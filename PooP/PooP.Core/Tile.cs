@@ -42,7 +42,7 @@ namespace PooP.Core
 
         public abstract bool available(Race race);
 
-        public Unit* getBestDefender()
+        public Unit getBestDefender()
         {
             throw new System.NotImplementedException();
         }

@@ -7,7 +7,7 @@ namespace PooP.Core
 {
     public class Game
     {
-        private Player* FirstPlayer;
+        private Player FirstPlayer;
     
         public PooP.Core.Player[] Players
         {
@@ -42,12 +42,12 @@ namespace PooP.Core
             }
         }
 
-        public PooP.Core.Player* getCurrentPlayer()
+        public Player getCurrentPlayer()
         {
             throw new System.NotImplementedException();
         }
 
-        public Player* getWinner()
+        public Player getWinner()
         {
             throw new System.NotImplementedException();
         }
