@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Map
+    public class TileFactory
     {
-        public TileFactory TilesFactory
+        public System.Collections.Generic.HashSet<PooP.Core.Tile, List<PooP.Core.Position>> Tiles
         {
             get
             {
@@ -17,19 +17,13 @@ namespace PooP.Core
             {
             }
         }
-
-        public PooP.Core.CreateMap MapCreator
+    
+        public Tile getTile(string TileType)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public void createMap()
+        public Unit getBestDefender()
         {
             throw new System.NotImplementedException();
         }

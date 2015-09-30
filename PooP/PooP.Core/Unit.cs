@@ -18,7 +18,18 @@ namespace PooP.Core
             }
         }
 
-        public Tile Tile
+        public TileFactory Tile
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Position Position
         {
             get
             {

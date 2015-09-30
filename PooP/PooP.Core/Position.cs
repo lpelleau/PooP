@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Map
+    public class Position
     {
-        public TileFactory TilesFactory
+        public int XPosition
         {
             get
             {
@@ -18,7 +18,7 @@ namespace PooP.Core
             }
         }
 
-        public PooP.Core.CreateMap MapCreator
+        public int YPosition
         {
             get
             {
@@ -27,11 +27,6 @@ namespace PooP.Core
             set
             {
             }
-        }
-
-        public void createMap()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

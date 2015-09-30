@@ -5,9 +5,8 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public abstract class Tile
+    public interface CreateMap
     {
-
-        public abstract bool available(Race race);
+        void create();
     }
 }

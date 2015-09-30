@@ -76,5 +76,10 @@ namespace PooP.Core
         public abstract int getVictoryPoints();
 
         public abstract bool hasUnits();
+
+        public void getRace(string raceName)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -39,19 +39,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackCommand.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandsStack.cs" />
+    <Compile Include="CreateMap.cs" />
+    <Compile Include="DemoGameBuilder.cs" />
+    <Compile Include="EndTurn.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameBuilder.cs" />
+    <Compile Include="GameSave.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MoveCommand.cs" />
     <Compile Include="Plain.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Race.cs" />
+    <Compile Include="SmallMap.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="TileFactory.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Classes.cd" />
+    <None Include="SequenceDiagram2.sequencediagram" />
+    <None Include="SequenceDiagram1.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SequenceDiagram2.sequencediagram.layout">
+      <DependentUpon>SequenceDiagram2.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequenceDiagram1.sequencediagram.layout">
+      <DependentUpon>SequenceDiagram1.sequencediagram</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

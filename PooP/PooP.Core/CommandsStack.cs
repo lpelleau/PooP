@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Map
+    public class CommandsStack
     {
-        public TileFactory TilesFactory
+        public Stack<Command> DoneCommands
         {
             get
             {
@@ -17,19 +17,8 @@ namespace PooP.Core
             {
             }
         }
-
-        public PooP.Core.CreateMap MapCreator
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public void createMap()
+    
+        public void undo()
         {
             throw new System.NotImplementedException();
         }

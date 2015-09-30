@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Design Pattern&#xD;&#xA;Factory">
+    <Position X="4.901" Y="7.061" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Design Pattern&#xD;&#xA;Strategy">
+    <Position X="16.378" Y="3.218" Height="0.75" Width="1.341" />
+  </Comment>
+  <Comment CommentText="Design Pattern&#xD;&#xA;Flyweight">
+    <Position X="15.342" Y="5.896" Height="0.75" Width="1.365" />
+  </Comment>
+  <Comment CommentText="Design Pattern&#xD;&#xA;Builder">
+    <Position X="8.487" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Design Pattern&#xD;&#xA;Command">
+    <Position X="0.624" Y="2.683" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Design Pattern&#xD;&#xA;Singleton">
+    <Position X="12.262" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="PooP.Core.Player">
-    <Position X="5.5" Y="2" Width="1.5" />
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -11,9 +29,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="PooP.Core.Unit">
-    <Position X="8.5" Y="4" Width="1.5" />
+    <Position X="9.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAAAAACAAAAAAAACACAAACAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAgAAAAACAAAAAAAACACAAACAAAAQA=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -21,14 +39,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="PooP.Core.Race">
-    <Position X="5.5" Y="3.75" Width="1.5" />
+    <Position X="6.5" Y="5.25" Width="1.5" />
     <AssociationLine Name="Player" Type="PooP.Core.Player">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.682" Y="0.279" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
       <FileName>Race.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -39,78 +57,74 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="PooP.Core.Tile">
-    <Position X="11.75" Y="4" Width="1.5" />
+    <Position X="12" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAABAAAAAAEAAAAAAAAAAAAAAEAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Units" />
-    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="PooP.Core.Map">
-    <Position X="11.75" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>Map.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Tiles" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="PooP.Core.Plain">
-    <Position X="9" Y="6.5" Width="1.5" />
+  <Class Name="PooP.Core.DemoMap">
+    <Position X="11" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmallMap.cs</FileName>
+      <NewMemberFileName>Map.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PooP.Core.Plain">
+    <Position X="10" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Water">
-    <Position X="12.5" Y="6.5" Width="1.5" />
+    <Position X="13.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Mountain">
-    <Position X="10.75" Y="6.5" Width="1.5" />
+    <Position X="11.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Forest">
-    <Position X="14.25" Y="6.5" Width="1.5" />
+    <Position X="15.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Human">
-    <Position X="3.75" Y="6.5" Width="1.5" />
+    <Position X="4.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Orc">
-    <Position X="5.5" Y="6.5" Width="1.5" />
+    <Position X="6.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Elf">
-    <Position X="7.25" Y="6.5" Width="1.5" />
+    <Position X="8.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Game">
-    <Position X="8.75" Y="0.75" Width="1.5" />
+    <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAGAAAAABAAAAAgAACAAAAAAAAgAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAGAAAAABAAAAAAAACAAAAAAAAgAAAAAIAAAAAAAQA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -120,5 +134,123 @@
       <Property Name="Players" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Class Name="PooP.Core.SmallMap">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmallMap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PooP.Core.StandardMap">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmallMap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.122" />
+  </Class>
+  <Class Name="PooP.Core.Map">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MapCreator" />
+      <Property Name="TilesFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PooP.Core.TileFactory">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAg=</HashCode>
+      <FileName>TileFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.Position">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.GameBuilder">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAgAAAAAAAAEBAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.DemoGameBuilder" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DemoGameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.SmallGameBuilder" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DemoGameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.StandardGameBuilder" Collapsed="true">
+    <Position X="5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DemoGameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.Command">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.MoveCommand">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAEAAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>MoveCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.AttackCommand">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAgAAEAAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>AttackCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.EndTurn">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>EndTurn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.CommandsStack">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>CommandsStack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.GameSave">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PooP.Core.CreateMap">
+    <Position X="15" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>CreateMap.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

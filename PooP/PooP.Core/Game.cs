@@ -52,7 +52,7 @@ namespace PooP.Core
             throw new System.NotImplementedException();
         }
 
-        public void start()
+        public void close()
         {
             throw new System.NotImplementedException();
         }

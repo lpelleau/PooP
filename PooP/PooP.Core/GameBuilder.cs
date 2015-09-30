@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Map
+    public abstract class GameBuilder
     {
-        public TileFactory TilesFactory
+        public System.IO.File OpenedFile
         {
             get
             {
@@ -17,19 +17,19 @@ namespace PooP.Core
             {
             }
         }
-
-        public PooP.Core.CreateMap MapCreator
+    
+        public Game createGame()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public void createMap()
+        public abstract Map createMap();
+
+        public abstract void placeUnits();
+
+        public abstract Player[] getPlayers();
+
+        public void start()
         {
             throw new System.NotImplementedException();
         }
