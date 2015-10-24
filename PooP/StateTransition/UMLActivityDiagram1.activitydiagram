@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="db065360-dbe2-47a5-952f-b4ac9f2c04f4" name="Game" linkedPackageId="23538763-ad64-4bed-a4eb-ea4788024b45" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="8ff3ba6c-80ba-4977-be16-01b062f04394">
+      <elementDefinition Id="cb118892-31af-43e0-83b4-97427246f3ff" />
+      <body>Player2 Victory</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker Id="c9f5498f-ceca-43d0-8243-3c47d2d170b7" LastKnownName="Player2 Victory" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9c1e3f83-a94c-4aba-b3e6-cfcf41d7cbb2">
+      <elementDefinition Id="50077599-4ed1-489a-a2e2-692b6e0a4428" />
+      <body>Player1 Victory</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker Id="2e9d6a69-4a97-4cf2-a213-d8127a7d6ce2" LastKnownName="Player1 Victory" />
+      </annotatedElements>
+    </comment>
+    <comment Id="808b1af5-5a0d-44e8-992a-7ad7a7fced22">
+      <elementDefinition Id="d794c826-2131-4f31-9d1b-76b996469d37" />
+      <body>if !(resting_units[2] &gt; 0)</body>
+    </comment>
+    <comment Id="bc2c83af-0582-44c5-8c36-c148867ef9fb">
+      <elementDefinition Id="edbe6ffd-832a-4b35-81fb-cd0ca3ef1fd0" />
+      <body>if (resting_units[2] &gt; 0)</body>
+    </comment>
+    <comment Id="0261284b-8a55-4750-97eb-1e25547ce84c">
+      <elementDefinition Id="42e2f2fa-697b-4d0f-ab60-318eabc9503a" />
+      <body>if !(resting_units[1] &gt; 0)</body>
+    </comment>
+    <comment Id="4340143f-7552-4d7b-a562-cb18ab532b69">
+      <elementDefinition Id="621e7476-56ae-48b5-a8fa-d39a82018b62" />
+      <body>if (resting_units[1] &gt; 0)</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="1f132850-60e1-45be-b838-e938fc610c6f">
+      <profileInstance Id="d99cf6c5-1c47-45ed-a11e-b174b0815203" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="ad917d64-578c-4147-9c2d-82e6ab4e9f9a">
+      <profileInstance Id="7196e74e-1930-48c3-872e-ad37489a80e4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="cf2e0d6c-a132-4865-8dec-9c6a28d824a6" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="528318af-b234-4b36-8fc7-14803a933c16" />
+        <nodes>
+          <initialNode Id="69927adf-9bd5-492b-8645-2c3892f41e6d" name="Initial1" isLeaf="false">
+            <elementDefinition Id="b39f75db-9ba9-406d-834b-9c9312f6e613" />
+            <flowNodeTargets>
+              <controlFlow Id="ec2932ef-db1d-4867-b4a1-e01e1f069d8a" isLeaf="false">
+                <opaqueActionMoniker Id="b268af49-951d-4c11-9154-eb33adee037f" LastKnownName="Game Start" />
+                <elementDefinition Id="3c9596e8-92a5-4cee-962e-47394c43c87c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="2e9d6a69-4a97-4cf2-a213-d8127a7d6ce2" name="Player1 Victory" isLeaf="false">
+            <description>Player1 Victory</description>
+            <elementDefinition Id="e847dd8d-b7dc-4fd5-b464-294d88ad2644" />
+          </activityFinalNode>
+          <objectNode Id="2374dfa8-5f2d-4d0a-9d53-ccb8b7aebc11" name="Player1 Turn" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="e0915fc4-a00e-4a5b-bced-ae8dfa950776" />
+            <objectFlowTargets>
+              <objectFlow Id="97e1d4ae-29dd-4f0b-bc64-f0f4939a2e61" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="a759dbf1-07ce-4eca-b553-124e2f719e93" LastKnownName="End Turn 1" />
+                <elementDefinition Id="b5654cef-9648-43d7-b6b8-544ab3d0a2a5" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="a191854d-dd30-469f-be9f-eded160c0930" name="2147483647" value="2147483647">
+                <elementDefinition Id="450199c6-52c4-4437-b35e-657e2a54c2a0" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="977b3767-fa8f-4bd4-b552-927cc281d3cb" name="Player2 Turn" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="6620dc7b-31ec-4bce-813a-d35de5d58958" />
+            <objectFlowTargets>
+              <objectFlow Id="020bb9ca-083e-4e0c-871e-1dff25aee234" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="84e0b72c-8f85-4a73-8799-f91786165bbe" LastKnownName="End Turn 2" />
+                <elementDefinition Id="20e06083-f79e-4402-9c25-4260cffe74fc" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="10c4746f-f18f-492c-b910-18f7b6300bca" name="2147483647" value="2147483647">
+                <elementDefinition Id="9756a793-1973-4b8b-b458-5ce59f910a8d" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="b268af49-951d-4c11-9154-eb33adee037f" name="Game Start" isLeaf="false">
+            <elementDefinition Id="a4e5aada-d423-4f4c-89a6-6c2c97d357b5" />
+            <objectFlowTargets>
+              <objectFlow Id="36c5e98b-e91b-4dbd-adf3-d87c8287fada" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="2374dfa8-5f2d-4d0a-9d53-ccb8b7aebc11" LastKnownName="Player1 Turn" />
+                <elementDefinition Id="9ae858f0-6470-43f5-815f-ece120980ab9" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <opaqueAction Id="a759dbf1-07ce-4eca-b553-124e2f719e93" name="End Turn 1" isLeaf="false">
+            <elementDefinition Id="52c86869-b53d-4cc1-8071-defe5da90802" />
+            <flowNodeTargets>
+              <controlFlow Id="5155fdb1-99bf-4bb0-acb8-6ef6ba304ee6" name=" " isLeaf="false">
+                <activityFinalNodeMoniker Id="2e9d6a69-4a97-4cf2-a213-d8127a7d6ce2" LastKnownName="Player1 Victory" />
+                <elementDefinition Id="81df7c62-4288-4269-b817-7bc4602becef" />
+              </controlFlow>
+            </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow Id="802204b2-c707-4e5e-8fbf-2aea4c33d02b" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="977b3767-fa8f-4bd4-b552-927cc281d3cb" LastKnownName="Player2 Turn" />
+                <elementDefinition Id="2d348291-5638-4ed6-87ce-63357ef8f4ee" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <opaqueAction Id="84e0b72c-8f85-4a73-8799-f91786165bbe" name="End Turn 2" isLeaf="false">
+            <elementDefinition Id="1f93d50c-35f6-4af0-aa8f-f71b81217ab7" />
+            <flowNodeTargets>
+              <controlFlow Id="fb620d19-d947-4e0b-a955-9e3e5315e29e" isLeaf="false">
+                <activityFinalNodeMoniker Id="c9f5498f-ceca-43d0-8243-3c47d2d170b7" LastKnownName="Player2 Victory" />
+                <elementDefinition Id="735a830f-b219-4239-bb0e-8fa43a066953" />
+              </controlFlow>
+            </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow Id="70e7df1e-34ae-4db3-9795-9d8b45550d9d" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="2374dfa8-5f2d-4d0a-9d53-ccb8b7aebc11" LastKnownName="Player1 Turn" />
+                <elementDefinition Id="cb2e3cd3-4176-4e70-a07a-bf5bc3f4b202" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <activityFinalNode Id="c9f5498f-ceca-43d0-8243-3c47d2d170b7" name="Player2 Victory" isLeaf="false">
+            <elementDefinition Id="bece716b-41c9-49bf-a001-f850522c8b84" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="23538763-ad64-4bed-a4eb-ea4788024b45" name="StateTransition">
+    <elementDefinition Id="df658139-30fa-4498-9f46-403900e572f8" />
+  </package>
+</activityRootModel>

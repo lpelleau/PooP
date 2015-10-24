@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="df658139-30fa-4498-9f46-403900e572f8"
+  name="StateTransition" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="cb118892-31af-43e0-83b4-97427246f3ff">
+      <body>Player2 Victory</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker
+          Id="bece716b-41c9-49bf-a001-f850522c8b84"
+          LastKnownName="Player2 Victory"
+          LastKnownLocation="StateTransition.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="50077599-4ed1-489a-a2e2-692b6e0a4428">
+      <body>Player1 Victory</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker
+          Id="e847dd8d-b7dc-4fd5-b464-294d88ad2644"
+          LastKnownName="Player1 Victory"
+          LastKnownLocation="StateTransition.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="d794c826-2131-4f31-9d1b-76b996469d37">
+      <body>if !(resting_units[2] &gt; 0)</body>
+    </comment>
+    <comment
+      Id="edbe6ffd-832a-4b35-81fb-cd0ca3ef1fd0">
+      <body>if (resting_units[2] &gt; 0)</body>
+    </comment>
+    <comment
+      Id="42e2f2fa-697b-4d0f-ab60-318eabc9503a">
+      <body>if !(resting_units[1] &gt; 0)</body>
+    </comment>
+    <comment
+      Id="621e7476-56ae-48b5-a8fa-d39a82018b62">
+      <body>if (resting_units[1] &gt; 0)</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="528318af-b234-4b36-8fc7-14803a933c16"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="b39f75db-9ba9-406d-834b-9c9312f6e613"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3c9596e8-92a5-4cee-962e-47394c43c87c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a4e5aada-d423-4f4c-89a6-6c2c97d357b5"
+                  LastKnownName="Game Start"
+                  LastKnownLocation="StateTransition.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="e847dd8d-b7dc-4fd5-b464-294d88ad2644"
+            name="Player1 Victory"
+            isLeaf="false">
+            <description>Player1 Victory</description>
+          </activityFinalNode>
+          <objectNode
+            Id="e0915fc4-a00e-4a5b-bced-ae8dfa950776"
+            name="Player1 Turn"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="b5654cef-9648-43d7-b6b8-544ab3d0a2a5"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="52c86869-b53d-4cc1-8071-defe5da90802"
+                  LastKnownName="End Turn 1"
+                  LastKnownLocation="StateTransition.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="450199c6-52c4-4437-b35e-657e2a54c2a0"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="6620dc7b-31ec-4bce-813a-d35de5d58958"
+            name="Player2 Turn"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="20e06083-f79e-4402-9c25-4260cffe74fc"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="1f93d50c-35f6-4af0-aa8f-f71b81217ab7"
+                  LastKnownName="End Turn 2"
+                  LastKnownLocation="StateTransition.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="9756a793-1973-4b8b-b458-5ce59f910a8d"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="a4e5aada-d423-4f4c-89a6-6c2c97d357b5"
+            name="Game Start"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="9ae858f0-6470-43f5-815f-ece120980ab9"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="e0915fc4-a00e-4a5b-bced-ae8dfa950776"
+                  LastKnownName="Player1 Turn"
+                  LastKnownLocation="StateTransition.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="52c86869-b53d-4cc1-8071-defe5da90802"
+            name="End Turn 1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="81df7c62-4288-4269-b817-7bc4602becef"
+                name=" "
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="e847dd8d-b7dc-4fd5-b464-294d88ad2644"
+                  LastKnownName="Player1 Victory"
+                  LastKnownLocation="StateTransition.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow
+                Id="2d348291-5638-4ed6-87ce-63357ef8f4ee"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="6620dc7b-31ec-4bce-813a-d35de5d58958"
+                  LastKnownName="Player2 Turn"
+                  LastKnownLocation="StateTransition.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1f93d50c-35f6-4af0-aa8f-f71b81217ab7"
+            name="End Turn 2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="735a830f-b219-4239-bb0e-8fa43a066953"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="bece716b-41c9-49bf-a001-f850522c8b84"
+                  LastKnownName="Player2 Victory"
+                  LastKnownLocation="StateTransition.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow
+                Id="cb2e3cd3-4176-4e70-a07a-bf5bc3f4b202"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="e0915fc4-a00e-4a5b-bced-ae8dfa950776"
+                  LastKnownName="Player1 Turn"
+                  LastKnownLocation="StateTransition.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="bece716b-41c9-49bf-a001-f850522c8b84"
+            name="Player2 Victory"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
