@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return DoneCommands;
             }
             set
             {
+                DoneCommands = value;
             }
         }
     

@@ -10,17 +10,17 @@ namespace PooP.Core
         public Map createMap()
         {
             throw new System.NotImplementedException();
-}
+        }
 
         public Player[] getPlayers()
         {
             throw new System.NotImplementedException();
-}
+        }
 
         public void placeUnits()
         {
             throw new System.NotImplementedException();
-}
+        }
     }
 
     public class SmallGameBuilder : GameBuilder

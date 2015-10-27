@@ -7,14 +7,15 @@ namespace PooP.Core
 {
     public class TileFactory
     {
-        public System.Collections.Generic.HashSet<PooP.Core.Tile, List<PooP.Core.Position>> Tiles
+        public Dictionary<Tile, List<Position>> Tiles
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Tiles;
             }
             set
             {
+                Tiles = value;
             }
         }
     

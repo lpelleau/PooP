@@ -12,10 +12,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Race;
             }
             set
             {
+                Race = value;
             }
         }
 
@@ -23,10 +24,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Name;
             }
             set
             {
+                Name = value;
             }
         }
     }

@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return TilesFactory;
             }
             set
             {
+                TilesFactory = value;
             }
         }
 
@@ -22,10 +23,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return MapCreator;
             }
             set
             {
+                MapCreator = value;
             }
         }
 

@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Life;
             }
             set
             {
+                Life = value;
             }
         }
 
@@ -22,10 +23,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Attack;
             }
             set
             {
+                Attack = value;
             }
         }
 
@@ -33,10 +35,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Defence;
             }
             set
             {
+                Defence = value;
             }
         }
 
@@ -44,10 +47,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return AttackDistance;
             }
             set
             {
+                AttackDistance = value;
             }
         }
 
@@ -55,10 +59,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Player;
             }
             set
             {
+                Player = value;
             }
         }
 
@@ -66,10 +71,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Units;
             }
             set
             {
+                Units = value;
             }
         }
 

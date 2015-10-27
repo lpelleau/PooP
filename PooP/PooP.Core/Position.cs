@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return XPosition;
             }
             set
             {
+                XPosition = value;
             }
         }
 
@@ -22,10 +23,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return YPosition;
             }
             set
             {
+                YPosition = value;
             }
         }
     }

@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return LifePoints;
             }
             set
             {
+                LifePoints = value;
             }
         }
 
@@ -22,10 +23,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Tile;
             }
             set
             {
+                Tile = value;
             }
         }
 
@@ -33,10 +35,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Position;
             }
             set
             {
+                Position = value;
             }
         }
 

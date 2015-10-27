@@ -11,10 +11,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return OpenedFile;
             }
             set
             {
+                OpenedFile = value;
             }
         }
     
