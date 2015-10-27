@@ -7,13 +7,25 @@ namespace PooP.Core
 {
     public class SmallMap : CreateMap
     {
+        public void create()
+        {
+
+        }
     }
 
     public class StandardMap : CreateMap
     {
+        public void create()
+        {
+
+        }
     }
 
     public class DemoMap : CreateMap
     {
+        public void create()
+        {
+
+        }
     }
 }

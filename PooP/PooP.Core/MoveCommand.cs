@@ -13,16 +13,16 @@ namespace PooP.Core
         public bool canDo()
         {
             throw new System.NotImplementedException();
-}
+        }
 
         public void execute()
         {
             throw new System.NotImplementedException();
-}
+        }
 
         public void undo()
         {
             throw new System.NotImplementedException();
-}
+        }
     }
 }

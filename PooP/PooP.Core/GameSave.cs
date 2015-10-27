@@ -7,7 +7,7 @@ namespace PooP.Core
 {
     public class GameSave
     {
-        public void save(System.IO.File SaveFile)
+        public void save(string SaveFile)
         {
             throw new System.NotImplementedException();
         }

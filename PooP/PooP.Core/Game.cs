@@ -13,10 +13,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Players;
             }
             set
             {
+                Players = value;
             }
         }
 
@@ -24,10 +25,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Map;
             }
             set
             {
+                Map = value;
             }
         }
 
@@ -35,10 +37,11 @@ namespace PooP.Core
         {
             get
             {
-                throw new System.NotImplementedException();
+                return NumbreOfTurns;
             }
             set
             {
+                NumbreOfTurns = value;
             }
         }
 

@@ -7,7 +7,7 @@ namespace PooP.Core
 {
     public abstract class GameBuilder
     {
-        public System.IO.File OpenedFile
+        public string OpenedFile
         {
             get
             {

@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttackCommand.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandsStack.cs" />
     <Compile Include="CreateMap.cs" />
@@ -49,7 +48,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameBuilder.cs" />
     <Compile Include="GameSave.cs" />
-    <Compile Include="Human.cs" />
+    <Compile Include="Races.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MoveCommand.cs" />
     <Compile Include="Plain.cs" />

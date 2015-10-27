@@ -25,7 +25,7 @@ namespace PooP.Core
             {
                 return Attack;
             }
-            set
+            protected set
             {
                 Attack = value;
             }
@@ -37,7 +37,7 @@ namespace PooP.Core
             {
                 return Defence;
             }
-            set
+            protected set
             {
                 Defence = value;
             }
@@ -49,7 +49,7 @@ namespace PooP.Core
             {
                 return AttackDistance;
             }
-            set
+            protected set
             {
                 AttackDistance = value;
             }
