@@ -7,6 +7,9 @@ namespace PooP.Core
 {
     public abstract class Race
     {
+        protected Race()
+        {
+        }
         public int Life
         {
             get
