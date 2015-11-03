@@ -9,38 +9,26 @@ namespace PooP.Core
     {
         public int LifePoints
         {
-            get
-            {
-                return LifePoints;
-            }
-            set
-            {
-                LifePoints = value;
-            }
+            get;
+            set;
         }
 
         public TileFactory Tile
         {
-            get
-            {
-                return Tile;
-            }
-            set
-            {
-                Tile = value;
-            }
+            get;
+            set;
         }
 
         public Position Position
         {
-            get
-            {
-                return Position;
-            }
-            set
-            {
-                Position = value;
-            }
+            get;
+            set;
+        }
+
+        public Race Race
+        {
+            get;
+            set;
         }
 
         public int getVictoryPoints()

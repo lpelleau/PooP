@@ -48,6 +48,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameBuilder.cs" />
     <Compile Include="GameSave.cs" />
+    <Compile Include="RaceFactory.cs" />
     <Compile Include="Races.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MoveCommand.cs" />

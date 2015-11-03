@@ -9,14 +9,8 @@ namespace PooP.Core
     {
         public Stack<Command> DoneCommands
         {
-            get
-            {
-                return DoneCommands;
-            }
-            set
-            {
-                DoneCommands = value;
-            }
+            get;
+            set;
         }
     
         public void undo()

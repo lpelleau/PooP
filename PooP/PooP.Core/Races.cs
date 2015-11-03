@@ -7,24 +7,12 @@ namespace PooP.Core
 {
     public class Human : Race
     {
-        private Human()
+        public Human()
         {
             Attack = 6;
             AttackDistance = 1;
             Defence = 3;
             Life = 15;
-        }
-        private static Race instance;
-        public static Race Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Human();
-                }
-                return instance;
-            }
         }
 
         public override bool hasUnits()
@@ -42,22 +30,11 @@ namespace PooP.Core
         private Elf()
         {
             Attack = 4;
-            AttackDistance = 1; // Carreful, AccackDistance = 2 if in the same direction.....
+            AttackDistance = 2;
             Defence = 3;
             Life = 12;
         }
-        private static Race instance;
-        public static Race Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Elf();
-                }
-                return instance;
-            }
-        }
+
         public override bool hasUnits()
         {
             throw new NotImplementedException();
@@ -77,18 +54,7 @@ namespace PooP.Core
             Defence = 2;
             Life = 17;
         }
-        private static Race instance;
-        public static Race Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Orc();
-                }
-                return instance;
-            }
-        }
+
         public override bool hasUnits()
         {
             throw new NotImplementedException();

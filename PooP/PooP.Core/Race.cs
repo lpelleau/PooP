@@ -12,83 +12,42 @@ namespace PooP.Core
         }
         public int Life
         {
-            get
-            {
-                return Life;
-            }
-            set
-            {
-                Life = value;
-            }
+            get;
+            protected set;
         }
 
         public int Attack
         {
-            get
-            {
-                return Attack;
-            }
-            protected set
-            {
-                Attack = value;
-            }
+            get;
+            protected set;
         }
 
         public int Defence
         {
-            get
-            {
-                return Defence;
-            }
-            protected set
-            {
-                Defence = value;
-            }
+            get;
+            protected set;
         }
 
         public int AttackDistance
         {
-            get
-            {
-                return AttackDistance;
-            }
-            protected set
-            {
-                AttackDistance = value;
-            }
+            get;
+            protected set;
         }
 
         public Player Player
         {
-            get
-            {
-                return Player;
-            }
-            set
-            {
-                Player = value;
-            }
+            get;
+            set;
         }
 
         public List<Unit> Units
         {
-            get
-            {
-                return Units;
-            }
-            set
-            {
-                Units = value;
-            }
+            get;
+            set;
         }
 
         public abstract int getVictoryPoints();
 
         public abstract bool hasUnits();
-
-        public void getRace(string raceName)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

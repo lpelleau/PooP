@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Design Pattern&#xD;&#xA;Factory">
-    <Position X="4.901" Y="7.061" Height="0.75" Width="1.7" />
+    <Position X="4.109" Y="7.061" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="Design Pattern&#xD;&#xA;Strategy">
     <Position X="16.378" Y="3.218" Height="0.75" Width="1.341" />
@@ -31,22 +31,23 @@
   <Class Name="PooP.Core.Unit">
     <Position X="9.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAgAAAAACAAAAAAAACACAAACAAAAQA=</HashCode>
+      <HashCode>QAAAAAAAAQAAAAAgAAAAACAAAAAAAACACAAACAAAAQA=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Tile" />
+      <Property Name="Race" />
     </ShowAsAssociation>
   </Class>
   <Class Name="PooP.Core.Race">
-    <Position X="6.5" Y="5.25" Width="1.5" />
+    <Position X="5.75" Y="5" Width="1.5" />
     <AssociationLine Name="Player" Type="PooP.Core.Player">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.682" Y="0.279" />
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.901" Y="0.279" Height="0.182" Width="0.808" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAABAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
       <FileName>Race.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -103,21 +104,21 @@
   <Class Name="PooP.Core.Human">
     <Position X="4.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQACACAAAAAA=</HashCode>
       <FileName>Races.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Orc">
     <Position X="6.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQACACAAAAAA=</HashCode>
       <FileName>Races.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Elf">
     <Position X="8.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQACACAAAAAA=</HashCode>
       <FileName>Races.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -243,6 +244,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PooP.Core.RaceFactory">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAIAAQAAAA=</HashCode>
+      <FileName>RaceFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="PooP.Core.CreateMap">
