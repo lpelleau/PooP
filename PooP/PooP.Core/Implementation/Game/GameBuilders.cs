@@ -7,17 +7,17 @@ namespace PooP.Core
 {
     public class DemoGameBuilder : GameBuilder
     {
-        public Map createMap()
+        public override Map createMap()
         {
             throw new System.NotImplementedException();
         }
 
-        public Player[] getPlayers()
+        public override Player[] getPlayers()
         {
             throw new System.NotImplementedException();
         }
 
-        public void placeUnits()
+        public override void placeUnits()
         {
             throw new System.NotImplementedException();
         }
@@ -25,17 +25,17 @@ namespace PooP.Core
 
     public class SmallGameBuilder : GameBuilder
     {
-        public Map createMap()
+        public override Map createMap()
         {
             throw new System.NotImplementedException();
         }
 
-        public Player[] getPlayers()
+        public override Player[] getPlayers()
         {
             throw new System.NotImplementedException();
         }
 
-        public void placeUnits()
+        public override void placeUnits()
         {
             throw new System.NotImplementedException();
         }
@@ -43,17 +43,17 @@ namespace PooP.Core
 
     public class StandardGameBuilder : GameBuilder
     {
-        public Map createMap()
+        public override Map createMap()
         {
             throw new System.NotImplementedException();
         }
 
-        public Player[] getPlayers()
+        public override Player[] getPlayers()
         {
             throw new System.NotImplementedException();
         }
 
-        public void placeUnits()
+        public override void placeUnits()
         {
             throw new System.NotImplementedException();
         }

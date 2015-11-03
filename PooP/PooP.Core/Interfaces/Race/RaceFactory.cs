@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP.Core
+namespace PooP
 {
-    public abstract class Tile
+    public interface RaceFactory
     {
-
-        public abstract bool available(Race race);
     }
 }

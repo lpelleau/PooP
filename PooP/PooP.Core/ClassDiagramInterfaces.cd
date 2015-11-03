@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="PooP.Command">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Command\Command.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Undoable">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Command\Undoable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Race">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <FileName>Interfaces\Race\Race.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Unit">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAACACAAACAAAAAA=</HashCode>
+      <FileName>Interfaces\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Tile">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Player">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Player.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Map">
+    <Position X="8.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Map.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.CreateMap">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interfaces\CreateMap.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PooP.Game">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAACAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Game.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

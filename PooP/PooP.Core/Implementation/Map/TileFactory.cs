@@ -9,14 +9,8 @@ namespace PooP.Core
     {
         public Dictionary<Tile, List<Position>> Tiles
         {
-            get
-            {
-                return Tiles;
-            }
-            set
-            {
-                Tiles = value;
-            }
+            get;
+            set;
         }
     
         public Tile getTile(string TileType)

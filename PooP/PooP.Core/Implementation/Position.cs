@@ -5,17 +5,18 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class CommandsStack
+    public class Position
     {
-        public Stack<Command> DoneCommands
+        public int XPosition
         {
             get;
             set;
         }
-    
-        public void undo()
+
+        public int YPosition
         {
-            throw new System.NotImplementedException();
+            get;
+            set;
         }
     }
 }

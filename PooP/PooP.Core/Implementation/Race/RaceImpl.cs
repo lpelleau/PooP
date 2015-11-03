@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public abstract class Race
+    public abstract class RaceImpl : Race
     {
-        protected Race()
+        protected RaceImpl()
         {
         }
         public int Life

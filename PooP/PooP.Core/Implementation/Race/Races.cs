@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Human : Race
+    public class Human : RaceImpl
     {
         public Human()
         {
@@ -25,7 +25,7 @@ namespace PooP.Core
         }
     }
 
-    public class Elf : Race
+    public class Elf : RaceImpl
     {
         private Elf()
         {
@@ -45,7 +45,7 @@ namespace PooP.Core
         }
     }
 
-    public class Orc : Race
+    public class Orc : RaceImpl
     {
         private Orc()
         {

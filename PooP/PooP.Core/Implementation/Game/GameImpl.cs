@@ -5,44 +5,26 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Game
+    public class GameImml : Game
     {
         private Player FirstPlayer;
-    
-        public PooP.Core.Player[] Players
+
+        public Player[] Players
         {
-            get
-            {
-                return Players;
-            }
-            set
-            {
-                Players = value;
-            }
+            get;
+            set;
         }
 
         public Map Map
         {
-            get
-            {
-                return Map;
-            }
-            set
-            {
-                Map = value;
-            }
+            get;
+            set;
         }
 
         public int NumbreOfTurns
         {
-            get
-            {
-                return NumbreOfTurns;
-            }
-            set
-            {
-                NumbreOfTurns = value;
-            }
+            get;
+            set;
         }
 
         public Player getCurrentPlayer()
@@ -55,7 +37,7 @@ namespace PooP.Core
             throw new System.NotImplementedException();
         }
 
-        public void close()
+        public void endGame()
         {
             throw new System.NotImplementedException();
         }

@@ -7,7 +7,7 @@ namespace PooP.Core
 {
     public class Plain : Tile
     {
-        public override bool available(Race race)
+        public bool available(Race Race)
         {
             return false;
         }
@@ -15,7 +15,7 @@ namespace PooP.Core
 
     public class Forest : Tile
     {
-        public override bool available(Race race)
+        public bool available(Race Race)
         {
             return false;
         }
@@ -23,7 +23,7 @@ namespace PooP.Core
 
     public class Mountain : Tile
     {
-        public override bool available(Race race)
+        public bool available(Race Race)
         {
             return false;
         }
@@ -31,7 +31,7 @@ namespace PooP.Core
 
     public class Water : Tile
     {
-        public override bool available(Race race)
+        public bool available(Race Race)
         {
             return false;
         }

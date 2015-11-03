@@ -9,14 +9,8 @@ namespace PooP.Core
     {
         public string OpenedFile
         {
-            get
-            {
-                return OpenedFile;
-            }
-            set
-            {
-                OpenedFile = value;
-            }
+            get;
+            set;
         }
     
         public Game createGame()

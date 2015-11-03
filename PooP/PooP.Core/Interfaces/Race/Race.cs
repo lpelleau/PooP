@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP.Core
+namespace PooP
 {
-    public interface CreateMap
+    public interface Race
     {
-        void create();
+        int getVictoryPoints();
+
+        bool hasUnits();
     }
 }
