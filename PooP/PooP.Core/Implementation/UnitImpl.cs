@@ -31,7 +31,7 @@ namespace PooP.Core
             set;
         }
 
-        public int MovePoints
+        public double MovePoints
         {
             get;
             set;
@@ -47,9 +47,23 @@ namespace PooP.Core
             throw new System.NotImplementedException();
         }
 
-        public int getMoveCost(Tile Tile)
+        public double getMoveCost(Tile Target)
         {
+            if (this.Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
+            {
+                return 2;
+            }
+            else if (this.Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
+            {
+                return 0.5;
+            }
+            return this.Race.AttackDistance;
             throw new System.NotImplementedException();
+        }
+
+        public bool canMoveTo(Tile Target)
+        {
+            return (this.getMoveCost(Target) < this.MovePoints) && (this.Race.GetType().Name != "Human" || Target.GetType().Name != "Water");
         }
     }
 }

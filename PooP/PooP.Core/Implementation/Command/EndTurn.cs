@@ -9,17 +9,23 @@ namespace PooP.Core
     {
         public bool canDo()
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public void execute()
         {
+            
             throw new System.NotImplementedException();
         }
 
         public void undo()
         {
-            throw new System.NotImplementedException();
+            // Undo is not possible
+        }
+
+        public void redo()
+        {
+            // Redo is not possible
         }
     }
 }

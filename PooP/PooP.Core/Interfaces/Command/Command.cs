@@ -12,5 +12,7 @@ namespace PooP
         void execute();
 
         void undo();
+
+        void redo();
     }
 }

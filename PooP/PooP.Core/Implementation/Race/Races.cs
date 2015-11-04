@@ -13,6 +13,13 @@ namespace PooP.Core
             AttackDistance = 1;
             Defence = 3;
             Life = 15;
+            MoveDistance = 1;
+        }
+
+        public int MoveDistance
+        {
+            get;
+            set;
         }
         public int Life
         {
@@ -68,6 +75,13 @@ namespace PooP.Core
             AttackDistance = 2;
             Defence = 3;
             Life = 12;
+            MoveDistance = 1;
+        }
+
+        public int MoveDistance
+        {
+            get;
+            set;
         }
         public int Life
         {
@@ -123,6 +137,13 @@ namespace PooP.Core
             AttackDistance = 2; // Carreful, AccackDistance = 1 if not on mountain tile......
             Defence = 2;
             Life = 17;
+            MoveDistance = 1;
+        }
+
+        public int MoveDistance
+        {
+            get;
+            set;
         }
         public int Life
         {

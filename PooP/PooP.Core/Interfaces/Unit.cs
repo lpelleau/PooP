@@ -31,7 +31,7 @@ namespace PooP
             set;
         }
 
-        int MovePoints
+        double MovePoints
         {
             get;
             set;
@@ -41,6 +41,8 @@ namespace PooP
 
         int getVictoryPoints();
 
-        int getMoveCost(Tile Tile);
+        double getMoveCost(Tile Tile);
+
+        bool canMoveTo(Tile Target);
     }
 }

@@ -12,15 +12,31 @@ namespace PooP.Core
             get;
             set;
         }
+
+        public Stack<Command> UndoneCommands
+        {
+            get;
+            set;
+        }
     
         public void undo()
         {
-            throw new System.NotImplementedException();
+            if (!(DoneCommands.Count == 0))
+            {
+                Command LastCommand = DoneCommands.Pop();
+                LastCommand.undo();
+                UndoneCommands.Push(LastCommand);
+            }
         }
 
         public void redo()
         {
-            throw new System.NotImplementedException();
+            if (!(UndoneCommands.Count == 0))
+            {
+                Command LastCommand = UndoneCommands.Pop();
+                LastCommand.redo();
+                DoneCommands.Push(LastCommand);
+            }
         }
     }
 }

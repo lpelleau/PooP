@@ -3,7 +3,7 @@
   <Interface Name="PooP.Command">
     <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Command\Command.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -17,21 +17,21 @@
   <Interface Name="PooP.Race">
     <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
       <FileName>Interfaces\Race\Race.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Unit">
-    <Position X="4.5" Y="3.5" Width="1.5" />
+    <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAACACAAACAAAAAA=</HashCode>
+      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAIAAAAAACAAAAQg=</HashCode>
       <FileName>Interfaces\Unit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Tile">
     <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Interfaces\Tile.cs</FileName>
     </TypeIdentifier>
   </Interface>

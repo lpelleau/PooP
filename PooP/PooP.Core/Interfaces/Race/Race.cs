@@ -42,6 +42,12 @@ namespace PooP
             get;
             set;
         }
+
+        int MoveDistance
+        {
+            get;
+            set;
+        }
         int getVictoryPoints();
 
         bool hasUnits();

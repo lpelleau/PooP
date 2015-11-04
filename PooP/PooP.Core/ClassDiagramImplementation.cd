@@ -69,7 +69,7 @@
   <Class Name="PooP.Core.Human">
     <Position X="4.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABCAA=</HashCode>
       <FileName>Implementation\Race\Races.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -77,7 +77,7 @@
   <Class Name="PooP.Core.Orc">
     <Position X="6.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABCAA=</HashCode>
       <FileName>Implementation\Race\Races.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -85,7 +85,7 @@
   <Class Name="PooP.Core.Elf">
     <Position X="8.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABCAA=</HashCode>
       <FileName>Implementation\Race\Races.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -163,7 +163,7 @@
   <Class Name="PooP.Core.MoveCommand">
     <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAEAAAAGAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAEEACAAAAAQAAAGAAAACAAAAAA=</HashCode>
       <FileName>Implementation\Command\MoveCommand.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -171,7 +171,7 @@
   <Class Name="PooP.Core.AttackCommand">
     <Position X="2.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACEAAAAAAAAAAAEACAgAAAQAAAGAAABCAAAAAA=</HashCode>
+      <HashCode>AAAAAACEAAAAAAAAAAEEACAgAAAQAAAGAAABCAAAAAA=</HashCode>
       <FileName>Implementation\Command\AttackCommand.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -179,7 +179,7 @@
   <Class Name="PooP.Core.EndTurn">
     <Position X="3.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Command\EndTurn.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -187,7 +187,7 @@
   <Class Name="PooP.Core.UndoableImpl">
     <Position X="2.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAgAAA=</HashCode>
       <FileName>Implementation\Command\UndoableImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -216,7 +216,7 @@
   <Class Name="PooP.Core.UnitImpl">
     <Position X="10" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAAAAAAAACAAAAQA=</HashCode>
+      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAIAAAAAACAAAAQg=</HashCode>
       <FileName>Implementation\UnitImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

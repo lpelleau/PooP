@@ -11,7 +11,7 @@ namespace PooP.Core
         private Tile OldTile;
         private Tile Target;
         private Unit Defender;
-        private int cost;
+        private double cost;
         private bool AttackSuccess;
         private int Damage;
 
@@ -32,31 +32,77 @@ namespace PooP.Core
         public void execute()
         {
             // Determine who wins the battle
-            AttackSuccess = (MovedUnit.Race.Attack > Defender.Race.Defence);
+            AttackSuccess = (MovedUnit.Race.Attack * MovedUnit.LifePoints / MovedUnit.Race.Life) > Defender.Race.Defence;
 
+            Random randGenerator = new Random();
+
+            // The attacker wins the battle
             if (AttackSuccess)
             {
-                Damage = 0;
+                // The damage are (Attack-Defence)+/-50%
+                Damage = (MovedUnit.Race.Attack - Defender.Race.Defence) * randGenerator.Next(50,150)/100;
                 Defender.LifePoints -= Damage;
+
+                if (Defender.LifePoints < 0)
+                {
+                    // Kills the defender
+                    Defender.Race.Units.Remove(Defender);
+
+                    // Move the attacker to the tile
+                    MovedUnit.Tile = Target;
+                }
             }
+            // The defender wins
             else
             {
-                Damage = 0;
+                // The damage are (Attack-Defence)+/-50%
+                Damage = (Defender.Race.Attack - MovedUnit.Race.Defence) * randGenerator.Next(50, 150) / 100;
                 MovedUnit.LifePoints -= Damage;
+
+                if (MovedUnit.LifePoints < 0)
+                {
+                    // Kills the unit
+                    MovedUnit.Race.Units.Remove(MovedUnit);
+                }
             }
+
             MovedUnit.MovePoints -= cost;
-            throw new System.NotImplementedException();
         }
 
         public void undo()
         {
-            // If Defender died
-            // MovedUnit.Tile = OldTile;
             MovedUnit.MovePoints += cost;
 
-            // If Defender still alive
+            if (AttackSuccess)
+            {
+                // The attack had been successful
+                if (Defender.LifePoints < 0)
+                {
+                    // The unit had moved to the target tile
+                    MovedUnit.Tile = OldTile;
 
-            throw new System.NotImplementedException();
+                    // The defender had been killed : resurect it
+                    Defender.Race.Units.Add(Defender);
+                }
+                // Give back the life points that had been taken
+                Defender.LifePoints += Damage;
+            }
+            else
+            {
+                // The ttack had failed
+                if (MovedUnit.LifePoints < 0)
+                {
+                    // Put again the unit in its army
+                    MovedUnit.Race.Units.Add(MovedUnit);
+                }
+                // Give back the life points that had been taken
+                MovedUnit.LifePoints += Damage;
+            }
+        }
+
+        public void redo()
+        {
+            this.execute();
         }
     }
 }

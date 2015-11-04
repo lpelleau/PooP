@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="df658139-30fa-4498-9f46-403900e572f8"
   name="StateTransition" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -3655,22 +3655,22 @@ The attacker wins, and there is no more defender</body>
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="5036364c-cd8c-4191-851c-00e89abfff63"
-            name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker
-                Id="657bae1c-d5e5-4b48-b9dc-79f3b914a8d1"
-                LastKnownName="Unit"
-                LastKnownLocation="StateTransition.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a7d42b32-6375-412c-b0b1-2de5e5544ff7"
             name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker
                 Id="8da62f78-507e-4dbf-a232-8d28e24d2250"
                 LastKnownName="Player2"
+                LastKnownLocation="StateTransition.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5036364c-cd8c-4191-851c-00e89abfff63"
+            name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker
+                Id="657bae1c-d5e5-4b48-b9dc-79f3b914a8d1"
+                LastKnownName="Unit"
                 LastKnownLocation="StateTransition.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4145,21 +4145,21 @@ The attacker wins, and there is no more defender</body>
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="faf250b3-8bfc-461d-9d43-22fae65c1a6a"
-            name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker
-                Id="306e9f3a-6dea-4a53-b09a-35dd4e0bd248"
-                LastKnownName="Unit"
-                LastKnownLocation="StateTransition.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="bf1a1475-40c0-418a-abaf-a8b9784169bd"
             name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker
                 Id="69e43bb9-9b6d-471b-bae8-340be3acd1ef"
+                LastKnownName="Unit"
+                LastKnownLocation="StateTransition.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="faf250b3-8bfc-461d-9d43-22fae65c1a6a"
+            name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker
+                Id="306e9f3a-6dea-4a53-b09a-35dd4e0bd248"
                 LastKnownName="Unit"
                 LastKnownLocation="StateTransition.uml" />
             </covered>
@@ -4395,22 +4395,22 @@ The attacker wins, and there is no more defender</body>
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="472bfa03-a30d-471f-a846-101764e00576"
-            name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker
-                Id="9b383104-e3d5-444f-82df-879e505e0710"
-                LastKnownName="Player1"
-                LastKnownLocation="StateTransition.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="69bf4539-9973-4774-ad3a-0d0b1eaacaac"
             name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker
                 Id="306e9f3a-6dea-4a53-b09a-35dd4e0bd248"
                 LastKnownName="Unit"
+                LastKnownLocation="StateTransition.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="472bfa03-a30d-471f-a846-101764e00576"
+            name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker
+                Id="9b383104-e3d5-444f-82df-879e505e0710"
+                LastKnownName="Player1"
                 LastKnownLocation="StateTransition.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4503,22 +4503,22 @@ The attacker wins, and there is no more defender</body>
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="a524e47b-28ce-4724-974f-430d74d30992"
-            name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker
-                Id="9d629a00-c72f-4c5d-9d49-d1e6c506ec77"
-                LastKnownName="Unit"
-                LastKnownLocation="StateTransition.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="12b8e31b-18d3-4e9c-bbd3-9527bd3e8313"
             name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker
                 Id="9b383104-e3d5-444f-82df-879e505e0710"
                 LastKnownName="Player1"
+                LastKnownLocation="StateTransition.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a524e47b-28ce-4724-974f-430d74d30992"
+            name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker
+                Id="9d629a00-c72f-4c5d-9d49-d1e6c506ec77"
+                LastKnownName="Unit"
                 LastKnownLocation="StateTransition.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5241,6 +5241,20 @@ The attacker wins, and there is no more defender</body>
       <executionEvent
         Id="ea1c716e-ecfd-4cfc-92d1-ab3e4abeb2be"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="3c54ae20-84b9-4e3e-9ff5-54c4c27db347"
+        name="Actor1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bfa05aa7-b988-418e-b642-d3142c33a782"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
