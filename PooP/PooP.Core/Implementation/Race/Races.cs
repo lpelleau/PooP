@@ -130,7 +130,7 @@ namespace PooP.Core
         }
         public int getVictoryPoints()
         {
-            throw new NotImplementedException();
+            return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
         }
     }
 
@@ -192,7 +192,7 @@ namespace PooP.Core
         }
         public int getVictoryPoints()
         {
-            throw new NotImplementedException();
+            return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
         }
     }
 }
