@@ -52,7 +52,7 @@
     <Compile Include="Implementation\Command\MoveCommand.cs" />
     <Compile Include="Implementation\Map\Tiles.cs" />
     <Compile Include="Implementation\PlayerImpl.cs" />
-    <Compile Include="Implementation\Position.cs" />
+    <Compile Include="Resource\Position.cs" />
     <Compile Include="Interfaces\Command\Command.cs" />
     <Compile Include="Interfaces\Command\Undoable.cs" />
     <Compile Include="Interfaces\CreateMap.cs" />
@@ -64,7 +64,6 @@
     <Compile Include="Interfaces\Tile.cs" />
     <Compile Include="Interfaces\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Implementation\Race\RaceImpl.cs" />
     <Compile Include="Implementation\Map\Maps.cs" />
     <Compile Include="Implementation\Map\TileFactory.cs" />
     <Compile Include="Implementation\UnitImpl.cs" />
@@ -72,19 +71,7 @@
   <ItemGroup>
     <None Include="ClassDiagramInterfaces.cd" />
     <None Include="ClassDiagramImplementation.cd" />
-    <None Include="SequenceDiagram2.sequencediagram" />
-    <None Include="SequenceDiagram1.sequencediagram" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="SequenceDiagram2.sequencediagram.layout">
-      <DependentUpon>SequenceDiagram2.sequencediagram</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SequenceDiagram1.sequencediagram.layout">
-      <DependentUpon>SequenceDiagram1.sequencediagram</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UMLActivityDiagram1.activitydiagram.layout" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class Human : RaceImpl
+    public class Human : Race
     {
         public Human()
         {
@@ -14,18 +14,53 @@ namespace PooP.Core
             Defence = 3;
             Life = 15;
         }
+        public int Life
+        {
+            get;
+            set;
+        }
 
-        public override bool hasUnits()
+        public int Attack
+        {
+            get;
+            set;
+        }
+
+        public int Defence
+        {
+            get;
+            set;
+        }
+
+        public int AttackDistance
+        {
+            get;
+            set;
+        }
+
+        public Player Player
+        {
+            get;
+            set;
+        }
+
+        public List<Unit> Units
+        {
+            get;
+            set;
+        }
+
+        public bool hasUnits()
         {
             throw new NotImplementedException();
         }
-        public override int getVictoryPoints()
+        public int getVictoryPoints()
         {
             throw new NotImplementedException();
         }
     }
 
-    public class Elf : RaceImpl
+    public class Elf : Race
     {
         private Elf()
         {
@@ -34,18 +69,53 @@ namespace PooP.Core
             Defence = 3;
             Life = 12;
         }
+        public int Life
+        {
+            get;
+            set;
+        }
 
-        public override bool hasUnits()
+        public int Attack
+        {
+            get;
+            set;
+        }
+
+        public int Defence
+        {
+            get;
+            set;
+        }
+
+        public int AttackDistance
+        {
+            get;
+            set;
+        }
+
+        public Player Player
+        {
+            get;
+            set;
+        }
+
+        public List<Unit> Units
+        {
+            get;
+            set;
+        }
+
+        public bool hasUnits()
         {
             throw new NotImplementedException();
         }
-        public override int getVictoryPoints()
+        public int getVictoryPoints()
         {
             throw new NotImplementedException();
         }
     }
 
-    public class Orc : RaceImpl
+    public class Orc : Race
     {
         private Orc()
         {
@@ -54,12 +124,47 @@ namespace PooP.Core
             Defence = 2;
             Life = 17;
         }
+        public int Life
+        {
+            get;
+            set;
+        }
 
-        public override bool hasUnits()
+        public int Attack
+        {
+            get;
+            set;
+        }
+
+        public int Defence
+        {
+            get;
+            set;
+        }
+
+        public int AttackDistance
+        {
+            get;
+            set;
+        }
+
+        public Player Player
+        {
+            get;
+            set;
+        }
+
+        public List<Unit> Units
+        {
+            get;
+            set;
+        }
+
+        public bool hasUnits()
         {
             throw new NotImplementedException();
         }
-        public override int getVictoryPoints()
+        public int getVictoryPoints()
         {
             throw new NotImplementedException();
         }

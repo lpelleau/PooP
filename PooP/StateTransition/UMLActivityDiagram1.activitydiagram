@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="db065360-dbe2-47a5-952f-b4ac9f2c04f4" name="Game" linkedPackageId="23538763-ad64-4bed-a4eb-ea4788024b45" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="db065360-dbe2-47a5-952f-b4ac9f2c04f4" name="Game" linkedPackageId="23538763-ad64-4bed-a4eb-ea4788024b45" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
     <comment Id="8ff3ba6c-80ba-4977-be16-01b062f04394">
       <elementDefinition Id="cb118892-31af-43e0-83b4-97427246f3ff" />
@@ -17,35 +17,21 @@
     </comment>
     <comment Id="808b1af5-5a0d-44e8-992a-7ad7a7fced22">
       <elementDefinition Id="d794c826-2131-4f31-9d1b-76b996469d37" />
-      <body>if !(resting_units[2] &gt; 0)</body>
+      <body>if !(units_left[2] &gt; 0)</body>
     </comment>
     <comment Id="bc2c83af-0582-44c5-8c36-c148867ef9fb">
       <elementDefinition Id="edbe6ffd-832a-4b35-81fb-cd0ca3ef1fd0" />
-      <body>if (resting_units[2] &gt; 0)</body>
+      <body>if (units_left[2] &gt; 0)</body>
     </comment>
     <comment Id="0261284b-8a55-4750-97eb-1e25547ce84c">
       <elementDefinition Id="42e2f2fa-697b-4d0f-ab60-318eabc9503a" />
-      <body>if !(resting_units[1] &gt; 0)</body>
+      <body>if !(units_left[1] &gt; 0)</body>
     </comment>
     <comment Id="4340143f-7552-4d7b-a562-cb18ab532b69">
       <elementDefinition Id="621e7476-56ae-48b5-a8fa-d39a82018b62" />
-      <body>if (resting_units[1] &gt; 0)</body>
+      <body>if (units_left[1] &gt; 0)</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="1f132850-60e1-45be-b838-e938fc610c6f">
-      <profileInstance Id="d99cf6c5-1c47-45ed-a11e-b174b0815203" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ad917d64-578c-4147-9c2d-82e6ab4e9f9a">
-      <profileInstance Id="7196e74e-1930-48c3-872e-ad37489a80e4" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="cf2e0d6c-a132-4865-8dec-9c6a28d824a6" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -140,5 +126,19 @@
   </packagedElements>
   <package Id="23538763-ad64-4bed-a4eb-ea4788024b45" name="StateTransition">
     <elementDefinition Id="df658139-30fa-4498-9f46-403900e572f8" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1f132850-60e1-45be-b838-e938fc610c6f">
+        <profileInstance Id="d99cf6c5-1c47-45ed-a11e-b174b0815203" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ad917d64-578c-4147-9c2d-82e6ab4e9f9a">
+        <profileInstance Id="7196e74e-1930-48c3-872e-ad37489a80e4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

@@ -5,17 +5,18 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class TileFactory
+    public class Position
     {
-        public Dictionary<Tile, List<Position>> Tiles
+        public int XPosition
         {
             get;
             set;
         }
-    
-        public Tile getTile(string TileType)
+
+        public int YPosition
         {
-            throw new System.NotImplementedException();
+            get;
+            set;
         }
     }
 }

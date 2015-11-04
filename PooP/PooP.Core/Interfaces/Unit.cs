@@ -7,12 +7,40 @@ namespace PooP
 {
     public interface Unit
     {
-        void attack(Tile Tile);
+        int LifePoints
+        {
+            get;
+            set;
+        }
+
+        Tile Tile
+        {
+            get;
+            set;
+        }
+
+        Race Race
+        {
+            get;
+            set;
+        }
+
+        PooP.Core.Position Position
+        {
+            get;
+            set;
+        }
+
+        int MovePoints
+        {
+            get;
+            set;
+        }
 
         bool canAttack(Tile Tile);
 
         int getVictoryPoints();
 
-        bool moveTo(Tile Tile);
+        int getMoveCost(Tile Tile);
     }
 }

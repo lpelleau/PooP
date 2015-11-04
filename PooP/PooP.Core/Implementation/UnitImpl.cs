@@ -13,13 +13,7 @@ namespace PooP.Core
             set;
         }
 
-        public TileFactory Tile
-        {
-            get;
-            set;
-        }
-
-        public Position Position
+        public Tile Tile
         {
             get;
             set;
@@ -31,22 +25,29 @@ namespace PooP.Core
             set;
         }
 
+        public Position Position
+        {
+            get;
+            set;
+        }
+
+        public int MovePoints
+        {
+            get;
+            set;
+        }
+
         public int getVictoryPoints()
         {
             throw new System.NotImplementedException();
         }
 
-        public void attack(Tile dest)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool moveTo(Tile dest)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public bool canAttack(Tile dest)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int getMoveCost(Tile Tile)
         {
             throw new System.NotImplementedException();
         }

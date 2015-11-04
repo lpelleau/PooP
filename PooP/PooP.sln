@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooP.Core", "PooP.Core\PooP.Core.csproj", "{2035FD77-0548-40AD-AC8D-42D610DB4048}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "StateTransition", "StateTransition\StateTransition.modelproj", "{83BF89A6-978B-4F2A-A63C-1369422537FF}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "StateTransition\UML.modelproj", "{83BF89A6-978B-4F2A-A63C-1369422537FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
