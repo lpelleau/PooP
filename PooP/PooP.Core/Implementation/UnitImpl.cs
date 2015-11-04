@@ -39,7 +39,26 @@ namespace PooP.Core
 
         public int getVictoryPoints()
         {
-            throw new System.NotImplementedException();
+            if (this.Race.GetType().Name == "Humain" && this.Tile.GetType().Name == "Water")
+            {
+                return 0;
+            }
+            else if (this.Race.GetType().Name == "Elf")
+            {
+                if (this.Tile.GetType().Name == "Mountain")
+                {
+                    return 0;
+                }
+                else if (this.Tile.GetType().Name == "Forest")
+                {
+                    return 3;
+                }
+            }
+            else if (this.Race.GetType().Name == "Orc" && this.Tile.GetType().Name == "Mountain")
+            {
+                return 2;
+            }
+            return 1;
         }
 
         public bool canAttack(Tile dest)
@@ -58,7 +77,6 @@ namespace PooP.Core
                 return 0.5;
             }
             return this.Race.AttackDistance;
-            throw new System.NotImplementedException();
         }
 
         public bool canMoveTo(Tile Target)
