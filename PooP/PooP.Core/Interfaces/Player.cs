@@ -7,5 +7,15 @@ namespace PooP
 {
     public interface Player
     {
+        Race Race
+        {
+            get;
+            set;
+        }
+        string Name
+        {
+            get;
+            set;
+        }
     }
 }

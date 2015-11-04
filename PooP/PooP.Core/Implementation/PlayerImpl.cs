@@ -7,13 +7,11 @@ namespace PooP.Core
 {
     public class PlayerImpl : Player
     {
-
         public Race Race
         {
             get;
             set;
         }
-
         public string Name
         {
             get;

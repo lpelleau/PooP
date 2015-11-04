@@ -63,7 +63,12 @@ namespace PooP.Core
         }
         public int getVictoryPoints()
         {
-            throw new NotImplementedException();
+            return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
+            /*int res = 0;
+            foreach (Unit u in Units.FindAll(e => e.LifePoints > 0)) {
+                res += u.getVictoryPoints();
+            }
+            return res;*/
         }
     }
 

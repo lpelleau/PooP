@@ -25,7 +25,7 @@ namespace PooP.Core
             set;
         }
     
-        public Race getRace(string raceName)
+        public static Race getRace(string raceName)
         {
             throw new System.NotImplementedException();
         }

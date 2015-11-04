@@ -34,7 +34,17 @@ namespace PooP.Core
 
         public Player getWinner()
         {
-            throw new System.NotImplementedException();
+            Player best = null;
+            foreach (Player p in Players)
+            {
+                if (best == null || 
+                    (RaceFactory.getRace(p.Race.GetType().Name).getVictoryPoints() >
+                    RaceFactory.getRace(best.Race.GetType().Name).getVictoryPoints()))
+                {
+                    best = p;
+                }
+            }
+            return best;
         }
 
         public void endGame()
