@@ -7,11 +7,6 @@ namespace PooP.Core
 {
     public class MapImpl : Map
     {
-        public TileFactory TilesFactory
-        {
-            get;
-            set;
-        }
 
         public CreateMap MapCreator
         {

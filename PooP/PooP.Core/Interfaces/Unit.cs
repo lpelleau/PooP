@@ -13,12 +13,6 @@ namespace PooP
             set;
         }
 
-        Tile Tile
-        {
-            get;
-            set;
-        }
-
         Race Race
         {
             get;
@@ -37,12 +31,12 @@ namespace PooP
             set;
         }
 
-        bool canAttack(Tile Tile);
+        bool canAttack(PooP.Core.Position Tile);
 
         int getVictoryPoints();
 
-        double getMoveCost(Tile Tile);
+        double getMoveCost(PooP.Core.Position Tile);
 
-        bool canMoveTo(Tile Target);
+        bool canMoveTo(PooP.Core.Position Target);
     }
 }

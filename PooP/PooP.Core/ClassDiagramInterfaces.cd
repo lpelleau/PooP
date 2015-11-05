@@ -15,30 +15,30 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Race">
-    <Position X="4.5" Y="2" Width="1.5" />
+    <Position X="4.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAEACACwABCAA=</HashCode>
       <FileName>Interfaces\Race\Race.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Unit">
     <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAIAAAAAACAAAAQg=</HashCode>
+      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAIAAAAAACAAAAAg=</HashCode>
       <FileName>Interfaces\Unit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Tile">
     <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Tile.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PooP.Player">
     <Position X="4.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Player.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -7,6 +7,12 @@ namespace PooP.Core
 {
     public class Position
     {
+        public Position(int xPosition, int yPosition)
+        {
+            XPosition = xPosition;
+            YPosition = yPosition;
+        }
+
         public int XPosition
         {
             get;

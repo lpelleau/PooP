@@ -6,8 +6,8 @@
   <Comment CommentText="Design Pattern&#xD;&#xA;Strategy">
     <Position X="15.566" Y="2.676" Height="0.75" Width="1.341" />
   </Comment>
-  <Comment CommentText="Design Pattern&#xD;&#xA;Flyweight">
-    <Position X="15.342" Y="5.896" Height="0.75" Width="1.365" />
+  <Comment CommentText="Design Pattern&#xD;&#xA;Flyweight&#xD;&#xA;Singleton">
+    <Position X="13.259" Y="3.709" Height="0.75" Width="1.365" />
   </Comment>
   <Comment CommentText="Design Pattern&#xD;&#xA;Builder">
     <Position X="8.82" Y="0.51" Height="0.75" Width="1.7" />
@@ -117,18 +117,15 @@
   <Class Name="PooP.Core.MapImpl">
     <Position X="11.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Implementation\Map\MapImpl.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="TilesFactory" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PooP.Core.TileFactory">
-    <Position X="14" Y="4.75" Width="1.5" />
+    <Position X="14.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEABAA=</HashCode>
       <FileName>Implementation\Map\TileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -171,7 +168,7 @@
   <Class Name="PooP.Core.AttackCommand">
     <Position X="2.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACEAAAAAAAAAAEEACAgAAAQAAAGAAABCAAAAAA=</HashCode>
+      <HashCode>AAAAAACEAAAAAAABAAEEACAgAAAQAAAGAAABAAAAAAA=</HashCode>
       <FileName>Implementation\Command\AttackCommand.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

@@ -12,10 +12,6 @@ namespace PooP.Core
         {
             return false;
         }
-        public Unit getBestDefender()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 
     public class Forest : Tile
@@ -24,10 +20,6 @@ namespace PooP.Core
         public bool available(Race Race)
         {
             return false;
-        }
-        public Unit getBestDefender()
-        {
-            throw new System.NotImplementedException();
         }
     }
 
@@ -38,10 +30,6 @@ namespace PooP.Core
         {
             return false;
         }
-        public Unit getBestDefender()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 
     public class Water : Tile
@@ -50,10 +38,6 @@ namespace PooP.Core
         public bool available(Race Race)
         {
             return false;
-        }
-        public Unit getBestDefender()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -8,15 +8,15 @@ namespace PooP.Core
     public class MoveCommand : Command
     {
         private Unit MovedUnit;
-        private Tile OldTile;
-        private Tile Target;
+        private Position OldTile;
+        private Position Target;
         private double cost;
 
-        public MoveCommand(Unit UnitToMove, Tile TileToReach)
+        public MoveCommand(Unit UnitToMove, Position PosToReach)
         {
             MovedUnit = UnitToMove;
-            Target = TileToReach;
-            OldTile = MovedUnit.Tile;
+            Target = PosToReach;
+            OldTile = MovedUnit.Position;
         }
 
         public bool canDo()
@@ -27,7 +27,7 @@ namespace PooP.Core
         public void execute()
         {
             // Move the unit to the target
-            MovedUnit.Tile = Target;
+            MovedUnit.Position = Target;
 
             // Consumes the needed move points
             cost = MovedUnit.getMoveCost(Target);
@@ -40,7 +40,7 @@ namespace PooP.Core
             MovedUnit.MovePoints += cost;
 
             // Move the unit back to the old tile
-            MovedUnit.Tile = OldTile;
+            MovedUnit.Position = OldTile;
         }
 
         public void redo()

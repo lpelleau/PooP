@@ -13,12 +13,6 @@ namespace PooP.Core
             set;
         }
 
-        public Tile Tile
-        {
-            get;
-            set;
-        }
-
         public Race Race
         {
             get;
@@ -39,49 +33,86 @@ namespace PooP.Core
 
         public int getVictoryPoints()
         {
-            if (this.Race.GetType().Name == "Humain" && this.Tile.GetType().Name == "Water")
+            if (Race.GetType().Name == "Humain" && TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Water")
             {
                 return 0;
             }
-            else if (this.Race.GetType().Name == "Elf")
+            else if (Race.GetType().Name == "Elf")
             {
-                if (this.Tile.GetType().Name == "Mountain")
+                if (TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Mountain")
                 {
                     return 0;
                 }
-                else if (this.Tile.GetType().Name == "Forest")
+                else if (TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Forest")
                 {
                     return 3;
                 }
             }
-            else if (this.Race.GetType().Name == "Orc" && this.Tile.GetType().Name == "Mountain")
+            else if (Race.GetType().Name == "Orc" && TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Mountain")
             {
                 return 2;
             }
             return 1;
         }
 
-        public bool canAttack(Tile dest)
+        // Tells if a unit can reach a given position
+        private Boolean reachable(Position Target)
         {
-            throw new System.NotImplementedException();
+            return (Target.XPosition == Position.YPosition || Target.YPosition == Position.YPosition)
+                && (getMoveCost(Target) < MovePoints) && (Race.GetType().Name != "Human" || Target.GetType().Name != "Water");
         }
 
-        public double getMoveCost(Tile Target)
+        // Tells if a given position can be attacked by this unit or not
+        public bool canAttack(Position dest)
         {
-            if (this.Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
+            return reachable(dest) && TileFactory.TILE_GENERATOR.IsOccupied(dest);
+        }
+
+        private double getMoveCostFromTile(Tile Target)
+        {
+            if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
             {
                 return 2;
             }
-            else if (this.Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
+            else if (Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
             {
                 return 0.5;
             }
-            return this.Race.AttackDistance;
+            return Race.AttackDistance;
         }
 
-        public bool canMoveTo(Tile Target)
+        // Computes the number of needed points to move to a given position
+        // (This version only computes moving vertically OR horizontally)
+        public double getMoveCost(Position Target)
         {
-            return (this.getMoveCost(Target) < this.MovePoints) && (this.Race.GetType().Name != "Human" || Target.GetType().Name != "Water");
+            double totalCost = 0;
+            // Moving on Y axis
+            if (Position.XPosition == Target.XPosition)
+                // Moving forward on Y axis
+                if (Position.YPosition < Target.YPosition)
+                    for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
+                        totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(i, Target.YPosition)));
+                // Moving backward on Y axis
+                else
+                    for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
+                        totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(i, Target.YPosition)));
+            // Moving on X axis
+            else
+                // Moving forward on X axis
+                if (Position.XPosition < Target.XPosition)
+                for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
+                    totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(Target.XPosition, i)));
+            // Moving backward on X axis
+            else
+                for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
+                    totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(Target.XPosition, i)));
+            return totalCost;
+        }
+
+        // Tells if the unit can move to a given tile through the position
+        public bool canMoveTo(Position Target)
+        {
+            return reachable(Target) && !TileFactory.TILE_GENERATOR.IsOccupied(Target);
         }
     }
 }

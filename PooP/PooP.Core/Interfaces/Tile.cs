@@ -8,7 +8,5 @@ namespace PooP
     public interface Tile
     {
         bool available(Race Race);
-
-        Unit getBestDefender();
     }
 }

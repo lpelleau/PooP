@@ -8,19 +8,19 @@ namespace PooP.Core
     public class AttackCommand : Command
     {
         private Unit MovedUnit;
-        private Tile OldTile;
-        private Tile Target;
+        private Position OldPos;
+        private Position Target;
         private Unit Defender;
         private double cost;
         private bool AttackSuccess;
         private int Damage;
 
-        public AttackCommand(Unit Attacker, Tile AttackedTile)
+        public AttackCommand(Unit Attacker, Position AttackedTilePos)
         {
             MovedUnit = Attacker;
-            OldTile = MovedUnit.Tile;
-            Target = AttackedTile;
-            Defender = Target.getBestDefender();
+            OldPos = MovedUnit.Position;
+            Target = AttackedTilePos;
+            Defender = TileFactory.TILE_GENERATOR.getBestDefenderAt(AttackedTilePos);
             cost = MovedUnit.getMoveCost(Target);
         }
     
@@ -49,7 +49,7 @@ namespace PooP.Core
                     Defender.Race.Units.Remove(Defender);
 
                     // Move the attacker to the tile
-                    MovedUnit.Tile = Target;
+                    MovedUnit.Position = Target;
                 }
             }
             // The defender wins
@@ -79,7 +79,7 @@ namespace PooP.Core
                 if (Defender.LifePoints < 0)
                 {
                     // The unit had moved to the target tile
-                    MovedUnit.Tile = OldTile;
+                    MovedUnit.Position = OldPos;
 
                     // The defender had been killed : resurect it
                     Defender.Race.Units.Add(Defender);
