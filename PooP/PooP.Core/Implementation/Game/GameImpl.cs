@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class GameImml : Game
+    public class GameImpl : Game
     {
         private Player FirstPlayer;
 

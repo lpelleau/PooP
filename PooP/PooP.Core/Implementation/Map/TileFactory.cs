@@ -19,7 +19,26 @@ namespace PooP.Core
         // If a tile of the given type already exists, it will only have another position more
         public Tile getTile(string TileType, Position Position)
         {
-            throw new System.NotImplementedException();
+            // If there is no tile of this type yet, create it
+            if (Tiles.Count(e => e.Key.GetType().Name == TileType) == 0)
+            {
+                Tile t;
+                switch (TileType)
+                {
+                    case "Water":       t = new Water();    break;
+                    case "Plain":       t = new Plain();    break;
+                    case "Mountain":    t = new Mountain(); break;
+                    case "Forest":      t = new Forest();   break;
+                    default: throw new Exception();
+                }
+                Tiles.Add(t, new List<Position>());
+                return t;
+            }
+            // If there is one, return it
+            else
+            {
+                return Tiles.First(e => e.Key.GetType().Name == TileType).Key;
+            }
         }
 
         // Gives a list of units at a given position

@@ -37,7 +37,7 @@
   <Class Name="PooP.Core.Plain">
     <Position X="12.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Map\Tiles.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -45,7 +45,7 @@
   <Class Name="PooP.Core.Water">
     <Position X="15.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Map\Tiles.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -53,7 +53,7 @@
   <Class Name="PooP.Core.Mountain">
     <Position X="14" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Map\Tiles.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -61,7 +61,7 @@
   <Class Name="PooP.Core.Forest">
     <Position X="17.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Map\Tiles.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -90,7 +90,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="PooP.Core.GameImml">
+  <Class Name="PooP.Core.GameImpl">
     <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAGAAAAABAAAAAAAACAAAAAAAAgAAAAABAAAAAAAQA=</HashCode>
@@ -125,7 +125,7 @@
   <Class Name="PooP.Core.TileFactory">
     <Position X="14.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEABAA=</HashCode>
+      <HashCode>AAAACAAAAAAAEAAAAAAAAgAAAAAAAAIAAAAAAAEABAA=</HashCode>
       <FileName>Implementation\Map\TileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -213,7 +213,7 @@
   <Class Name="PooP.Core.UnitImpl">
     <Position X="10" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAAAAAIAAAAAACAAAAQg=</HashCode>
+      <HashCode>QAACAAAAAQAAAAAgAAAAACAEAAAAAIAAAAABCAAAAAg=</HashCode>
       <FileName>Implementation\UnitImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
