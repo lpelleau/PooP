@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Commands
 {
-    public class EndTurn : Command
+    public class EndTurn : Commands
     {
         public bool canDo()
         {

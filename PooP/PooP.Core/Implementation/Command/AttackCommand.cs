@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Commands;
+using PooP.Core.Implementation.Maps;
+using PooP.Core.Ressource;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Commands
 {
     public class AttackCommand : Command
     {

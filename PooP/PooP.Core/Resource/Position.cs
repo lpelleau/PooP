@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP.Core
+namespace PooP.Core.Ressource
 {
     public class Position
     {

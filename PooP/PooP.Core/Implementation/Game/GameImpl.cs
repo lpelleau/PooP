@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Maps;
+using PooP.Core.Interfaces.Games;
+using PooP.Core.Interfaces.Races;
+using PooP.Core.Data.Games;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Games
 {
     [Serializable]
     public class GameImpl : Game
@@ -22,7 +27,7 @@ namespace PooP.Core
             set;
         }
 
-        public int NumbreOfTurns
+        public int NumberOfTurns
         {
             get;
             set;
@@ -59,7 +64,7 @@ namespace PooP.Core
             {
                 FirstPlayer = this.FirstPlayer.ToData(),
                 Players = this.Players.ToList().ConvertAll(p => p.ToData()),
-                NumbreOfTurns = this.NumbreOfTurns
+                NumberOfTurns = this.NumberOfTurns
             };
         }
     }

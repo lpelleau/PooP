@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Maps;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Games
 {
     public class DemoGameBuilder : GameBuilder
     {
-        public override Map createMap()
+        public override Maps createMap()
         {
             throw new System.NotImplementedException();
         }

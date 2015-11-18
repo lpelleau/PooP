@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces.Races;
 
-namespace PooP.Core
+namespace PooP.Core.Data.Races
 {
     public class HumanData : RaceData
     {

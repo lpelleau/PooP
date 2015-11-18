@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Races;
+using PooP.Core.Interfaces.Maps;
+using PooP.Core.Implementation.Maps;
+using PooP.Core.Ressource;
+using PooP.Core.Data;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation
 {
     public class UnitImpl : Unit
     {

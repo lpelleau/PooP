@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP.Core
+namespace PooP.Core.Data.Games
 {
     public class GameData
     {
@@ -19,7 +19,7 @@ namespace PooP.Core
             set;
         }
 
-        public int NumbreOfTurns
+        public int NumberOfTurns
         {
             get;
             set;

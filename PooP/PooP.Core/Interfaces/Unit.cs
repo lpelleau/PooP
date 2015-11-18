@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Ressource;
+using PooP.Core.Interfaces.Races;
+using PooP.Core.Data;
 
-namespace PooP.Core
+namespace PooP.Core.Interfaces
 {
     public interface Unit
     {
@@ -19,7 +22,7 @@ namespace PooP.Core
             set;
         }
 
-        PooP.Core.Position Position
+        Position Position
         {
             get;
             set;
@@ -31,13 +34,13 @@ namespace PooP.Core
             set;
         }
 
-        bool canAttack(PooP.Core.Position Tile);
+        bool canAttack(Position Tile);
 
         int getVictoryPoints();
 
-        double getMoveCost(PooP.Core.Position Tile);
+        double getMoveCost(Position Tile);
 
-        bool canMoveTo(PooP.Core.Position Target);
+        bool canMoveTo(Position Target);
 
         public UnitData ToData();
     }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces.Commands;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Command
 {
     public class UndoableImpl : Undoable
     {

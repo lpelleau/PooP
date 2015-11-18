@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces.Maps;
+using PooP.Core.Interfaces;
+using PooP.Core.Ressource;
+using PooP.Core.Data.Maps;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Maps
 {
     public abstract class TileFactory
     {

@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Races;
+using PooP.Core.Data;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation
 {
     public class PlayerImpl : Player
     {

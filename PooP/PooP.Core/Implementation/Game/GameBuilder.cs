@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Games;
+using PooP.Core.Interfaces.Maps;
 
-namespace PooP.Core
+namespace PooP.Core.Implementation.Games
 {
     public abstract class GameBuilder
     {
