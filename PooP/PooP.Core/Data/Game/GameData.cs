@@ -5,25 +5,24 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public interface Player
+    public class GameData
     {
-        Race Race
+        public PlayerData FirstPlayer
         {
             get;
             set;
         }
-        string Name
+
+        public List<PlayerData> Players
         {
             get;
             set;
         }
-        public PlayerData ToData()
+
+        public int NumbreOfTurns
         {
-            return new PlayerData
-            {
-                Race = this.Race.ToData(),
-                Name = this.Name
-            };
+            get;
+            set;
         }
     }
 }

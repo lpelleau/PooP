@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP
+namespace PooP.Core
 {
     public interface Race
     {
@@ -51,5 +51,7 @@ namespace PooP
         int getVictoryPoints();
 
         bool hasUnits();
+
+        public RaceData ToData();
     }
 }

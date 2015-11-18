@@ -64,11 +64,14 @@ namespace PooP.Core
         public int getVictoryPoints()
         {
             return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
-            /*int res = 0;
-            foreach (Unit u in Units.FindAll(e => e.LifePoints > 0)) {
-                res += u.getVictoryPoints();
-            }
-            return res;*/
+        }
+
+        public RaceData ToData()
+        {
+            return new HumanData
+            {
+                Units = this.Units.ConvertAll(u => u.ToData())
+            };
         }
     }
 
@@ -132,6 +135,14 @@ namespace PooP.Core
         {
             return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
         }
+
+        public RaceData ToData()
+        {
+            return new HumanData
+            {
+                Units = this.Units.ConvertAll(u => u.ToData())
+            };
+        }
     }
 
     public class Orc : Race
@@ -193,6 +204,14 @@ namespace PooP.Core
         public int getVictoryPoints()
         {
             return Units.FindAll(e => e.LifePoints > 0).Sum(e => e.getVictoryPoints());
+        }
+
+        public RaceData ToData()
+        {
+            return new HumanData
+            {
+                Units = this.Units.ConvertAll(u => u.ToData())
+            };
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace PooP.Core
 {
+    [Serializable]
     public class GameImpl : Game
     {
         private Player FirstPlayer;
@@ -50,6 +51,16 @@ namespace PooP.Core
         public void endGame()
         {
             throw new System.NotImplementedException();
+        }
+
+        public GameData ToData()
+        {
+            return new GameData
+            {
+                FirstPlayer = this.FirstPlayer.ToData(),
+                Players = this.Players.ToList().ConvertAll(p => p.ToData()),
+                NumbreOfTurns = this.NumbreOfTurns
+            };
         }
     }
 }

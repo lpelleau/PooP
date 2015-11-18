@@ -39,6 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Game\GameData.cs" />
+    <Compile Include="Data\Map\TileFactoryData.cs" />
+    <Compile Include="Data\PlayerData.cs" />
+    <Compile Include="Data\Race\RaceData.cs" />
+    <Compile Include="Data\Race\RacesData.cs" />
+    <Compile Include="Data\UnitData.cs" />
     <Compile Include="Implementation\Command\AttackCommand.cs" />
     <Compile Include="Implementation\Command\UndoableImpl.cs" />
     <Compile Include="Implementation\Game\GameBuilders.cs" />

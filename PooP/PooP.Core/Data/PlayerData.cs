@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PooP.Core
 {
-    public class PlayerImpl : Player
+    public class PlayerData
     {
-        public Race Race
+        public RaceData Race
         {
             get;
             set;
@@ -16,11 +16,6 @@ namespace PooP.Core
         {
             get;
             set;
-        }
-
-        public PlayerData ToData()
-        {
-            return new PlayerData();
         }
     }
 }

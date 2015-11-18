@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PooP
+namespace PooP.Core
 {
     public interface Unit
     {
@@ -38,5 +38,7 @@ namespace PooP
         double getMoveCost(PooP.Core.Position Tile);
 
         bool canMoveTo(PooP.Core.Position Target);
+
+        public UnitData ToData();
     }
 }

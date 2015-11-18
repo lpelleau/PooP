@@ -114,5 +114,15 @@ namespace PooP.Core
         {
             return reachable(Target) && !TileFactory.TILE_GENERATOR.IsOccupied(Target);
         }
+
+        public UnitData ToData()
+        {
+            return new UnitData
+            {
+                LifePoints = this.LifePoints,
+                MovePoints = this.MovePoints,
+                Position = this.Position
+            };
+        }
     }
 }

@@ -66,5 +66,17 @@ namespace PooP.Core
         {
             return getUnits(dest).Count == 0;
         }
+
+        public TileFactoryData ToData()
+        {
+            Dictionary<string, List<Position>> tmpTiles = new Dictionary<string, List<Position>>();
+            Tiles.Keys.ToList().ForEach(e => {
+                tmpTiles.Add(typeof(e).Name, Tiles.First(k => k.Key == e).Value);
+            });
+            return new TileFactoryData
+            {
+                Tiles = tmpTiles
+            };
+        }
     }
 }
