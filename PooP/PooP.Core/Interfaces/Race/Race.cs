@@ -53,6 +53,6 @@ namespace PooP.Core.Interfaces.Races
 
         bool hasUnits();
 
-        public RaceData ToData();
+        RaceData ToData();
     }
 }

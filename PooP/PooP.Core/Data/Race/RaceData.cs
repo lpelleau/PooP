@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PooP.Core.Data.Races
 {
-    interface RaceData
+    public interface RaceData
     {
         List<UnitData> Units
         {

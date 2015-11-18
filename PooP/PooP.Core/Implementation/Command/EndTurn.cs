@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PooP.Core.Implementation.Commands
 {
-    public class EndTurn : Commands
+    public class EndTurn : PooP.Core.Interfaces.Commands.Command
     {
         public bool canDo()
         {

@@ -9,7 +9,7 @@ using PooP.Core.Ressource;
 
 namespace PooP.Core.Implementation.Commands
 {
-    public class AttackCommand : Command
+    public class AttackCommand : PooP.Core.Interfaces.Commands.Command
     {
         private Unit MovedUnit;
         private Position OldPos;

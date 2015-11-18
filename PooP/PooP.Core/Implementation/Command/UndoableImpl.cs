@@ -8,13 +8,13 @@ namespace PooP.Core.Implementation.Command
 {
     public class UndoableImpl : Undoable
     {
-        public Stack<Command> DoneCommands
+        public Stack<PooP.Core.Interfaces.Commands.Command> DoneCommands
         {
             get;
             set;
         }
 
-        public Stack<Command> UndoneCommands
+        public Stack<PooP.Core.Interfaces.Commands.Command> UndoneCommands
         {
             get;
             set;
@@ -24,7 +24,7 @@ namespace PooP.Core.Implementation.Command
         {
             if (!(DoneCommands.Count == 0))
             {
-                Command LastCommand = DoneCommands.Pop();
+                PooP.Core.Interfaces.Commands.Command LastCommand = DoneCommands.Pop();
                 LastCommand.undo();
                 UndoneCommands.Push(LastCommand);
             }
@@ -34,7 +34,7 @@ namespace PooP.Core.Implementation.Command
         {
             if (!(UndoneCommands.Count == 0))
             {
-                Command LastCommand = UndoneCommands.Pop();
+                PooP.Core.Interfaces.Commands.Command LastCommand = UndoneCommands.Pop();
                 LastCommand.redo();
                 DoneCommands.Push(LastCommand);
             }

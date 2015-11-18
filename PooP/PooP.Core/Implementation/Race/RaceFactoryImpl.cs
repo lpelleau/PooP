@@ -6,7 +6,7 @@ using PooP.Core.Interfaces.Races;
 
 namespace PooP.Core.Implementation.Races
 {
-    public class RaceFactory
+    public class RaceFactoryImpl
     {
         public Race Human
         {

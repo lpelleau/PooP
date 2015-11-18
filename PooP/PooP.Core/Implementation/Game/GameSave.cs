@@ -12,7 +12,7 @@ namespace PooP.Core.Implementation.Games
     public class GameSave
     {
         private static string EXTENSION = ".flav";
-        public void save(string SaveFile, Games RunningGame)
+        public void save(string SaveFile, Game RunningGame)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Create, FileAccess.Write, FileShare.None))
@@ -20,7 +20,7 @@ namespace PooP.Core.Implementation.Games
                 formatter.Serialize(stream, new GameData());
             }
         }
-        public void load(string SaveFile, Games RunningGame)
+        public void load(string SaveFile, Game RunningGame)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Open, FileAccess.Read, FileShare.None))

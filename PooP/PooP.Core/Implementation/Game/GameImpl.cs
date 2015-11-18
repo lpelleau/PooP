@@ -5,7 +5,7 @@ using System.Text;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Maps;
 using PooP.Core.Interfaces.Games;
-using PooP.Core.Interfaces.Races;
+using PooP.Core.Implementation.Races;
 using PooP.Core.Data.Games;
 
 namespace PooP.Core.Implementation.Games
@@ -44,8 +44,8 @@ namespace PooP.Core.Implementation.Games
             foreach (Player p in Players)
             {
                 if (best == null || 
-                    (RaceFactory.getRace(p.Race.GetType().Name).getVictoryPoints() >
-                    RaceFactory.getRace(best.Race.GetType().Name).getVictoryPoints()))
+                    (RaceFactoryImpl.getRace(p.Race.GetType().Name).getVictoryPoints() >
+                    RaceFactoryImpl.getRace(best.Race.GetType().Name).getVictoryPoints()))
                 {
                     best = p;
                 }

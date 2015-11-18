@@ -42,6 +42,6 @@ namespace PooP.Core.Interfaces
 
         bool canMoveTo(Position Target);
 
-        public UnitData ToData();
+        UnitData ToData();
     }
 }

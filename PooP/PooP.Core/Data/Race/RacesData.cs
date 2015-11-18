@@ -15,7 +15,7 @@ namespace PooP.Core.Data.Races
         }
     }
 
-    public class ElfData : Race
+    public class ElfData : RaceData
     {
         public List<UnitData> Units
         {
@@ -24,7 +24,7 @@ namespace PooP.Core.Data.Races
         }
     }
 
-    public class OrcData : Race
+    public class OrcData : RaceData
     {
         public List<UnitData> Units
         {

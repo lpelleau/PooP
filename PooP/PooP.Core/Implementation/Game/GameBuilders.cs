@@ -9,7 +9,7 @@ namespace PooP.Core.Implementation.Games
 {
     public class DemoGameBuilder : GameBuilder
     {
-        public override Maps createMap()
+        public override Map createMap()
         {
             throw new System.NotImplementedException();
         }

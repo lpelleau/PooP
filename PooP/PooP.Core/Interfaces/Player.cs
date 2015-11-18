@@ -19,13 +19,6 @@ namespace PooP.Core.Interfaces
             get;
             set;
         }
-        public PlayerData ToData()
-        {
-            return new PlayerData
-            {
-                Race = this.Race.ToData(),
-                Name = this.Name
-            };
-        }
+        PlayerData ToData();
     }
 }

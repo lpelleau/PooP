@@ -23,7 +23,11 @@ namespace PooP.Core.Implementation
 
         public PlayerData ToData()
         {
-            return new PlayerData();
+            return new PlayerData
+            {
+                Race = this.Race.ToData(),
+                Name = this.Name
+            };
         }
     }
 }

@@ -8,7 +8,7 @@ using PooP.Core.Ressource;
 
 namespace PooP.Core.Implementation.Commands
 {
-    public class MoveCommand : Command
+    public class MoveCommand : PooP.Core.Interfaces.Commands.Command
     {
         private Unit MovedUnit;
         private Position OldTile;

@@ -52,7 +52,7 @@
     <Compile Include="Implementation\Game\GameImpl.cs" />
     <Compile Include="Implementation\Game\GameBuilder.cs" />
     <Compile Include="Implementation\Game\GameSave.cs" />
-    <Compile Include="Implementation\Race\RaceFactory.cs" />
+    <Compile Include="Implementation\Race\RaceFactoryImpl.cs" />
     <Compile Include="Implementation\Race\Races.cs" />
     <Compile Include="Implementation\Map\MapImpl.cs" />
     <Compile Include="Implementation\Command\MoveCommand.cs" />
