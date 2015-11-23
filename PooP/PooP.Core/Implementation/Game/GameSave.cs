@@ -20,12 +20,12 @@ namespace PooP.Core.Implementation.Games
                 formatter.Serialize(stream, new GameData());
             }
         }
-        public void load(string SaveFile, Game RunningGame)
+        public Game load(string SaveFile, Game RunningGame)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Open, FileAccess.Read, FileShare.None))
             {
-                //mo = (GameData) formatter.Deserialize(stream);
+                return new GameImpl((GameData) formatter.Deserialize(stream));
             }
         }
     }

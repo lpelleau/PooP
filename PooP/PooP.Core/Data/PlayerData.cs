@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PooP.Core.Data.Races;
+using PooP.Core.Interfaces;
+using PooP.Core.Implementation;
 
 namespace PooP.Core.Data
 {
@@ -18,6 +20,11 @@ namespace PooP.Core.Data
         {
             get;
             set;
+        }
+
+        public Player ToPlayer()
+        {
+            return new PlayerImpl(this);
         }
     }
 }

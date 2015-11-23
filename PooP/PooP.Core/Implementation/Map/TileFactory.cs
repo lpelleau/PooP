@@ -13,6 +13,32 @@ namespace PooP.Core.Implementation.Maps
     {
         public static TileFactory TILE_GENERATOR;
 
+        public TileFactory(TileFactoryData data)
+        {
+            data.Tiles.Keys.ToList().ForEach(e => Tiles.Add(ToTile(e), data.Tiles.First(k => k.Key == e).Value));
+        }
+
+        private Tile ToTile(string t)
+        {
+            Tile tile = null;
+            switch(t.ToLower())
+            {
+                case "forest":
+                    tile = new Forest();
+                    break;
+                case "mountain":
+                    tile = new Mountain();
+                    break;
+                case "plain":
+                    tile = new Plain();
+                    break;
+                case "water":
+                    tile = new Water();
+                    break;
+            }
+            return tile;
+        }
+
         public Dictionary<Tile, List<Position>> Tiles
         {
             get;

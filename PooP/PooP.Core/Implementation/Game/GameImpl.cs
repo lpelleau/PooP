@@ -13,7 +13,18 @@ namespace PooP.Core.Implementation.Games
     [Serializable]
     public class GameImpl : Game
     {
-        private Player FirstPlayer;
+        public GameImpl(GameData data)
+        {
+            FirstPlayer = new PlayerImpl(data.FirstPlayer);
+            Players = data.Players.ConvertAll(p => p.ToPlayer()).ToArray();
+            NumberOfTurns = data.NumberOfTurns;
+        }
+
+        public Player FirstPlayer
+        {
+            get;
+            set;
+        }
 
         public Player[] Players
         {
