@@ -6,6 +6,7 @@ using PooP.Core.Interfaces.Maps;
 using PooP.Core.Interfaces;
 using PooP.Core.Ressource;
 using PooP.Core.Data.Maps;
+using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Maps
 {
@@ -57,7 +58,7 @@ namespace PooP.Core.Implementation.Maps
                     case "Plain":       t = new Plain();    break;
                     case "Mountain":    t = new Mountain(); break;
                     case "Forest":      t = new Forest();   break;
-                    default: throw new Exception();
+                    default: throw new TileTypeException();
                 }
                 Tiles.Add(t, new List<Position>());
                 return t;

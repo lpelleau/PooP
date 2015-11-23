@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PooP.Core.Data.Maps;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace PooP.Core.Data.Games
         {
             get;
             set;
+        }
+
+        public TileFactoryData Tiles
+        {
+            get; set;
         }
     }
 }

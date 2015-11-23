@@ -17,7 +17,7 @@ namespace PooP.Core.Implementation.Games
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                formatter.Serialize(stream, new GameData());
+                formatter.Serialize(stream, GameImpl.CURRENTGAME.ToData());
             }
         }
         public Game load(string SaveFile, Game RunningGame)

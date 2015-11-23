@@ -45,6 +45,8 @@
     <Compile Include="Data\Race\RaceData.cs" />
     <Compile Include="Data\Race\RacesData.cs" />
     <Compile Include="Data\UnitData.cs" />
+    <Compile Include="Exceptions\BadPositionException.cs" />
+    <Compile Include="Exceptions\TileTypeException.cs" />
     <Compile Include="Implementation\Command\AttackCommand.cs" />
     <Compile Include="Implementation\Command\UndoableImpl.cs" />
     <Compile Include="Implementation\Game\GameBuilders.cs" />
