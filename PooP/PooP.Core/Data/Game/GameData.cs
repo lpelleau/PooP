@@ -5,6 +5,7 @@ using System.Text;
 
 namespace PooP.Core.Data.Games
 {
+    [Serializable]
     public class GameData
     {
         public PlayerData FirstPlayer

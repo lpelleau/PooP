@@ -6,6 +6,7 @@ using PooP.Core.Ressource;
 
 namespace PooP.Core.Data
 {
+    [Serializable]
     public class UnitData
     {
         public int LifePoints

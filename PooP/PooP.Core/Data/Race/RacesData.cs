@@ -6,6 +6,7 @@ using PooP.Core.Interfaces.Races;
 
 namespace PooP.Core.Data.Races
 {
+    [Serializable]
     public class HumanData : RaceData
     {
         public List<UnitData> Units
@@ -15,6 +16,7 @@ namespace PooP.Core.Data.Races
         }
     }
 
+    [Serializable]
     public class ElfData : RaceData
     {
         public List<UnitData> Units
@@ -24,6 +26,7 @@ namespace PooP.Core.Data.Races
         }
     }
 
+    [Serializable]
     public class OrcData : RaceData
     {
         public List<UnitData> Units

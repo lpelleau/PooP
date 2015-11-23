@@ -6,6 +6,7 @@ using PooP.Core.Data.Races;
 
 namespace PooP.Core.Data
 {
+    [Serializable]
     public class PlayerData
     {
         public RaceData Race

@@ -6,6 +6,7 @@ using PooP.Core.Ressource;
 
 namespace PooP.Core.Data.Maps
 {
+    [Serializable]
     public class TileFactoryData
     {
         public Dictionary<string, List<Position>> Tiles
