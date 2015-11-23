@@ -8,6 +8,7 @@ using PooP.Core.Interfaces.Maps;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Ressource;
 using PooP.Core.Data;
+using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation
 {
@@ -46,22 +47,22 @@ namespace PooP.Core.Implementation
 
         public int getVictoryPoints()
         {
-            if (Race.GetType().Name == "Humain" && TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Water")
+            if (Race.GetType().Name == "Humain" && GameImpl.CURRENTGAME.Tiles.getTileAt(Position).GetType().Name == "Water")
             {
                 return 0;
             }
             else if (Race.GetType().Name == "Elf")
             {
-                if (TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Mountain")
+                if (GameImpl.CURRENTGAME.Tiles.getTileAt(Position).GetType().Name == "Mountain")
                 {
                     return 0;
                 }
-                else if (TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Forest")
+                else if (GameImpl.CURRENTGAME.Tiles.getTileAt(Position).GetType().Name == "Forest")
                 {
                     return 3;
                 }
             }
-            else if (Race.GetType().Name == "Orc" && TileFactory.TILE_GENERATOR.getTileAt(Position).GetType().Name == "Mountain")
+            else if (Race.GetType().Name == "Orc" && GameImpl.CURRENTGAME.Tiles.getTileAt(Position).GetType().Name == "Mountain")
             {
                 return 2;
             }
@@ -78,7 +79,7 @@ namespace PooP.Core.Implementation
         // Tells if a given position can be attacked by this unit or not
         public bool canAttack(Position dest)
         {
-            return reachable(dest) && TileFactory.TILE_GENERATOR.IsOccupied(dest);
+            return reachable(dest) && GameImpl.CURRENTGAME.Tiles.IsOccupied(dest);
         }
 
         private double getMoveCostFromTile(Tile Target)
@@ -104,28 +105,28 @@ namespace PooP.Core.Implementation
                 // Moving forward on Y axis
                 if (Position.YPosition < Target.YPosition)
                     for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
-                        totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(i, Target.YPosition)));
                 // Moving backward on Y axis
                 else
                     for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
-                        totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(i, Target.YPosition)));
             // Moving on X axis
             else
                 // Moving forward on X axis
                 if (Position.XPosition < Target.XPosition)
                 for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
-                    totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(Target.XPosition, i)));
+                    totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
             // Moving backward on X axis
             else
                 for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
-                    totalCost += getMoveCostFromTile(TileFactory.TILE_GENERATOR.getTileAt(new Position(Target.XPosition, i)));
+                    totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
             return totalCost;
         }
 
         // Tells if the unit can move to a given tile through the position
         public bool canMoveTo(Position Target)
         {
-            return reachable(Target) && !TileFactory.TILE_GENERATOR.IsOccupied(Target);
+            return reachable(Target) && !GameImpl.CURRENTGAME.Tiles.IsOccupied(Target);
         }
 
         public UnitData ToData()

@@ -7,17 +7,23 @@ using PooP.Core.Interfaces.Maps;
 using PooP.Core.Interfaces.Games;
 using PooP.Core.Implementation.Races;
 using PooP.Core.Data.Games;
+using PooP.Core.Implementation.Maps;
 
 namespace PooP.Core.Implementation.Games
 {
     [Serializable]
     public class GameImpl : Game
     {
+        public static GameImpl CURRENTGAME = new GameImpl();
         public GameImpl(GameData data)
         {
             FirstPlayer = new PlayerImpl(data.FirstPlayer);
             Players = data.Players.ConvertAll(p => p.ToPlayer()).ToArray();
             NumberOfTurns = data.NumberOfTurns;
+        }
+
+        private GameImpl()
+        {
         }
 
         public Player FirstPlayer
@@ -42,6 +48,18 @@ namespace PooP.Core.Implementation.Games
         {
             get;
             set;
+        }
+
+        public TileFactory Tiles
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
 
         public Player getCurrentPlayer()

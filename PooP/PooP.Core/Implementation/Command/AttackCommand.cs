@@ -6,6 +6,7 @@ using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Commands;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Ressource;
+using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation.Commands
 {
@@ -24,7 +25,7 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit = Attacker;
             OldPos = MovedUnit.Position;
             Target = AttackedTilePos;
-            Defender = TileFactory.TILE_GENERATOR.getBestDefenderAt(AttackedTilePos);
+            Defender = GameImpl.CURRENTGAME.Tiles.getBestDefenderAt(AttackedTilePos);
             cost = MovedUnit.getMoveCost(Target);
         }
     

@@ -11,8 +11,6 @@ namespace PooP.Core.Implementation.Maps
 {
     public abstract class TileFactory
     {
-        public static TileFactory TILE_GENERATOR;
-
         public TileFactory(TileFactoryData data)
         {
             data.Tiles.Keys.ToList().ForEach(e => Tiles.Add(ToTile(e), data.Tiles.First(k => k.Key == e).Value));
