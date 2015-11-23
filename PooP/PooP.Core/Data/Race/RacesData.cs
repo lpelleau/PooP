@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Races;
+using PooP.Core.Implementation.Races;
 
 namespace PooP.Core.Data.Races
 {
@@ -14,6 +15,13 @@ namespace PooP.Core.Data.Races
             get;
             set;
         }
+
+        public Race ToRace()
+        {
+            Race r = new Human();
+            r.Units = Units.ConvertAll(u => u.ToUnit());
+            return r;
+        }
     }
 
     [Serializable]
@@ -24,6 +32,13 @@ namespace PooP.Core.Data.Races
             get;
             set;
         }
+
+        public Race ToRace()
+        {
+            Race r = new Elf();
+            r.Units = Units.ConvertAll(u => u.ToUnit());
+            return r;
+        }
     }
 
     [Serializable]
@@ -33,6 +48,13 @@ namespace PooP.Core.Data.Races
         {
             get;
             set;
+        }
+
+        public Race ToRace()
+        {
+            Race r = new Orc();
+            r.Units = Units.ConvertAll(u => u.ToUnit());
+            return r;
         }
     }
 }

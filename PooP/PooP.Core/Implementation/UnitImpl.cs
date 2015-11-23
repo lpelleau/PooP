@@ -13,6 +13,13 @@ namespace PooP.Core.Implementation
 {
     public class UnitImpl : Unit
     {
+        public UnitImpl(UnitData data)
+        {
+            LifePoints = data.LifePoints;
+            MovePoints = data.MovePoints;
+            Position = data.Position;
+        }
+
         public int LifePoints
         {
             get;

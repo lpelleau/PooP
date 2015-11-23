@@ -10,6 +10,11 @@ namespace PooP.Core.Implementation
 {
     public class PlayerImpl : Player
     {
+        public PlayerImpl(PlayerData data)
+        {
+            Race = data.Race.ToRace();
+            Name = data.Name;
+        }
         public Race Race
         {
             get;

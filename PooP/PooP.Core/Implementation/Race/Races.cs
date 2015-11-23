@@ -19,6 +19,11 @@ namespace PooP.Core.Implementation.Races
             MoveDistance = 1;
         }
 
+        public Human(HumanData data)
+        {
+            Units = data.Units.ConvertAll(u => u.ToUnit());
+        }
+
         public int MoveDistance
         {
             get;
@@ -80,13 +85,18 @@ namespace PooP.Core.Implementation.Races
 
     public class Elf : Race
     {
-        private Elf()
+        public Elf()
         {
             Attack = 4;
             AttackDistance = 2;
             Defence = 3;
             Life = 12;
             MoveDistance = 1;
+        }
+
+        public Elf(ElfData data)
+        {
+            Units = data.Units.ConvertAll(u => u.ToUnit());
         }
 
         public int MoveDistance
@@ -150,13 +160,18 @@ namespace PooP.Core.Implementation.Races
 
     public class Orc : Race
     {
-        private Orc()
+        public Orc()
         {
             Attack = 5;
             AttackDistance = 2; // Carreful, AccackDistance = 1 if not on mountain tile......
             Defence = 2;
             Life = 17;
             MoveDistance = 1;
+        }
+
+        public Orc(OrcData data)
+        {
+            Units = data.Units.ConvertAll(u => u.ToUnit());
         }
 
         public int MoveDistance

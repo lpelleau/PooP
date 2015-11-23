@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace PooP.Core.Data.Races
 {
-    [Serializable]
     public interface RaceData
     {
         List<UnitData> Units
@@ -14,5 +13,7 @@ namespace PooP.Core.Data.Races
             get;
             set;
         }
+
+        Interfaces.Races.Race ToRace();
     }
 }

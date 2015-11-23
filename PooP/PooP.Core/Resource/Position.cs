@@ -5,6 +5,7 @@ using System.Text;
 
 namespace PooP.Core.Ressource
 {
+    [Serializable]
     public class Position
     {
         public Position(int xPosition, int yPosition)
