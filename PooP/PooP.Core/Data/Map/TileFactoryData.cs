@@ -9,7 +9,22 @@ namespace PooP.Core.Data.Maps
     [Serializable]
     public class TileFactoryData
     {
-        public Dictionary<string, List<Position>> Tiles
+        public List<TileCuple> Tiles
+        {
+            get;
+            set;
+        }
+    }
+
+    [Serializable]
+    public class TileCuple
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
+        public List<Position> Positions
         {
             get;
             set;

@@ -10,6 +10,12 @@ namespace PooP.Core.Ressource
     public class Position
     {
         private int x, y;
+
+        public Position()
+        {
+
+        }
+
         public Position(int xPosition, int yPosition)
         {
             XPosition = xPosition;

@@ -19,7 +19,7 @@ namespace PooP.Core.Implementation.Races
             MoveDistance = 1;
         }
 
-        public Human(HumanData data)
+        public Human(RaceData data)
         {
             Units = data.Units.ConvertAll(u => u.ToUnit());
         }
@@ -76,9 +76,10 @@ namespace PooP.Core.Implementation.Races
 
         public RaceData ToData()
         {
-            return new HumanData
+            return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData())
+                Units = this.Units.ConvertAll(u => u.ToData()), 
+                Race = "Human"
             };
         }
     }
@@ -94,7 +95,7 @@ namespace PooP.Core.Implementation.Races
             MoveDistance = 1;
         }
 
-        public Elf(ElfData data)
+        public Elf(RaceData data)
         {
             Units = data.Units.ConvertAll(u => u.ToUnit());
         }
@@ -151,9 +152,10 @@ namespace PooP.Core.Implementation.Races
 
         public RaceData ToData()
         {
-            return new HumanData
+            return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData())
+                Units = this.Units.ConvertAll(u => u.ToData()),
+                Race = "Elf"
             };
         }
     }
@@ -169,7 +171,7 @@ namespace PooP.Core.Implementation.Races
             MoveDistance = 1;
         }
 
-        public Orc(OrcData data)
+        public Orc(RaceData data)
         {
             Units = data.Units.ConvertAll(u => u.ToUnit());
         }
@@ -226,9 +228,10 @@ namespace PooP.Core.Implementation.Races
 
         public RaceData ToData()
         {
-            return new HumanData
+            return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData())
+                Units = this.Units.ConvertAll(u => u.ToData()),
+                Race = "Orc"
             };
         }
     }

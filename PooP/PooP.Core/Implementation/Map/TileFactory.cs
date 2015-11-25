@@ -14,7 +14,8 @@ namespace PooP.Core.Implementation.Maps
     {
         public TileFactory(TileFactoryData data)
         {
-            data.Tiles.Keys.ToList().ForEach(e => Tiles.Add(ToTile(e), data.Tiles.First(k => k.Key == e).Value));
+            Tiles.Clear();
+            data.Tiles.ForEach(c => Tiles.Add(ToTile(c.Name), c.Positions));
         }
 
         private Tile ToTile(string t)
@@ -98,8 +99,12 @@ namespace PooP.Core.Implementation.Maps
 
         public TileFactoryData ToData()
         {
-            Dictionary<string, List<Position>> tmpTiles = new Dictionary<string, List<Position>>();
-            Tiles.Keys.ToList().ForEach(e => tmpTiles.Add(e.GetType().Name, Tiles.First(k => k.Key == e).Value));
+            List<TileCuple> tmpTiles = new List<TileCuple>();
+            Tiles.Keys.ToList().ForEach(e => tmpTiles.Add(new TileCuple()
+            {
+                Name = e.GetType().Name,
+                Positions = Tiles.First(k => k.Key == e).Value
+            }));
             return new TileFactoryData
             {
                 Tiles = tmpTiles
