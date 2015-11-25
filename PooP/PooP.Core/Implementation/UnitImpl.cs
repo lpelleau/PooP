@@ -12,8 +12,15 @@ using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation
 {
+    /// <summary>
+    /// Implements a Unit
+    /// </summary>
     public class UnitImpl : Unit
     {
+        /// <summary>
+        /// Creates a Unit from a data unit
+        /// </summary>
+        /// <param name="data">Datas to load</param>
         public UnitImpl(UnitData data)
         {
             LifePoints = data.LifePoints;
@@ -21,30 +28,59 @@ namespace PooP.Core.Implementation
             Position = data.Position;
         }
 
+        /// <summary>
+        /// Creates a Unit with a race and a position
+        /// </summary>
+        /// <param name="r">Unit's race</param>
+        /// <param name="p">Position of the unit for the first turn</param>
+        public UnitImpl(Race r, Position p)
+        {
+            Race = r;
+            LifePoints = r.Life;
+            Position = p;
+            MovePoints = 0;
+        }
+
+        /// <summary>
+        /// Current life points of the unit
+        /// </summary>
         public int LifePoints
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Unit's race
+        /// </summary>
         public Race Race
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Current position of the unit
+        /// </summary>
         public Position Position
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Number of points the unit can use to move to different tiles
+        /// </summary>
         public double MovePoints
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Computes how many victory points the unit gives to the player
+        /// </summary>
+        /// <returns>Victory points, in a 0-3 range</returns>
         public int getVictoryPoints()
         {
             if (Race.GetType().Name == "Humain" && GameImpl.CURRENTGAME.Tiles.getTileAt(Position).GetType().Name == "Water")
@@ -69,14 +105,22 @@ namespace PooP.Core.Implementation
             return 1;
         }
 
-        // Tells if a unit can reach a given position
-        private Boolean reachable(Position Target)
+        /// <summary>
+        /// Tells if a unit can reach a given position
+        /// </summary>
+        /// <param name="Target">Position to reach</param>
+        /// <returns>true if the unit has the needed points to move to this position</returns>
+        private bool reachable(Position Target)
         {
             return (Target.XPosition == Position.YPosition || Target.YPosition == Position.YPosition)
                 && (getMoveCost(Target) < MovePoints) && (Race.GetType().Name != "Human" || Target.GetType().Name != "Water");
         }
 
-        // Tells if a given position can be attacked by this unit or not
+        /// <summary>
+        /// Tells if a given position can be attacked by this unit or not
+        /// </summary>
+        /// <param name="dest">Position to attack</param>
+        /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
             return reachable(dest) && GameImpl.CURRENTGAME.Tiles.IsOccupied(dest);
@@ -95,8 +139,12 @@ namespace PooP.Core.Implementation
             return Race.AttackDistance;
         }
 
-        // Computes the number of needed points to move to a given position
-        // (This version only computes moving vertically OR horizontally)
+        /// <summary>
+        /// Computes the number of needed points to move to a given position
+        /// (This version only computes moving vertically OR horizontally)
+        /// </summary>
+        /// <param name="Target">Position to reach</param>
+        /// <returns>The number of points needed to move to the given position</returns>
         public double getMoveCost(Position Target)
         {
             double totalCost = 0;
@@ -114,12 +162,12 @@ namespace PooP.Core.Implementation
             else
                 // Moving forward on X axis
                 if (Position.XPosition < Target.XPosition)
-                for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
-                    totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
-            // Moving backward on X axis
-            else
-                for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
-                    totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
+                    for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
+                        totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
+                // Moving backward on X axis
+                else
+                    for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
+                        totalCost += getMoveCostFromTile(GameImpl.CURRENTGAME.Tiles.getTileAt(new Position(Target.XPosition, i)));
             return totalCost;
         }
 

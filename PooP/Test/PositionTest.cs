@@ -28,7 +28,7 @@ namespace Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(BadPositionException), "Position out of bounds !")]
+        [ExpectedException(typeof(BadPositionException))]
         public void SetInvalidTest()
         {
             p.XPosition = -1;

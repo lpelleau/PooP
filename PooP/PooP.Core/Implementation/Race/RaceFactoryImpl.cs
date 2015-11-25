@@ -3,32 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Races;
+using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Races
 {
     public class RaceFactoryImpl
     {
-        public Race Human
-        {
-            get;
-            set;
-        }
+        public static Human HumanRace = new Human();
 
-        public Race Orc
-        {
-            get;
-            set;
-        }
+        public static Orc OrcRace = new Orc();
 
-        public Race Elf
-        {
-            get;
-            set;
-        }
-    
+        public static Elf ElfRace = new Elf();
+
         public static Race getRace(string raceName)
         {
-            throw new System.NotImplementedException();
+            switch (raceName.ToLower())
+            {
+                case "human": return HumanRace;
+                case "orc": return OrcRace;
+                case "elf": return ElfRace;
+                default: throw new NotExistingRaceException(raceName);
+            }
         }
     }
 }

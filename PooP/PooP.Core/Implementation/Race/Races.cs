@@ -17,6 +17,7 @@ namespace PooP.Core.Implementation.Races
             Defence = 3;
             Life = 15;
             MoveDistance = 1;
+            Units = new List<Unit>();
         }
 
         public Human(RaceData data)
@@ -78,8 +79,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData()), 
-                Race = "Human"
+                Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
     }
@@ -93,6 +93,7 @@ namespace PooP.Core.Implementation.Races
             Defence = 3;
             Life = 12;
             MoveDistance = 1;
+            Units = new List<Unit>();
         }
 
         public Elf(RaceData data)
@@ -154,8 +155,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData()),
-                Race = "Elf"
+                Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
     }
@@ -169,6 +169,7 @@ namespace PooP.Core.Implementation.Races
             Defence = 2;
             Life = 17;
             MoveDistance = 1;
+            Units = new List<Unit>();
         }
 
         public Orc(RaceData data)
@@ -230,8 +231,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Units = this.Units.ConvertAll(u => u.ToData()),
-                Race = "Orc"
+                Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
     }

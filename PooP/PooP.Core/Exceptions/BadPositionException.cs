@@ -8,9 +8,17 @@ namespace PooP.Core.Exceptions
 {
     public class BadPositionException : Exception
     {
-        public BadPositionException() : base("Position out of bounds !")
+        private string p;
+
+        public BadPositionException()
+            : base("Position out of bounds !")
         {
-            
+
+        }
+
+        public BadPositionException(string p)
+            : base(p)
+        {
         }
     }
 }

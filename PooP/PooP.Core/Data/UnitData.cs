@@ -5,6 +5,7 @@ using System.Text;
 using PooP.Core.Ressource;
 using PooP.Core.Interfaces;
 using PooP.Core.Implementation;
+using PooP.Core.Data.Races;
 
 namespace PooP.Core.Data
 {

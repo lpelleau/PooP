@@ -47,26 +47,33 @@ namespace PooP.Core.Implementation.Maps
 
         // Creates a tile for the given type and position
         // If a tile of the given type already exists, it will only have another position more
+        // If the position is already used, throw an exception
         public Tile getTile(string TileType, Position Position)
         {
+            // If the position is already used, throw an exception
+            if (Tiles.Where(l => l.Value.Contains(Position)).Count() != 0)
+                throw new BadPositionException("Position already used");
             // If there is no tile of this type yet, create it
             if (Tiles.Count(e => e.Key.GetType().Name == TileType) == 0)
             {
                 Tile t;
                 switch (TileType)
                 {
-                    case "Water":       t = new Water();    break;
-                    case "Plain":       t = new Plain();    break;
-                    case "Mountain":    t = new Mountain(); break;
-                    case "Forest":      t = new Forest();   break;
+                    case "Water": t = new Water(); break;
+                    case "Plain": t = new Plain(); break;
+                    case "Mountain": t = new Mountain(); break;
+                    case "Forest": t = new Forest(); break;
                     default: throw new TileTypeException();
                 }
-                Tiles.Add(t, new List<Position>());
+                List<Position> l = new List<Position>();
+                l.Add(Position);
+                Tiles.Add(t, l);
                 return t;
             }
             // If there is one, return it
             else
             {
+                Tiles.First(e => e.Key.GetType().Name == TileType).Value.Add(Position);
                 return Tiles.First(e => e.Key.GetType().Name == TileType).Key;
             }
         }
