@@ -28,10 +28,16 @@ namespace PooP.Core.Implementation
 
         public PlayerData ToData()
         {
+            return ToData(false);
+        }
+
+        public PlayerData ToData(bool FstP)
+        {
             return new PlayerData
             {
                 Race = this.Race.ToData(),
-                Name = this.Name
+                Name = this.Name,
+                Fst = FstP
             };
         }
     }

@@ -92,7 +92,7 @@ namespace PooP.Core.Implementation.Games
             return new GameData
             {
                 FirstPlayer = this.FirstPlayer.ToData(),
-                Players = this.Players.ToList().ConvertAll(p => p.ToData()),
+                Players = this.Players.ToList().ConvertAll(p => (p.Equals(FirstPlayer)) ? p.ToData() : p.ToData(true)),
                 NumberOfTurns = this.NumberOfTurns,
                 Tiles = this.Tiles.ToData()
             };

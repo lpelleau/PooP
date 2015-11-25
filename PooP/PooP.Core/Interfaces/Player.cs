@@ -20,5 +20,7 @@ namespace PooP.Core.Interfaces
             set;
         }
         PlayerData ToData();
+
+        PlayerData ToData(bool FstP);
     }
 }

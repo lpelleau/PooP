@@ -21,6 +21,11 @@ namespace PooP.Core.Data
             get;
             set;
         }
+        public bool Fst
+        {
+            get;
+            set;
+        }
 
         public Player ToPlayer()
         {
