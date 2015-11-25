@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 
-namespace WpfApplication2
+namespace PooP.GUI
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
@@ -23,9 +23,21 @@ namespace WpfApplication2
     {
         public MainWindow()
         {
-            
         }
         
+        private void ClearIfDefault(object sender, RoutedEventArgs e)
+        {
+            ((TextBox)sender).Text = "";
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // ... Get control that raised this event.
+            var textBox = sender as TextBox;
+            // ... Change Window Title.
+            this.Title = textBox.Text +
+            "[Length = " + textBox.Text.Length.ToString() + "]";
+        }
     }
 
     public class NegateBool : IValueConverter
