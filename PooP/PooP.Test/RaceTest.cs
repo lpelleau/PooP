@@ -6,7 +6,7 @@ using PooP.Core.Implementation.Races;
 using PooP.Core.Interfaces.Races;
 using PooP.Core.Exceptions;
 
-namespace Test
+namespace PooP.Test
 {
     [TestClass]
     public class RaceTest

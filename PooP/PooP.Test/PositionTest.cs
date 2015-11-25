@@ -2,7 +2,7 @@
 using PooP.Core.Ressource;
 using PooP.Core.Exceptions;
 
-namespace Test
+namespace PooP.Test
 {
     [TestClass]
     public class PositionTest

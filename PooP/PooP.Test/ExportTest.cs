@@ -4,20 +4,24 @@ using PooP.Core.Exceptions;
 using PooP.Core.Interfaces.Games;
 using PooP.Core.Implementation.Games;
 
-namespace Test
+namespace PooP.Test
 {
     [TestClass]
     public class ExportTest
     {
+        Game g;
+
         [TestInitialize]
         public void init()
         {
+            g = GameImpl.CURRENTGAME;
+            // Init game
         }
 
         [TestMethod]
         public void ExportDataTest()
         {
-            GameSave.save("test", GameImpl.CURRENTGAME);
+            GameSave.INSTANCE.save("test", g);
         }
     }
 }

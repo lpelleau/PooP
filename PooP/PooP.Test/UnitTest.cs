@@ -6,7 +6,7 @@ using PooP.Core.Interfaces.Races;
 using PooP.Core.Implementation;
 using PooP.Core.Interfaces;
 
-namespace Test
+namespace PooP.Test
 {
     [TestClass]
     public class UnitTest
