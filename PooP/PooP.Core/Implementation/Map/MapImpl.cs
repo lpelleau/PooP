@@ -25,14 +25,8 @@ namespace PooP.Core.Implementation.Maps
         /// </summary>
         public TileFactory Tiles
         {
-            get
-            {
-                
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace PooP.Test
         [TestMethod]
         public void ExportDataTest()
         {
-            GameSave.INSTANCE.save("test", GameBuilder.CURRENTGAME);
+            GameSave.INSTANCE.save("test");
         }
     }
 }
