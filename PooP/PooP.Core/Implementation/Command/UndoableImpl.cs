@@ -7,19 +7,19 @@ using PooP.Core.Interfaces.Commands;
 namespace PooP.Core.Implementation.Command
 {
     /// <summary>
-    /// Impelements an undoable list of actions
+    /// Implements an undoable list of actions
     /// </summary>
-    public class UndoableImpl : Undoable
+    public class UndoableImpl
     {
         // List of done actions
-        public Stack<PooP.Core.Interfaces.Commands.Command> DoneCommands
+        public static Stack<PooP.Core.Interfaces.Commands.Command> DoneCommands
         {
             get;
             set;
         }
 
         // List of undone commands
-        public Stack<PooP.Core.Interfaces.Commands.Command> UndoneCommands
+        public static Stack<PooP.Core.Interfaces.Commands.Command> UndoneCommands
         {
             get;
             set;
@@ -28,7 +28,7 @@ namespace PooP.Core.Implementation.Command
         /// <summary>
         /// Undoes the last done command and puts it in the undone commands
         /// </summary>
-        public void undo()
+        public static void undo()
         {
             if (!(DoneCommands.Count == 0))
             {
@@ -41,7 +41,7 @@ namespace PooP.Core.Implementation.Command
         /// <summary>
         /// Redoes the last undone command and puts it in the done commands
         /// </summary>
-        public void redo()
+        public static void redo()
         {
             if (!(UndoneCommands.Count == 0))
             {

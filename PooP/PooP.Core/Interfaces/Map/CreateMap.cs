@@ -6,8 +6,14 @@ using PooP.Core.Implementation.Maps;
 
 namespace PooP.Core.Interfaces.Maps
 {
+    /// <summary>
+    /// Creates a map
+    /// </summary>
     public interface CreateMap
     {
+        /// <summary>
+        /// Creates the map
+        /// </summary>
         TileFactory create();
     }
 }

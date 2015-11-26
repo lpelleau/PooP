@@ -5,6 +5,9 @@ using System.Text;
 
 namespace PooP.Core.Interfaces.Maps
 {
+    /// <summary>
+    /// Represents a map
+    /// </summary>
     public interface Map
     {
         /// <summary>

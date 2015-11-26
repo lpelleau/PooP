@@ -8,12 +8,19 @@ using PooP.Core.Interfaces;
 
 namespace PooP.Test
 {
+    /// <summary>
+    /// Tests the unit
+    /// </summary>
     [TestClass]
     public class UnitTest
     {
         Race r;
         Position p;
         Unit u;
+
+        /// <summary>
+        /// Inits the test environment
+        /// </summary>
         [TestInitialize]
         public void init()
         {
@@ -21,8 +28,12 @@ namespace PooP.Test
             p = new Position(2, 5);
             u = new UnitImpl(r, p);
         }
+
+        /// <summary>
+        /// Tests the constructor and the getter
+        /// </summary>
         [TestMethod]
-        public void ConstructorGetTest()
+        public void UnitConstructorGetTest()
         {
             Assert.IsTrue(u.MovePoints == 0);
             Assert.IsTrue(u.LifePoints == r.Life);
