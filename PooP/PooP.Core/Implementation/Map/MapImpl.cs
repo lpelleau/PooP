@@ -34,7 +34,7 @@ namespace PooP.Core.Implementation.Maps
         /// </summary>
         public void createMap()
         {
-            throw new System.NotImplementedException();
+            Tiles = MapCreator.create();
         }
     }
 }

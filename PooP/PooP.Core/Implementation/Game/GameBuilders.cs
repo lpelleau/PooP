@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PooP.Core.Implementation.Maps;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Maps;
+using PooP.Wrapper;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -79,7 +81,10 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            throw new System.NotImplementedException();
+            Map map = new MapImpl();
+            map.MapCreator = new SmallMap();
+            map.createMap();
+            return Map;
         }
 
         /// <summary>

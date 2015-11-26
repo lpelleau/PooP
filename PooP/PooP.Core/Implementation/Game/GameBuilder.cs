@@ -39,6 +39,15 @@ namespace PooP.Core.Implementation.Games
         }
 
         /// <summary>
+        /// The Map of the game
+        /// </summary>
+        public Map Map
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Creates a game
         /// </summary>
         /// <param name="players">An array with the players names as strings</param>

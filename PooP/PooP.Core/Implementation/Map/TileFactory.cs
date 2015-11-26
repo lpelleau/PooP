@@ -13,13 +13,20 @@ namespace PooP.Core.Implementation.Maps
     /// <summary>
     /// Creates the needed tiles and affects them to their positions
     /// </summary>
-    public abstract class TileFactory
+    public class TileFactory
     {
         // The created tiles, with their positions
         public Dictionary<Tile, List<Position>> Tiles
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public TileFactory()
+        {
         }
         
         /// <summary>

@@ -7,8 +7,8 @@
     <ProjectGuid>{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModelEtudiant</RootNamespace>
-    <AssemblyName>ModelEtudiant</AssemblyName>
+    <RootNamespace>PooP.Wrapper</RootNamespace>
+    <AssemblyName>PooP.Wrapper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

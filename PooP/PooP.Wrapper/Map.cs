@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PooP.Wrapper
 {
-    public class Map
+    public class WMap
     {
-        public Map(TileType[] tiles)
+        public WMap(TileType[] tiles)
         {
             Tiles = tiles;
         }

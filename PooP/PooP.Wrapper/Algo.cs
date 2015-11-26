@@ -19,12 +19,12 @@ namespace PooP.Wrapper
     {
         bool disposed = false;
         IntPtr nativeAlgo;
-     
-        public Map CreateMap(int nbTiles)
+
+        public WMap CreateMap(int nbTiles)
         {
             var tiles = new TileType[nbTiles];
             Algo_fillMap(nativeAlgo, tiles, nbTiles);
-            return new Map(tiles);
+            return new WMap(tiles);
         }
 
         public Algo()
@@ -57,13 +57,13 @@ namespace PooP.Wrapper
         }
 
 
-        [DllImport("libCPP.dll", CallingConvention= CallingConvention.Cdecl)]
+        [DllImport("PooP.NativeLib.dll", CallingConvention= CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
 
-        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();
 
-        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_delete(IntPtr algo);
     }
 }

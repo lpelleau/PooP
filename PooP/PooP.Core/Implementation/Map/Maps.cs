@@ -4,9 +4,35 @@ using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Maps;
 using PooP.Wrapper;
+using PooP.Core.Ressource;
 
 namespace PooP.Core.Implementation.Maps
 {
+    /// <summary>
+    /// Implements a demo map
+    /// </summary>
+    /// <see cref="CreateMap"/>
+    public class DemoMap : CreateMap
+    {
+        /// <summary>
+        /// A demo map is 6x6 tiles large
+        /// </summary>
+        private static int SIZE = 6;
+
+        /// <summary>
+        /// Creates the map
+        /// </summary>
+        /// <see cref="CreateMap"/>
+        public TileFactory create()
+        {
+            throw new NotImplementedException();
+            //foreach (var tile in new Algo().CreateMap(SIZE * SIZE).Tiles)
+            //{
+            //Console.WriteLine(tile);
+            //}
+        }
+    }
+
     /// <summary>
     /// Implements a small game map
     /// </summary>
@@ -22,12 +48,26 @@ namespace PooP.Core.Implementation.Maps
         /// Creates the map
         /// </summary>
         /// <see cref="CreateMap"/>
-        public void create()
+        public TileFactory create()
         {
-            foreach (var tile in new Algo().CreateMap(SIZE).Tiles)
+            TileFactory fact = new TileFactory();
+            fact.Tiles = new Dictionary<Tile, List<Position>>();
+            TileType[] map = new Algo().CreateMap(SIZE * SIZE).Tiles;
+
+            for (int x = 0 ; x < SIZE ; x++)
             {
-                //Console.WriteLine(tile);
+                for (int y = 0 ; y < SIZE ; y++)
+                {
+                    switch(map[x * SIZE + y]) {
+                        case TileType.Forest:  fact.getTile("Forest", new Position(x, y));  break;
+                        case TileType.Moutain: fact.getTile("Moutain", new Position(x, y)); break;
+                        case TileType.Plain:   fact.getTile("Plain", new Position(x, y));   break;
+                        case TileType.Water:   fact.getTile("Water", new Position(x, y));   break;
+                    }
+                }
             }
+
+            return fact;
         }
     }
 
@@ -46,36 +86,13 @@ namespace PooP.Core.Implementation.Maps
         /// Creates the map
         /// </summary>
         /// <see cref="CreateMap"/>
-        public void create()
+        public TileFactory create()
         {
-            foreach (var tile in new Algo().CreateMap(SIZE).Tiles)
-            {
+            throw new NotImplementedException();
+            //foreach (var tile in new Algo().CreateMap(SIZE * SIZE).Tiles)
+            //{
                 //Console.WriteLine(tile);
-            }
-        }
-    }
-
-    /// <summary>
-    /// Implements a demo map
-    /// </summary>
-    /// <see cref="CreateMap"/>
-    public class DemoMap : CreateMap
-    {
-        /// <summary>
-        /// A demo map is 6x6 tiles large
-        /// </summary>
-        private static int SIZE = 6;
-
-        /// <summary>
-        /// Creates the map
-        /// </summary>
-        /// <see cref="CreateMap"/>
-        public void create()
-        {
-            foreach (var tile in new Algo().CreateMap(SIZE).Tiles)
-            {
-                //Console.WriteLine(tile);
-            }
+            //}
         }
     }
 }
