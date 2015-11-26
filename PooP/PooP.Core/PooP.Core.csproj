@@ -80,6 +80,12 @@
     <None Include="ClassDiagramInterfaces.cd" />
     <None Include="ClassDiagramImplementation.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PooP.Wrapper\PooP.Wrapper.csproj">
+      <Project>{04085094-32f3-4c5e-8eb4-5eb4aa5ac3f3}</Project>
+      <Name>PooP.Wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

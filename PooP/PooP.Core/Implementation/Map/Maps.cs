@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Maps;
-using Wrapper;
+using PooP.Wrapper;
 
 namespace PooP.Core.Implementation.Maps
 {
