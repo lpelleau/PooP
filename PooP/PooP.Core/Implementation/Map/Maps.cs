@@ -7,9 +7,21 @@ using PooP.Wrapper;
 
 namespace PooP.Core.Implementation.Maps
 {
+    /// <summary>
+    /// Implements a small game map
+    /// </summary>
+    /// <see cref="CreateMap"/>
     public class SmallMap : CreateMap
     {
-        private static int SIZE = 42;
+        /// <summary>
+        /// A small map is 10x10 tiles large
+        /// </summary>
+        private static int SIZE = 10;
+
+        /// <summary>
+        /// Creates the map
+        /// </summary>
+        /// <see cref="CreateMap"/>
         public void create()
         {
             foreach (var tile in new Algo().CreateMap(SIZE).Tiles)
@@ -19,9 +31,21 @@ namespace PooP.Core.Implementation.Maps
         }
     }
 
+    /// <summary>
+    /// Implements a standard map
+    /// </summary>
+    /// <see cref="CreateMap"/>
     public class StandardMap : CreateMap
     {
-        private static int SIZE = 42;
+        /// <summary>
+        /// A standard map is 14x14 tiles large
+        /// </summary>
+        private static int SIZE = 14;
+
+        /// <summary>
+        /// Creates the map
+        /// </summary>
+        /// <see cref="CreateMap"/>
         public void create()
         {
             foreach (var tile in new Algo().CreateMap(SIZE).Tiles)
@@ -31,9 +55,21 @@ namespace PooP.Core.Implementation.Maps
         }
     }
 
+    /// <summary>
+    /// Implements a demo map
+    /// </summary>
+    /// <see cref="CreateMap"/>
     public class DemoMap : CreateMap
     {
-        private static int SIZE = 42;
+        /// <summary>
+        /// A demo map is 6x6 tiles large
+        /// </summary>
+        private static int SIZE = 6;
+
+        /// <summary>
+        /// Creates the map
+        /// </summary>
+        /// <see cref="CreateMap"/>
         public void create()
         {
             foreach (var tile in new Algo().CreateMap(SIZE).Tiles)

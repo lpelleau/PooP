@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PooP.Core.Exceptions
 {
-    public class NotExistingRaceException : Exception
+    public class RaceException : Exception
     {
-        public NotExistingRaceException(string race)
-            : base("The race \"" + race + "\" does not exist !")
+        public RaceException(string race)
+            : base("The race \"" + race + "\" does not exist or has already been choosen !")
         {
 
         }

@@ -9,19 +9,19 @@ namespace PooP.Test
     [TestClass]
     public class ExportTest
     {
-        Game g;
-
         [TestInitialize]
         public void init()
         {
-            g = GameImpl.CURRENTGAME;
-            // Init game
+            string[] players = new string[2] { "Pl1", "Pl2"};
+            string[] races = new string[2] { "orc", "elf" };
+            new SmallGameBuilder().createGame(players,races);
         }
 
         [TestMethod]
         public void ExportDataTest()
         {
-            GameSave.INSTANCE.save("test", g);
+            GameSave.INSTANCE.save("test", GameBuilder.CURRENTGAME);
         }
     }
 }
+

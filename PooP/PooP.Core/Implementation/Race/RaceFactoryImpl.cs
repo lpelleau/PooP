@@ -7,14 +7,23 @@ using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Races
 {
+    /// <summary>
+    /// Creates and gives the instances for races
+    /// </summary>
     public class RaceFactoryImpl
     {
+        // Races
         public static Human HumanRace = new Human();
 
         public static Orc OrcRace = new Orc();
 
         public static Elf ElfRace = new Elf();
 
+        /// <summary>
+        /// Gets the race for a given name
+        /// </summary>
+        /// <param name="raceName">Name of the race to use</param>
+        /// <returns>The race corresponding to that name</returns>
         public static Race getRace(string raceName)
         {
             switch (raceName.ToLower())
@@ -22,7 +31,7 @@ namespace PooP.Core.Implementation.Races
                 case "human": return HumanRace;
                 case "orc": return OrcRace;
                 case "elf": return ElfRace;
-                default: throw new NotExistingRaceException(raceName);
+                default: throw new RaceException(raceName);
             }
         }
     }

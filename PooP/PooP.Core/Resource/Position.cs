@@ -6,22 +6,38 @@ using System.Text;
 
 namespace PooP.Core.Ressource
 {
+    /// <summary>
+    /// Represents an {x;y} position
+    /// </summary>
     [Serializable]
     public class Position
     {
         private int x, y;
 
+        /// <summary>
+        /// Creates an empty position
+        /// </summary>
         public Position()
         {
-
+            XPosition = 0;
+            YPosition = 0;
         }
 
+        /// <summary>
+        /// Creates a position with x;y
+        /// </summary>
+        /// <param name="xPosition">x-axis position</param>
+        /// <param name="yPosition">y-axis position</param>
         public Position(int xPosition, int yPosition)
         {
             XPosition = xPosition;
             YPosition = yPosition;
         }
 
+        /// <summary>
+        /// The x-axis position
+        /// You can't have a negative x
+        /// </summary>
         public int XPosition
         {
             get { return x; }
@@ -31,6 +47,10 @@ namespace PooP.Core.Ressource
             }
         }
 
+        /// <summary>
+        /// The y-axis position
+        /// You can't have a negative y
+        /// </summary>
         public int YPosition
         {
             get { return y; }

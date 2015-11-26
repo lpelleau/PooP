@@ -29,7 +29,7 @@
   <Class Name="PooP.Core.Implementation.Maps.DemoMap">
     <Position X="11" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -93,7 +93,7 @@
   <Class Name="PooP.Core.Implementation.Games.GameImpl">
     <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACACAAABAAAAAAAACAAAAAAAAgAAAAABAABAAAAQA=</HashCode>
+      <HashCode>AAACACAAABAAAAAAAACAAAAAAAAgAAIAABAABAAAAQA=</HashCode>
       <FileName>Implementation\Game\GameImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -101,7 +101,7 @@
   <Class Name="PooP.Core.Implementation.Maps.SmallMap">
     <Position X="12.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -109,7 +109,7 @@
   <Class Name="PooP.Core.Implementation.Maps.StandardMap">
     <Position X="14" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.122" />
@@ -117,7 +117,7 @@
   <Class Name="PooP.Core.Implementation.Maps.MapImpl">
     <Position X="11.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Implementation\Map\MapImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -132,7 +132,7 @@
   <Class Name="PooP.Core.Implementation.Games.GameBuilder">
     <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAgAAAAAAAAEBAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAACAAAAAAAAAAAgAAAAAAEAEBAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Game\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -192,7 +192,7 @@
   <Class Name="PooP.Core.Ressource.Position">
     <Position X="16" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Resource\Position.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -207,14 +207,14 @@
   <Class Name="PooP.Core.Implementation.Races.RaceFactoryImpl">
     <Position X="7.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAIAAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIBAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Race\RaceFactoryImpl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Implementation.Games.GameSave" Collapsed="true">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAICAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Implementation\Game\GameSave.cs</FileName>
     </TypeIdentifier>
   </Class>

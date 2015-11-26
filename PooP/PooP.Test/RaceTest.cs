@@ -51,7 +51,7 @@ namespace PooP.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotExistingRaceException))]
+        [ExpectedException(typeof(RaceException))]
         public void TestBadRace()
         {
             Race r = RaceFactoryImpl.getRace("UndefinedRace");

@@ -8,6 +8,9 @@ using PooP.Core.Ressource;
 
 namespace PooP.Core.Implementation.Commands
 {
+    /// <summary>
+    /// Moves a unit to a certain tile
+    /// </summary>
     public class MoveCommand : PooP.Core.Interfaces.Commands.Command
     {
         private Unit MovedUnit;
@@ -15,6 +18,11 @@ namespace PooP.Core.Implementation.Commands
         private Position Target;
         private double cost;
 
+        /// <summary>
+        /// Creates the command to execute
+        /// </summary>
+        /// <param name="UnitToMove">The unit that shall be moved</param>
+        /// <param name="PosToReach">The tile to reach</param>
         public MoveCommand(Unit UnitToMove, Position PosToReach)
         {
             MovedUnit = UnitToMove;
@@ -22,11 +30,18 @@ namespace PooP.Core.Implementation.Commands
             OldTile = MovedUnit.Position;
         }
 
+        /// <summary>
+        /// Tests if the unit can move to the tile
+        /// </summary>
+        /// <returns>true if the unit can go, false otherwise</returns>
         public bool canDo()
         {
             return MovedUnit.canMoveTo(Target);
         }
 
+        /// <summary>
+        /// Executes de command
+        /// </summary>
         public void execute()
         {
             // Move the unit to the target
@@ -37,6 +52,9 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit.MovePoints -= cost;
         }
 
+        /// <summary>
+        /// Undoes the command
+        /// </summary>
         public void undo()
         {
             // Gives back the needed move points
@@ -46,6 +64,9 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit.Position = OldTile;
         }
 
+        /// <summary>
+        /// Redoes the command
+        /// </summary>
         public void redo()
         {
             this.execute();

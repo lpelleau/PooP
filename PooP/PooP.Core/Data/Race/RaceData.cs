@@ -8,28 +8,36 @@ using PooP.Core.Implementation.Races;
 
 namespace PooP.Core.Data.Races
 {
+    /// <summary>
+    /// Represents a savable data race
+    /// </summary>
     public class RaceData
     {
+        /// <summary>
+        /// The race standing units
+        /// </summary>
         public List<UnitData> Units
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// The name of the race
+        /// </summary>
         public string Race
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Converts the data race back into a real race
+        /// </summary>
+        /// <returns>The race that has been converted</returns>
         public Race ToRace()
         {
-            Race r = null;
-            switch(Race.ToLower()) {
-                case "human": new Human(); break;
-                case "elf":   new Elf();   break;
-                case "orc":   new Orc();   break;
-            }
+            Race r = RaceFactoryImpl.getRace(Race);
             r.Units = Units.ConvertAll(u => u.ToUnit());
             return r;
         }

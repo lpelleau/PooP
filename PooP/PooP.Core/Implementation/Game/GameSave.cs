@@ -9,26 +9,50 @@ using PooP.Core.Data.Games;
 
 namespace PooP.Core.Implementation.Games
 {
+    /// <summary>
+    /// Saves a game
+    /// </summary>
     public class GameSave
     {
+        // Defines the extension and creates a glabal instance
         private static string EXTENSION = ".flav";
         public static GameSave INSTANCE = new GameSave();
 
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         private GameSave()
         {
         }
 
-        public void save(string SaveFile, Game RunningGame)
+        /// <summary>
+        /// Saves the game with an XML-like format
+        /// </summary>
+        /// <param name="SaveFile">Name of the file to write</param>
+        public void save(string SaveFile)
         {
+            // If the file name contains the extension, delete it
+            if (SaveFile.LastIndexOf(EXTENSION) != -1)
+                SaveFile = SaveFile.Substring(0, SaveFile.LastIndexOf(EXTENSION));
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                formatter.Serialize(stream, GameImpl.CURRENTGAME.ToData());
+                formatter.Serialize(stream, GameBuilder.CURRENTGAME.ToData());
             }
         }
 
-        public Game load(string SaveFile, Game RunningGame)
+        /// <summary>
+        /// Reads a file
+        /// </summary>
+        /// <param name="SaveFile">File to read</param>
+        /// <returns>The created game</returns>
+        /// TO DO : Change it : there is a global instance !!!
+        public Game load(string SaveFile)
         {
+            // If the file name contains the extension, delete it
+            if (SaveFile.LastIndexOf(EXTENSION) != -1)
+                SaveFile = SaveFile.Substring(0, SaveFile.LastIndexOf(EXTENSION));
+
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Open, FileAccess.Read, FileShare.None))
             {
