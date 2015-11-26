@@ -31,7 +31,10 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            throw new System.NotImplementedException();
+            Map map = new MapImpl();
+            map.MapCreator = new DemoMap();
+            map.createMap();
+            return map;
         }
 
         /// <summary>
@@ -55,7 +58,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 
@@ -84,7 +87,7 @@ namespace PooP.Core.Implementation.Games
             Map map = new MapImpl();
             map.MapCreator = new SmallMap();
             map.createMap();
-            return Map;
+            return map;
         }
 
         /// <summary>
@@ -108,7 +111,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 
@@ -134,7 +137,10 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            throw new System.NotImplementedException();
+            Map map = new MapImpl();
+            map.MapCreator = new StandardMap();
+            map.createMap();
+            return map;
         }
 
         /// <summary>
@@ -158,7 +164,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 }

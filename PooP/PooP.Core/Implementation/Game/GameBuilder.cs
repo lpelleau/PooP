@@ -85,7 +85,7 @@ namespace PooP.Core.Implementation.Games
         /// </summary>
         public void start()
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 }

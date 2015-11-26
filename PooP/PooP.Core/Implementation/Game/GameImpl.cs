@@ -42,7 +42,7 @@ namespace PooP.Core.Implementation.Games
             Players = players;
             FirstPlayer = Players[new Random().Next(0,1)];
             NumberOfTurns = turns;
-            // Load tiles from Map
+            Map = m;
         }
 
         /// <summary>
@@ -87,7 +87,8 @@ namespace PooP.Core.Implementation.Games
         /// <returns></returns>
         public Player getCurrentPlayer()
         {
-            throw new System.NotImplementedException();
+            // TODO
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace PooP.Core.Implementation.Games
         /// </summary>
         public void endGame()
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
 
         /// <summary>

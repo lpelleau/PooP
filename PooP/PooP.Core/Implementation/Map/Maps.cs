@@ -25,6 +25,7 @@ namespace PooP.Core.Implementation.Maps
         /// <see cref="CreateMap"/>
         public TileFactory create()
         {
+            // TODO
             throw new NotImplementedException();
             //foreach (var tile in new Algo().CreateMap(SIZE * SIZE).Tiles)
             //{
@@ -88,6 +89,7 @@ namespace PooP.Core.Implementation.Maps
         /// <see cref="CreateMap"/>
         public TileFactory create()
         {
+            // TODO
             throw new NotImplementedException();
             //foreach (var tile in new Algo().CreateMap(SIZE * SIZE).Tiles)
             //{
