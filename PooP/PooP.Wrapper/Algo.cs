@@ -10,7 +10,7 @@ namespace PooP.Wrapper
     public enum TileType
     {
         Plain = 0,
-        Moutain = 1,
+        Mountain = 1,
         Forest = 2,
         Water = 3
     }
@@ -48,7 +48,7 @@ namespace PooP.Wrapper
         protected virtual void Dispose(bool disposing)
         {
             if (disposed)
-                return; 
+                return;
             if (disposing)
             {
                 Algo_delete(nativeAlgo);
@@ -57,7 +57,7 @@ namespace PooP.Wrapper
         }
 
 
-        [DllImport("PooP.NativeLib.dll", CallingConvention= CallingConvention.Cdecl)]
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]

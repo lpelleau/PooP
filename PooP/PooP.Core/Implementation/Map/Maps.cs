@@ -59,10 +59,10 @@ namespace PooP.Core.Implementation.Maps
                 for (int y = 0 ; y < SIZE ; y++)
                 {
                     switch(map[x * SIZE + y]) {
-                        case TileType.Forest:  fact.getTile("Forest", new Position(x, y));  break;
-                        case TileType.Moutain: fact.getTile("Moutain", new Position(x, y)); break;
-                        case TileType.Plain:   fact.getTile("Plain", new Position(x, y));   break;
-                        case TileType.Water:   fact.getTile("Water", new Position(x, y));   break;
+                        case TileType.Forest:   fact.getTile("Forest", new Position(x, y));   break;
+                        case TileType.Mountain: fact.getTile("Mountain", new Position(x, y)); break;
+                        case TileType.Plain:    fact.getTile("Plain", new Position(x, y));    break;
+                        case TileType.Water:    fact.getTile("Water", new Position(x, y));    break;
                     }
                 }
             }

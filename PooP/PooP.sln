@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooP.Core", "PooP.Core\PooP.Core.csproj", "{2035FD77-0548-40AD-AC8D-42D610DB4048}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooP.GUI", "PooP.GUI\PooP.GUI.csproj", "{50E18684-ADB1-40D3-9DFE-EA1717516171}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2035FD77-0548-40AD-AC8D-42D610DB4048} = {2035FD77-0548-40AD-AC8D-42D610DB4048}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PooP.NativeLib", "PooP.NativeLib\libCPPP.vcxproj", "{81E670FE-8518-4C71-B28D-D3D6AC90C790}"
 EndProject
@@ -14,8 +17,15 @@ EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "PooP.UML2", "PooP.UML2\PooP.UML2.modelproj", "{32EB2FE7-6B28-4B4A-A451-541622C98A91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooP.Wrapper", "PooP.Wrapper\PooP.Wrapper.csproj", "{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81E670FE-8518-4C71-B28D-D3D6AC90C790} = {81E670FE-8518-4C71-B28D-D3D6AC90C790}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooP.Test", "PooP.Test\PooP.Test.csproj", "{9EAB1619-E9CF-4217-BEDA-F18254A1B293}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3} = {04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}
+		{81E670FE-8518-4C71-B28D-D3D6AC90C790} = {81E670FE-8518-4C71-B28D-D3D6AC90C790}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

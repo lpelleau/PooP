@@ -2,7 +2,7 @@
 
 enum TileType {
 	Plain = 0,
-	Moutain = 1,
+	Mountain = 1,
 	Forest = 2,
 	Water = 3
 };
