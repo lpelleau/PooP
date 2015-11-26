@@ -47,21 +47,21 @@ namespace PooP.Test
             Assert.IsTrue(h.AttackDistance == 1);
             Assert.IsTrue(h.Defence == 3);
             Assert.IsTrue(h.Life == 15);
-            Assert.IsTrue(h.MoveDistance == 1);
+            Assert.IsTrue(h.MoveDistance == 2);
 
             // Test the orc constants
             Assert.IsTrue(o.Attack == 5);
-            Assert.IsTrue(o.AttackDistance == 2);
+            Assert.IsTrue(o.AttackDistance == 1);
             Assert.IsTrue(o.Defence == 2);
             Assert.IsTrue(o.Life == 17);
-            Assert.IsTrue(o.MoveDistance == 1);
+            Assert.IsTrue(o.MoveDistance == 2);
 
             // Test the elf constants
             Assert.IsTrue(e.Attack == 4);
             Assert.IsTrue(e.AttackDistance == 2);
             Assert.IsTrue(e.Defence == 3);
             Assert.IsTrue(e.Life == 12);
-            Assert.IsTrue(e.MoveDistance == 1);
+            Assert.IsTrue(e.MoveDistance == 2);
         }
 
         /// <summary>

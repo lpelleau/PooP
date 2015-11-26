@@ -25,14 +25,8 @@ namespace PooP.Core.Implementation.Maps
         /// </summary>
         public TileFactory Tiles
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         /// <summary>
