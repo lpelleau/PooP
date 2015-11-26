@@ -133,8 +133,8 @@ namespace PooP.Core.Implementation.Maps
         /// <returns>The data object corresponding to the factory</returns>
         public TileFactoryData ToData()
         {
-            List<TileCuple> tmpTiles = new List<TileCuple>();
-            Tiles.Keys.ToList().ForEach(e => tmpTiles.Add(new TileCuple()
+            List<TileCouple> tmpTiles = new List<TileCouple>();
+            Tiles.Keys.ToList().ForEach(e => tmpTiles.Add(new TileCouple()
             {
                 Name = e.GetType().Name,
                 Positions = Tiles.First(k => k.Key == e).Value

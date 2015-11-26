@@ -6,9 +6,15 @@ using PooP.Core.Implementation.Games;
 
 namespace PooP.Test
 {
+    /// <summary>
+    /// Tests the export
+    /// </summary>
     [TestClass]
     public class ExportTest
     {
+        /// <summary>
+        /// Sets the test environment
+        /// </summary>
         [TestInitialize]
         public void init()
         {
@@ -17,10 +23,13 @@ namespace PooP.Test
             new SmallGameBuilder().createGame(players,races);
         }
 
+        /// <summary>
+        /// Test the save
+        /// </summary>
         [TestMethod]
         public void ExportDataTest()
         {
-            GameSave.INSTANCE.save("test", GameBuilder.CURRENTGAME);
+            GameSave.INSTANCE.save("test");
         }
     }
 }

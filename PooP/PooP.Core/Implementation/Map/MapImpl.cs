@@ -27,7 +27,7 @@ namespace PooP.Core.Implementation.Maps
         {
             get
             {
-                
+                throw new NotImplementedException();
             }
 
             set

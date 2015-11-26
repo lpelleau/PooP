@@ -63,7 +63,6 @@
     <Compile Include="Implementation\PlayerImpl.cs" />
     <Compile Include="Resource\Position.cs" />
     <Compile Include="Interfaces\Command\Command.cs" />
-    <Compile Include="Interfaces\Command\Undoable.cs" />
     <Compile Include="Interfaces\Map\CreateMap.cs" />
     <Compile Include="Interfaces\Game\Game.cs" />
     <Compile Include="Interfaces\Map\Map.cs" />

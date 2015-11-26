@@ -10,6 +10,9 @@ using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation.Commands
 {
+    /// <summary>
+    /// Allows a unit to attack a tile
+    /// </summary>
     public class AttackCommand : PooP.Core.Interfaces.Commands.Command
     {
         private Unit MovedUnit;
@@ -20,6 +23,11 @@ namespace PooP.Core.Implementation.Commands
         private bool AttackSuccess;
         private int Damage;
 
+        /// <summary>
+        /// Creates the command
+        /// </summary>
+        /// <param name="Attacker">The unit that attacks</param>
+        /// <param name="AttackedTilePos">The tile that is under attack</param>
         public AttackCommand(Unit Attacker, Position AttackedTilePos)
         {
             MovedUnit = Attacker;
@@ -29,11 +37,18 @@ namespace PooP.Core.Implementation.Commands
             cost = MovedUnit.getMoveCost(Target);
         }
     
+        /// <summary>
+        /// Tests if the tile can be attacked by the unit
+        /// </summary>
+        /// <returns>true if the unit can attack the tile</returns>
         public bool canDo()
         {
             return MovedUnit.canAttack(Target);
         }
 
+        /// <summary>
+        /// Executes the command
+        /// </summary>
         public void execute()
         {
             // Determine who wins the battle
@@ -74,6 +89,9 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit.MovePoints -= cost;
         }
 
+        /// <summary>
+        /// Undoes the command
+        /// </summary>
         public void undo()
         {
             MovedUnit.MovePoints += cost;
@@ -105,6 +123,9 @@ namespace PooP.Core.Implementation.Commands
             }
         }
 
+        /// <summary>
+        /// Redoes the command
+        /// </summary>
         public void redo()
         {
             this.execute();

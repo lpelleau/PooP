@@ -8,23 +8,37 @@ using PooP.Core.Exceptions;
 
 namespace PooP.Test
 {
+    /// <summary>
+    /// Tests the race
+    /// </summary>
     [TestClass]
     public class RaceTest
     {
         Race h, o, e;
-        public RaceTest()
+
+        /// <summary>
+        /// Sets the test environment
+        /// </summary>
+        [TestInitialize]
+        public void init()
         {
             h = RaceFactoryImpl.getRace("Human");
             o = RaceFactoryImpl.getRace("Orc");
             e = RaceFactoryImpl.getRace("Elf");
         }
 
+        /// <summary>
+        /// Tests if a created race has 0 unit
+        /// </summary>
         [TestMethod]
         public void TestEmptyUnits()
         {
             Assert.IsTrue(h.Units.Count == 0);
         }
 
+        /// <summary>
+        /// Tests the constants for the races
+        /// </summary>
         [TestMethod]
         public void TestConstants()
         {
@@ -50,6 +64,9 @@ namespace PooP.Test
             Assert.IsTrue(e.MoveDistance == 1);
         }
 
+        /// <summary>
+        /// Tests the creation of a bad race
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(RaceException))]
         public void TestBadRace()
