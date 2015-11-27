@@ -27,6 +27,11 @@ namespace PooP.Wrapper
             return new WMap(tiles);
         }
 
+        public void BestMoves()
+        {
+
+        }
+
         public Algo()
         {
             nativeAlgo = Algo_new();
@@ -59,6 +64,9 @@ namespace PooP.Wrapper
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
+
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
+        extern static void Algo_bestMoves(IntPtr algo);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();

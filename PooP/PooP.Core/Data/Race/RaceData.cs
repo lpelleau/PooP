@@ -25,7 +25,7 @@ namespace PooP.Core.Data.Races
         /// <summary>
         /// The name of the race
         /// </summary>
-        public string Race
+        public string RaceName
         {
             get;
             set;
@@ -37,7 +37,7 @@ namespace PooP.Core.Data.Races
         /// <returns>The race that has been converted</returns>
         public Race ToRace()
         {
-            Race r = RaceFactoryImpl.getRace(Race);
+            Race r = RaceFactoryImpl.getRace(RaceName);
             r.Units = Units.ConvertAll(u => u.ToUnit());
             return r;
         }

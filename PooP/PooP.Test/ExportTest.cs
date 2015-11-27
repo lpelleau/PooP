@@ -31,6 +31,15 @@ namespace PooP.Test
         {
             GameSave.INSTANCE.save("test");
         }
+
+        /// <summary>
+        /// Test the load
+        /// </summary>
+        [TestMethod]
+        public void ImportDataTest()
+        {
+            GameSave.INSTANCE.load("test");
+        }
     }
 }
 

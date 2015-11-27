@@ -15,6 +15,7 @@ public:
 
 	// You can change the return type and the parameters according to your needs.
 	void fillMap(TileType map[], int size);
+	void bestMoves();
 };
 
 
@@ -25,6 +26,10 @@ public:
 
 EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size) {
 	return algo->fillMap(map, size);
+}
+
+EXPORTCDECL void Algo_bestMoves(Algo* algo) {
+	return algo->bestMoves();
 }
 
 EXPORTCDECL Algo* Algo_new() {
