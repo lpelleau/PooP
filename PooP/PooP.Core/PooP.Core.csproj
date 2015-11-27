@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Game\GameData.cs" />
-    <Compile Include="Data\Map\TileFactoryData.cs" />
+    <Compile Include="Data\Map\MapData.cs" />
     <Compile Include="Data\PlayerData.cs" />
     <Compile Include="Data\Race\RaceData.cs" />
     <Compile Include="Data\UnitData.cs" />
@@ -50,6 +50,7 @@
     <Compile Include="Exceptions\TileTypeException.cs" />
     <Compile Include="Implementation\Command\AttackCommand.cs" />
     <Compile Include="Implementation\Command\UndoableImpl.cs" />
+    <Compile Include="Implementation\Game\GameBuilderFactory.cs" />
     <Compile Include="Implementation\Game\GameBuilders.cs" />
     <Compile Include="Implementation\Command\EndTurn.cs" />
     <Compile Include="Implementation\Game\GameImpl.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Implementation\Game\GameSave.cs" />
     <Compile Include="Implementation\Race\RaceFactoryImpl.cs" />
     <Compile Include="Implementation\Race\Races.cs" />
-    <Compile Include="Implementation\Map\MapImpl.cs" />
     <Compile Include="Implementation\Command\MoveCommand.cs" />
     <Compile Include="Implementation\Map\Tiles.cs" />
     <Compile Include="Implementation\PlayerImpl.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="Interfaces\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementation\Map\Maps.cs" />
-    <Compile Include="Implementation\Map\TileFactory.cs" />
+    <Compile Include="Implementation\Map\MapImpl.cs" />
     <Compile Include="Implementation\UnitImpl.cs" />
   </ItemGroup>
   <ItemGroup>

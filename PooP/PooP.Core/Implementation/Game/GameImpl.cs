@@ -130,7 +130,7 @@ namespace PooP.Core.Implementation.Games
                 FirstPlayer = this.FirstPlayer.ToData(),
                 Players = this.Players.ToList().ConvertAll(p => (p.Equals(FirstPlayer)) ? p.ToData() : p.ToData(true)),
                 NumberOfTurns = this.NumberOfTurns,
-                Tiles = this.Map.Tiles.ToData()
+                Tiles = this.Map.ToData()
             };
         }
     }

@@ -23,7 +23,7 @@ namespace PooP.Core.Implementation.Maps
         /// Creates the map
         /// </summary>
         /// <see cref="CreateMap"/>
-        public TileFactory create()
+        public Map create()
         {
             // TODO
             throw new NotImplementedException();
@@ -49,9 +49,9 @@ namespace PooP.Core.Implementation.Maps
         /// Creates the map
         /// </summary>
         /// <see cref="CreateMap"/>
-        public TileFactory create()
+        public Map create()
         {
-            TileFactory fact = new TileFactory();
+            MapImpl fact = new MapImpl();
             fact.Tiles = new Dictionary<Tile, List<Position>>();
             TileType[] map = new Algo().CreateMap(SIZE * SIZE).Tiles;
 
@@ -87,7 +87,7 @@ namespace PooP.Core.Implementation.Maps
         /// Creates the map
         /// </summary>
         /// <see cref="CreateMap"/>
-        public TileFactory create()
+        public Map create()
         {
             // TODO
             throw new NotImplementedException();

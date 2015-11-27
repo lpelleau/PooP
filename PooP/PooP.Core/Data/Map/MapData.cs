@@ -10,7 +10,7 @@ namespace PooP.Core.Data.Maps
     /// Represents a map for the datas
     /// </summary>
     [Serializable]
-    public class TileFactoryData
+    public class MapData
     {
         /// <summary>
         /// The list of tiles and positions

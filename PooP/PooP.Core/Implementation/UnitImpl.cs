@@ -83,22 +83,22 @@ namespace PooP.Core.Implementation
         /// <returns>Victory points, in a 0-3 range</returns>
         public int getVictoryPoints()
         {
-            if (Race.GetType().Name == "Humain" && GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(Position).GetType().Name == "Water")
+            if (Race.GetType().Name == "Humain" && GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Water")
             {
                 return 0;
             }
             else if (Race.GetType().Name == "Elf")
             {
-                if (GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(Position).GetType().Name == "Mountain")
+                if (GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Mountain")
                 {
                     return 0;
                 }
-                else if (GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(Position).GetType().Name == "Forest")
+                else if (GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Forest")
                 {
                     return 3;
                 }
             }
-            else if (Race.GetType().Name == "Orc" && GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(Position).GetType().Name == "Mountain")
+            else if (Race.GetType().Name == "Orc" && GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Mountain")
             {
                 return 2;
             }
@@ -123,7 +123,7 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
-            return reachable(dest) && GameBuilder.CURRENTGAME.Map.Tiles.IsOccupied(dest);
+            return reachable(dest) && GameBuilder.CURRENTGAME.Map.IsOccupied(dest);
         }
 
         /// <summary>
@@ -158,21 +158,21 @@ namespace PooP.Core.Implementation
                 // Moving forward on Y axis
                 if (Position.YPosition < Target.YPosition)
                     for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
                 // Moving backward on Y axis
                 else
                     for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
             // Moving on X axis
             else
                 // Moving forward on X axis
                 if (Position.XPosition < Target.XPosition)
                     for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(new Position(Target.XPosition, i)));
+                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
                 // Moving backward on X axis
                 else
                     for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.Tiles.getTileAt(new Position(Target.XPosition, i)));
+                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
             return totalCost;
         }
 
@@ -183,7 +183,7 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit can move to the given position, false otherwise</returns>
         public bool canMoveTo(Position Target)
         {
-            return reachable(Target) && !GameBuilder.CURRENTGAME.Map.Tiles.IsOccupied(Target);
+            return reachable(Target) && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target);
         }
 
         /// <summary>
