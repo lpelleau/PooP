@@ -125,7 +125,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Race = "Human",
+                RaceName = "Human",
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
@@ -248,7 +248,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Race = "Elf",
+                RaceName = "Elf",
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
@@ -371,7 +371,7 @@ namespace PooP.Core.Implementation.Races
         {
             return new RaceData
             {
-                Race = "Orc",
+                RaceName = "Orc",
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
         }

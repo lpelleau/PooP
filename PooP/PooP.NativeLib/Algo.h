@@ -8,6 +8,8 @@ enum TileType {
 };
 
 class Algo {
+private:
+	bool generationOk(int *nbTiles);
 
 public:
 	Algo() {}
