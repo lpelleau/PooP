@@ -14,6 +14,6 @@ namespace PooP.Core.Interfaces.Maps
         /// <summary>
         /// Creates the map
         /// </summary>
-        TileFactory create();
+        Map create();
     }
 }

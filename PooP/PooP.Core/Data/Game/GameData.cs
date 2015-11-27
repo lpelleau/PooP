@@ -42,7 +42,7 @@ namespace PooP.Core.Data.Games
         /// <summary>
         /// The map of the game
         /// </summary>
-        public TileFactoryData Tiles
+        public MapData Tiles
         {
             get; set;
         }

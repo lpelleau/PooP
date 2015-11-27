@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest.cs" />
     <Compile Include="RaceTest.cs" />
+    <Compile Include="GameBuildTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PooP.Core\PooP.Core.csproj">

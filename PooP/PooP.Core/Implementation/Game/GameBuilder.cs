@@ -5,6 +5,8 @@ using System.Text;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Games;
 using PooP.Core.Interfaces.Maps;
+using PooP.Core.Interfaces.Races;
+using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -54,6 +56,12 @@ namespace PooP.Core.Implementation.Games
         /// <param name="races">An array with the players races as strings</param>
         public void createGame(string[] playersNames, string[] races)
         {
+            List<string> UsedRaces = new List<string>();
+            foreach (string race in races)
+            {
+                if (UsedRaces.Contains(race)) throw new RaceException(race);
+                UsedRaces.Add(race);
+            }
             Player[] p = getPlayers(playersNames, races);
             Map m = createMap();
             placeUnits();

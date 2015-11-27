@@ -33,7 +33,7 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit = Attacker;
             OldPos = MovedUnit.Position;
             Target = AttackedTilePos;
-            Defender = GameBuilder.CURRENTGAME.Map.Tiles.getBestDefenderAt(AttackedTilePos);
+            Defender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(AttackedTilePos);
             cost = MovedUnit.getMoveCost(Target);
         }
     

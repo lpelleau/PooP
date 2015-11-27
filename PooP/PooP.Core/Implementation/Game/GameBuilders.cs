@@ -31,9 +31,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            Map map = new MapImpl();
-            map.MapCreator = new DemoMap();
-            map.createMap();
+            Map map = new DemoMap().create();
             return map;
         }
 
@@ -84,9 +82,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            Map map = new MapImpl();
-            map.MapCreator = new SmallMap();
-            map.createMap();
+            Map map = new SmallMap().create();
             return map;
         }
 
@@ -137,9 +133,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override Map createMap()
         {
-            Map map = new MapImpl();
-            map.MapCreator = new StandardMap();
-            map.createMap();
+            Map map = new StandardMap().create();
             return map;
         }
 

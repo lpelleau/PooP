@@ -9,7 +9,7 @@ namespace PooP.Core.Exceptions
     /// <summary>
     /// Exception thrown whenever an unexisting difficulty is used
     /// </summary>
-    class NotExistingDifficultyException : Exception
+    public class NotExistingDifficultyException : Exception
     {
         /// <summary>
         /// Creates the exception
