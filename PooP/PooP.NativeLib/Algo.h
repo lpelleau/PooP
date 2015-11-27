@@ -9,7 +9,8 @@ enum TileType {
 
 class Algo {
 private:
-	bool generationOk(int *nbTiles);
+	int generateNext(TileType map[], int h, TileType type, int x, int y, int remain);
+	int generateNextInner(TileType map[], int sixe, TileType type, int pos, int remain);
 
 public:
 	Algo() {}
