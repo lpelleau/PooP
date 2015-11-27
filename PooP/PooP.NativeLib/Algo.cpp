@@ -4,21 +4,21 @@
 #include <time.h>
 #include <math.h>
 
-void Algo::fillMap(TileType map[], int size)
+void Algo::fillMap(TileType map[], int size, int players[])
 {
 	//TODO : init map tiles with a better algorithm
 	// A map should have the same  number of the differents types of tile
 	// Place the units too
 
-	int height = sqrt(size);
-	int obj = size / 4;
+	int height = sqrt(size); // Height of the map
+	int obj = size / 4; // Objectif for the number of each tiles
 	int nbTiles[4] { 0 };
 	for (int i = 0; i < size; i++) { // Init the map to full plain
 		map[i] = Plain;
 		nbTiles[Plain]++;
 	}
 
-	srand(time(NULL));
+	srand(time(NULL)); // Random init
 
 	// Fit Mountain
 	while (nbTiles[Mountain] != obj) {
@@ -64,6 +64,44 @@ void Algo::fillMap(TileType map[], int size)
 		nbTiles[Water] += added;
 		nbTiles[Plain] -= added;
 	}
+
+	// Players placement
+	// P1
+	int border = rand() % 4;
+
+	switch (border) {
+	case 0: // West
+		players[0] = rand() % 2;
+		players[1] = rand() % height;
+		break;
+	case 1: // East
+		players[0] = rand() % 2 + height - 2;
+		players[1] = rand() % height;
+		break;
+	case 2: // South
+		players[0] = rand() % height;
+		players[1] = rand() % 2 + height - 2;
+		break;
+	case 3: // North
+		players[0] = rand() % height;
+		players[1] = rand() % 2;
+		break;
+	}
+
+	// P2
+	players[2] = height - 1 - players[0];// Strict opposit of P1
+	players[3] = height - 1 - players[1];
+	int move, res;
+	do {
+		move = 1 - (rand() % 3);
+		res = (players[2] + move) * height + players[3];
+	} while (res < 0 || res >= size);
+	players[2] += move; // Randomly move near the opposite
+	do {
+		move = 1 - (rand() % 3);
+		res = players[2] * height + (players[3] + move);
+	} while (res < 0 || res >= size);
+	players[3] += move; // Randomly move near the opposite
 }
 
 int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
@@ -85,7 +123,7 @@ int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int r
 }
 
 int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, int remain) {
-	if (pos > 0 && pos < size && map[pos] == Plain) {
+	if (pos >= 0 && pos < size && map[pos] == Plain) {
 		if (remain > 0) {
 			if (rand() % 2) {
 				map[pos] = type;

@@ -23,7 +23,8 @@ namespace PooP.Wrapper
         public WMap CreateMap(int nbTiles)
         {
             var tiles = new TileType[nbTiles];
-            Algo_fillMap(nativeAlgo, tiles, nbTiles);
+            var players = new int[4];
+            Algo_fillMap(nativeAlgo, tiles, nbTiles, players);
             return new WMap(tiles);
         }
 
@@ -63,7 +64,7 @@ namespace PooP.Wrapper
 
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
+        extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles, int[] players);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_bestMoves(IntPtr algo);
