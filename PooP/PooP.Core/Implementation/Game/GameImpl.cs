@@ -25,10 +25,14 @@ namespace PooP.Core.Implementation.Games
         /// <param name="data">Datas to load</param>
         public GameImpl(GameData data)
         {
-            FirstPlayer = new PlayerImpl(data.FirstPlayer);
             Players = data.Players.ConvertAll(p => p.ToPlayer()).ToArray();
+            foreach (Player p in Players) {
+                if (data.FirstPlayer.Name == p.Name)
+                    FirstPlayer = p;
+            }
             NumberOfTurns = data.NumberOfTurns;
             // TO DO : Load the tiles
+            Map = new MapImpl(data.Tiles);
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace PooP.Test
         public void ImportDataTest()
         {
             GameSave.INSTANCE.load("test");
+            GameSave.INSTANCE.save("test2");
         }
     }
 }

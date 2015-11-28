@@ -35,7 +35,10 @@ namespace PooP.Core.Implementation.Maps
         /// <param name="data">Datas to load</param>
         public MapImpl(MapData data)
         {
-            Tiles.Clear();
+            if (Tiles == null)
+                Tiles =  new Dictionary<Tile, List<Position>>();
+            else
+                Tiles.Clear();
             data.Tiles.ForEach(c => Tiles.Add(ToTile(c.Name), c.Positions));
         }
 

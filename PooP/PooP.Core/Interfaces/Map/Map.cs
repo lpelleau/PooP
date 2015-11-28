@@ -12,6 +12,13 @@ namespace PooP.Core.Interfaces.Maps
     /// </summary>
     public interface Map
     {
+        // The created tiles, with their positions
+        Dictionary<Tile, List<Position>> Tiles
+        {
+            get;
+            set;
+        }
+
         // Creates a tile for the given type and position
         // If a tile of the given type already exists, it will only have another position more
         // If the position is already used, throw an exception
