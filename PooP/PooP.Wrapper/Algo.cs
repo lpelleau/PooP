@@ -20,10 +20,9 @@ namespace PooP.Wrapper
         bool disposed = false;
         IntPtr nativeAlgo;
 
-        public WMap CreateMap(int nbTiles)
+        public WMap CreateMap(int nbTiles, int[] players)
         {
             var tiles = new TileType[nbTiles];
-            var players = new int[4];
             Algo_fillMap(nativeAlgo, tiles, nbTiles, players);
             return new WMap(tiles);
         }

@@ -53,7 +53,8 @@ namespace PooP.Core.Implementation.Maps
         {
             MapImpl fact = new MapImpl();
             fact.Tiles = new Dictionary<Tile, List<Position>>();
-            TileType[] map = new Algo().CreateMap(SIZE * SIZE).Tiles;
+            int[] players = new int[4];
+            TileType[] map = new Algo().CreateMap(SIZE * SIZE, players).Tiles;
 
             for (int x = 0 ; x < SIZE ; x++)
             {
@@ -67,6 +68,9 @@ namespace PooP.Core.Implementation.Maps
                     }
                 }
             }
+
+            Position p1 = new Position(players[0], players[1]);
+            Position p2 = new Position(players[2], players[3]);
 
             return fact;
         }
