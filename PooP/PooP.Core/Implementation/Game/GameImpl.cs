@@ -31,7 +31,6 @@ namespace PooP.Core.Implementation.Games
                     FirstPlayer = p;
             }
             NumberOfTurns = data.NumberOfTurns;
-            // TO DO : Load the tiles
             Map = new MapImpl(data.Tiles);
         }
 
@@ -103,8 +102,7 @@ namespace PooP.Core.Implementation.Games
         /// <returns></returns>
         public Player getCurrentPlayer()
         {
-            // TODO
-            throw new NotImplementedException();
+            return GameBuilder.CURRENTGAME.FirstPlayer;
         }
 
         /// <summary>
