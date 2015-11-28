@@ -25,7 +25,10 @@ void Algo::fillMap(TileType map[], int size, int players[])
 		int x = rand() % height; // Calculate center point
 		int y = rand() % height;
 
-		map[x * height + y] = Mountain; // Add the tile on the map
+		int pos = x * height + y;
+		if (map[pos] != Plain)
+			continue;
+		map[pos] = Mountain; // Add the tile on the map
 		nbTiles[Mountain]++;
 		nbTiles[Plain]--;
 
@@ -40,7 +43,10 @@ void Algo::fillMap(TileType map[], int size, int players[])
 		int x = rand() % height; // Calculate center point
 		int y = rand() % height;
 
-		map[x * height + y] = Forest; // Add the tile on the map
+		int pos = x * height + y;
+		if (map[pos] != Plain)
+			continue;
+		map[pos] = Forest; // Add the tile on the map
 		nbTiles[Forest]++;
 		nbTiles[Plain]--;
 
@@ -55,7 +61,10 @@ void Algo::fillMap(TileType map[], int size, int players[])
 		int x = rand() % height; // Calculate center point
 		int y = rand() % height;
 
-		map[x * height + y] = Water; // Add the tile on the map
+		int pos = x * height + y;
+		if (map[pos] != Plain)
+			continue;
+		map[pos] = Water; // Add the tile on the map
 		nbTiles[Water]++;
 		nbTiles[Plain]--;
 
@@ -105,21 +114,22 @@ void Algo::fillMap(TileType map[], int size, int players[])
 }
 
 int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
-	int tilesAdded = 0;
+	int remainB = remain;
 	int size = h * h;
 
 	int pos = (x - 1) * h + y; // West
-	tilesAdded += generateNextInner(map, size, type, pos, remain);
+	remain -= generateNextInner(map, size, type, pos, remain);
 
 	pos = (x + 1) * h + y; // East
-	tilesAdded += generateNextInner(map, size, type, pos, remain);
+	remain -= generateNextInner(map, size, type, pos, remain);
 
 	pos = x * h + (y - 1); // South
-	tilesAdded += generateNextInner(map, size, type, pos, remain);
+	remain -= generateNextInner(map, size, type, pos, remain);
 
 	pos = x * h + (y + 1); // North
-	tilesAdded += generateNextInner(map, size, type, pos, remain);
-	return tilesAdded;
+	remain -= generateNextInner(map, size, type, pos, remain);
+
+	return remainB - remain;
 }
 
 int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, int remain) {
