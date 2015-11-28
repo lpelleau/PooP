@@ -71,12 +71,19 @@ namespace PooP.Core.Implementation
         /// <returns>The data object representing this player</returns>
         public PlayerData ToData(bool FstP)
         {
-            return new PlayerData
-            {
-                Race = this.Race.ToData(),
-                Name = this.Name,
-                Fst = FstP
-            };
+            if (FstP) 
+                return new PlayerData
+                {
+                    Name = this.Name,
+                    Fst = FstP
+                };
+            else
+                return new PlayerData
+                {
+                    Race = this.Race.ToData(),
+                    Name = this.Name,
+                    Fst = FstP
+                };
         }
     }
 }

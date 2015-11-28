@@ -5,6 +5,7 @@ using System.Text;
 using PooP.Core.Interfaces.Maps;
 using PooP.Wrapper;
 using PooP.Core.Ressource;
+using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation.Maps
 {
@@ -70,7 +71,20 @@ namespace PooP.Core.Implementation.Maps
             }
 
             Position p1 = new Position(players[0], players[1]);
+            for (int i = 0; i < 5; i++)
+            {
+                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[0].Race, p1);
+                GameBuilder.CURRENTGAME.Players[0].Race.Units.Add(u);
+            }
+
             Position p2 = new Position(players[2], players[3]);
+            for (int i = 0; i < 5; i++)
+            {
+                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[1].Race, p2);
+                GameBuilder.CURRENTGAME.Players[1].Race.Units.Add(u);
+            }
+
+            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % 2];
 
             return fact;
         }

@@ -63,9 +63,10 @@ namespace PooP.Core.Implementation.Games
                 UsedRaces.Add(race);
             }
             Player[] p = getPlayers(playersNames, races);
+            CURRENTGAME = new GameImpl(p, NbTurns);
             Map m = createMap();
+            GameBuilder.CURRENTGAME.Map = m;
             placeUnits();
-            CURRENTGAME = new GameImpl(p,m,NbTurns);
             OpenedFile = null;
         }
 

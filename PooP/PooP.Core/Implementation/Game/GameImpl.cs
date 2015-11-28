@@ -46,6 +46,18 @@ namespace PooP.Core.Implementation.Games
         }
 
         /// <summary>
+        /// Creates a game without the map
+        /// </summary>
+        /// <param name="players">Names of the players</param>
+        /// <param name="turns">Number of turns for the game</param>
+        public GameImpl(Player[] players, int turns)
+        {
+            Players = players;
+            FirstPlayer = Players[new Random().Next(0, 1)];
+            NumberOfTurns = turns;
+        }
+
+        /// <summary>
         /// First player to play
         /// </summary>
         public Player FirstPlayer
@@ -127,8 +139,8 @@ namespace PooP.Core.Implementation.Games
         {
             return new GameData
             {
-                FirstPlayer = this.FirstPlayer.ToData(),
-                Players = this.Players.ToList().ConvertAll(p => (p.Equals(FirstPlayer)) ? p.ToData() : p.ToData(true)),
+                FirstPlayer = this.FirstPlayer.ToData(true),
+                Players = this.Players.ToList().ConvertAll(p => p.ToData()),
                 NumberOfTurns = this.NumberOfTurns,
                 Tiles = this.Map.ToData()
             };
