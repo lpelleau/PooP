@@ -56,7 +56,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            // TODO
+            // TODO : but useless, already done in createMap
         }
     }
 
@@ -107,7 +107,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            // TODO
+            // TODO : but useless, already done in createMap
         }
     }
 
@@ -158,7 +158,7 @@ namespace PooP.Core.Implementation.Games
         /// <see cref="GameBuilder"/>
         public override void placeUnits()
         {
-            // TODO
+            // TODO : but useless, already done in createMap
         }
     }
 }
