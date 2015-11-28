@@ -40,6 +40,8 @@ namespace PooP.Test
         {
             GameSave.INSTANCE.load("test");
             GameSave.INSTANCE.save("test2");
+
+            Assert.IsTrue(System.IO.File.ReadAllText("test.flav") == System.IO.File.ReadAllText("test2.flav"));
         }
     }
 }

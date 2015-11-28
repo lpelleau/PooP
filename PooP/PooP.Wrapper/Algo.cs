@@ -20,11 +20,20 @@ namespace PooP.Wrapper
         bool disposed = false;
         IntPtr nativeAlgo;
 
-        public WMap CreateMap(int nbTiles, int[] players)
+        public static Algo INSTANCE = new Algo();
+
+        public WMap CreateMap(int nbTiles)
         {
             var tiles = new TileType[nbTiles];
-            Algo_fillMap(nativeAlgo, tiles, nbTiles, players);
+            Algo_fillMap(nativeAlgo, tiles, nbTiles);
             return new WMap(tiles);
+        }
+
+        public int[] PlacePlayers(int nbTiles)
+        {
+            var players = new int[4];
+            Algo_placePlayers(nativeAlgo, players, nbTiles);
+            return players;
         }
 
         public void BestMoves()
@@ -32,7 +41,7 @@ namespace PooP.Wrapper
 
         }
 
-        public Algo()
+        private Algo()
         {
             nativeAlgo = Algo_new();
         }
@@ -63,7 +72,10 @@ namespace PooP.Wrapper
 
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles, int[] players);
+        extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
+
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
+        extern static void Algo_placePlayers(IntPtr algo, int[] players, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_bestMoves(IntPtr algo);

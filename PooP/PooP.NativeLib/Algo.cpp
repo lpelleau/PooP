@@ -4,12 +4,8 @@
 #include <time.h>
 #include <math.h>
 
-void Algo::fillMap(TileType map[], int size, int players[])
+void Algo::fillMap(TileType map[], int size)
 {
-	//TODO : init map tiles with a better algorithm
-	// A map should have the same  number of the differents types of tile
-	// Place the units too
-
 	int height = sqrt(size); // Height of the map
 	int obj = size / 4; // Objectif for the number of each tiles
 	int nbTiles[4] { 0 };
@@ -73,6 +69,41 @@ void Algo::fillMap(TileType map[], int size, int players[])
 		nbTiles[Water] += added;
 		nbTiles[Plain] -= added;
 	}
+}
+
+int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
+	int remainB = remain;
+	int size = h * h;
+
+	int pos = (x - 1) * h + y; // West
+	remain -= generateNextInner(map, size, type, pos, remain);
+
+	pos = (x + 1) * h + y; // East
+	remain -= generateNextInner(map, size, type, pos, remain);
+
+	pos = x * h + (y - 1); // South
+	remain -= generateNextInner(map, size, type, pos, remain);
+
+	pos = x * h + (y + 1); // North
+	remain -= generateNextInner(map, size, type, pos, remain);
+
+	return remainB - remain;
+}
+
+int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, int remain) {
+	if (pos >= 0 && pos < size && map[pos] == Plain) {
+		if (remain > 0) {
+			if (rand() % 2) {
+				map[pos] = type;
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+void Algo::placePlayers(int players[], int size) {
+	int height = sqrt(size); // Height of the map
 
 	// Players placement
 	// P1
@@ -111,37 +142,6 @@ void Algo::fillMap(TileType map[], int size, int players[])
 		res = players[2] * height + (players[3] + move);
 	} while (res < 0 || res >= size);
 	players[3] += move; // Randomly move near the opposite
-}
-
-int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
-	int remainB = remain;
-	int size = h * h;
-
-	int pos = (x - 1) * h + y; // West
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = (x + 1) * h + y; // East
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = x * h + (y - 1); // South
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = x * h + (y + 1); // North
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	return remainB - remain;
-}
-
-int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, int remain) {
-	if (pos >= 0 && pos < size && map[pos] == Plain) {
-		if (remain > 0) {
-			if (rand() % 2) {
-				map[pos] = type;
-				return 1;
-			}
-		}
-	}
-	return 0;
 }
 
 void Algo::bestMoves()

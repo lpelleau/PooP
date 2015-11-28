@@ -17,7 +17,8 @@ public:
 	~Algo() {}
 
 	// You can change the return type and the parameters according to your needs.
-	void fillMap(TileType map[], int size, int players[]);
+	void fillMap(TileType map[], int size);
+	void placePlayers(int players[], int size);
 	void bestMoves();
 };
 
@@ -27,8 +28,12 @@ public:
 // export all C++ class/methods as friendly C functions to be consumed by external component in a portable way
 ///
 
-EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size, int players[]) {
-	return algo->fillMap(map, size, players);
+EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size) {
+	return algo->fillMap(map, size);
+}
+
+EXPORTCDECL void Algo_PlacePlayers(Algo* algo, int players[], int size) {
+	return algo->placePlayers(players, size);
 }
 
 EXPORTCDECL void Algo_bestMoves(Algo* algo) {
