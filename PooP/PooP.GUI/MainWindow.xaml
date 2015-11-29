@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:l="clr-namespace:PooP.GUI"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Choix des races" Height="258.89" Width="292.366">
+    Title="Choix des races" Height="258.89" Width="292.366" ResizeMode="NoResize">
     <Window.Resources>
         <l:NegateBool x:Key="NegateBool"/>
         <l:ConvNotEmpty x:Key="ConvNotEmpty" />
@@ -11,23 +11,24 @@
 
     <Grid Margin="0,0,0,0" RenderTransformOrigin="0.614,0.5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="59*"/>
-            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Race J1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
         <RadioButton Name="Elf1" Content="Elf" HorizontalAlignment="Left" Margin="8,28,0,0" VerticalAlignment="Top" GroupName="Race1" IsEnabled="{Binding Path=IsChecked, ElementName=Elf2, Converter={StaticResource NegateBool}}" Height="16" Width="66" IsChecked="True"/>
         <RadioButton Name="Orc1" Content="Human" HorizontalAlignment="Left" Margin="8,60,0,0" VerticalAlignment="Top" GroupName="Race1"  IsEnabled="{Binding Path=IsChecked, ElementName=Orc2, Converter={StaticResource NegateBool}}" Height="16" Width="66"/>
         <RadioButton Name="Human1" Content="Orc" HorizontalAlignment="Left" Margin="8,44,0,0" VerticalAlignment="Top" GroupName="Race1" RenderTransformOrigin="0.5,0.5"  IsEnabled="{Binding Path=IsChecked, ElementName=Human2, Converter={StaticResource NegateBool}}" Height="16" Width="66"/>
-        <Label Content="Race J2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
-        <RadioButton Name="Elf2" Content="Elf" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="0.724,0.25" IsEnabled="{Binding Path=IsChecked, ElementName=Elf1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67" />
-        <RadioButton Name="Orc2" Content="Human" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" GroupName="Race2" IsEnabled="{Binding Path=IsChecked, ElementName=Orc1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67"/>
-        <RadioButton Name="Human2" Content="Orc" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="2.029,0.625" IsEnabled="{Binding Path=IsChecked, ElementName=Human1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67" IsChecked="True"/>
+        <Label Content="Race J2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <RadioButton Name="Elf2" Content="Elf" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="0.724,0.25" IsEnabled="{Binding Path=IsChecked, ElementName=Elf1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67" Grid.ColumnSpan="2" />
+        <RadioButton Name="Orc2" Content="Human" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" GroupName="Race2" IsEnabled="{Binding Path=IsChecked, ElementName=Orc1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67" Grid.ColumnSpan="2"/>
+        <RadioButton Name="Human2" Content="Orc" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="2.029,0.625" IsEnabled="{Binding Path=IsChecked, ElementName=Human1, Converter={StaticResource NegateBool}}" Grid.Column="1" Height="16" Width="67" IsChecked="True" Grid.ColumnSpan="2"/>
         <TextBox x:Name="NameP1" HorizontalAlignment="Left" Height="23" Margin="8,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Nom du joueur 1"/>
-        <TextBox x:Name="NameP2" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" ToolTip="Nom du joueur 2"/>
+        <TextBox x:Name="NameP2" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" ToolTip="Nom du joueur 2" Grid.ColumnSpan="2"/>
         <Label Content="Name P1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="0,81,0,0"/>
-        <Label Content="Name P2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="0,81,0,0"/>
+        <Label Content="Name P2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="0,81,0,0" Grid.ColumnSpan="2"/>
         <Label Content="Difficulty" Margin="0,142,0,45" RenderTransformOrigin="0.515,0.365" FontWeight="Bold"/>
-        <Grid Grid.ColumnSpan="2" Margin="0,0,0,30">
+        <Grid Grid.ColumnSpan="3" Margin="0,0,0,30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="33*"/>
                 <ColumnDefinition Width="33*"/>
@@ -37,7 +38,7 @@
             <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,167,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1"/>
             <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,167,0,0" VerticalAlignment="Top" Width="85" Grid.Column="2"/>
         </Grid>
-        <Button x:Name="start_button" Content="Start" Grid.Column="1" HorizontalAlignment="Left" Margin="91,198,0,0" VerticalAlignment="Top" Width="39">
+        <Button x:Name="start_button" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="76,198,0,0" VerticalAlignment="Top" Width="39">
             <Button.IsEnabled>
                 <MultiBinding Converter="{StaticResource ConvAnd}">
                     <Binding ElementName="NameP1" Path="Text" Converter="{StaticResource ConvNotEmpty}"/>

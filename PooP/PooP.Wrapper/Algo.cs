@@ -7,14 +7,6 @@ using System.Threading.Tasks;
 
 namespace PooP.Wrapper
 {
-    public enum TileType
-    {
-        Plain = 0,
-        Mountain = 1,
-        Forest = 2,
-        Water = 3
-    }
-
     public class Algo : IDisposable
     {
         bool disposed = false;
