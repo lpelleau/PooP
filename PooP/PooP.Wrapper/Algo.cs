@@ -24,7 +24,7 @@ namespace PooP.Wrapper
         public int[] PlacePlayers(int nbTiles)
         {
             var players = new int[4];
-            Algo_placePlayers(nativeAlgo, players, nbTiles);
+            Algo_PlacePlayers(nativeAlgo, players, nbTiles);
             return players;
         }
 
@@ -67,7 +67,7 @@ namespace PooP.Wrapper
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_placePlayers(IntPtr algo, int[] players, int nbTiles);
+        extern static void Algo_PlacePlayers(IntPtr algo, int[] players, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_bestMoves(IntPtr algo);

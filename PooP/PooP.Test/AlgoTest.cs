@@ -5,14 +5,14 @@ using PooP.Wrapper;
 
 namespace PooP.Test
 {
-    private static int SIZE = 10;
-
     /// <summary>
     /// Tests the C++ algorithmes
     /// </summary>
     [TestClass]
     public class AlgoTest
     {
+        private static int SIZE = 10;
+
         /// <summary>
         /// Test the map generation
         /// (Same number of tile for each types)
