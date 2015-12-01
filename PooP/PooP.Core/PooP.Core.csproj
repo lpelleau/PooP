@@ -61,6 +61,7 @@
     <Compile Include="Implementation\Command\MoveCommand.cs" />
     <Compile Include="Implementation\Map\Tiles.cs" />
     <Compile Include="Implementation\PlayerImpl.cs" />
+    <Compile Include="Resource\Algo.cs" />
     <Compile Include="Resource\Position.cs" />
     <Compile Include="Interfaces\Command\Command.cs" />
     <Compile Include="Interfaces\Map\CreateMap.cs" />
@@ -75,16 +76,11 @@
     <Compile Include="Implementation\Map\Maps.cs" />
     <Compile Include="Implementation\Map\MapImpl.cs" />
     <Compile Include="Implementation\UnitImpl.cs" />
+    <Compile Include="Resource\WrapperMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagramInterfaces.cd" />
     <None Include="ClassDiagramImplementation.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PooP.Wrapper\PooP.Wrapper.csproj">
-      <Project>{04085094-32f3-4c5e-8eb4-5eb4aa5ac3f3}</Project>
-      <Name>PooP.Wrapper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

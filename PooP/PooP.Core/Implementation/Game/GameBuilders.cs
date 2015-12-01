@@ -5,7 +5,6 @@ using System.Text;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Maps;
-using PooP.Wrapper;
 
 namespace PooP.Core.Implementation.Games
 {
