@@ -13,15 +13,6 @@ namespace PooP.Core.Data.Games
     public class GameData
     {
         /// <summary>
-        /// The first player to play
-        /// </summary>
-        public PlayerData FirstPlayer
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// The players
         /// </summary>
         public List<PlayerData> Players

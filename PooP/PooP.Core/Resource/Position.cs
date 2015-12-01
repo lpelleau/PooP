@@ -43,7 +43,7 @@ namespace PooP.Core.Ressource
             get { return x; }
             set {
                 if (value >= 0) x = value;
-                else throw new BadPositionException();
+                else throw new BadPositionException("x=" + value);
             }
         }
 
@@ -57,7 +57,7 @@ namespace PooP.Core.Ressource
             set
             {
                 if (value >= 0) y = value;
-                else throw new BadPositionException();
+                else throw new BadPositionException("y=" + value);
             }
         }
     }

@@ -9,6 +9,7 @@ using PooP.Core.Implementation.Races;
 using PooP.Core.Data.Games;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Exceptions;
+using PooP.Core.Data;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -25,11 +26,13 @@ namespace PooP.Core.Implementation.Games
         /// <param name="data">Datas to load</param>
         public GameImpl(GameData data)
         {
-            Players = data.Players.ConvertAll(p => p.ToPlayer()).ToArray();
-            foreach (Player p in Players) {
-                if (data.FirstPlayer.Name == p.Name)
-                    FirstPlayer = p;
+            List<Player> PlayersList = new List<Player>();
+            foreach (PlayerData p in data.Players) {
+                if (p.Fst)
+                    FirstPlayer = p.ToPlayer();
+                PlayersList.Add(p.ToPlayer());
             }
+            Players = PlayersList.ToArray();
             NumberOfTurns = data.NumberOfTurns;
             Map = new MapImpl(data.Tiles);
         }
@@ -141,8 +144,7 @@ namespace PooP.Core.Implementation.Games
         {
             return new GameData
             {
-                FirstPlayer = this.FirstPlayer.ToData(true),
-                Players = this.Players.ToList().ConvertAll(p => p.ToData()),
+                Players = this.Players.ToList().ConvertAll(p => p.ToData(p.Equals(this.FirstPlayer))),
                 NumberOfTurns = this.NumberOfTurns,
                 Tiles = this.Map.ToData()
             };

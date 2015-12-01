@@ -46,7 +46,7 @@ namespace PooP.Test
         }
         /// <summary>
         /// Test the placement of the players
-        /// (they should not be on the same tile)
+        /// (they should not be on the same tile and be at a distanec of 8 minimum)
         /// </summary>
         [TestMethod]
         public void PlayersPlacementTest()
