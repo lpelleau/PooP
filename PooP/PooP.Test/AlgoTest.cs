@@ -17,7 +17,7 @@ namespace PooP.Test
         /// Test the map generation
         /// (Same number of tile for each types)
         /// </summary>
-        [TestMethod]
+        /*[TestMethod]
         public void MapGenerationTest()
         {
             Algo alg = Algo.INSTANCE;
@@ -45,7 +45,7 @@ namespace PooP.Test
             int[] players = alg.PlacePlayers(SIZE * SIZE);
 
             Assert.IsTrue(players[0] != players[2] && players[1] != players[3]);
-        }
+        }*/
     }
 }
 

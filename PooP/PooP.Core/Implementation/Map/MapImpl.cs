@@ -149,6 +149,7 @@ namespace PooP.Core.Implementation.Maps
                 Name = e.GetType().Name,
                 Positions = Tiles.First(k => k.Key == e).Value
             }));
+            tmpTiles.Sort((k1, k2) => k1.Name.CompareTo(k2.Name));
             return new MapData
             {
                 Tiles = tmpTiles

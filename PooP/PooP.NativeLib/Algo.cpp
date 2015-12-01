@@ -140,7 +140,7 @@ void Algo::placePlayers(int players[], int size) {
 	do {
 		move = 1 - (rand() % 3);
 		res = players[2] * height + (players[3] + move);
-	} while (res < 0 || res >= size);
+	} while (res < 0 || res >= size || players[3] + move < 0);
 	players[3] += move; // Randomly move near the opposite
 }
 
