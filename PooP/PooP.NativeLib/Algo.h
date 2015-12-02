@@ -7,8 +7,16 @@ enum TileType {
 	Water = 3
 };
 
+enum Race {
+	Human = 0,
+	Orc = 1,
+	Elf = 2
+};
+
 class Algo {
 private:
+	TileType* _map;
+
 	int generateNext(TileType map[], int h, TileType type, int x, int y, int remain);
 	int generateNextInner(TileType map[], int sixe, TileType type, int pos, int remain);
 
@@ -19,7 +27,7 @@ public:
 	// You can change the return type and the parameters according to your needs.
 	void fillMap(TileType map[], int size);
 	void placePlayers(int players[], int size);
-	void bestMoves();
+	void bestMoves(int size, Race race, int units[], int nbUnits, int moves[]);
 };
 
 
@@ -36,8 +44,8 @@ EXPORTCDECL void Algo_PlacePlayers(Algo* algo, int players[], int size) {
 	return algo->placePlayers(players, size);
 }
 
-EXPORTCDECL void Algo_bestMoves(Algo* algo) {
-	return algo->bestMoves();
+EXPORTCDECL void Algo_bestMoves(Algo* algo, int size, Race race, int units[], int nbUnits, int moves[]) {
+	return algo->bestMoves(size, race, units, nbUnits, moves);
 }
 
 EXPORTCDECL Algo* Algo_new() {

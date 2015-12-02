@@ -14,6 +14,13 @@ namespace PooP.Core.Ressource
         Water = 3
     }
 
+    public enum WRace
+    {
+        Human = 0,
+        Orc = 1,
+        Elf = 2
+    };
+
     public class WMap
     {
         public WMap(TileType[] tiles)

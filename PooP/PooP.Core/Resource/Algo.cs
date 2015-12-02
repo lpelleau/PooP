@@ -28,9 +28,11 @@ namespace PooP.Core.Ressource
             return players;
         }
 
-        public void BestMoves()
+        public int[] BestMoves(int size, WRace race, int[] units, int nbUnits)
         {
-
+            var moves = new int[6];
+            Algo_bestMoves(nativeAlgo, size, race, units, nbUnits, moves);
+            return moves;
         }
 
         private Algo()
@@ -70,7 +72,7 @@ namespace PooP.Core.Ressource
         extern static void Algo_PlacePlayers(IntPtr algo, int[] players, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_bestMoves(IntPtr algo);
+        extern static void Algo_bestMoves(IntPtr algo, int size, WRace race, int[] units, int nbUnits, int[] moves);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();
