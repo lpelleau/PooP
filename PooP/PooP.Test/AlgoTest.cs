@@ -2,6 +2,8 @@
 using PooP.Core.Ressource;
 using PooP.Core.Exceptions;
 using System;
+using PooP.Core.Implementation.Games;
+using PooP.Core.Interfaces;
 
 namespace PooP.Test
 {
@@ -32,10 +34,10 @@ namespace PooP.Test
                 }
             }
 
-            Assert.IsTrue(n[(int)TileType.Plain] == 25);
-            Assert.IsTrue(n[(int)TileType.Mountain] ==  25);
-            Assert.IsTrue(n[(int)TileType.Forest] == 25);
-            Assert.IsTrue(n[(int)TileType.Water] == 25);
+            Assert.IsTrue(n[(int)TileType.Plain] == SIZE * SIZE / 4);
+            Assert.IsTrue(n[(int)TileType.Mountain] == SIZE * SIZE / 4);
+            Assert.IsTrue(n[(int)TileType.Forest] == SIZE * SIZE / 4);
+            Assert.IsTrue(n[(int)TileType.Water] == SIZE * SIZE / 4);
         }
         /// <summary>
         /// Test the placement of the players
@@ -46,9 +48,7 @@ namespace PooP.Test
         {
             Algo alg = Algo.INSTANCE;
             int[] players = alg.PlacePlayers(SIZE * SIZE);
-
-            Assert.IsTrue(players[0] != players[2] && players[1] != players[3]);
-            Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= 8);
+            Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= SIZE - 2*2);
         }
     }
 }

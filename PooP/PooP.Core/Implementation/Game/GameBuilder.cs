@@ -8,6 +8,8 @@ using PooP.Core.Interfaces.Maps;
 using PooP.Core.Interfaces.Races;
 using PooP.Core.Exceptions;
 using PooP.Core.Data.Games;
+using PooP.Core.Implementation.Commands;
+using PooP.Core.Interfaces.Commands;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -76,8 +78,9 @@ namespace PooP.Core.Implementation.Games
             CURRENTGAME = new GameImpl(p, NbTurns);
             Map m = createMap();
             GameBuilder.CURRENTGAME.Map = m;
-            placeUnits();
             OpenedFile = null;
+            UndoableImpl.DoneCommands = new Stack<Command>();
+            UndoableImpl.UndoneCommands = new Stack<Command>();
         }
 
         /// <summary>
@@ -85,11 +88,6 @@ namespace PooP.Core.Implementation.Games
         /// </summary>
         /// <returns>The created map</returns>
         public abstract Map createMap();
-
-        /// <summary>
-        /// Creates and places units on the map
-        /// </summary>
-        public abstract void placeUnits();
 
         /// <summary>
         /// Creates the players

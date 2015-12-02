@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PooP.Core.Implementation.Games;
 using PooP.Core.Exceptions;
+using PooP.Core.Interfaces;
+using PooP.Core.Ressource;
 
 namespace PooP.Test
 {
@@ -72,6 +74,23 @@ namespace PooP.Test
             string[] players = new string[2] { "Pl1", "Pl2" };
             string[] races = new string[2] { "orc", "elf" };
             GameBuilderFactory.get("incorrect").createGame(players, races);
+        }
+
+        /// <summary>
+        /// Tests if all the units of a same race are grouped
+        /// </summary>
+        [TestMethod]
+        public void GroupeRacesTest()
+        {
+            string[] players = new string[2] { "Pl1", "Pl2" };
+            string[] races = new string[2] { "orc", "elf" };
+            GameBuilderFactory.get("standard").createGame(players, races);
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Length ;i++ )
+            {
+                Player p = GameBuilder.CURRENTGAME.Players[i];
+                Position pos = p.Race.Units[0].Position;
+                Assert.IsTrue(p.Race.Units.TrueForAll(u => u.Position.Equals(pos)));
+            }
         }
     }
 }
