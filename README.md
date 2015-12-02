@@ -1,6 +1,6 @@
 ### Il faut créer 3 sous-projets: 
 * SmallWorld.Code (class library C#) 
-* SmallWorld.NativeLib (bibliothèque C#) 
+* SmallWorld.NativeLib (bibliothèque C++) 
 * SmallWorld.GUI (application WPF) 
 * SmallWorld.UML 
 * SmallWorld.UnitTests (Test library C#)
@@ -13,6 +13,8 @@
 
 Janvier
 * GUI
+
+`Tiles.OfType<Mountain>().Count();`
 
 Diagramme de séquence (x2) -> projet UML Visuel Studio
 Diagramme d'état (x1) -> Modelio
