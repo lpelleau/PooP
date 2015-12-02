@@ -48,15 +48,6 @@ namespace PooP.Core.Implementation.Games
                 pl.Add(new PlayerImpl(players[i], races[i]));
             return pl.ToArray();
         }
-
-        /// <summary>
-        /// Creates and places units on the map
-        /// </summary>
-        /// <see cref="GameBuilder"/>
-        public override void placeUnits()
-        {
-            // TODO : but useless, already done in createMap
-        }
     }
 
     /// <summary>
@@ -99,15 +90,6 @@ namespace PooP.Core.Implementation.Games
                 pl.Add(new PlayerImpl(players[i], races[i]));
             return pl.ToArray();
         }
-
-        /// <summary>
-        /// Creates and places units on the map
-        /// </summary>
-        /// <see cref="GameBuilder"/>
-        public override void placeUnits()
-        {
-            // TODO : but useless, already done in createMap
-        }
     }
 
     /// <summary>
@@ -149,15 +131,6 @@ namespace PooP.Core.Implementation.Games
             for (int i = 0; i < players.Count(); i++)
                 pl.Add(new PlayerImpl(players[i], races[i]));
             return pl.ToArray();
-        }
-
-        /// <summary>
-        /// Creates and places units on the map
-        /// </summary>
-        /// <see cref="GameBuilder"/>
-        public override void placeUnits()
-        {
-            // TODO : but useless, already done in createMap
         }
     }
 }

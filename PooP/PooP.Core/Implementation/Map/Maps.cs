@@ -50,21 +50,18 @@ namespace PooP.Core.Implementation.Maps
 
             int[] players = Algo.INSTANCE.PlacePlayers(SIZE * SIZE);
 
-            Position p1 = new Position(players[0], players[1]);
-            for (int i = 0; i < NB_UNITS; i++)
+            for (int p = 0; p < players.Count(); p += 2)
             {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[0].Race, p1);
-                GameBuilder.CURRENTGAME.Players[0].Race.Units.Add(u);
+                GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Clear();
+                Position pos = new Position(players[p], players[p + 1]);
+                for (int i = 0; i < NB_UNITS; i++)
+                {
+                    UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[p / 2].Race, pos);
+                    GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Add(u);
+                }
             }
 
-            Position p2 = new Position(players[2], players[3]);
-            for (int i = 0; i < NB_UNITS; i++)
-            {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[1].Race, p2);
-                GameBuilder.CURRENTGAME.Players[1].Race.Units.Add(u);
-            }
-
-            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % 2];
+            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % GameBuilder.CURRENTGAME.Players.Count()];
 
             return fact;
         }
@@ -112,21 +109,18 @@ namespace PooP.Core.Implementation.Maps
 
             int[] players = Algo.INSTANCE.PlacePlayers(SIZE * SIZE);
 
-            Position p1 = new Position(players[0], players[1]);
-            for (int i = 0; i < NB_UNITS; i++)
+            for (int p = 0; p < players.Count(); p += 2)
             {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[0].Race, p1);
-                GameBuilder.CURRENTGAME.Players[0].Race.Units.Add(u);
+                GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Clear();
+                Position pos = new Position(players[p], players[p + 1]);
+                for (int i = 0; i < NB_UNITS; i++)
+                {
+                    UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[p/2].Race, pos);
+                    GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Add(u);
+                }
             }
 
-            Position p2 = new Position(players[2], players[3]);
-            for (int i = 0; i < NB_UNITS; i++)
-            {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[1].Race, p2);
-                GameBuilder.CURRENTGAME.Players[1].Race.Units.Add(u);
-            }
-
-            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % 2];
+            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % GameBuilder.CURRENTGAME.Players.Count()];
 
             return fact;
         }
@@ -174,21 +168,18 @@ namespace PooP.Core.Implementation.Maps
 
             int[] players = Algo.INSTANCE.PlacePlayers(SIZE * SIZE);
 
-            Position p1 = new Position(players[0], players[1]);
-            for (int i = 0; i < NB_UNITS; i++)
+            for (int p = 0; p < players.Count(); p += 2)
             {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[0].Race, p1);
-                GameBuilder.CURRENTGAME.Players[0].Race.Units.Add(u);
+                GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Clear();
+                Position pos = new Position(players[p], players[p + 1]);
+                for (int i = 0; i < NB_UNITS; i++)
+                {
+                    UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[p / 2].Race, pos);
+                    GameBuilder.CURRENTGAME.Players[p / 2].Race.Units.Add(u);
+                }
             }
 
-            Position p2 = new Position(players[2], players[3]);
-            for (int i = 0; i < NB_UNITS; i++)
-            {
-                UnitImpl u = new UnitImpl(GameBuilder.CURRENTGAME.Players[1].Race, p2);
-                GameBuilder.CURRENTGAME.Players[1].Race.Units.Add(u);
-            }
-
-            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % 2];
+            GameBuilder.CURRENTGAME.FirstPlayer = GameBuilder.CURRENTGAME.Players[new Random().Next() % GameBuilder.CURRENTGAME.Players.Count()];
 
             return fact;
         }

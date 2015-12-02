@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Commands;
 
-namespace PooP.Core.Implementation.Command
+namespace PooP.Core.Implementation.Commands
 {
     /// <summary>
     /// Implements an undoable list of actions

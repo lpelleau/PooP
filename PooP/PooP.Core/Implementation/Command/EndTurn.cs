@@ -1,4 +1,4 @@
-﻿using PooP.Core.Implementation.Command;
+﻿using PooP.Core.Implementation.Commands;
 using PooP.Core.Implementation.Games;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Commands;
@@ -14,6 +14,8 @@ namespace PooP.Core.Implementation.Commands
     /// </summary>
     public class EndTurn : PooP.Core.Interfaces.Commands.Command
     {
+        public static Player winner = null;
+
         /// <summary>
         /// Tests if the turn can be ended
         /// </summary>
@@ -37,7 +39,7 @@ namespace PooP.Core.Implementation.Commands
             if (GameBuilder.CURRENTGAME.NumberOfTurns == 0 ||
                 GameBuilder.CURRENTGAME.Players.Count(p => p.Race.hasUnits()) == 1)
             {
-                GameBuilder.CURRENTGAME.getWinner();
+                winner = GameBuilder.CURRENTGAME.getWinner();
             }          
         }
 
