@@ -46,8 +46,8 @@ namespace PooP.Core.Implementation.Games
         /// <param name="turns">Number of turns for the game</param>
         public GameImpl(Player[] players, Map m, int turns)
         {
-            IndexOfCurrentPlayer = new Random().Next(0,players.Count()-1);
             Players = players;
+            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
             FirstPlayer = Players[IndexOfCurrentPlayer];
             NumberOfTurns = turns;
             Map = m;
@@ -60,8 +60,8 @@ namespace PooP.Core.Implementation.Games
         /// <param name="turns">Number of turns for the game</param>
         public GameImpl(Player[] players, int turns)
         {
-            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
             Players = players;
+            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
             FirstPlayer = Players[IndexOfCurrentPlayer];
             NumberOfTurns = turns;
         }

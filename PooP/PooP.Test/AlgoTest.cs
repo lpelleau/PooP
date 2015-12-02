@@ -28,14 +28,7 @@ namespace PooP.Test
             {
                 for (int j = 0; j < SIZE; j++)
                 {
-                    try
-                    {
-                        n[(int)map.Tiles[i * SIZE + j]]++;
-                    }
-                    catch (Exception e)
-                    {
-                        Console.Write(i + " " + j);
-                    }
+                    n[(int)map.Tiles[i * SIZE + j]]++;
                 }
             }
 
