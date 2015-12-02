@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PooP.Core.Interfaces.Maps;
-using PooP.Wrapper;
 using PooP.Core.Ressource;
 using PooP.Core.Implementation.Games;
 

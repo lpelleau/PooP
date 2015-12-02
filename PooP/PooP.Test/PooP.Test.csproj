@@ -64,10 +64,6 @@
       <Project>{2035fd77-0548-40ad-ac8d-42d610db4048}</Project>
       <Name>PooP.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PooP.Wrapper\PooP.Wrapper.csproj">
-      <Project>{04085094-32f3-4c5e-8eb4-5eb4aa5ac3f3}</Project>
-      <Name>PooP.Wrapper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
