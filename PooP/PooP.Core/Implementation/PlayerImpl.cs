@@ -6,6 +6,7 @@ using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Races;
 using PooP.Core.Data;
 using PooP.Core.Implementation.Races;
+using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation
 {
@@ -52,16 +53,6 @@ namespace PooP.Core.Implementation
         {
             get;
             set;
-        }
-
-        /// <summary>
-        /// Transforms a player into datas
-        /// This one shall be used only if the player is not the first player
-        /// </summary>
-        /// <returns>The data object representing the player</returns>
-        public PlayerData ToData()
-        {
-            return ToData(false);
         }
 
         /// <summary>

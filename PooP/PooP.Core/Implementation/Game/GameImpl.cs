@@ -28,9 +28,10 @@ namespace PooP.Core.Implementation.Games
         {
             List<Player> PlayersList = new List<Player>();
             foreach (PlayerData p in data.Players) {
+                Player PlayerToAdd = p.ToPlayer();
                 if (p.Fst)
-                    FirstPlayer = p.ToPlayer();
-                PlayersList.Add(p.ToPlayer());
+                    FirstPlayer = PlayerToAdd;
+                PlayersList.Add(PlayerToAdd);
             }
             Players = PlayersList.ToArray();
             NumberOfTurns = data.NumberOfTurns;
@@ -45,8 +46,9 @@ namespace PooP.Core.Implementation.Games
         /// <param name="turns">Number of turns for the game</param>
         public GameImpl(Player[] players, Map m, int turns)
         {
+            IndexOfCurrentPlayer = new Random().Next(0,players.Count()-1);
             Players = players;
-            FirstPlayer = Players[new Random().Next(0,1)];
+            FirstPlayer = Players[IndexOfCurrentPlayer];
             NumberOfTurns = turns;
             Map = m;
         }
@@ -58,8 +60,9 @@ namespace PooP.Core.Implementation.Games
         /// <param name="turns">Number of turns for the game</param>
         public GameImpl(Player[] players, int turns)
         {
+            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
             Players = players;
-            FirstPlayer = Players[new Random().Next(0, 1)];
+            FirstPlayer = Players[IndexOfCurrentPlayer];
             NumberOfTurns = turns;
         }
 
@@ -79,6 +82,16 @@ namespace PooP.Core.Implementation.Games
         {
             get;
             set;
+        }
+
+        private int indexOfCurrentPlayer;
+        public int IndexOfCurrentPlayer
+        {
+            get {return indexOfCurrentPlayer; }
+            set
+            {
+                indexOfCurrentPlayer = value % Players.Count();
+            }
         }
 
         /// <summary>

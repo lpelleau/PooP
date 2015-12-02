@@ -7,6 +7,7 @@ using PooP.Core.Interfaces.Games;
 using PooP.Core.Interfaces.Maps;
 using PooP.Core.Interfaces.Races;
 using PooP.Core.Exceptions;
+using PooP.Core.Data.Games;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -47,6 +48,15 @@ namespace PooP.Core.Implementation.Games
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Loads a GameData game
+        /// </summary>
+        /// <param name="gd">Game to load</param>
+        public static void createGame(GameData gd)
+        {
+            CURRENTGAME = new GameImpl(gd);
         }
 
         /// <summary>
