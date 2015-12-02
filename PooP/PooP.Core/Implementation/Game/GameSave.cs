@@ -46,8 +46,7 @@ namespace PooP.Core.Implementation.Games
         /// </summary>
         /// <param name="SaveFile">File to read</param>
         /// <returns>The created game</returns>
-        /// TO DO : Change it : there is a global instance !!!
-        public Game load(string SaveFile)
+        public void load(string SaveFile)
         {
             // If the file name contains the extension, delete it
             if (SaveFile.LastIndexOf(EXTENSION) != -1)
@@ -56,7 +55,7 @@ namespace PooP.Core.Implementation.Games
             XmlSerializer formatter = new XmlSerializer(typeof(GameData));
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Open, FileAccess.Read, FileShare.None))
             {
-                return new GameImpl((GameData) formatter.Deserialize(stream));
+                GameBuilder.createGame((GameData) formatter.Deserialize(stream));
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿using PooP.Core.Implementation.Command;
+using PooP.Core.Implementation.Games;
+using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Commands;
 using System;
 using System.Collections.Generic;
@@ -23,11 +25,20 @@ namespace PooP.Core.Implementation.Commands
 
         /// <summary>
         /// Executes the command
+        /// Deletes the action list, Changes the current player, Decreases the 
         /// </summary>
         public void execute()
         {
             UndoableImpl.DoneCommands.Clear();
-            // TO DO : Change the current player
+            GameBuilder.CURRENTGAME.NumberOfTurns--;
+            GameBuilder.CURRENTGAME.IndexOfCurrentPlayer++;
+            
+            // Cas où la partie se termine
+            if (GameBuilder.CURRENTGAME.NumberOfTurns == 0 ||
+                GameBuilder.CURRENTGAME.Players.Count(p => p.Race.hasUnits()) == 1)
+            {
+                GameBuilder.CURRENTGAME.getWinner();
+            }          
         }
 
         /// <summary>

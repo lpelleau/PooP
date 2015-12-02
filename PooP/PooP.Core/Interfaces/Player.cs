@@ -31,12 +31,6 @@ namespace PooP.Core.Interfaces
         }
 
         /// <summary>
-        /// Transforms the player into datas
-        /// </summary>
-        /// <returns>The data object representing the player</returns>
-        PlayerData ToData();
-
-        /// <summary>
         /// Transforms the player into data, knowing whether or not it is the first player
         /// </summary>
         /// <param name="FstP">Is this player the first one ?</param>
