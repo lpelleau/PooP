@@ -66,6 +66,14 @@
       <Name>PooP.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Test files\tester1.flav" />
+    <None Include="Test files\tester2.flav" />
+    <None Include="Test files\TesterPooP.xlsm" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
