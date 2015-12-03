@@ -10,6 +10,8 @@ using PooP.Core.Data.Games;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Exceptions;
 using PooP.Core.Data;
+using PooP.Core.Implementation.Commands;
+using PooP.Core.Interfaces.Commands;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -36,6 +38,9 @@ namespace PooP.Core.Implementation.Games
             Players = PlayersList.ToArray();
             NumberOfTurns = data.NumberOfTurns;
             Map = new MapImpl(data.Tiles);
+            FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
+            UndoableImpl.DoneCommands = new Stack<Command>();
+            UndoableImpl.UndoneCommands = new Stack<Command>();
         }
 
         /// <summary>

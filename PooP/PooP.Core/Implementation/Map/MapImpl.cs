@@ -8,6 +8,7 @@ using PooP.Core.Ressource;
 using PooP.Core.Data.Maps;
 using PooP.Core.Exceptions;
 using PooP.Core.Implementation.Games;
+using PooP.Core.Interfaces.Races;
 
 namespace PooP.Core.Implementation.Maps
 {
@@ -103,7 +104,6 @@ namespace PooP.Core.Implementation.Maps
         /// <returns>The units standing at this position</returns>
         private List<Unit> getUnits(Position Position)
         {
-            // TO DO : Add correct code
             List<Unit> units = new List<Unit>();
             for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Length; i++)
             {
@@ -142,10 +142,11 @@ namespace PooP.Core.Implementation.Maps
         /// Tells if there is a unit at a position
         /// </summary>
         /// <param name="dest">Position to test</param>
+        /// <param name="r">Race that could occupy the position</param>
         /// <returns>true if there is at least one unit on this tile, false otherwise</returns>
-        public bool IsOccupied(Position dest)
+        public bool IsOccupied(Position dest, Race r)
         {
-            return getUnits(dest).Count == 0;
+            return getUnits(dest).Count(u => u.Race != r) != 0;
         }
 
         /// <summary>

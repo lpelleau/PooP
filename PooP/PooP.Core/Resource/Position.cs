@@ -67,5 +67,10 @@ namespace PooP.Core.Ressource
                 return false;
             return ((Position)o).x == x && ((Position)o).y == y;
         }
+
+        public override int GetHashCode()
+        {
+            return this.x * 100 + this.y;
+        }
     }
 }

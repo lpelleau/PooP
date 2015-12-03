@@ -59,6 +59,7 @@
     <Compile Include="RaceTest.cs" />
     <Compile Include="GameBuildTest.cs" />
     <Compile Include="EndTurnTest.cs" />
+    <Compile Include="MoveTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PooP.Core\PooP.Core.csproj">

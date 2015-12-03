@@ -1,4 +1,5 @@
 ﻿using PooP.Core.Data.Maps;
+using PooP.Core.Interfaces.Races;
 using PooP.Core.Ressource;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,9 @@ namespace PooP.Core.Interfaces.Maps
         /// Tells if there is a unit at a position
         /// </summary>
         /// <param name="dest">Position to test</param>
+        /// <param name="r">Race that wish to occupy it</param>
         /// <returns>true if there is at least one unit on this tile, false otherwise</returns>
-        bool IsOccupied(Position dest);
+        bool IsOccupied(Position dest, Race r);
 
         /// <summary>
         /// Transforms the tile factory into datas
