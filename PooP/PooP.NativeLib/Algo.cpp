@@ -70,7 +70,10 @@ void Algo::fillMap(TileType map[], int size)
 		nbTiles[Plain] -= added;
 	}
 
-	_map = map;
+	_map = new TileType[size];
+	for (int i = 0; i < size; i++) {
+		_map[i] = map[i];
+	}
 }
 
 int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
@@ -158,14 +161,16 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 		int x = units[i], y = units[i + 1]; // Unit coordinates
 
 		// All tiles around (2 of distance) the one where is the unit
-		for (int j = 0; j < 5; j++) {
-			for (int k = 0; k < 5; k++) {
+		for (int j = 0; j < 10; j++) {
+			for (int k = 0; k < 10; k++) {
 				if (x - j >= 0 && x + j < height && y - k >= 0 && y + k < height) { // Tile on the map
-					if (abs(x - j) + abs(y - k) <= 2) { // Distance <= 2
+					int points;
+					bool movePossible = true;
 
+					if (race == Orc && _map[j * height + k] == Plain) {
+						points = 1;
+					} else if (abs(x - j) + abs(y - k) <= 2) { // Distance <= 2
 						// Calculate best moves based on victory points
-						int points;
-						bool movePossible = true;
 						switch (race) {
 						case Human:
 							switch (_map[j * height + k]){
@@ -185,7 +190,7 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 							break;
 						case Orc:
 							switch (_map[j * height + k]){
-							case Plain:
+							case Plain: // Useless case
 								points = 1;
 								break;
 							case Mountain:
@@ -205,6 +210,9 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 								points = 1;
 								break;
 							case Mountain:
+								if (abs(x - j) + abs(y - k) <= 1) {
+									movePossible = false;
+								}
 								points = 0;
 								break;
 							case Forest:
@@ -216,15 +224,15 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 							}
 							break;
 						}
+					}
 
-						if (movePossible) {
-							// Change best moves
-							for (int m = 0; m < 3; m++) {
-								if (victoryPoints[m] < points) {
-									moves[m * 2] = j;
-									moves[m * 2 + 1] = k;
-									break;
-								}
+					if (movePossible) {
+						// Change best moves
+						for (int m = 0; m < 3; m++) {
+							if (victoryPoints[m] < points) {
+								moves[m * 2] = j;
+								moves[m * 2 + 1] = k;
+								break;
 							}
 						}
 					}
