@@ -22,6 +22,7 @@ namespace PooP.Core.Implementation
         public PlayerImpl(PlayerData data)
         {
             Race = data.Race.ToRace();
+            Race.Units.ForEach(u => u.Race = Race);
             Name = data.Name;
         }
 

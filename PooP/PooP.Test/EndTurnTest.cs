@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PooP.Core.Implementation.Games;
 using PooP.Core.Implementation.Commands;
+using PooP.Core.Ressource;
 
 namespace PooP.Test
 {
@@ -49,10 +50,26 @@ namespace PooP.Test
         [TestMethod]
         public void ClearsCommands()
         {
-            // TO DO : Add commands to the stack
+            GameSave.INSTANCE.load("../../Test_files/tester1");
+
+            // Adding some useless command to the stack
+            new MoveCommand(GameBuilder.CURRENTGAME.FirstPlayer.Race.Units[0], new Position(0, 8));
+            new AttackCommand(GameBuilder.CURRENTGAME.FirstPlayer.Race.Units[2], new Position(8, 5));
+            
+            // Ending the turn
             new EndTurn().execute();
             Assert.IsTrue(UndoableImpl.DoneCommands.Count == 0);
             Assert.IsTrue(UndoableImpl.UndoneCommands.Count == 0);
+        }
+
+        /// <summary>
+        /// Checks that ending a turn adds move points to the player that will play
+        /// </summary>
+        [TestMethod]
+        public void ReinitsMovePoints()
+        {
+            new EndTurn().execute();
+            Assert.IsTrue(GameBuilder.CURRENTGAME.FirstPlayer.Race.Units.TrueForAll(u => u.MovePoints == 2));
         }
     }
 }

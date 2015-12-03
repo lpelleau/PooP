@@ -40,7 +40,11 @@ namespace PooP.Core.Implementation.Commands
                 GameBuilder.CURRENTGAME.Players.Count(p => p.Race.hasUnits()) == 1)
             {
                 winner = GameBuilder.CURRENTGAME.getWinner();
-            }          
+            }
+            else
+            {
+                GameBuilder.CURRENTGAME.FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
+            }    
         }
 
         /// <summary>

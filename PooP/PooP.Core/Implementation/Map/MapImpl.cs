@@ -7,6 +7,7 @@ using PooP.Core.Interfaces;
 using PooP.Core.Ressource;
 using PooP.Core.Data.Maps;
 using PooP.Core.Exceptions;
+using PooP.Core.Implementation.Games;
 
 namespace PooP.Core.Implementation.Maps
 {
@@ -103,7 +104,17 @@ namespace PooP.Core.Implementation.Maps
         private List<Unit> getUnits(Position Position)
         {
             // TO DO : Add correct code
-            return new List<Unit>();
+            List<Unit> units = new List<Unit>();
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Length; i++)
+            {
+                GameBuilder.CURRENTGAME.Players[i].Race.Units.ForEach(u => 
+                    {
+                        if (u.Position.Equals(Position)) {
+                            units.Add(u);
+                        }
+                    });
+            }
+            return units;
         }
 
         /// <summary>
@@ -124,7 +135,7 @@ namespace PooP.Core.Implementation.Maps
         /// <returns>The best defender for this position</returns>
         public Unit getBestDefenderAt(Position Position)
         {
-            return getUnits(Position).Where(u => u.LifePoints == getUnits(Position).Max(un => un.Race.Defence)).First();
+            return getUnits(Position).Where(u => u.LifePoints == getUnits(Position).Max(un => un.LifePoints)).First();
         }
 
         /// <summary>

@@ -77,7 +77,8 @@ namespace PooP.Core.Implementation.Games
             Player[] p = getPlayers(playersNames, races);
             CURRENTGAME = new GameImpl(p, NbTurns);
             Map m = createMap();
-            GameBuilder.CURRENTGAME.Map = m;
+            CURRENTGAME.Map = m;
+            CURRENTGAME.FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
             OpenedFile = null;
             UndoableImpl.DoneCommands = new Stack<Command>();
             UndoableImpl.UndoneCommands = new Stack<Command>();

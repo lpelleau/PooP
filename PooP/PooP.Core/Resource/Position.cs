@@ -60,5 +60,12 @@ namespace PooP.Core.Ressource
                 else throw new BadPositionException("y=" + value);
             }
         }
+    
+        public override bool Equals(Object o)
+        {
+            if (!o.GetType().Name.Equals("Position"))
+                return false;
+            return ((Position)o).x == x && ((Position)o).y == y;
+        }
     }
 }

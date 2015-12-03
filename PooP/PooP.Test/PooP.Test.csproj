@@ -67,12 +67,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test files\tester1.flav" />
-    <None Include="Test files\tester2.flav" />
-    <None Include="Test files\TesterPooP.xlsm" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="Test_files\tester1.flav" />
+    <None Include="Test_files\tester2.flav" />
+    <None Include="Test_files\TesterPooP.xlsm" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

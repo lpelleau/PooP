@@ -91,6 +91,7 @@ namespace PooP.Core.Implementation.Games
             set
             {
                 indexOfCurrentPlayer = value % Players.Count();
+                FirstPlayer = Players[indexOfCurrentPlayer];
             }
         }
 
