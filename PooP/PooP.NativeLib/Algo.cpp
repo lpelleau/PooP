@@ -229,7 +229,7 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 					if (movePossible) {
 						// Change best moves
 						for (int m = 0; m < 3; m++) {
-							if (victoryPoints[m] < points) {
+							if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
 								moves[m * 2] = j;
 								moves[m * 2 + 1] = k;
 								break;
