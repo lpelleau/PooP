@@ -44,17 +44,13 @@ namespace PooP.Core.Implementation.Maps
                 Tiles.Clear();
             data.Tiles.ForEach(c => Tiles.Add(ToTile(c.Name), c.Positions));
 
-            int size = Tiles.Values.First().Count * Tiles.Values.First().Count;
+            int size = Tiles.Values.Sum(v => v.Count()) ;
             var map = new TileType[size];
             foreach (KeyValuePair<Tile, List<Position>> entry in Tiles)
             {
-                TileType type;
-
-                if(entry.Key is Plain)
-                {
-                    type = TileType.Plain;
-                }
-                else if (entry.Key is Mountain)
+                TileType type = TileType.Plain;
+                
+                if (entry.Key is Mountain)
                 {
                     type = TileType.Mountain;
                 }
@@ -69,7 +65,7 @@ namespace PooP.Core.Implementation.Maps
 
                 foreach (Position pos in entry.Value)
                 {
-                    map[pos.XPosition * size + pos.YPosition] = type;
+                    map[pos.XPosition * ((int) Math.Sqrt(size)) + pos.YPosition] = type;
                 }
             }
             Algo.INSTANCE.InitMap(map, size);
