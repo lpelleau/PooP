@@ -4,116 +4,95 @@
 #include <time.h>
 #include <math.h>
 
+void Algo::initVars(int size) {
+	_nbTiles = size;
+	_height = sqrt(_nbTiles);
+	_objTiles = _nbTiles / NB_TILES;
+
+	_map = new TileType*[_height];
+	for (int i = 0; i < _height; i++) {
+		_map[i] = new TileType[_height];
+	}
+}
+
 void Algo::init(TileType map[], int size) {
-	_map = new TileType[size];
-	for (int i = 0; i < size; i++) {
-		_map[i] = map[i];
+	initVars(size);
+
+	for (int i = 0; i < _height; i++) {
+		for (int j = 0; j < _height; j++) {
+			_map[i][j] = map[i * _height + j];
+		}
 	}
 }
 
 void Algo::fillMap(TileType map[], int size)
 {
-	int height = sqrt(size); // Height of the map
-	int obj = size / 4; // Objectif for the number of each tiles
-	int nbTiles[4] { 0 };
-	for (int i = 0; i < size; i++) { // Init the map to full plain
-		map[i] = Plain;
-		nbTiles[Plain]++;
-	}
+	srand(time(NULL));
 
-	srand(time(NULL)); // Random init
+	initVars(size);
 
-	// Fit Mountain
-	while (nbTiles[Mountain] != obj) {
-		int x = rand() % height; // Calculate center point
-		int y = rand() % height;
+	generatePlains();
+	generateLakes();
+	generateMountain();
+	generateForest();
 
-		int pos = x * height + y;
-		if (map[pos] != Plain)
-			continue;
-		map[pos] = Mountain; // Add the tile on the map
-		nbTiles[Mountain]++;
-		nbTiles[Plain]--;
-
-		// Generate other tiles of the same type 
-		int added = generateNext(map, height, Mountain, x, y, nbTiles[Mountain] - obj);;
-		nbTiles[Mountain] += added;
-		nbTiles[Plain] -= added;
-	}
-
-	// Fit Forest
-	while (nbTiles[Forest] != obj) {
-		int x = rand() % height; // Calculate center point
-		int y = rand() % height;
-
-		int pos = x * height + y;
-		if (map[pos] != Plain)
-			continue;
-		map[pos] = Forest; // Add the tile on the map
-		nbTiles[Forest]++;
-		nbTiles[Plain]--;
-
-		// Generate other tiles of the same type around
-		int added = generateNext(map, height, Forest, x, y, nbTiles[Forest] - obj);
-		nbTiles[Forest] += added;
-		nbTiles[Plain] -= added;
-	}
-
-	// Fit Water
-	while (nbTiles[Water] != obj) {
-		int x = rand() % height; // Calculate center point
-		int y = rand() % height;
-
-		int pos = x * height + y;
-		if (map[pos] != Plain)
-			continue;
-		map[pos] = Water; // Add the tile on the map
-		nbTiles[Water]++;
-		nbTiles[Plain]--;
-
-		// Generate other tiles of the same type around
-		int added = generateNext(map, height, Water, x, y, nbTiles[Water] - obj);
-		nbTiles[Water] += added;
-		nbTiles[Plain] -= added;
-	}
-
-	init(map, size);
-}
-
-int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
-	int remainB = remain;
-	int size = h * h;
-
-	int pos = (x - 1) * h + y; // West
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = (x + 1) * h + y; // East
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = x * h + (y - 1); // South
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	pos = x * h + (y + 1); // North
-	remain -= generateNextInner(map, size, type, pos, remain);
-
-	return remainB - remain;
-}
-
-int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, int remain) {
-	if (pos >= 0 && pos < size && map[pos] == Plain) {
-		if (remain > 0) {
-			if (rand() % 2) {
-				map[pos] = type;
-				return 1;
-			}
+	for (int i = 0; i < _height; i++) {
+		for (int j = 0; j < _height; j++) {
+			map[i * _height + j] = _map[i][j];
 		}
 	}
-	return 0;
 }
 
-void Algo::placePlayers(int players[], int size) {
-	int height = sqrt(size); // Height of the map
+void Algo::generatePlains() {
+	for (int i = 0; i < _height; i++) {
+		for (int j = 0; j < _height; j++) {
+			_map[i][j] = Plain;
+			_tilesOnMap[Plain]++;
+		}
+	}
+}
 
+void Algo::generateLakes() {
+	while (_tilesOnMap[Water] < _objTiles) {
+		generateRec(Water, rand() % _height, rand() % _height, 1);
+	}
+}
+
+void Algo::generateRec(TileType type, int x, int y, int step) {
+	step += STEP_LAKE_GEN;
+
+	if ((_tilesOnMap[type] < _objTiles) && (_map[x][y] == Plain) && ((rand() % step) == (step - 1))) {
+		_map[x][y] = type;
+		_tilesOnMap[type]++;
+
+		if ((x - 1) >= 0) {
+			generateRec(type, x - 1, y, step);
+		}
+		if ((x + 1) < _height) {
+			generateRec(type, x + 1, y, step);
+		}
+		if ((y - 1) >= 0) {
+			generateRec(type, x, y - 1, step);
+		}
+		if ((y + 1) < _height) {
+			generateRec(type, x, y + 1, step);
+		}
+	}
+}
+
+void Algo::generateMountain() {
+	while (_tilesOnMap[Mountain] < _objTiles) {
+		generateRec(Mountain, rand() % _height, rand() % _height, 1);
+	}
+}
+
+void Algo::generateForest() {
+	while (_tilesOnMap[Forest] < _objTiles) {
+		generateRec(Forest, rand() % _height, rand() % _height, 1);
+	}
+}
+
+void Algo::placePlayers(int players[]) {
 	do {
 		// Players placement
 		// P1
@@ -122,64 +101,61 @@ void Algo::placePlayers(int players[], int size) {
 		switch (border) {
 		case 0: // West
 			players[0] = rand() % 2;
-			players[1] = rand() % height;
+			players[1] = rand() % _height;
 			break;
 		case 1: // East
-			players[0] = rand() % 2 + height - 2;
-			players[1] = rand() % height;
+			players[0] = rand() % 2 + _height - 2;
+			players[1] = rand() % _height;
 			break;
 		case 2: // South
-			players[0] = rand() % height;
-			players[1] = rand() % 2 + height - 2;
+			players[0] = rand() % _height;
+			players[1] = rand() % 2 + _height - 2;
 			break;
 		case 3: // North
-			players[0] = rand() % height;
+			players[0] = rand() % _height;
 			players[1] = rand() % 2;
 			break;
 		}
 
 		// P2
-		players[2] = height - 1 - players[0];// Strict opposit of P1
-		players[3] = height - 1 - players[1];
+		players[2] = _height - 1 - players[0];// Strict opposit of P1
+		players[3] = _height - 1 - players[1];
 		int move, res;
 		do {
 			move = 1 - (rand() % 3);
-			res = (players[2] + move) * height + players[3];
-		} while (res < 0 || res >= size);
+			res = (players[2] + move) * _height + players[3];
+		} while (res < 0 || res >= _nbTiles);
 		players[2] += move; // Randomly move near the opposite
 		do {
 			move = 1 - (rand() % 3);
-			res = players[2] * height + (players[3] + move);
-		} while (res < 0 || res >= size || players[3] + move < 0);
+			res = players[2] * _height + (players[3] + move);
+		} while (res < 0 || res >= _nbTiles || players[3] + move < 0);
 		players[3] += move; // Randomly move near the opposite
-	} while (_map[players[0] * height + players[1]] != Water && _map[players[2] * height + players[3]] != Water);
+	} while (_map[players[0]][players[1]] != Water && _map[players[2]][players[3]] != Water);
 }
 
-void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
+void Algo::bestMoves(Race race, int units[], int nbUnits, int moves[])
 {
-	// TODO: Orc spend 0.5 move points to move on plain tile
-	// TODO: Elf spend 2 move points to move on mountain tile
-
-	int height = sqrt(size);
 	int victoryPoints[3] { -1 }; // Nb victory points for the best tiles
 
 	for (int i = 0; i < nbUnits * 2; i += 2){ // For all player units
 		int x = units[i], y = units[i + 1]; // Unit coordinates
 
 		// All tiles around (2 of distance) the one where is the unit
-		for (int j = 0; j < 10; j++) {
-			for (int k = 0; k < 10; k++) {
-				if (x - j >= 0 && x + j < height && y - k >= 0 && y + k < height) { // Tile on the map
+		for (int j = 0; j < _height; j++) {
+			for (int k = 0; k < _height; k++) {
+				if (x - j >= 0 && x + j < _height && y - k >= 0 && y + k < _height) { // Tile on the map
 					int points;
 					bool movePossible = true;
 
-					if (race == Orc && _map[j * height + k] == Plain) {
+					if (race == Orc && _map[j][k] == Plain) {
 						points = 1;
-					} else if (abs(x - j) + abs(y - k) <= 2) { // Distance <= 2
+					}
+					else if (abs(x - j) + abs(y - k) <= 2) { // Distance <= 2
 						// Calculate best moves based on victory points
 						switch (race) {
 						case Human:
-							switch (_map[j * height + k]){
+							switch (_map[j][k]){
 							case Plain:
 								points = 2;
 								break;
@@ -195,7 +171,7 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 							}
 							break;
 						case Orc:
-							switch (_map[j * height + k]){
+							switch (_map[j][k]){
 							case Plain: // Useless case
 								points = 1;
 								break;
@@ -211,7 +187,7 @@ void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
 							}
 							break;
 						case Elf:
-							switch (_map[j * height + k]){
+							switch (_map[j][k]){
 							case Plain:
 								points = 1;
 								break;
