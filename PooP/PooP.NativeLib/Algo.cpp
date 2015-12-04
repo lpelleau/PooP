@@ -100,7 +100,10 @@ void Algo::placePlayers(int players[]) {
 
 	do {
 		placeP1(x1, y1);
-		placeP2(x1, y1, x2, y2);
+
+		*x2 = _height - 1 - *x1;// Strict opposit of P1
+		*y2 = _height - 1 - *y1;
+		placeP2(x2, y2);
 	} while (_map[*x1][*y1] == Water || _map[*x2][*y2] == Water);
 }
 void Algo::placeP1(int *x, int *y) {
@@ -125,21 +128,18 @@ void Algo::placeP1(int *x, int *y) {
 		break;
 	}
 }
-void Algo::placeP2(int *x1, int *y1, int *x2, int *y2) {
-	*x2 = _height - 1 - *x1;// Strict opposit of P1
-	*y2 = _height - 1 - *y1;
-
+void Algo::placeP2(int *x, int *y) {
 	int move, res;
 	do {
 		move = 1 - (rand() % 3);
-		res = (*x2 + move) * _height + *y2;
+		res = (*x + move) * _height + *y;
 	} while (res < 0 || res >= _nbTiles);
-	*x2 += move; // Randomly move near the opposite
+	*x += move; // Randomly move near the opposite
 	do {
 		move = 1 - (rand() % 3);
-		res = *x2 * _height + (*y2 + move);
-	} while (res < 0 || res >= _nbTiles || *y2 + move < 0);
-	*y2 += move; // Randomly move near the opposite
+		res = *x * _height + (*y + move);
+	} while (res < 0 || res >= _nbTiles || *y + move < 0);
+	*y += move; // Randomly move near the opposite
 }
 
 void Algo::bestMoves(Race race, int units[], int nbUnits, int moves[])
