@@ -34,7 +34,7 @@ namespace PooP.Test
         [TestMethod]
         public void TestEmptyUnits()
         {
-            Assert.IsTrue(h.Units.Count == 0);
+            Assert.AreEqual(0, h.Units.Count);
         }
 
         /// <summary>
@@ -44,25 +44,25 @@ namespace PooP.Test
         public void TestConstants()
         {
             // Test the human constants
-            Assert.IsTrue(h.Attack == 6);
-            Assert.IsTrue(h.AttackDistance == 1);
-            Assert.IsTrue(h.Defence == 3);
-            Assert.IsTrue(h.Life == 15);
-            Assert.IsTrue(h.MoveDistance == 2);
+            Assert.AreEqual(6,  h.Attack);
+            Assert.AreEqual(1,  h.AttackDistance);
+            Assert.AreEqual(3,  h.Defence);
+            Assert.AreEqual(15, h.Life);
+            Assert.AreEqual(2,  h.MoveDistance);
 
             // Test the orc constants
-            Assert.IsTrue(o.Attack == 5);
-            Assert.IsTrue(o.AttackDistance == 1);
-            Assert.IsTrue(o.Defence == 2);
-            Assert.IsTrue(o.Life == 17);
-            Assert.IsTrue(o.MoveDistance == 2);
+            Assert.AreEqual(5,  o.Attack);
+            Assert.AreEqual(1,  o.AttackDistance);
+            Assert.AreEqual(2,  o.Defence);
+            Assert.AreEqual(17, o.Life);
+            Assert.AreEqual(2,  o.MoveDistance);
 
             // Test the elf constants
-            Assert.IsTrue(e.Attack == 4);
-            Assert.IsTrue(e.AttackDistance == 2);
-            Assert.IsTrue(e.Defence == 3);
-            Assert.IsTrue(e.Life == 12);
-            Assert.IsTrue(e.MoveDistance == 2);
+            Assert.AreEqual(4,  e.Attack);
+            Assert.AreEqual(2,  e.AttackDistance);
+            Assert.AreEqual(3,  e.Defence);
+            Assert.AreEqual(12, e.Life);
+            Assert.AreEqual(2,  e.MoveDistance);
         }
 
         /// <summary>
@@ -87,18 +87,18 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester1");
            
             // An orc on a plain tile -> 1pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getVictoryPoints() == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getVictoryPoints());
             // An orc on a mountain tile -> 2pts
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[2].getVictoryPoints() == 2);
+            Assert.AreEqual(2, GameBuilder.CURRENTGAME.Players[0].Race.Units[2].getVictoryPoints());
             // An orc on a forest tile -> 1pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getVictoryPoints() == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getVictoryPoints());
 
             // An elf on a plain tile -> 1pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[0].getVictoryPoints() == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[1].Race.Units[0].getVictoryPoints());
             // An elf on a mountain tile -> 0pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getVictoryPoints() == 0);
+            Assert.AreEqual(0, GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getVictoryPoints());
             // An elf on a forest tile -> 3pts
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[4].getVictoryPoints() == 3);
+            Assert.AreEqual(3, GameBuilder.CURRENTGAME.Players[1].Race.Units[4].getVictoryPoints());
 
             // Load the game in tester2
             // First player has human
@@ -106,13 +106,13 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester2");
 
             // A human on a water tile -> 0pts
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[4].getVictoryPoints() == 0);
+            Assert.AreEqual(0, GameBuilder.CURRENTGAME.Players[0].Race.Units[4].getVictoryPoints());
             // A human on a plain tile -> 2pts
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getVictoryPoints() == 2);
+            Assert.AreEqual(2, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getVictoryPoints());
             // A human on a mountain tile -> 1pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[0].getVictoryPoints() == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[0].getVictoryPoints());
             // A human on a forest tile -> 1pt
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getVictoryPoints() == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getVictoryPoints());
         }
     }
 }

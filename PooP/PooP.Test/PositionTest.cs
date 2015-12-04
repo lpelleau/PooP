@@ -27,7 +27,8 @@ namespace PooP.Test
         [TestMethod]
         public void PositionConstructorGetTest()
         { 
-            Assert.IsTrue(p.XPosition == 1 && p.YPosition == 5);
+            Assert.AreEqual(1, p.XPosition);
+            Assert.AreEqual(5, p.YPosition);
         }
 
         /// <summary>
@@ -38,7 +39,8 @@ namespace PooP.Test
         {
             p.XPosition = 9;
             p.YPosition = 456;
-            Assert.IsTrue(p.XPosition == 9 && p.YPosition == 456);
+            Assert.AreEqual(9, p.XPosition);
+            Assert.AreEqual(456, p.YPosition);
         }
 
         /// <summary>

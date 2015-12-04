@@ -5,6 +5,7 @@ using System.Text;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Commands;
 using PooP.Core.Ressource;
+using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Commands
 {
@@ -28,6 +29,9 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit = UnitToMove;
             Target = PosToReach;
             OldTile = MovedUnit.Position;
+            
+            // Computes the number of needed points
+            cost = MovedUnit.getMoveCost(Target);
         }
 
         /// <summary>
@@ -44,11 +48,13 @@ namespace PooP.Core.Implementation.Commands
         /// </summary>
         public void execute()
         {
+            if (!this.canDo()) throw new IncorrectCommandException();
+
             // Move the unit to the target
             MovedUnit.Position = Target;
 
             // Consumes the needed move points
-            cost = MovedUnit.getMoveCost(Target);
+            
             MovedUnit.MovePoints -= cost;
         }
 
