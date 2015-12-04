@@ -93,45 +93,53 @@ void Algo::generateForest() {
 }
 
 void Algo::placePlayers(int players[]) {
+	int *x1 = &(players[0]);
+	int *y1 = &(players[1]);
+	int *x2 = &(players[2]);
+	int *y2 = &(players[3]);
+
 	do {
-		// Players placement
-		// P1
-		int border = rand() % 4;
+		placeP1(x1, y1);
+		placeP2(x1, y1, x2, y2);
+	} while (_map[*x1][*y1] == Water || _map[*x2][*y2] == Water);
+}
+void Algo::placeP1(int *x, int *y) {
+	int border = rand() % 4;
 
-		switch (border) {
-		case 0: // West
-			players[0] = rand() % 2;
-			players[1] = rand() % _height;
-			break;
-		case 1: // East
-			players[0] = rand() % 2 + _height - 2;
-			players[1] = rand() % _height;
-			break;
-		case 2: // South
-			players[0] = rand() % _height;
-			players[1] = rand() % 2 + _height - 2;
-			break;
-		case 3: // North
-			players[0] = rand() % _height;
-			players[1] = rand() % 2;
-			break;
-		}
+	switch (border) {
+	case 0: // West
+		*x = rand() % 2;
+		*y = rand() % _height;
+		break;
+	case 1: // East
+		*x = rand() % 2 + _height - 2;
+		*y = rand() % _height;
+		break;
+	case 2: // South
+		*x = rand() % _height;
+		*y = rand() % 2 + _height - 2;
+		break;
+	case 3: // North
+		*x = rand() % _height;
+		*y = rand() % 2;
+		break;
+	}
+}
+void Algo::placeP2(int *x1, int *y1, int *x2, int *y2) {
+	*x2 = _height - 1 - *x1;// Strict opposit of P1
+	*y2 = _height - 1 - *y1;
 
-		// P2
-		players[2] = _height - 1 - players[0];// Strict opposit of P1
-		players[3] = _height - 1 - players[1];
-		int move, res;
-		do {
-			move = 1 - (rand() % 3);
-			res = (players[2] + move) * _height + players[3];
-		} while (res < 0 || res >= _nbTiles);
-		players[2] += move; // Randomly move near the opposite
-		do {
-			move = 1 - (rand() % 3);
-			res = players[2] * _height + (players[3] + move);
-		} while (res < 0 || res >= _nbTiles || players[3] + move < 0);
-		players[3] += move; // Randomly move near the opposite
-	} while (_map[players[0]][players[1]] != Water && _map[players[2]][players[3]] != Water);
+	int move, res;
+	do {
+		move = 1 - (rand() % 3);
+		res = (*x2 + move) * _height + *y2;
+	} while (res < 0 || res >= _nbTiles);
+	*x2 += move; // Randomly move near the opposite
+	do {
+		move = 1 - (rand() % 3);
+		res = *x2 * _height + (*y2 + move);
+	} while (res < 0 || res >= _nbTiles || *y2 + move < 0);
+	*y2 += move; // Randomly move near the opposite
 }
 
 void Algo::bestMoves(Race race, int units[], int nbUnits, int moves[])

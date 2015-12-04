@@ -35,6 +35,9 @@ private:
 
 	void generateRec(TileType type, int x, int y, int step);
 
+	void placeP1(int *x, int *y);
+	void placeP2(int *x1, int *y1, int *x2, int *y2);
+
 public:
 	Algo() {}
 	~Algo() {}
