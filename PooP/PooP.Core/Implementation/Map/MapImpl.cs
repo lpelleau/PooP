@@ -33,6 +33,7 @@ namespace PooP.Core.Implementation.Maps
         
         /// <summary>
         /// Creates a tile factory from a data file
+        /// Initialize C++ algorithme
         /// </summary>
         /// <param name="data">Datas to load</param>
         public MapImpl(MapData data)
@@ -42,6 +43,36 @@ namespace PooP.Core.Implementation.Maps
             else
                 Tiles.Clear();
             data.Tiles.ForEach(c => Tiles.Add(ToTile(c.Name), c.Positions));
+
+            int size = Tiles.Values.First().Count * Tiles.Values.First().Count;
+            var map = new TileType[size];
+            foreach (KeyValuePair<Tile, List<Position>> entry in Tiles)
+            {
+                TileType type;
+
+                if(entry.Key is Plain)
+                {
+                    type = TileType.Plain;
+                }
+                else if (entry.Key is Mountain)
+                {
+                    type = TileType.Mountain;
+                }
+                else if (entry.Key is Forest)
+                {
+                    type = TileType.Forest;
+                }
+                else if (entry.Key is Water)
+                {
+                    type = TileType.Water;
+                }
+
+                foreach (Position pos in entry.Value)
+                {
+                    map[pos.XPosition * size + pos.YPosition] = type;
+                }
+            }
+            Algo.INSTANCE.InitMap(map, size);
         }
 
         /// <summary>
