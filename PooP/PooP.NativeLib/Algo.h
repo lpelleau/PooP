@@ -58,12 +58,12 @@ EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size) {
 	return algo->fillMap(map, size);
 }
 
-EXPORTCDECL void Algo_placePlayers(Algo* algo, int players[], int size) {
-	return algo->placePlayers(players, size);
+EXPORTCDECL void Algo_placePlayers(Algo* algo, int players[]) {
+	return algo->placePlayers(players);
 }
 
-EXPORTCDECL void Algo_bestMoves(Algo* algo, int size, Race race, int units[], int nbUnits, int moves[]) {
-	return algo->bestMoves(size, race, units, nbUnits, moves);
+EXPORTCDECL void Algo_bestMoves(Algo* algo, Race race, int units[], int nbUnits, int moves[]) {
+	return algo->bestMoves(race, units, nbUnits, moves);
 }
 
 EXPORTCDECL Algo* Algo_new() {
