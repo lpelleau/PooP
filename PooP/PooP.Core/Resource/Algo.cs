@@ -14,6 +14,11 @@ namespace PooP.Core.Ressource
 
         public static Algo INSTANCE = new Algo();
 
+        public void InitMap(TileType[] map, int nbTiles)
+        {
+            Algo_fillMap(nativeAlgo, map, nbTiles);
+        }
+
         public WMap CreateMap(int nbTiles)
         {
             var tiles = new TileType[nbTiles];
@@ -24,7 +29,7 @@ namespace PooP.Core.Ressource
         public int[] PlacePlayers(int nbTiles)
         {
             var players = new int[4];
-            Algo_PlacePlayers(nativeAlgo, players, nbTiles);
+            Algo_placePlayers(nativeAlgo, players, nbTiles);
             return players;
         }
 
@@ -66,10 +71,13 @@ namespace PooP.Core.Ressource
 
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
+        extern static void Algo_init(IntPtr algo, TileType[] map, int nbTiles);
+
+        [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_PlacePlayers(IntPtr algo, int[] players, int nbTiles);
+        extern static void Algo_placePlayers(IntPtr algo, int[] players, int nbTiles);
 
         [DllImport("PooP.NativeLib.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_bestMoves(IntPtr algo, int size, WRace race, int[] units, int nbUnits, int[] moves);

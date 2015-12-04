@@ -4,6 +4,13 @@
 #include <time.h>
 #include <math.h>
 
+void Algo::init(TileType map[], int size) {
+	_map = new TileType[size];
+	for (int i = 0; i < size; i++) {
+		_map[i] = map[i];
+	}
+}
+
 void Algo::fillMap(TileType map[], int size)
 {
 	int height = sqrt(size); // Height of the map
@@ -70,10 +77,7 @@ void Algo::fillMap(TileType map[], int size)
 		nbTiles[Plain] -= added;
 	}
 
-	_map = new TileType[size];
-	for (int i = 0; i < size; i++) {
-		_map[i] = map[i];
-	}
+	init(map, size);
 }
 
 int Algo::generateNext(TileType map[], int h, TileType type, int x, int y, int remain) {
@@ -110,43 +114,45 @@ int Algo::generateNextInner(TileType map[], int size, TileType type, int pos, in
 void Algo::placePlayers(int players[], int size) {
 	int height = sqrt(size); // Height of the map
 
-	// Players placement
-	// P1
-	int border = rand() % 4;
-
-	switch (border) {
-	case 0: // West
-		players[0] = rand() % 2;
-		players[1] = rand() % height;
-		break;
-	case 1: // East
-		players[0] = rand() % 2 + height - 2;
-		players[1] = rand() % height;
-		break;
-	case 2: // South
-		players[0] = rand() % height;
-		players[1] = rand() % 2 + height - 2;
-		break;
-	case 3: // North
-		players[0] = rand() % height;
-		players[1] = rand() % 2;
-		break;
-	}
-
-	// P2
-	players[2] = height - 1 - players[0];// Strict opposit of P1
-	players[3] = height - 1 - players[1];
-	int move, res;
 	do {
-		move = 1 - (rand() % 3);
-		res = (players[2] + move) * height + players[3];
-	} while (res < 0 || res >= size);
-	players[2] += move; // Randomly move near the opposite
-	do {
-		move = 1 - (rand() % 3);
-		res = players[2] * height + (players[3] + move);
-	} while (res < 0 || res >= size || players[3] + move < 0);
-	players[3] += move; // Randomly move near the opposite
+		// Players placement
+		// P1
+		int border = rand() % 4;
+
+		switch (border) {
+		case 0: // West
+			players[0] = rand() % 2;
+			players[1] = rand() % height;
+			break;
+		case 1: // East
+			players[0] = rand() % 2 + height - 2;
+			players[1] = rand() % height;
+			break;
+		case 2: // South
+			players[0] = rand() % height;
+			players[1] = rand() % 2 + height - 2;
+			break;
+		case 3: // North
+			players[0] = rand() % height;
+			players[1] = rand() % 2;
+			break;
+		}
+
+		// P2
+		players[2] = height - 1 - players[0];// Strict opposit of P1
+		players[3] = height - 1 - players[1];
+		int move, res;
+		do {
+			move = 1 - (rand() % 3);
+			res = (players[2] + move) * height + players[3];
+		} while (res < 0 || res >= size);
+		players[2] += move; // Randomly move near the opposite
+		do {
+			move = 1 - (rand() % 3);
+			res = players[2] * height + (players[3] + move);
+		} while (res < 0 || res >= size || players[3] + move < 0);
+		players[3] += move; // Randomly move near the opposite
+	} while (_map[players[0] * height + players[1]] != Water && _map[players[2] * height + players[3]] != Water);
 }
 
 void Algo::bestMoves(int size, Race race, int units[], int nbUnits, int moves[])
