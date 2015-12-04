@@ -40,6 +40,9 @@ private:
 	void placeP1(int *x, int *y);
 	void placeP2(int *x, int *y);
 
+	double moveCostFromTile(Race race, int x, int y, int life, int enemies[], int nbEnemies);
+	double moveCost(Race race, int xS, int yS, int xT, int yT, int life, int enemies[], int nbEnemies);
+
 public:
 	Algo() {}
 	~Algo() {}
@@ -47,7 +50,7 @@ public:
 	void init(TileType map[], int size);
 	void fillMap(TileType map[], int size);
 	void placePlayers(int players[]);
-	void bestMoves(Race race, int units[], int nbUnits, int moves[]);
+	void bestMoves(Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
 };
 
 #define EXPORTCDECL extern "C" __declspec(dllexport)

@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <time.h>
 #include <math.h>
+#include <vector>
+
+using namespace std;
 
 /**
 * @Description Initialize class attributes with the size of the map
@@ -192,7 +195,94 @@ void Algo::placeP2(int *x, int *y) {
 	*y += move; // Randomly move near the opposite
 }
 
-void Algo::bestMoves(Race race, int units[], int nbUnits, int moves[])
+double Algo::moveCostFromTile(Race race, int x, int y, int life, int enemies[], int nbEnemies)
+{
+	double res = 0;
+
+	if (life < 5)
+	for (int i = 0; i < nbEnemies * 2; i++)
+	if (enemies[i] == x && enemies[i + 1] == y)
+		return INFINITY;
+
+	if (race == Human && _map[x][y] == Water)
+		return INFINITY;
+	else if (race == Elf && _map[x][y] == Mountain)
+		return 2;
+	else if (race == Orc && _map[x][y] == Plain)
+		return 0.5;
+	return 1;
+}
+
+double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int enemies[], int nbEnemies)
+{
+	double totalCost = 0;
+	// Moving on Y axis
+	if (xS == xT)
+		// Moving forward on Y axis
+	if (yS < yT)
+	for (int i = yS + 1; i <= yT; i++)
+		totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
+	// Moving backward on Y axis
+	else
+	for (int i = yS - 1; i >= yT; i--)
+		totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
+
+	// Moving on X axis
+	else if (yS == yT)
+		// Moving forward on X axis
+	if (xS < xT)
+	for (int i = xS + 1; i <= xT; i++)
+		totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
+	// Moving backward on X axis
+	else
+	for (int i = xS - 1; i >= xT; i--)
+		totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
+
+	// Find the correct path
+	else
+	{
+		// Try moving to another tile and test
+		vector<double> possibleCosts = vector<double>();
+		int TestedPaths[4 * 2] = { xS + 1, yS,
+			xS, yS + 1,
+			xS - 1, yS,
+			xS, yS - 1 };
+
+		if (xS < xT && yS < yT)
+		{
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[0], TestedPaths[1], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[0], TestedPaths[1], xT, yT, life, enemies, nbEnemies));
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[2], TestedPaths[3], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[2], TestedPaths[3], xT, yT, life, enemies, nbEnemies));
+		}
+		else if (xS < xT && yS > yT)
+		{
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[0], TestedPaths[1], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[0], TestedPaths[1], xT, yT, life, enemies, nbEnemies));
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[6], TestedPaths[7], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[6], TestedPaths[7], xT, yT, life, enemies, nbEnemies));
+		}
+		else if (xS > xT && yS > yT)
+		{
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[4], TestedPaths[5], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[4], TestedPaths[5], xT, yT, life, enemies, nbEnemies));
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[6], TestedPaths[7], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[6], TestedPaths[7], xT, yT, life, enemies, nbEnemies));
+		}
+		else
+		{
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[2], TestedPaths[3], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[2], TestedPaths[3], xT, yT, life, enemies, nbEnemies));
+			possibleCosts.push_back(moveCost(race, xS, yS, TestedPaths[4], TestedPaths[5], life, enemies, nbEnemies)
+				+ moveCost(race, TestedPaths[4], TestedPaths[5], xT, yT, life, enemies, nbEnemies));
+		}
+
+		totalCost += *min_element(possibleCosts.begin(), possibleCosts.end());
+	}
+	return totalCost;
+}
+
+void Algo::bestMoves(Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[])
 {
 	int victoryPoints[3] { -1 }; // Nb victory points for the best tiles
 
@@ -200,80 +290,69 @@ void Algo::bestMoves(Race race, int units[], int nbUnits, int moves[])
 		int x = units[i], y = units[i + 1]; // Unit coordinates
 
 		// All tiles around (2 of distance) the one where is the unit
-		for (int j = 0; j < _height; j++) {
-			for (int k = 0; k < _height; k++) {
-				if (x - j >= 0 && x + j < _height && y - k >= 0 && y + k < _height) { // Tile on the map
-					int points;
-					bool movePossible = true;
+		for (int j = fmax(0, x - 4); j < fmin(x + 4, _height - 1); j++) {
+			for (int k = fmax(0, y - 4); k < fmin(y + 4, _height - 1); k++) {
+				int points;
+				int mvpts = moveCost(race, x, y, j, k, life[i / 2], enemies, nbEnemies);
 
-					if (race == Orc && _map[j][k] == Plain) {
+				// Calculate best moves based on victory points
+				switch (race) {
+				case Human:
+					switch (_map[j][k]){
+					case Plain:
+						points = 2;
+						break;
+					case Mountain:
 						points = 1;
+						break;
+					case Forest:
+						points = 1;
+						break;
+					case Water:
+						points = 0;
+						break;
 					}
-					else if (abs(x - j) + abs(y - k) <= 2) { // Distance <= 2
-						// Calculate best moves based on victory points
-						switch (race) {
-						case Human:
-							switch (_map[j][k]){
-							case Plain:
-								points = 2;
-								break;
-							case Mountain:
-								points = 1;
-								break;
-							case Forest:
-								points = 1;
-								break;
-							case Water:
-								points = 0;
-								break;
-							}
-							break;
-						case Orc:
-							switch (_map[j][k]){
-							case Plain: // Useless case
-								points = 1;
-								break;
-							case Mountain:
-								points = 2;
-								break;
-							case Forest:
-								points = 1;
-								break;
-							case Water:
-								movePossible = false;
-								break;
-							}
-							break;
-						case Elf:
-							switch (_map[j][k]){
-							case Plain:
-								points = 1;
-								break;
-							case Mountain:
-								if (abs(x - j) + abs(y - k) <= 1) {
-									movePossible = false;
-								}
-								points = 0;
-								break;
-							case Forest:
-								points = 3;
-								break;
-							case Water:
-								movePossible = false;
-								break;
-							}
-							break;
-						}
+					break;
+				case Orc:
+					switch (_map[j][k]){
+					case Plain:
+						points = 1;
+						break;
+					case Mountain:
+						points = 2;
+						break;
+					case Forest:
+						points = 1;
+						break;
+					case Water:
+						break;
 					}
+					break;
+				case Elf:
+					switch (_map[j][k]){
+					case Plain:
+						points = 1;
+						break;
+					case Mountain:
+						points = 0;
+						break;
+					case Forest:
+						points = 3;
+						break;
+					case Water:
+						break;
+					}
+					break;
+				}
 
-					if (movePossible) {
-						// Change best moves
-						for (int m = 0; m < 3; m++) {
-							if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
-								moves[m * 2] = j;
-								moves[m * 2 + 1] = k;
-								break;
-							}
+
+				if (mvpts < INFINITY) {
+					// Change best moves
+					for (int m = 0; m < 3; m++) {
+						if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
+							moves[m * 2] = j;
+							moves[m * 2 + 1] = k;
+							break;
 						}
 					}
 				}
