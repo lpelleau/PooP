@@ -94,7 +94,7 @@ namespace PooP.Core.Implementation
             {
                 if (GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Mountain")
                     return 0;
-                
+
                 if (GameBuilder.CURRENTGAME.Map.getTileAt(Position).GetType().Name == "Forest")
                     return 3;
             }
@@ -111,9 +111,9 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
-            return (getMoveCost(dest)-Int16.MaxValue/2) <= MovePoints + Race.AttackDistance
+            return (getMoveCost(dest) - Int16.MaxValue / 2) <= MovePoints + Race.AttackDistance
                 && (dest.XPosition == Position.XPosition || dest.YPosition == Position.YPosition)
-                && GameBuilder.CURRENTGAME.Map.IsOccupied(dest,Race)
+                && GameBuilder.CURRENTGAME.Map.IsOccupied(dest, Race)
                 && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(dest).GetType().Name != "Water");
         }
 
@@ -140,11 +140,11 @@ namespace PooP.Core.Implementation
             if (GameBuilder.CURRENTGAME.Map.IsOccupied(TargetPos, this.Race))
                 res = Int16.MaxValue / 2;
             if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water")
-                res+= Int16.MaxValue / 2; 
+                res += Int16.MaxValue / 2;
             else if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
-                res+= 2;
+                res += 2;
             else if (Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
-                res+= 0.5;
+                res += 0.5;
             else res += 1;
             return res;
         }
@@ -188,28 +188,52 @@ namespace PooP.Core.Implementation
                                                             new Position(Start.XPosition, Start.YPosition + 1),
                                                             new Position(Start.XPosition - 1, Start.YPosition),
                                                             new Position(Start.XPosition, Start.YPosition - 1)};
-
+                /*
+                 * Start (S) and Target (T) are like :
+                 *  S   A  ... ...
+                 *  B  ... ... ...
+                 * ... ... ...  T
+                 * => Test A (TestedPaths[0]) and B (TestedPaths[1])
+                */
                 if (Start.XPosition < Target.XPosition && Start.YPosition < Target.YPosition)
                 {
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[0]) + getMoveCostFromTo(TestedPaths[0], Target));
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[1]) + getMoveCostFromTo(TestedPaths[1], Target));
                 }
+                /*
+                 * Start (S) and Target (T) are like :
+                 * B T
+                 * S A
+                 * => Test A (TestedPaths[0]) and B (TestedPaths[3])
+                */
                 else if (Start.XPosition < Target.XPosition && Start.YPosition > Target.YPosition)
                 {
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[0]) + getMoveCostFromTo(TestedPaths[0], Target));
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[3]) + getMoveCostFromTo(TestedPaths[3], Target));
                 }
+                /*
+                 * Start (S) and Target (T) are like :
+                 * T B
+                 * A S
+                 * => Test A (TestedPaths[2]) and B (TestedPaths[3])
+                */
                 else if (Start.XPosition > Target.XPosition && Start.YPosition > Target.YPosition)
                 {
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[2]) + getMoveCostFromTo(TestedPaths[2], Target));
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[3]) + getMoveCostFromTo(TestedPaths[3], Target));
                 }
+                /*
+                 * Start (S) and Target (T) are like :
+                 * A S
+                 * T B
+                 * => Test A (TestedPaths[2]) and B (TestedPaths[1])
+                */
                 else
                 {
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[1]) + getMoveCostFromTo(TestedPaths[1], Target));
                     possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[2]) + getMoveCostFromTo(TestedPaths[2], Target));
                 }
-                
+
                 totalCost += possibleCosts.Min();
             }
             return totalCost;
@@ -229,7 +253,7 @@ namespace PooP.Core.Implementation
         {
             return (Target.XPosition == Position.XPosition || Target.YPosition == Position.YPosition)
                 && (getMoveCost(Target) <= MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water")
-                && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target,Race);
+                && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target, Race);
         }
 
         /// <summary>
