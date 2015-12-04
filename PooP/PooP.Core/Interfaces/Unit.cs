@@ -77,6 +77,13 @@ namespace PooP.Core.Interfaces
         bool canMoveTo(Position Target);
 
         /// <summary>
+        /// Tests if the unit can defend itself
+        /// </summary>
+        /// <param name="Attackers">Attackers' position</param>
+        /// <returns>true if it is possible</returns>
+        bool canDefendAgainst(Position Attackers);
+
+        /// <summary>
         /// Transforms the unit into datas
         /// </summary>
         /// <returns>The data object representing the unit</returns>

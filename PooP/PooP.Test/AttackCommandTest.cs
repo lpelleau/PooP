@@ -50,15 +50,45 @@ namespace PooP.Test
         [TestMethod]
         public void WinsAttack()
         {
+            // Attack with a defender at only 1 HP
             Position AttackedPos = new Position(4, 7);
-            int HPAttacker = GameBuilder.CURRENTGAME.Players[0].Race.Units[1].LifePoints;
+            Unit Attacker = GameBuilder.CURRENTGAME.Players[0].Race.Units[1];
+            int HPAttacker = Attacker.LifePoints;
             Unit BestDefender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(AttackedPos);
             int HPDefender = BestDefender.LifePoints;
 
-            new MoveCommand(GameBuilder.CURRENTGAME.Players[0].Race.Units[1], new Position(4, 6)).execute();
+            new MoveCommand(Attacker, new Position(4, 6)).execute();
             AttackCommand atk = new AttackCommand(GameBuilder.CURRENTGAME.Players[0].Race.Units[1], AttackedPos);
 
             atk.execute();
+
+            Assert.AreNotEqual(HPDefender, BestDefender.LifePoints);
+            Assert.IsTrue(0 >= BestDefender.LifePoints);
+            Assert.AreEqual(HPAttacker, Attacker.LifePoints);
+        }
+
+        /// <summary>
+        /// Attacks and must win because the defender is too far away
+        /// </summary>
+        [TestMethod]
+        public void WinsAttack2()
+        {
+            // End the turn so that the elves can play
+            new EndTurn().execute();
+
+            // Attack with a defender that cannot defend itself
+            Position AttackedPos = new Position(4, 5);
+            Unit Attacker = GameBuilder.CURRENTGAME.Players[1].Race.Units[2];
+            int HPAttacker = Attacker.LifePoints;
+            Unit BestDefender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(AttackedPos);
+            int HPDefender = BestDefender.LifePoints;
+
+            AttackCommand atk = new AttackCommand(Attacker, AttackedPos);
+
+            atk.execute();
+
+            Assert.AreNotEqual(HPDefender, BestDefender.LifePoints);
+            Assert.AreEqual(HPAttacker, Attacker.LifePoints);
         }
 
         /// <summary>

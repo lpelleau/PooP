@@ -58,7 +58,7 @@ namespace PooP.Core.Implementation.Commands
 
             // Determine who wins the battle
             AttackSuccess = (MovedUnit.Race.Attack * MovedUnit.LifePoints / MovedUnit.Race.Life) > Defender.Race.Defence
-                || (!Defender.canAttack(OldPos)) ;
+                || (!Defender.canDefendAgainst(OldPos)) ;
 
             Random randGenerator = new Random();
 
