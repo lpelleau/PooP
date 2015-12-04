@@ -35,7 +35,7 @@ namespace PooP.Test
             string[] races = new string[2] { "orc", "elf" };
             GameBuilderFactory.get("demo").createGame(players, races);
             Assert.IsNotNull(GameBuilder.CURRENTGAME);
-            Assert.IsTrue(GameBuilder.CURRENTGAME.NumberOfTurns == 5);
+            Assert.AreEqual(5, GameBuilder.CURRENTGAME.NumberOfTurns);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace PooP.Test
             string[] races = new string[2] { "orc", "elf" };
             GameBuilderFactory.get("small").createGame(players, races);
             Assert.IsNotNull(GameBuilder.CURRENTGAME);
-            Assert.IsTrue(GameBuilder.CURRENTGAME.NumberOfTurns == 20);
+            Assert.AreEqual(20, GameBuilder.CURRENTGAME.NumberOfTurns);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace PooP.Test
             string[] races = new string[2] { "orc", "elf" };
             GameBuilderFactory.get("standard").createGame(players, races);
             Assert.IsNotNull(GameBuilder.CURRENTGAME);
-            Assert.IsTrue(GameBuilder.CURRENTGAME.NumberOfTurns == 30);
+            Assert.AreEqual(30, GameBuilder.CURRENTGAME.NumberOfTurns);
         }
 
         /// <summary>

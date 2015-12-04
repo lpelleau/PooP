@@ -7,6 +7,7 @@ using PooP.Core.Interfaces.Commands;
 using PooP.Core.Implementation.Maps;
 using PooP.Core.Ressource;
 using PooP.Core.Implementation.Games;
+using PooP.Core.Exceptions;
 
 namespace PooP.Core.Implementation.Commands
 {
@@ -33,7 +34,6 @@ namespace PooP.Core.Implementation.Commands
             MovedUnit = Attacker;
             OldPos = MovedUnit.Position;
             Target = AttackedTilePos;
-            Defender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(AttackedTilePos);
             cost = MovedUnit.getMoveCost(Target);
         }
     
@@ -51,8 +51,14 @@ namespace PooP.Core.Implementation.Commands
         /// </summary>
         public void execute()
         {
+            if (!this.canDo()) throw new IncorrectCommandException();
+
+            // Choose the defender
+            Defender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(Target);
+
             // Determine who wins the battle
-            AttackSuccess = (MovedUnit.Race.Attack * MovedUnit.LifePoints / MovedUnit.Race.Life) > Defender.Race.Defence;
+            AttackSuccess = (MovedUnit.Race.Attack * MovedUnit.LifePoints / MovedUnit.Race.Life) > Defender.Race.Defence
+                || (!Defender.canAttack(OldPos)) ;
 
             Random randGenerator = new Random();
 

@@ -34,10 +34,10 @@ namespace PooP.Test
                 }
             }
 
-            Assert.IsTrue(n[(int)TileType.Plain] == SIZE * SIZE / 4);
-            Assert.IsTrue(n[(int)TileType.Mountain] == SIZE * SIZE / 4);
-            Assert.IsTrue(n[(int)TileType.Forest] == SIZE * SIZE / 4);
-            Assert.IsTrue(n[(int)TileType.Water] == SIZE * SIZE / 4);
+            Assert.AreEqual(SIZE * SIZE / 4, n[(int)TileType.Plain]);
+            Assert.AreEqual(SIZE * SIZE / 4, n[(int)TileType.Mountain]);
+            Assert.AreEqual(SIZE * SIZE / 4, n[(int)TileType.Forest]);
+            Assert.AreEqual(SIZE * SIZE / 4, n[(int)TileType.Water]);
         }
         /// <summary>
         /// Test the placement of the players

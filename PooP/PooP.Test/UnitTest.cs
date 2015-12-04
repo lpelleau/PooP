@@ -35,9 +35,9 @@ namespace PooP.Test
         [TestMethod]
         public void UnitConstructorGetTest()
         {
-            Assert.IsTrue(u.MovePoints == 0);
-            Assert.IsTrue(u.LifePoints == r.Life);
-            Assert.IsTrue(u.Position == p);
+            Assert.AreEqual(0, u.MovePoints);
+            Assert.AreEqual(r.Life, u.LifePoints);
+            Assert.AreEqual(p, u.Position);
         }
     }
 }

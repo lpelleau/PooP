@@ -25,7 +25,7 @@ namespace PooP.Test
         {
             int nt = GameBuilder.CURRENTGAME.NumberOfTurns;
             new EndTurn().execute();
-            Assert.IsTrue(nt - 1 == GameBuilder.CURRENTGAME.NumberOfTurns);
+            Assert.AreEqual(GameBuilder.CURRENTGAME.NumberOfTurns, nt - 1);
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace PooP.Test
             
             // Ending the turn
             new EndTurn().execute();
-            Assert.IsTrue(UndoableImpl.DoneCommands.Count == 0);
-            Assert.IsTrue(UndoableImpl.UndoneCommands.Count == 0);
+            Assert.AreEqual(0, UndoableImpl.DoneCommands.Count);
+            Assert.AreEqual(0, UndoableImpl.UndoneCommands.Count);
         }
 
         /// <summary>

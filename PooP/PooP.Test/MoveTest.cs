@@ -18,16 +18,16 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester1");
 
             // An elf must use 2 points to move to a mountain tile
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(9, 5)) == 2);
+            Assert.AreEqual(2, GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(9, 5)));
 
             // An elf must use 1 points otherwise
             // Forest
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 4)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 4)));
             // Plain
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[0].getMoveCost(new Position(12, 7)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[1].Race.Units[0].getMoveCost(new Position(12, 7)));
 
             // Water -> Infinite since impossible
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 6)) == Int16.MaxValue / 2);
+            Assert.AreEqual(Int16.MaxValue / 2, GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 6)));
         }
 
         /// <summary>
@@ -39,16 +39,16 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester1");
 
             // An orc must use 0.5 points to move to a plain tile
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(3, 5)) == 0.5);
+            Assert.AreEqual(0.5, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(4, 9)));
 
             // An orc must use 1 points otherwise
             // Mountain
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)));
             // Forest
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)));
 
             // Water -> Infinite since impossible
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)) == Int16.MaxValue / 2);
+            Assert.AreEqual(Int16.MaxValue / 2, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)));
 
         }
 
@@ -63,13 +63,13 @@ namespace PooP.Test
 
             // A human must use 1 points everytime
             // Water
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)));
             // Mountain
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)));
             // Plain
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[2].getMoveCost(new Position(8, 2)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[2].getMoveCost(new Position(8, 2)));
             // Forest
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)) == 1);
+            Assert.AreEqual(1, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester1");
 
             // To move to a distant tile, this orc must spend 1.5pts
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(4,10)) == 1.5);
+            Assert.AreEqual(1.5, GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(4,10)));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace PooP.Test
             GameSave.INSTANCE.load("../../Test_files/tester1");
 
             // The unit has enough move points to move to this tile
-            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 7)) <= GameBuilder.CURRENTGAME.Players[0].Race.Units[1].MovePoints);
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 7)) >= Int16.MaxValue / 2);
         }
 
         /// <summary>

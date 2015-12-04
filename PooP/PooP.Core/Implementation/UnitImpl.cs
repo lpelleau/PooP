@@ -105,24 +105,16 @@ namespace PooP.Core.Implementation
         }
 
         /// <summary>
-        /// Tells if a unit can reach a given position
-        /// </summary>
-        /// <param name="Target">Position to reach</param>
-        /// <returns>true if the unit has the needed points to move to this position</returns>
-        private bool reachable(Position Target)
-        {
-            return (Target.XPosition == Position.YPosition || Target.YPosition == Position.YPosition)
-                && (getMoveCost(Target) < MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water");
-        }
-
-        /// <summary>
         /// Tells if a given position can be attacked by this unit or not
         /// </summary>
         /// <param name="dest">Position to attack</param>
         /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
-            return reachable(dest) && GameBuilder.CURRENTGAME.Map.IsOccupied(dest,Race);
+            return (getMoveCost(dest)-Int16.MaxValue/2) <= MovePoints
+                && (dest.XPosition == Position.XPosition || dest.YPosition == Position.YPosition)
+                && GameBuilder.CURRENTGAME.Map.IsOccupied(dest,Race)
+                && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(dest).GetType().Name != "Water");
         }
 
         /// <summary>
@@ -130,14 +122,17 @@ namespace PooP.Core.Implementation
         /// </summary>
         /// <param name="Target">Position to reach</param>
         /// <returns>The number of needed points</returns>
-        private double getMoveCostFromTile(Tile Target)
+        private double getMoveCostFromTile(Position TargetPos)
         {
-            if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
+            Tile Target = GameBuilder.CURRENTGAME.Map.getTileAt(TargetPos);
+
+            if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water"
+                || GameBuilder.CURRENTGAME.Map.IsOccupied(TargetPos, this.Race))
+                return Int16.MaxValue / 2; 
+            else if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
                 return 2;
             else if (Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
                 return 0.5;
-            else if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water")
-                return Int16.MaxValue / 2;
             return 1;
         }
 
@@ -155,21 +150,21 @@ namespace PooP.Core.Implementation
                 // Moving forward on Y axis
                 if (Start.YPosition < Target.YPosition)
                     for (int i = Start.YPosition + 1; i <= Target.YPosition; i++)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
+                        totalCost += getMoveCostFromTile(new Position(Target.XPosition, i));
                 // Moving backward on Y axis
                 else
                     for (int i = Start.YPosition - 1; i >= Target.YPosition; i--)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
+                        totalCost += getMoveCostFromTile(new Position(Target.XPosition, i));
             // Moving on X axis
             else if (Start.YPosition == Target.YPosition)
                 // Moving forward on X axis
                 if (Start.XPosition < Target.XPosition)
                     for (int i = Start.XPosition + 1; i <= Target.XPosition; i++)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(new Position(i, Target.YPosition));
                 // Moving backward on X axis
                 else
                     for (int i = Start.XPosition - 1; i >= Target.XPosition; i--)
-                        totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
+                        totalCost += getMoveCostFromTile(new Position(i, Target.YPosition));
             // Find the correct path
             else
             {
@@ -218,7 +213,9 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit can move to the given position, false otherwise</returns>
         public bool canMoveTo(Position Target)
         {
-            return reachable(Target) && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target,Race);
+            return (Target.XPosition == Position.XPosition || Target.YPosition == Position.YPosition)
+                && (getMoveCost(Target) <= MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water")
+                && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target,Race);
         }
 
         /// <summary>
