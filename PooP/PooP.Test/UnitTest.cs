@@ -39,5 +39,21 @@ namespace PooP.Test
             Assert.AreEqual(r.Life, u.LifePoints);
             Assert.AreEqual(p, u.Position);
         }
+
+        /// <summary>
+        /// Tests the modification of a unit
+        /// </summary>
+        [TestMethod]
+        public void UnitModifyTest()
+        {
+            Position p2 = new Position(5, 6);
+            u.Position = p2;
+            u.LifePoints = 2;
+            u.MovePoints = 3;
+
+            Assert.AreEqual(p2, u.Position);
+            Assert.AreEqual(2, u.LifePoints);
+            Assert.AreEqual(3, u.MovePoints);
+        }
     }
 }

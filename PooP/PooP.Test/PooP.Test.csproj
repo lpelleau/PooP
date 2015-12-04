@@ -62,6 +62,7 @@
     <Compile Include="MoveTest.cs" />
     <Compile Include="MoveCommandTest.cs" />
     <Compile Include="AttackCommandTest.cs" />
+    <Compile Include="MapTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PooP.Core\PooP.Core.csproj">
