@@ -111,10 +111,20 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
-            return (getMoveCost(dest)-Int16.MaxValue/2) <= MovePoints
+            return (getMoveCost(dest)-Int16.MaxValue/2) <= MovePoints + Race.AttackDistance
                 && (dest.XPosition == Position.XPosition || dest.YPosition == Position.YPosition)
                 && GameBuilder.CURRENTGAME.Map.IsOccupied(dest,Race)
                 && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(dest).GetType().Name != "Water");
+        }
+
+        /// <summary>
+        /// Tests if the unit can defend itself from an attack by a certain position
+        /// </summary>
+        /// <param name="Attackers">Attackers' position</param>
+        /// <returns>true if the unit has enough attack distance, false else</returns>
+        public bool canDefendAgainst(Position Attackers)
+        {
+            return (getMoveCost(Attackers) - (Int16.MaxValue / 2)) <= Race.AttackDistance;
         }
 
         /// <summary>
@@ -124,23 +134,27 @@ namespace PooP.Core.Implementation
         /// <returns>The number of needed points</returns>
         private double getMoveCostFromTile(Position TargetPos)
         {
+            double res = 0;
             Tile Target = GameBuilder.CURRENTGAME.Map.getTileAt(TargetPos);
 
-            if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water"
-                || GameBuilder.CURRENTGAME.Map.IsOccupied(TargetPos, this.Race))
-                return Int16.MaxValue / 2; 
+            if (GameBuilder.CURRENTGAME.Map.IsOccupied(TargetPos, this.Race))
+                res = Int16.MaxValue / 2;
+            if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water")
+                res+= Int16.MaxValue / 2; 
             else if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
-                return 2;
+                res+= 2;
             else if (Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
-                return 0.5;
-            return 1;
+                res+= 0.5;
+            else res += 1;
+            return res;
         }
 
         /// <summary>
         /// Computes the number of needed points to move to a given position
-        /// (This version only computes moving vertically OR horizontally)
+        /// This method uses Dijkstra algorithm to compute the needed points, starting from the beginning position
         /// </summary>
         /// <param name="Target">Position to reach</param>
+        /// <param name="Start">Starting position</param>
         /// <returns>The number of points needed to move to the given position</returns>
         public double getMoveCostFromTo(Position Start, Position Target)
         {

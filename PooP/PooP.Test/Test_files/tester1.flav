@@ -62,7 +62,7 @@
             <MovePoints>0</MovePoints>
           </UnitData>
           <UnitData>
-            <LifePoints>12</LifePoints>
+            <LifePoints>1</LifePoints>
             <Position>
               <XPosition>4</XPosition>
               <YPosition>7</YPosition>
