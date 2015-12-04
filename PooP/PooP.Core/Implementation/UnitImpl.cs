@@ -133,13 +133,11 @@ namespace PooP.Core.Implementation
         private double getMoveCostFromTile(Tile Target)
         {
             if (Race.GetType().Name == "Elf" && Target.GetType().Name == "Mountain")
-            {
                 return 2;
-            }
             else if (Race.GetType().Name == "Orc" && Target.GetType().Name == "Plain")
-            {
                 return 0.5;
-            }
+            else if (Race.GetType().Name != "Human" && Target.GetType().Name == "Water")
+                return Int16.MaxValue / 2;
             return 1;
         }
 
@@ -149,30 +147,68 @@ namespace PooP.Core.Implementation
         /// </summary>
         /// <param name="Target">Position to reach</param>
         /// <returns>The number of points needed to move to the given position</returns>
-        public double getMoveCost(Position Target)
+        public double getMoveCostFromTo(Position Start, Position Target)
         {
             double totalCost = 0;
             // Moving on Y axis
-            if (Position.XPosition == Target.XPosition)
+            if (Start.XPosition == Target.XPosition)
                 // Moving forward on Y axis
-                if (Position.YPosition < Target.YPosition)
-                    for (int i = Position.YPosition + 1; i <= Target.YPosition; i++)
+                if (Start.YPosition < Target.YPosition)
+                    for (int i = Start.YPosition + 1; i <= Target.YPosition; i++)
                         totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
                 // Moving backward on Y axis
                 else
-                    for (int i = Position.YPosition - 1; i >= Target.YPosition; i--)
+                    for (int i = Start.YPosition - 1; i >= Target.YPosition; i--)
                         totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(Target.XPosition, i)));
             // Moving on X axis
-            else
+            else if (Start.YPosition == Target.YPosition)
                 // Moving forward on X axis
-                if (Position.XPosition < Target.XPosition)
-                    for (int i = Position.XPosition + 1; i <= Target.XPosition; i++)
+                if (Start.XPosition < Target.XPosition)
+                    for (int i = Start.XPosition + 1; i <= Target.XPosition; i++)
                         totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
                 // Moving backward on X axis
                 else
-                    for (int i = Position.XPosition - 1; i >= Target.XPosition; i--)
+                    for (int i = Start.XPosition - 1; i >= Target.XPosition; i--)
                         totalCost += getMoveCostFromTile(GameBuilder.CURRENTGAME.Map.getTileAt(new Position(i, Target.YPosition)));
+            // Find the correct path
+            else
+            {
+                // Try moving to another tile and test
+                List<double> possibleCosts = new List<double>();
+                Position[] TestedPaths = new Position[4] {  new Position(Start.XPosition + 1, Start.YPosition),
+                                                            new Position(Start.XPosition, Start.YPosition + 1),
+                                                            new Position(Start.XPosition - 1, Start.YPosition),
+                                                            new Position(Start.XPosition, Start.YPosition - 1)};
+
+                if (Start.XPosition < Target.XPosition && Start.YPosition < Target.YPosition)
+                {
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[0]) + getMoveCostFromTo(TestedPaths[0], Target));
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[1]) + getMoveCostFromTo(TestedPaths[1], Target));
+                }
+                else if (Start.XPosition < Target.XPosition && Start.YPosition > Target.YPosition)
+                {
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[0]) + getMoveCostFromTo(TestedPaths[0], Target));
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[3]) + getMoveCostFromTo(TestedPaths[3], Target));
+                }
+                else if (Start.XPosition > Target.XPosition && Start.YPosition > Target.YPosition)
+                {
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[2]) + getMoveCostFromTo(TestedPaths[2], Target));
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[3]) + getMoveCostFromTo(TestedPaths[3], Target));
+                }
+                else
+                {
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[1]) + getMoveCostFromTo(TestedPaths[1], Target));
+                    possibleCosts.Add(getMoveCostFromTo(Start, TestedPaths[2]) + getMoveCostFromTo(TestedPaths[2], Target));
+                }
+                
+                totalCost += possibleCosts.Min();
+            }
             return totalCost;
+        }
+
+        public double getMoveCost(Position Target)
+        {
+            return getMoveCostFromTo(this.Position, Target);
         }
 
         /// <summary>

@@ -21,10 +21,13 @@ namespace PooP.Test
             Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(9, 5)) == 2);
 
             // An elf must use 1 points otherwise
+            // Forest
             Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 4)) == 1);
+            // Plain
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[0].getMoveCost(new Position(12, 7)) == 1);
 
-            // An elf can't walk on water
-            Assert.IsFalse(new MoveCommand(GameBuilder.CURRENTGAME.Players[1].Race.Units[1],(new Position(8, 4))).canDo());
+            // Water -> Infinite since impossible
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[1].Race.Units[1].getMoveCost(new Position(8, 6)) == Int16.MaxValue / 2);
         }
 
         /// <summary>
@@ -39,10 +42,14 @@ namespace PooP.Test
             Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(3, 5)) == 0.5);
 
             // An orc must use 1 points otherwise
+            // Mountain
             Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)) == 1);
+            // Forest
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)) == 1);
 
-            // An orc can't walk on water
-            Assert.IsFalse(new MoveCommand(GameBuilder.CURRENTGAME.Players[0].Race.Units[1], (new Position(5, 5))).canDo());
+            // Water -> Infinite since impossible
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)) == Int16.MaxValue / 2);
+
         }
 
         /// <summary>
@@ -55,10 +62,50 @@ namespace PooP.Test
             new EndTurn().execute();
 
             // A human must use 1 points everytime
+            // Water
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(5, 5)) == 1);
+            // Mountain
             Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 6)) == 1);
+            // Plain
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[2].getMoveCost(new Position(8, 2)) == 1);
+            // Forest
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(3, 10)) == 1);
+        }
 
-            // A human can walk on water
-            Assert.IsTrue(new MoveCommand(GameBuilder.CURRENTGAME.Players[0].Race.Units[1], (new Position(5, 5))).canDo());
+        /// <summary>
+        /// Tests the move cost for a distant tile
+        /// </summary>
+        [TestMethod]
+        public void DistantTile()
+        {
+            GameSave.INSTANCE.load("../../Test_files/tester1");
+
+            // To move to a distant tile, this orc must spend 1.5pts
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[3].getMoveCost(new Position(4,10)) == 1.5);
+        }
+
+        /// <summary>
+        /// A unit can't move to an occupied tile
+        /// </summary>
+        [TestMethod]
+        public void MoveToOccupied()
+        {
+            GameSave.INSTANCE.load("../../Test_files/tester1");
+
+            // The unit has enough move points to move to this tile
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 7)) <= GameBuilder.CURRENTGAME.Players[0].Race.Units[1].MovePoints);
+        }
+
+        /// <summary>
+        /// A unit can't move too far
+        /// </summary>
+        [TestMethod]
+        public void MoveToTooFar()
+        {
+            GameSave.INSTANCE.load("../../Test_files/tester1");
+
+            // The unit hasn't enough move points to move to this tile
+            Assert.IsTrue(GameBuilder.CURRENTGAME.Players[0].Race.Units[1].getMoveCost(new Position(4, 2)) > GameBuilder.CURRENTGAME.Players[0].Race.Units[1].MovePoints);
         }
     }
 }
