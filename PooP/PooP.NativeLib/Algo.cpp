@@ -4,6 +4,10 @@
 #include <time.h>
 #include <math.h>
 
+/**
+* @Description Initialize class attributes with the size of the map
+* @Param size - Size of the map (number of tiles)
+**/
 void Algo::initVars(int size) {
 	_nbTiles = size;
 	_height = sqrt(_nbTiles);
@@ -15,6 +19,11 @@ void Algo::initVars(int size) {
 	}
 }
 
+/**
+* @Description Initialize the map of the class with a map already generated
+* @Param map - Map generated
+* @Param size - Size of the map (number of tiles)
+**/
 void Algo::init(TileType map[], int size) {
 	initVars(size);
 
@@ -25,6 +34,12 @@ void Algo::init(TileType map[], int size) {
 	}
 }
 
+/**
+* @Description Initialize the map of the class withe an algorithme
+* and return it
+* @Param map - Map to be generated
+* @Param size - Size of the map (number of tiles)
+**/
 void Algo::fillMap(TileType map[], int size)
 {
 	srand(time(NULL));
@@ -43,6 +58,9 @@ void Algo::fillMap(TileType map[], int size)
 	}
 }
 
+/**
+* @Description Fill the map with Plain tiles
+**/
 void Algo::generatePlains() {
 	for (int i = 0; i < _height; i++) {
 		for (int j = 0; j < _height; j++) {
@@ -52,12 +70,22 @@ void Algo::generatePlains() {
 	}
 }
 
+/**
+* @Description Generate lakes in the map
+**/
 void Algo::generateLakes() {
 	while (_tilesOnMap[Water] < _objTiles) {
 		generateRec(Water, rand() % _height, rand() % _height, 1);
 	}
 }
 
+/**
+* @Description Generate a group of tiles from a central point
+* @Param type - Type of tile
+* @Param x - X coordinate
+* @Param y - Y coordinate
+* @Param step - Level of recursion : higher mean less chance to generate recursion
+**/
 void Algo::generateRec(TileType type, int x, int y, int step) {
 	step += STEP_LAKE_GEN;
 
@@ -80,18 +108,28 @@ void Algo::generateRec(TileType type, int x, int y, int step) {
 	}
 }
 
+/**
+* @Description Generate Mountains in the map
+**/
 void Algo::generateMountain() {
 	while (_tilesOnMap[Mountain] < _objTiles) {
 		generateRec(Mountain, rand() % _height, rand() % _height, 1);
 	}
 }
 
+/**
+* @Description Generate Forests in the map
+**/
 void Algo::generateForest() {
 	while (_tilesOnMap[Forest] < _objTiles) {
 		generateRec(Forest, rand() % _height, rand() % _height, 1);
 	}
 }
 
+/**
+* @Description Place the two players on the map, the can't be on a Water tile
+* @Param players - Array of players
+**/
 void Algo::placePlayers(int players[]) {
 	int *x1 = &(players[0]);
 	int *y1 = &(players[1]);
@@ -106,6 +144,12 @@ void Algo::placePlayers(int players[]) {
 		placeP2(x2, y2);
 	} while (_map[*x1][*y1] == Water || _map[*x2][*y2] == Water);
 }
+
+/**
+* @Description Place the first player near of a border
+* @Param *x - X position
+* @Param *y - Y position
+**/
 void Algo::placeP1(int *x, int *y) {
 	int border = rand() % 4;
 
@@ -128,6 +172,12 @@ void Algo::placeP1(int *x, int *y) {
 		break;
 	}
 }
+
+/**
+* @Description Place the second player at the opposite of the first player modulo one tile
+* @Param *x - X position
+* @Param *y - Y position
+**/
 void Algo::placeP2(int *x, int *y) {
 	int move, res;
 	do {

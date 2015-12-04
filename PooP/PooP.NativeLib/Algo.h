@@ -5,6 +5,7 @@
 
 #define STEP_LAKE_GEN 1
 
+/* Types of the differents tiles */
 enum TileType {
 	Plain = 0,
 	Mountain = 1,
@@ -12,6 +13,7 @@ enum TileType {
 	Water = 3
 };
 
+/* Types of the differents races */
 enum Race {
 	Human = 0,
 	Orc = 1,
@@ -20,11 +22,11 @@ enum Race {
 
 class Algo {
 private:
-	TileType** _map;
-	int _nbTiles;
-	int _height;
-	int _objTiles;
-	int _tilesOnMap[NB_TILES];
+	TileType** _map;			// Map of the current game
+	int _nbTiles;				// Number of tiles on the map
+	int _height;				// Height of the map
+	int _objTiles;				// Number of tiles per types of tile (goal)
+	int _tilesOnMap[NB_TILES];	// Number of tiles per types of tile (real)
 
 	void initVars(int size);
 
