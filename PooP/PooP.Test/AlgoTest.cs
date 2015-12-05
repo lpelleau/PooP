@@ -59,7 +59,7 @@ namespace PooP.Test
         [TestMethod]
         public void BestMovesTest()
         {
-            //GameSave.INSTANCE.load("../../Test_files/tester1");
+            GameSave.INSTANCE.load("../../Test_files/tester1");
             Player[] p = GameBuilder.CURRENTGAME.Players;
 
             List<Unit>.Enumerator e = p[0].Race.Units.GetEnumerator();
@@ -88,8 +88,8 @@ namespace PooP.Test
 
             for (int i = 0; i < 3; i++)
             {
-                Assert.Equals(moves[i * 2], 0);
-                Assert.Equals(moves[i * 2 + 1], 0);
+                Assert.Equals(moves[i * 2], 0); // Real expected value here...
+                Assert.Equals(moves[i * 2 + 1], 0); // Real expected value here...
             }
         }
     }
