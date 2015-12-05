@@ -18,7 +18,6 @@ namespace PooP.Core.Implementation.Games
     /// <summary>
     /// Implements a Game
     /// </summary>
-    [Serializable]
     public class GameImpl : Game
     {
 

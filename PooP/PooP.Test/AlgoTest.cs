@@ -2,8 +2,11 @@
 using PooP.Core.Ressource;
 using PooP.Core.Exceptions;
 using System;
+using System.Collections.Generic;
 using PooP.Core.Implementation.Games;
 using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Games;
+using PooP.Core.Ressource;
 
 namespace PooP.Test
 {
@@ -49,6 +52,45 @@ namespace PooP.Test
             Algo alg = Algo.INSTANCE;
             int[] players = alg.PlacePlayers(SIZE * SIZE);
             Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= SIZE - 2*2);
+        }
+        /// <summary>
+        /// Test the best moves finder
+        /// </summary>
+        [TestMethod]
+        public void BestMovesTest()
+        {
+            //GameSave.INSTANCE.load("../../Test_files/tester1");
+            Player[] p = GameBuilder.CURRENTGAME.Players;
+
+            List<Unit>.Enumerator e = p[0].Race.Units.GetEnumerator();
+            int nbUnits = p[0].Race.Units.Count;
+            int[] units = new int[nbUnits * 2];
+            int[] life = new int[nbUnits];
+            for (int i = 0; i  < nbUnits; i++) {
+                units[i * 2] = e.Current.Position.XPosition;
+                units[i * 2 + 1] = e.Current.Position.YPosition;
+                life[i] = e.Current.LifePoints;
+                e.MoveNext();
+            }
+
+            e = p[1].Race.Units.GetEnumerator();
+            int nbEnemies = p[1].Race.Units.Count;
+            int[] enemies = new int[nbEnemies * 2];
+            for (int i = 0; i < nbEnemies; i++)
+            {
+                enemies[i * 2] = e.Current.Position.XPosition;
+                enemies[i * 2 + 1] = e.Current.Position.YPosition;
+                e.MoveNext();
+            }
+
+            Algo alg = Algo.INSTANCE;
+            int[] moves = alg.BestMoves(14 * 14, WRace.Orc, units, nbUnits, life, enemies, nbEnemies);
+
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.Equals(moves[i * 2], 0);
+                Assert.Equals(moves[i * 2 + 1], 0);
+            }
         }
     }
 }
