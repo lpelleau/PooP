@@ -192,6 +192,7 @@ namespace PooP.Core.Implementation
                  * Start (S) and Target (T) are like :
                  *  S   A  ... ...
                  *  B  ... ... ...
+                 * ... ... ... ...
                  * ... ... ...  T
                  * => Test A (TestedPaths[0]) and B (TestedPaths[1])
                 */
@@ -202,8 +203,10 @@ namespace PooP.Core.Implementation
                 }
                 /*
                  * Start (S) and Target (T) are like :
-                 * B T
-                 * S A
+                 * ... ... ...  T
+                 * ... ... ... ...
+                 *  B  ... ... ...
+                 *  S   A  ... ...
                  * => Test A (TestedPaths[0]) and B (TestedPaths[3])
                 */
                 else if (Start.XPosition < Target.XPosition && Start.YPosition > Target.YPosition)
@@ -213,8 +216,10 @@ namespace PooP.Core.Implementation
                 }
                 /*
                  * Start (S) and Target (T) are like :
-                 * T B
-                 * A S
+                 *  T  ... ... ...
+                 * ... ... ... ...
+                 * ... ... ...  B
+                 * ... ...  A   S
                  * => Test A (TestedPaths[2]) and B (TestedPaths[3])
                 */
                 else if (Start.XPosition > Target.XPosition && Start.YPosition > Target.YPosition)
@@ -224,8 +229,10 @@ namespace PooP.Core.Implementation
                 }
                 /*
                  * Start (S) and Target (T) are like :
-                 * A S
-                 * T B
+                 * ... ...  A   S
+                 * ... ... ...  B
+                 * ... ... ... ...
+                 *  T  ... ... ...
                  * => Test A (TestedPaths[2]) and B (TestedPaths[1])
                 */
                 else

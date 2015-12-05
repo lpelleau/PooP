@@ -70,8 +70,8 @@ EXPORTCDECL void Algo_placePlayers(Algo* algo, int players[]) {
 	return algo->placePlayers(players);
 }
 
-EXPORTCDECL void Algo_bestMoves(Algo* algo, Race race, int units[], int nbUnits, int moves[]) {
-	return algo->bestMoves(race, units, nbUnits, moves);
+EXPORTCDECL void Algo_bestMoves(Algo* algo, Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]) {
+	return algo->bestMoves(race, units, nbUnits, life, enemies, nbEnemies, moves);
 }
 
 EXPORTCDECL Algo* Algo_new() {

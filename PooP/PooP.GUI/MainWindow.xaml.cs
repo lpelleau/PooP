@@ -10,9 +10,9 @@ namespace PooP.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public void LaunchGame(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("Launching...");
         }
     }
 

@@ -71,5 +71,22 @@ namespace PooP.Test
             new EndTurn().execute();
             Assert.IsTrue(GameBuilder.CURRENTGAME.FirstPlayer.Race.Units.TrueForAll(u => u.MovePoints == 2));
         }
+
+        /// <summary>
+        /// Checks that the game ends if there is 0 turns
+        /// </summary>
+        [TestMethod]
+        public void EndsGameIfZeroTurns()
+        {
+            throw new NotImplementedException();
+            
+            // Load the correct file
+
+            new EndTurn().execute();
+
+            Assert.IsNotNull(EndTurn.winner);
+
+            // Checks that the given winner is correct
+        }
     }
 }

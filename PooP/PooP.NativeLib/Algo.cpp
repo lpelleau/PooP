@@ -207,10 +207,10 @@ double Algo::moveCostFromTile(Race race, int x, int y, int life, int enemies[], 
 	if (life < 5)
 	for (int i = 0; i < nbEnemies * 2; i++)
 	if (enemies[i] == x && enemies[i + 1] == y)
-		return INFINITY;
+		return DBL_MAX;
 
 	if (race == Human && _map[x][y] == Water)
-		return INFINITY;
+		return DBL_MAX;
 	else if (race == Elf && _map[x][y] == Mountain)
 		return 2;
 	else if (race == Orc && _map[x][y] == Plain)
@@ -351,7 +351,7 @@ void Algo::bestMoves(Race race, int units[], int nbUnits, int life[], int enemie
 				}
 
 
-				if (mvpts < INFINITY) {
+				if (mvpts < DBL_MAX) {
 					// Change best moves
 					for (int m = 0; m < 3; m++) {
 						if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
