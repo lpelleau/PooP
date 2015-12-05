@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Test_files\tester1.flav" />
+    <None Include="Test_files\tester3.flav" />
     <None Include="Test_files\tester2.flav" />
     <None Include="Test_files\TesterPooP.xlsm" />
   </ItemGroup>

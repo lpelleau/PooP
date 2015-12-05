@@ -82,6 +82,7 @@ namespace PooP.Core.Implementation.Games
             OpenedFile = null;
             UndoableImpl.DoneCommands = new Stack<Command>();
             UndoableImpl.UndoneCommands = new Stack<Command>();
+            EndTurn.winner = null;
         }
 
         /// <summary>

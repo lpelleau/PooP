@@ -52,5 +52,22 @@ namespace PooP.Test
         {
             p.XPosition = -1;
         }
+
+        /// <summary>
+        /// Tests the method equals
+        /// </summary>
+        [TestMethod]
+        public void EqualityTest()
+        {
+            Position p2 = new Position(1, 5);
+            Position p3 = new Position(2, 5);
+            Position p4 = new Position(1, 4);
+            Position p5 = new Position(2, 4);
+
+            Assert.AreEqual(p, p2);
+            Assert.AreNotEqual(p, p3);
+            Assert.AreNotEqual(p, p4);
+            Assert.AreNotEqual(p, p5);
+        }
     }
 }

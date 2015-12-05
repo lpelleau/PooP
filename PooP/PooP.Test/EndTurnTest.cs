@@ -73,20 +73,44 @@ namespace PooP.Test
         }
 
         /// <summary>
+        /// Checks that the game ends if only one player has still units
+        /// </summary>
+        [TestMethod]
+        public void EndsGameIfGotAWinner()
+        {
+            GameSave.INSTANCE.load("../../Test_files/tester2");
+
+            Assert.IsNull(EndTurn.winner);
+
+            new AttackCommand(GameBuilder.CURRENTGAME.Players[0].Race.Units[1], new Position(3, 5)).execute();
+            new EndTurn().execute();
+
+            // Now, the game has ended, P1 is the winner
+            Assert.IsNotNull(EndTurn.winner);
+
+            Assert.AreEqual(GameBuilder.CURRENTGAME.Players[0], EndTurn.winner);
+        }
+
+        /// <summary>
         /// Checks that the game ends if there is 0 turns
+        /// and tests the given winner
         /// </summary>
         [TestMethod]
         public void EndsGameIfZeroTurns()
-        {
-            throw new NotImplementedException();
-            
+        {            
             // Load the correct file
+            GameSave.INSTANCE.load("../../Test_files/tester3");
 
+            // Before this turn, there is no winner
+            Assert.IsNull(EndTurn.winner);
+
+            // End the turn
             new EndTurn().execute();
 
+            // Now, the game has ended, P1 is the winner
             Assert.IsNotNull(EndTurn.winner);
 
-            // Checks that the given winner is correct
+            Assert.AreEqual(GameBuilder.CURRENTGAME.Players[0], EndTurn.winner);
         }
     }
 }

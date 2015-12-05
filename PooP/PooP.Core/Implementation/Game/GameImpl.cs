@@ -41,6 +41,7 @@ namespace PooP.Core.Implementation.Games
             FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
             UndoableImpl.DoneCommands = new Stack<Command>();
             UndoableImpl.UndoneCommands = new Stack<Command>();
+            EndTurn.winner = null;
         }
 
         /// <summary>

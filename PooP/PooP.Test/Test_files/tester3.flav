@@ -54,7 +54,7 @@
       <Race>
         <Units>
           <UnitData>
-            <LifePoints>1</LifePoints>
+            <LifePoints>12</LifePoints>
             <Position>
               <XPosition>3</XPosition>
               <YPosition>5</YPosition>
@@ -68,7 +68,7 @@
       <Fst>false</Fst>
     </PlayerData>
   </Players>
-  <NumberOfTurns>30</NumberOfTurns>
+  <NumberOfTurns>1</NumberOfTurns>
   <Tiles>
     <Tiles>
       <TileCouple>
