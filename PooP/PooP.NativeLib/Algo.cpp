@@ -1,4 +1,9 @@
+#ifdef _DEBUG
+#include "../PooP.NativeLib.Test/Algo.h"
+#else
 #include "Algo.h"
+#endif
+
 #include <iostream>
 #include <algorithm>
 #include <time.h>
@@ -92,7 +97,7 @@ void Algo::generateLakes() {
 void Algo::generateRec(TileType type, int x, int y, int step) {
 	step += STEP_LAKE_GEN;
 
-	if ((_tilesOnMap[type] < _objTiles) && (_map[x][y] == Plain) && ((rand() % step) == (step - 1))) {
+	if ((_tilesOnMap[type] < _objTiles) && (_map[x][y] == Plain) && ((rand() % step) == 0)) {
 		_map[x][y] = type;
 		_tilesOnMap[type]++;
 
