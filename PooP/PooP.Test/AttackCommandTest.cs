@@ -97,7 +97,22 @@ namespace PooP.Test
         [TestMethod]
         public void UndoAttack()
         {
-            throw new NotImplementedException();
+            Position WhereToAttack = new Position(4, 6);
+            Unit Attacker = GameBuilder.CURRENTGAME.Players[0].Race.Units[1];
+            Unit Defenser = GameBuilder.CURRENTGAME.Players[1].Race.Units[3];
+            double MovedPoints = Attacker.MovePoints;
+            int LifeAtk = Attacker.LifePoints;
+            int LifeDef = Defenser.LifePoints;
+
+            // Attack the unit
+            AttackCommand atkc = new AttackCommand(Attacker, Defenser.Position);
+            atkc.execute();
+
+            // Undo the attack
+            atkc.undo();
+            Assert.IsTrue(Attacker.MovePoints.Equals(MovedPoints));
+            Assert.IsTrue(Attacker.LifePoints.Equals(LifeAtk));
+            Assert.IsTrue(Defenser.LifePoints.Equals(LifeDef));
         }
         
         /// <summary>
@@ -106,7 +121,31 @@ namespace PooP.Test
         [TestMethod]
         public void RedoAttack()
         {
-            throw new NotImplementedException();
+            Position WhereToAttack = new Position(4, 6);
+            Unit Attacker = GameBuilder.CURRENTGAME.Players[0].Race.Units[1];
+            Unit Defenser = GameBuilder.CURRENTGAME.Players[1].Race.Units[3];
+            double MovedPoints = Attacker.MovePoints;
+            int LifeAtk = Attacker.LifePoints;
+            int LifeDef = Defenser.LifePoints;
+
+            // Attack the unit
+            AttackCommand atkc = new AttackCommand(Attacker, Defenser.Position);
+            atkc.execute();
+            double MovedPointsAfter = Attacker.MovePoints;
+            int LifeAtkAfter = Attacker.LifePoints;
+            int LifeDefAfter = Defenser.LifePoints;
+
+            // Undo the attack
+            atkc.undo();
+            Assert.IsTrue(Attacker.MovePoints.Equals(MovedPoints));
+            Assert.IsTrue(Attacker.LifePoints.Equals(LifeAtk));
+            Assert.IsTrue(Defenser.LifePoints.Equals(LifeDef));
+
+            // Redo the attack
+            atkc.redo();
+            Assert.IsTrue(Attacker.MovePoints.Equals(MovedPointsAfter));
+            Assert.IsTrue(Attacker.LifePoints.Equals(LifeAtkAfter));
+            Assert.IsTrue(Defenser.LifePoints.Equals(LifeDefAfter));
         }
     }
 }

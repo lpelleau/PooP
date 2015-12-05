@@ -1,5 +1,6 @@
 #ifdef _DEBUG
-#include "../PooP.NativeLib.Test/Algo.h"
+#include "Algo.h"
+//#include "../PooP.NativeLib.Test/Algo.h"
 #else
 #include "Algo.h"
 #endif
