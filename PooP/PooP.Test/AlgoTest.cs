@@ -86,11 +86,12 @@ namespace PooP.Test
 
             Algo alg = Algo.INSTANCE;
             int[] moves = alg.BestMoves(14 * 14, WRace.Orc, units, nbUnits, life, enemies, nbEnemies);
+            int[] expectedMoves = new int[6] { 6, 5, 6, 6, 6, 7 }; // Real expected value here...
 
             for (int i = 0; i < 3; i++)
             {
-                Assert.Equals(moves[i * 2], 0); // Real expected value here...
-                Assert.Equals(moves[i * 2 + 1], 0); // Real expected value here...
+                Assert.IsTrue(moves[i * 2] == expectedMoves[i * 2]); 
+                Assert.IsTrue(moves[i * 2 + 1] == expectedMoves[i * 2 + 1]);
             }
         }
     }
