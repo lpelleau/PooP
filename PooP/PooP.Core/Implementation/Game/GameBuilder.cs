@@ -98,13 +98,5 @@ namespace PooP.Core.Implementation.Games
         /// <param name="races">An array with the players races as strings</param>
         /// <returns>An array with </returns>
         public abstract Player[] getPlayers(string[] playersNames, string[] races);
-
-        /// <summary>
-        /// Starts the game
-        /// </summary>
-        public void start()
-        {
-            // TODO
-        }
     }
 }

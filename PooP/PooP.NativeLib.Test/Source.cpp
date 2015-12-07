@@ -5,8 +5,7 @@
 #include <time.h>
 #include <math.h>
 
-
-#define SIZE 100
+#define SIZE 400
 #define NB_UNITS 5
 
 using namespace std;
@@ -15,7 +14,7 @@ int main() {
 	srand(time(NULL));
 	int height = (int)sqrt(SIZE);
 
-	Algo alg = Algo();
+	Algo alg;
 	TileType map[SIZE];
 	int players[4] = { 0 };
 	int moves[6] = { 0 };
