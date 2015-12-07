@@ -3,7 +3,7 @@
 #define NB_TILES 4
 #define NB_RACES 3
 
-#define STEP_LAKE_GEN 1
+#define STEP_GEN 1
 
 /* Types of the differents tiles */
 enum TileType {
@@ -31,7 +31,7 @@ private:
 	void initVars(int size);
 
 	int labelize(int *zones, int x, int y, int cpt);
-	int getDryZones(const TileType map[]);
+	int getDryZones();
 
 	void generatePlains();
 	void generateLakes();

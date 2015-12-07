@@ -18,6 +18,8 @@ using namespace std;
 * @Param size - Size of the map (number of tiles)
 **/
 void Algo::initVars(int size) {
+	srand(time(NULL));
+
 	_nbTiles = size;
 	_height = sqrt(_nbTiles);
 	_objTiles = _nbTiles / NB_TILES;
@@ -51,10 +53,12 @@ void Algo::init(TileType map[], int size) {
 **/
 void Algo::fillMap(TileType map[], int size)
 {
-	do {
-		srand(time(NULL));
+	initVars(size);
 
-		initVars(size);
+	do {
+		for (int i = 0; i < NB_TILES; i++) {
+			_tilesOnMap[i] = 0;
+		}
 
 		generatePlains();
 		generateLakes();
@@ -66,7 +70,7 @@ void Algo::fillMap(TileType map[], int size)
 				map[i * _height + j] = _map[i][j];
 			}
 		}
-	} while (getDryZones(map)>1);
+	} while (getDryZones() > 1);
 }
 
 /**
@@ -78,13 +82,13 @@ int Algo::labelize(int zones[], int x, int y, int cpt){
 
 	zones[x * _height + y] = cpt;
 	// If there is one, label the left tile
-	if (x > 0 && zones[(x - 1) * _height + y] == 0) nbLab += labelize(zones, x - 1, y, cpt);
+	if (x - 1 >= 0 && zones[(x - 1) * _height + y] == 0) nbLab += labelize(zones, x - 1, y, cpt);
 	// If there is one, label the upper tile
-	if (y > 0 && zones[x * _height + y - 1] == 0) nbLab += labelize(zones, x, y - 1, cpt);
+	if (y - 1 >= 0 && zones[x * _height + y - 1] == 0) nbLab += labelize(zones, x, y - 1, cpt);
 	// If there is one, label the right tile
-	if (x < 10 && zones[(x + 1) * _height + y] == 0) nbLab += labelize(zones, x + 1, y, cpt);
+	if (x + 1 < _height && zones[(x + 1) * _height + y] == 0) nbLab += labelize(zones, x + 1, y, cpt);
 	// If there is one, label the down tile
-	if (y < 10 && zones[x * _height + y + 1] == 0) nbLab += labelize(zones, x, y + 1, cpt);
+	if (y + 1 < _height && zones[x * _height + y + 1] == 0) nbLab += labelize(zones, x, y + 1, cpt);
 	return nbLab;
 }
 
@@ -92,16 +96,15 @@ int Algo::labelize(int zones[], int x, int y, int cpt){
  * @Description Finds how many dry zones there are in the map
  * @return The number of distinct dry zones
  **/
-int Algo::getDryZones(const TileType map[]){
-	int size = _height*_height;
-	int *zones = new int[size];
+int Algo::getDryZones(){
+	int *zones = new int[_nbTiles];
 	int firstNonWaterX, firstNonWaterY;
 	int labelled = 0;
 	int cpt = 1;
 	// Label all the water
 	for (int x = 0; x < _height; x++) {
 		for (int y = 0; y < _height; y++) {
-			if (map[x * _height + y] == Water) {
+			if (_map[x][y] == Water) {
 				zones[x * _height + y] = -1;
 				labelled++;
 			}
@@ -109,7 +112,7 @@ int Algo::getDryZones(const TileType map[]){
 		}
 	}
 	// While there is at least one tile that is not labelled
-	while (labelled < size){
+	while (labelled < _nbTiles){
 		// Find the first non-labelled tile
 		for (int x = 0; x < _height; x++){
 			for (int y = 0; y < _height; y++){
@@ -158,7 +161,7 @@ void Algo::generateLakes() {
 * @Param step - Level of recursion : higher mean less chance to generate recursion
 **/
 void Algo::generateRec(TileType type, int x, int y, int step) {
-	step += STEP_LAKE_GEN;
+	step += STEP_GEN;
 
 	if ((_tilesOnMap[type] < _objTiles) && (_map[x][y] == Plain) && ((rand() % step) == 0)) {
 		_map[x][y] = type;

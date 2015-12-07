@@ -1,7 +1,7 @@
 #define NB_TILES 4
 #define NB_RACES 3
 
-#define STEP_LAKE_GEN 1
+#define STEP_GEN 1
 
 /* Types of the differents tiles */
 enum TileType {
@@ -27,6 +27,9 @@ private:
 	int _tilesOnMap[NB_TILES];	// Number of tiles per types of tile (real)
 
 	void initVars(int size);
+
+	int labelize(int *zones, int x, int y, int cpt);
+	int getDryZones();
 
 	void generatePlains();
 	void generateLakes();

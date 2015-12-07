@@ -5,7 +5,7 @@
 #include <time.h>
 #include <math.h>
 
-#define SIZE 400
+#define SIZE 196
 #define NB_UNITS 5
 
 using namespace std;
