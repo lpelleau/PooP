@@ -44,27 +44,89 @@ void Algo::init(TileType map[], int size) {
 }
 
 /**
-* @Description Initialize the map of the class withe an algorithme
+* @Description Initialize the map of the class with an algorithme
 * and return it
 * @Param map - Map to be generated
 * @Param size - Size of the map (number of tiles)
 **/
 void Algo::fillMap(TileType map[], int size)
 {
-	srand(time(NULL));
+	do {
+		srand(time(NULL));
 
-	initVars(size);
+		initVars(size);
 
-	generatePlains();
-	generateLakes();
-	generateMountain();
-	generateForest();
+		generatePlains();
+		generateLakes();
+		generateMountain();
+		generateForest();
 
-	for (int i = 0; i < _height; i++) {
-		for (int j = 0; j < _height; j++) {
-			map[i * _height + j] = _map[i][j];
+		for (int i = 0; i < _height; i++) {
+			for (int j = 0; j < _height; j++) {
+				map[i * _height + j] = _map[i][j];
+			}
+		}
+	} while (getDryZones(map)>1);
+}
+
+/**
+ * @Description Labelize a zone with a certain label
+ * @return The number of tiles labelized
+ **/
+int Algo::labelize(int zones[], int x, int y, int cpt){
+	int nbLab = 1;
+
+	zones[x * _height + y] = cpt;
+	// If there is one, label the left tile
+	if (x > 0 && zones[(x - 1) * _height + y] == 0) nbLab += labelize(zones, x - 1, y, cpt);
+	// If there is one, label the upper tile
+	if (y > 0 && zones[x * _height + y - 1] == 0) nbLab += labelize(zones, x, y - 1, cpt);
+	// If there is one, label the right tile
+	if (x < 10 && zones[(x + 1) * _height + y] == 0) nbLab += labelize(zones, x + 1, y, cpt);
+	// If there is one, label the down tile
+	if (y < 10 && zones[x * _height + y + 1] == 0) nbLab += labelize(zones, x, y + 1, cpt);
+	return nbLab;
+}
+
+/**
+ * @Description Finds how many dry zones there are in the map
+ * @return The number of distinct dry zones
+ **/
+int Algo::getDryZones(const TileType map[]){
+	int size = _height*_height;
+	int *zones = new int[size];
+	int firstNonWaterX, firstNonWaterY;
+	int labelled = 0;
+	int cpt = 1;
+	// Label all the water
+	for (int x = 0; x < _height; x++) {
+		for (int y = 0; y < _height; y++) {
+			if (map[x * _height + y] == Water) {
+				zones[x * _height + y] = -1;
+				labelled++;
+			}
+			else zones[x * _height + y] = 0;
 		}
 	}
+	// While there is at least one tile that is not labelled
+	while (labelled < size){
+		// Find the first non-labelled tile
+		for (int x = 0; x < _height; x++){
+			for (int y = 0; y < _height; y++){
+				if (zones[x * _height + y] == 0) {
+					firstNonWaterX = x;
+					firstNonWaterY = y;
+					break;
+				}
+			}
+		}
+		// Begin with this tile and label its zone
+		labelled += labelize(zones, firstNonWaterX, firstNonWaterY, cpt);
+		// Begin a new zone
+		cpt++;
+	}
+
+	return cpt - 1;
 }
 
 /**

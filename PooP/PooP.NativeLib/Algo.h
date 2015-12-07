@@ -30,6 +30,9 @@ private:
 
 	void initVars(int size);
 
+	int labelize(int *zones, int x, int y, int cpt);
+	int getDryZones(const TileType map[]);
+
 	void generatePlains();
 	void generateLakes();
 	void generateMountain();
