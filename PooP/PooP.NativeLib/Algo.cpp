@@ -271,12 +271,12 @@ double Algo::moveCostFromTile(Race race, int x, int y, int life, int enemies[], 
 	double res = 0;
 
 	if (life < 5)
-	for (int i = 0; i < nbEnemies * 2; i++)
-	if (enemies[i] == x && enemies[i + 1] == y)
-		return DBL_MAX;
+		for (int i = 0; i < nbEnemies * 2; i++)
+			if (enemies[i] == x && enemies[i + 1] == y)
+				return DBL_MAX / 100;
 
 	if (race == Human && _map[x][y] == Water)
-		return DBL_MAX;
+		return DBL_MAX / 100;
 	else if (race == Elf && _map[x][y] == Mountain)
 		return 2;
 	else if (race == Orc && _map[x][y] == Plain)
@@ -290,24 +290,24 @@ double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int e
 	// Moving on Y axis
 	if (xS == xT)
 		// Moving forward on Y axis
-	if (yS < yT)
-	for (int i = yS + 1; i <= yT; i++)
-		totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
+		if (yS < yT)
+			for (int i = yS + 1; i <= yT; i++)
+				totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
 	// Moving backward on Y axis
-	else
-	for (int i = yS - 1; i >= yT; i--)
-		totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
+		else
+			for (int i = yS - 1; i >= yT; i--)
+				totalCost += moveCostFromTile(race, xT, i, life, enemies, nbEnemies);
 
 	// Moving on X axis
 	else if (yS == yT)
 		// Moving forward on X axis
-	if (xS < xT)
-	for (int i = xS + 1; i <= xT; i++)
-		totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
+		if (xS < xT)
+			for (int i = xS + 1; i <= xT; i++)
+				totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
 	// Moving backward on X axis
-	else
-	for (int i = xS - 1; i >= xT; i--)
-		totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
+		else
+			for (int i = xS - 1; i >= xT; i--)
+				totalCost += moveCostFromTile(race, i, yT, life, enemies, nbEnemies);
 
 	// Find the correct path
 	else
@@ -353,9 +353,10 @@ double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int e
 	return totalCost;
 }
 
-void Algo::bestMoves(Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[])
+void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[])
 {
-	int victoryPoints[3] { -1 }; // Nb victory points for the best tiles
+	int* victoryPoints = new int[_height*_height * 2];  // Nb victory points for the best tiles
+	for (int i = 0; i < _height*_height * 2; i++) victoryPoints[i] = -1;
 
 	for (int i = 0; i < nbUnits * 2; i += 2){ // For all player units
 		int x = units[i], y = units[i + 1]; // Unit coordinates
@@ -363,8 +364,8 @@ void Algo::bestMoves(Race race, int units[], int nbUnits, int life[], int enemie
 		// All tiles around (2 of distance) the one where is the unit
 		for (int j = fmax(0, x - 4); j < fmin(x + 4, _height - 1); j++) {
 			for (int k = fmax(0, y - 4); k < fmin(y + 4, _height - 1); k++) {
-				int points;
-				int mvpts = moveCost(race, x, y, j, k, life[i / 2], enemies, nbEnemies);
+				int points = 0;
+				double mvpoints = moveCost(race, x, y, j, k, life[i / 2], enemies, nbEnemies);
 
 				// Calculate best moves based on victory points
 				switch (race) {
@@ -417,12 +418,21 @@ void Algo::bestMoves(Race race, int units[], int nbUnits, int life[], int enemie
 				}
 
 
-				if (mvpts < DBL_MAX) {
+				if (mvpoints <= mvPts[i]) {
 					// Change best moves
 					for (int m = 0; m < 3; m++) {
+						// If this is the same value, 1/2 chance of changing it
 						if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
 							moves[m * 2] = j;
 							moves[m * 2 + 1] = k;
+							victoryPoints[m] = points;
+							break;
+						}
+						else if (victoryPoints[m] == points && moves[m * 2] != j && moves[m * 2 + 1] != k &&
+							rand() % 100 < 50) {
+							moves[m * 2] = j;
+							moves[m * 2 + 1] = k;
+							victoryPoints[m] = points;
 							break;
 						}
 					}

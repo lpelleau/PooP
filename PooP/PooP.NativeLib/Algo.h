@@ -53,7 +53,7 @@ public:
 	void init(TileType map[], int size);
 	void fillMap(TileType map[], int size);
 	void placePlayers(int players[]);
-	void bestMoves(Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
+	void bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
 };
 
 #define EXPORTCDECL extern "C" __declspec(dllexport)
@@ -73,8 +73,8 @@ EXPORTCDECL void Algo_placePlayers(Algo* algo, int players[]) {
 	return algo->placePlayers(players);
 }
 
-EXPORTCDECL void Algo_bestMoves(Algo* algo, Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]) {
-	return algo->bestMoves(race, units, nbUnits, life, enemies, nbEnemies, moves);
+EXPORTCDECL void Algo_bestMoves(Algo* algo, Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]) {
+	return algo->bestMoves(race, units, mvPts, nbUnits, life, enemies, nbEnemies, moves);
 }
 
 EXPORTCDECL Algo* Algo_new() {

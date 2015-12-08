@@ -18,6 +18,7 @@ int main() {
 	TileType map[SIZE];
 	int players[4] = { 0 };
 	int moves[6] = { 0 };
+	double mvPts[NB_UNITS] = { 2.0 };
 	int units[NB_UNITS * 2];
 	int life[NB_UNITS];
 	int enemies[NB_UNITS * 2];
@@ -38,7 +39,7 @@ int main() {
 
 	alg.fillMap(map, SIZE);
 	alg.placePlayers(players);
-	alg.bestMoves(Human, units, NB_UNITS, life, enemies, NB_UNITS, moves);
+	alg.bestMoves(Human, units, mvPts, NB_UNITS, life, enemies, NB_UNITS, moves);
 	int n[4]{ 0 };
 
 	cout << "All" << endl;

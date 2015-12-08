@@ -65,6 +65,7 @@ namespace PooP.Test
             List<Unit>.Enumerator e = p[0].Race.Units.GetEnumerator();
             int nbUnits = p[0].Race.Units.Count;
             int[] units = new int[nbUnits * 2];
+            double[] mvPts = new double[nbUnits];
             int[] life = new int[nbUnits];
             for (int i = 0; i  < nbUnits; i++)
             {
@@ -72,6 +73,7 @@ namespace PooP.Test
                 units[i * 2] = e.Current.Position.XPosition;
                 units[i * 2 + 1] = e.Current.Position.YPosition;
                 life[i] = e.Current.LifePoints;
+                mvPts[i] = e.Current.MovePoints;
             }
 
             e = p[1].Race.Units.GetEnumerator();
@@ -85,13 +87,13 @@ namespace PooP.Test
             }
 
             Algo alg = Algo.INSTANCE;
-            int[] moves = alg.BestMoves(14 * 14, WRace.Orc, units, nbUnits, life, enemies, nbEnemies);
+            int[] moves = alg.BestMoves(14 * 14, WRace.Orc, units, mvPts, nbUnits, life, enemies, nbEnemies);
             int[] expectedMoves = new int[6] { 6, 5, 6, 6, 6, 7 }; // Real expected value here...
 
             for (int i = 0; i < 3; i++)
             {
-                Assert.IsTrue(moves[i * 2] == expectedMoves[i * 2]); 
-                Assert.IsTrue(moves[i * 2 + 1] == expectedMoves[i * 2 + 1]);
+                Assert.AreEqual(expectedMoves[i * 2], moves[i * 2]); 
+                Assert.AreEqual(expectedMoves[i * 2 + 1], moves[i * 2 + 1]);
             }
         }
     }

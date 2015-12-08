@@ -51,5 +51,5 @@ public:
 	void init(TileType map[], int size);
 	void fillMap(TileType map[], int size);
 	void placePlayers(int players[]);
-	void bestMoves(Race race, int units[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
+	void bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
 };
