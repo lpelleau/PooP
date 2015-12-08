@@ -355,8 +355,8 @@ double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int e
 
 void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[])
 {
-	int* victoryPoints = new int[_height*_height * 2];  // Nb victory points for the best tiles
-	for (int i = 0; i < _height*_height * 2; i++) victoryPoints[i] = -1;
+	int* victoryPoints = new int[_nbTiles * 2];  // Nb victory points for the best tiles
+	for (int i = 0; i < _nbTiles * 2; i++) victoryPoints[i] = -1;
 
 	for (int i = 0; i < nbUnits * 2; i += 2){ // For all player units
 		int x = units[i], y = units[i + 1]; // Unit coordinates
@@ -429,7 +429,7 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 							break;
 						}
 						else if (victoryPoints[m] == points && moves[m * 2] != j && moves[m * 2 + 1] != k &&
-							rand() % 100 < 50) {
+							rand() % 2) {
 							moves[m * 2] = j;
 							moves[m * 2 + 1] = k;
 							victoryPoints[m] = points;
