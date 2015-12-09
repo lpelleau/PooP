@@ -53,7 +53,7 @@ namespace PooP.Test
             GameBuilderFactory.get("small").createGame(nplayers, races);
             Algo alg = Algo.INSTANCE;
             int[] players = alg.PlacePlayers(SIZE * SIZE);
-            Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= SIZE - 2*2);
+            Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= SIZE - 2 * 2);
         }
 
         /// <summary>
@@ -68,7 +68,8 @@ namespace PooP.Test
                                              new Position(3,6), 
                                              new Position(4,6), 
                                              new Position(4,3), 
-                                             new Position(4,4), 
+                                             new Position(4,4),
+                                             new Position(5,4),  
                                              new Position(8,1), 
                                              new Position(8,3), 
                                              new Position(8,5), 
@@ -78,7 +79,7 @@ namespace PooP.Test
             for (int i = 0; i < 3; i++)
             {
                 bool contains = false;
-                Position givenPosition = new Position(moves[i*2], moves[i*2+1]);
+                Position givenPosition = new Position(moves[i * 2], moves[i * 2 + 1]);
                 for (int j = 0; j < expectedPositions.Length && !contains; j++)
                     if (expectedPositions[j].Equals(givenPosition)) contains = true;
                 Assert.IsTrue(contains);

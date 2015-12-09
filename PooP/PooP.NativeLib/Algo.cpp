@@ -266,7 +266,7 @@ void Algo::placeP2(int *x, int *y) {
 	*y += move; // Randomly move near the opposite
 }
 
-double Algo::moveCostFromTile(Race race, int x, int y, int life, int enemies[], int nbEnemies)
+double Algo::moveCostFromTile(Race race, int y, int x, int life, int enemies[], int nbEnemies)
 {
 	double res = 0;
 
@@ -275,7 +275,7 @@ double Algo::moveCostFromTile(Race race, int x, int y, int life, int enemies[], 
 			if (enemies[i] == x && enemies[i + 1] == y)
 				return DBL_MAX / 100;
 
-	if (race == Human && _map[x][y] == Water)
+	if (race != Human && _map[x][y] == Water)
 		return DBL_MAX / 100;
 	else if (race == Elf && _map[x][y] == Mountain)
 		return 2;
@@ -362,15 +362,15 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 		int x = units[i], y = units[i + 1]; // Unit coordinates
 
 		// All tiles around (2 of distance) the one where is the unit
-		for (int j = fmax(0, x - 4); j < fmin(x + 4, _height - 1); j++) {
-			for (int k = fmax(0, y - 4); k < fmin(y + 4, _height - 1); k++) {
+		for (int j = fmax(0, x - 3); j < fmin(x + 3, _height - 1); j++) {
+			for (int k = fmax(0, y - (3-abs(x-j))); k < fmin(y + (3-abs(x-j)), _height - 1); k++) {
 				int points = 0;
 				double mvpoints = moveCost(race, x, y, j, k, life[i / 2], enemies, nbEnemies);
 
 				// Calculate best moves based on victory points
 				switch (race) {
 				case Human:
-					switch (_map[j][k]){
+					switch (_map[k][j]){
 					case Plain:
 						points = 2;
 						break;
@@ -386,7 +386,7 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 					}
 					break;
 				case Orc:
-					switch (_map[j][k]){
+					switch (_map[k][j]){
 					case Plain:
 						points = 1;
 						break;
@@ -397,11 +397,12 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 						points = 1;
 						break;
 					case Water:
+						points = -1;
 						break;
 					}
 					break;
 				case Elf:
-					switch (_map[j][k]){
+					switch (_map[k][j]){
 					case Plain:
 						points = 1;
 						break;
@@ -412,6 +413,7 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 						points = 3;
 						break;
 					case Water:
+						points = -1;
 						break;
 					}
 					break;
