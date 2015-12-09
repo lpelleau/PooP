@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 using System.Globalization;
+using System.Windows.Input;
 
 namespace PooP.GUI
 {
@@ -10,10 +11,6 @@ namespace PooP.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public void LaunchGame(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Launching...");
-        }
     }
 
     public class NegateBool : IValueConverter

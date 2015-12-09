@@ -76,6 +76,12 @@
     <None Include="Test_files\tester2.flav" />
     <None Include="Test_files\TesterPooP.xlsm" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Debug\PooP.NativeLib.dll">
+      <Link>PooP.NativeLib.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
