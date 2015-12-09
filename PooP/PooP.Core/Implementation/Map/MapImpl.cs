@@ -65,7 +65,7 @@ namespace PooP.Core.Implementation.Maps
 
                 foreach (Position pos in entry.Value)
                 {
-                    map[pos.XPosition * ((int) Math.Sqrt(size)) + pos.YPosition] = type;
+                    map[pos.YPosition * ((int) Math.Sqrt(size)) + pos.XPosition] = type;
                 }
             }
             Algo.INSTANCE.InitMap(map, size);

@@ -26,5 +26,11 @@ namespace PooP.Core.Interfaces.Games
         /// </summary>
         /// <returns>The winning player</returns>
         Player getWinner();
+
+        /// <summary>
+        /// Gets the best moves
+        /// </summary>
+        /// <returns>Possible best moves</returns>
+        int[] getBestMoves();
     }
 }

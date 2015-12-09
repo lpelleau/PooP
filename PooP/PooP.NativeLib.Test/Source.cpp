@@ -39,7 +39,6 @@ int main() {
 
 	alg.fillMap(map, SIZE);
 	alg.placePlayers(players);
-	alg.bestMoves(Human, units, mvPts, NB_UNITS, life, enemies, NB_UNITS, moves);
 	int n[4]{ 0 };
 
 	cout << "All" << endl;
@@ -119,11 +118,210 @@ int main() {
 		cout << "\t" << i << " - " << units[i * 2] << ":" << units[i * 2 + 1] << endl;
 	}
 
+	alg.bestMoves(Orc, units, mvPts, NB_UNITS, life, enemies, NB_UNITS, moves);
+
 	cout << " ===" << endl;
 	cout << "3 best moves:" << endl;
 	cout << "\t1 - " << moves[0] << ":" << moves[1] << endl;
 	cout << "\t2 - " << moves[2] << ":" << moves[3] << endl;
 	cout << "\t3 - " << moves[4] << ":" << moves[5] << endl;
+
+	TileType testmap[] = {
+		Water	, Mountain	, Plain	, Water	, Water	, Water	, Forest	, Mountain	, Water		, Plain	, Mountain	, Mountain	, Water		, Water	,
+		Forest	, Mountain	, Water	, Plain	, Forest, Forest, Mountain	, Forest	, Mountain	, Plain	, Mountain	, Water		, Mountain	, Water	,
+		Forest	,
+		Forest	,
+		Plain	,
+		Plain	,
+		Forest	,
+		Forest	,
+		Plain	,
+		Forest	,
+		Plain	,
+		Plain	,
+		Forest	,
+		Water	,
+		Plain	,
+		Plain	,
+		Forest	,
+		Plain	,
+		Forest	,
+		Water	,
+		Mountain	,
+		Plain	,
+		Water	,
+		Plain	,
+		Mountain	,
+		Mountain	,
+		Mountain	,
+		Water	,
+		Plain	,
+		Water	,
+		Mountain	,
+		Mountain	,
+		Plain	,
+		Water	,
+		Mountain	,
+		Mountain	,
+		Plain	,
+		Plain	,
+		Forest	,
+		Plain	,
+		Water	,
+		Water	,
+		Forest	,
+		Forest	,
+		Plain	,
+		Water	,
+		Forest	,
+		Plain	,
+		Plain	,
+		Water	,
+		Mountain	,
+		Forest	,
+		Mountain	,
+		Mountain	,
+		Forest	,
+		Mountain	,
+		Mountain	,
+		Forest	,
+		Mountain	,
+		Plain	,
+		Mountain	,
+		Mountain	,
+		Mountain	,
+		Forest	,
+		Mountain	,
+		Water	,
+		Water	,
+		Forest	,
+		Plain	,
+	Forest,
+	Plain,
+	Mountain,
+	Forest,
+	Water,
+	Plain,
+	Forest,
+	Plain,
+	Forest,
+	Forest,
+	Forest,
+	Mountain,
+	Plain,
+	Water,
+	Forest,
+	Plain,
+	Plain,
+	Forest,
+	Mountain,
+	Water,
+	Water,
+	Forest,
+	Water,
+	Water,
+	Water,
+	Mountain,
+	Plain,
+	Water,
+	Mountain,
+	Mountain,
+	Forest,
+	Forest,
+	Water,
+	Water,
+	Forest,
+	Plain,
+	Water,
+	Water,
+	Mountain,
+	Forest,
+	Water,
+	Plain,
+	Plain,
+	Forest,
+	Mountain,
+	Water,
+	Water,
+	Water,
+	Forest,
+	Mountain,
+	Mountain,
+	Water,
+	Water,
+	Plain,
+	Plain,
+	Water,
+	Mountain,
+	Plain,
+	Mountain,
+	Mountain,
+	Forest,
+	Mountain,
+	Water,
+	Plain,
+	Mountain,
+	Water,
+	Mountain,
+	Forest,
+	Plain,
+	Forest,
+	Water,
+	Water,
+	Plain,
+	Plain,
+	Forest,
+	Forest,
+	Water,
+	Plain,
+	Forest,
+	Forest,
+	Mountain,
+	Plain,
+	Forest,
+	Mountain,
+	Water,
+	Mountain,
+	Plain,
+	Water,
+	Mountain,
+	Forest,
+	Plain,
+	Mountain,
+	Forest,
+	Water,
+	Plain,
+	Forest,
+	Forest,
+	Plain,
+	Plain,
+	Plain,
+	Mountain };
+
+	alg.init(testmap, 196);
+
+	cout << "All" << endl;
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < height; j++) {
+			cout << testmap[i * height + j] << " ";
+			n[map[i * height + j]]++;
+		}
+		cout << endl;
+	}
+
+	int tunits[] = { 1, 8, 4, 5, 8, 3, 3, 9 };
+	int tlife[] = { 17, 17, 17, 17 };
+	double tmv[] = { 2, 2, 2, 2 };
+	int tenemies[] = { 12, 6, 8, 5, 4, 7, 3, 5, 6, 7 };
+
+	alg.bestMoves(Orc, tunits, tmv, NB_UNITS, tlife, tenemies, NB_UNITS, moves);
+
+	cout << " ===" << endl;
+	cout << "3 best moves:" << endl;
+	cout << "\t1 - " << moves[0] << ":" << moves[1] << endl;
+	cout << "\t2 - " << moves[2] << ":" << moves[3] << endl;
+	cout << "\t3 - " << moves[4] << ":" << moves[5] << endl;
+
 
 	system("pause");
 }

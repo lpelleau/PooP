@@ -12,6 +12,7 @@ using PooP.Core.Exceptions;
 using PooP.Core.Data;
 using PooP.Core.Implementation.Commands;
 using PooP.Core.Interfaces.Commands;
+using PooP.Core.Ressource;
 
 namespace PooP.Core.Implementation.Games
 {
@@ -167,6 +168,39 @@ namespace PooP.Core.Implementation.Games
                 NumberOfTurns = this.NumberOfTurns,
                 Tiles = this.Map.ToData()
             };
+        }
+
+        /// <summary>
+        /// Gets the best moves
+        /// </summary>
+        /// <returns>Possible best moves</returns>
+        public int[] getBestMoves()
+        {
+            List<Unit>.Enumerator e = FirstPlayer.Race.Units.GetEnumerator();
+            int nbUnits = FirstPlayer.Race.Units.Count;
+            int[] units = new int[nbUnits * 2];
+            double[] mvPts = new double[nbUnits];
+            int[] life = new int[nbUnits];
+            for (int i = 0; i < nbUnits; i++)
+            {
+                e.MoveNext();
+                units[i * 2] = e.Current.Position.XPosition;
+                units[i * 2 + 1] = e.Current.Position.YPosition;
+                life[i] = e.Current.LifePoints;
+                mvPts[i] = e.Current.MovePoints;
+            }
+
+            e = Players[1].Race.Units.GetEnumerator();
+            int nbEnemies = FirstPlayer.Race.Units.Count;
+            int[] enemies = new int[nbEnemies * 2];
+            for (int i = 0; i < nbEnemies; i++)
+            {
+                e.MoveNext();
+                enemies[i * 2] = e.Current.Position.XPosition;
+                enemies[i * 2 + 1] = e.Current.Position.YPosition;
+            }
+
+            return Algo.INSTANCE.BestMoves(3, WRace.Orc, units, mvPts, nbUnits, life, enemies, nbEnemies);
         }
     }
 }

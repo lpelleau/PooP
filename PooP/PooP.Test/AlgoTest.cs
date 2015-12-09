@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using PooP.Core.Implementation.Games;
 using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Games;
-using PooP.Core.Ressource;
 
 namespace PooP.Test
 {
@@ -49,10 +48,14 @@ namespace PooP.Test
         [TestMethod]
         public void PlayersPlacementTest()
         {
+            string[] nplayers = new string[2] { "Pl1", "Pl2" };
+            string[] races = new string[2] { "orc", "elf" };
+            GameBuilderFactory.get("small").createGame(nplayers, races);
             Algo alg = Algo.INSTANCE;
             int[] players = alg.PlacePlayers(SIZE * SIZE);
             Assert.IsTrue(Math.Sqrt(Math.Pow(players[0] - players[2], 2) + Math.Pow(players[1] - players[3], 2)) >= SIZE - 2*2);
         }
+
         /// <summary>
         /// Test the best moves finder
         /// </summary>
@@ -60,40 +63,25 @@ namespace PooP.Test
         public void BestMovesTest()
         {
             GameSave.INSTANCE.load("../../Test_files/tester1");
-            Player[] p = GameBuilder.CURRENTGAME.Players;
-
-            List<Unit>.Enumerator e = p[0].Race.Units.GetEnumerator();
-            int nbUnits = p[0].Race.Units.Count;
-            int[] units = new int[nbUnits * 2];
-            double[] mvPts = new double[nbUnits];
-            int[] life = new int[nbUnits];
-            for (int i = 0; i  < nbUnits; i++)
-            {
-                e.MoveNext();
-                units[i * 2] = e.Current.Position.XPosition;
-                units[i * 2 + 1] = e.Current.Position.YPosition;
-                life[i] = e.Current.LifePoints;
-                mvPts[i] = e.Current.MovePoints;
-            }
-
-            e = p[1].Race.Units.GetEnumerator();
-            int nbEnemies = p[1].Race.Units.Count;
-            int[] enemies = new int[nbEnemies * 2];
-            for (int i = 0; i < nbEnemies; i++)
-            {
-                e.MoveNext();
-                enemies[i * 2] = e.Current.Position.XPosition;
-                enemies[i * 2 + 1] = e.Current.Position.YPosition;
-            }
-
-            Algo alg = Algo.INSTANCE;
-            int[] moves = alg.BestMoves(14 * 14, WRace.Orc, units, mvPts, nbUnits, life, enemies, nbEnemies);
-            int[] expectedMoves = new int[6] { 6, 5, 6, 6, 6, 7 }; // Real expected value here...
+            int[] moves = GameBuilder.CURRENTGAME.getBestMoves();
+            Position[] expectedPositions = { new Position(1,8),
+                                             new Position(3,6), 
+                                             new Position(4,6), 
+                                             new Position(4,3), 
+                                             new Position(4,4), 
+                                             new Position(8,1), 
+                                             new Position(8,3), 
+                                             new Position(8,5), 
+                                             new Position(9,3), 
+                                             new Position(10,3) };
 
             for (int i = 0; i < 3; i++)
             {
-                Assert.AreEqual(expectedMoves[i * 2], moves[i * 2]); 
-                Assert.AreEqual(expectedMoves[i * 2 + 1], moves[i * 2 + 1]);
+                bool contains = false;
+                Position givenPosition = new Position(moves[i*2], moves[i*2+1]);
+                for (int j = 0; j < expectedPositions.Length && !contains; j++)
+                    if (expectedPositions[j].Equals(givenPosition)) contains = true;
+                Assert.IsTrue(contains);
             }
         }
     }

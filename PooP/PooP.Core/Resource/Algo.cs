@@ -16,7 +16,7 @@ namespace PooP.Core.Ressource
 
         public void InitMap(TileType[] map, int nbTiles)
         {
-            Algo_fillMap(nativeAlgo, map, nbTiles);
+            Algo_init(nativeAlgo, map, nbTiles);
         }
 
         public WMap CreateMap(int nbTiles)
@@ -33,9 +33,9 @@ namespace PooP.Core.Ressource
             return players;
         }
 
-        public int[] BestMoves(int size, WRace race, int[] units, double[] mvPts, int nbUnits, int[] life, int[] enemies, int nbEnemies)
+        public int[] BestMoves(int nbMoves, WRace race, int[] units, double[] mvPts, int nbUnits, int[] life, int[] enemies, int nbEnemies)
         {
-            var moves = new int[size*2];
+            var moves = new int[nbMoves*2];
             Algo_bestMoves(nativeAlgo, race, units, mvPts, nbUnits, life, enemies, nbEnemies, moves);
             return moves;
         }
