@@ -3,6 +3,7 @@
     xmlns:l="clr-namespace:PooP.GUI"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Interface="clr-namespace:Interface" x:Class="MainWindow"
+    x:Name="InitWindow"
     Title="Choix des races" Height="258.89" Width="292.366" ResizeMode="NoResize">
     <Window.Resources>
         <l:NegateBool x:Key="NegateBool"/>
@@ -46,6 +47,6 @@
             <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,167,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1" Command="{Binding ChangeMapSize}" CommandParameter="Small"/>
             <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,167,0,0" VerticalAlignment="Top" Width="85" Grid.Column="2" Command="{Binding ChangeMapSize}" CommandParameter="Standard"/>
         </Grid>
-        <Button x:Name="start_button" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="76,198,0,0" VerticalAlignment="Top" Width="39" Command="{Binding Launch}"/>
+        <Button x:Name="start_button" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="76,198,0,0" VerticalAlignment="Top" Width="39" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}"/>
     </Grid>
 </Window>
