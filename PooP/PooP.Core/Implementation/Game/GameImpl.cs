@@ -149,14 +149,6 @@ namespace PooP.Core.Implementation.Games
         }
 
         /// <summary>
-        /// Ends the game
-        /// </summary>
-        public void endGame()
-        {
-            // TODO
-        }
-
-        /// <summary>
         /// Transforms a game into data
         /// </summary>
         /// <returns>The data game object</returns>
