@@ -55,4 +55,17 @@ namespace PooP.GUI
             throw new NotImplementedException();
         }
     }
+
+    public class AddExtension : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((string)value) + ".png";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
