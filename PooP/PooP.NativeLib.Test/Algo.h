@@ -46,7 +46,7 @@ private:
 
 public:
 	Algo() {}
-	~Algo() {}
+	~Algo();
 
 	void init(TileType map[], int size);
 	void fillMap(TileType map[], int size);

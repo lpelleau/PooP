@@ -13,6 +13,16 @@
 
 using namespace std;
 
+/***
+* @Description Destructor
+**/
+Algo::~Algo(void) {
+	for (int i = 0; i < _height; i++) {
+		delete _map[i];
+	}
+	delete _map;
+}
+
 /**
 * @Description Initialize class attributes with the size of the map
 * @Param size - Size of the map (number of tiles)
@@ -128,6 +138,8 @@ int Algo::getDryZones(){
 		// Begin a new zone
 		cpt++;
 	}
+
+	delete zones;
 
 	return cpt - 1;
 }
@@ -442,4 +454,6 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 			}
 		}
 	}
+
+	delete victoryPoints;
 }
