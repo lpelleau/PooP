@@ -27,43 +27,26 @@ namespace PooP.GUI
         }
     }
 
-    public class ConvAnd : IMultiValueConverter
+    public class RaceParameter
+    {
+        public String Name;
+        public Object Image;
+
+        public RaceParameter(string name, Object image)
+        {
+            this.Name = name.Substring(0,name.Length-1);
+            this.Image = image;
+        }
+    }
+
+    public class ParameterRaceConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            bool comb = true;
-            foreach (object value in values)
-                comb = comb && (bool) value;
-            return comb;
+            return new RaceParameter((string)values[0], values[1]);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class ConvNotEmpty : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return !((string)value).Equals("");
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class AddExtension : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return ((string)value) + ".png";
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

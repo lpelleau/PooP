@@ -1,4 +1,5 @@
 ﻿using PooP.Core.Implementation.Games;
+using PooP.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,8 +91,10 @@ namespace Interface
 
         public string Player1RaceImage
         {
-            get;
-            set;
+            get
+            {
+                return IMAGES_PATH + Player1Race.ToLower() + ".png";
+            }
         }
 
         public string Player2Race
@@ -102,8 +105,10 @@ namespace Interface
 
         public string Player2RaceImage
         {
-            get;
-            set;
+            get
+            {
+                return IMAGES_PATH + Player2Race.ToLower() + ".png";
+            }
         }
 
 
@@ -136,8 +141,8 @@ namespace Interface
         /// <param name="o">The name of the choosen race</param>
         public void Execute(Object o)
         {
-            mvm.Player1Race = (string) o;
-            mvm.Player1RaceImage = MainViewModel.IMAGES_PATH + mvm.Player2Race.ToLower() + ".png";
+            mvm.Player1Race = ((RaceParameter) o).Name;
+            ((System.Windows.Controls.Image)((RaceParameter)o).Image).Source = new BitmapImage(new Uri(mvm.Player1RaceImage, UriKind.Relative));
         }
 
         /// <summary>
@@ -183,8 +188,8 @@ namespace Interface
         /// <param name="o">The name of the choosen race</param>
         public void Execute(Object o)
         {
-            mvm.Player2Race = (string)o;
-            mvm.Player2RaceImage = MainViewModel.IMAGES_PATH + mvm.Player2Race.ToLower() + ".png";
+            mvm.Player2Race = ((RaceParameter)o).Name;
+            ((System.Windows.Controls.Image)((RaceParameter)o).Image).Source = new BitmapImage(new Uri(mvm.Player2RaceImage, UriKind.Relative));
         }
 
         /// <summary>
