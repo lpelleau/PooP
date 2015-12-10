@@ -1,6 +1,6 @@
 #ifdef _DEBUG
-#include "Algo.h"
-//#include "../PooP.NativeLib.Test/Algo.h"
+//#include "Algo.h" // PooP
+#include "../PooP.NativeLib.Test/Algo.h" // Test C++
 #else
 #include "Algo.h"
 #endif
@@ -10,6 +10,7 @@
 #include <time.h>
 #include <math.h>
 #include <vector>
+#include <list>
 
 using namespace std;
 
@@ -367,15 +368,14 @@ double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int e
 
 void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[])
 {
-	int* victoryPoints = new int[_nbTiles * 2];  // Nb victory points for the best tiles
-	for (int i = 0; i < _nbTiles * 2; i++) victoryPoints[i] = -1;
+	list<pair<int, pair<int, int>>> movesList;
 
 	for (int i = 0; i < nbUnits * 2; i += 2){ // For all player units
 		int x = units[i], y = units[i + 1]; // Unit coordinates
 
 		// All tiles around (2 of distance) the one where is the unit
 		for (int j = fmax(0, x - 3); j < fmin(x + 3, _height - 1); j++) {
-			for (int k = fmax(0, y - (3-abs(x-j))); k < fmin(y + (3-abs(x-j)), _height - 1); k++) {
+			for (int k = fmax(0, y - (3 - abs(x - j))); k < fmin(y + (3 - abs(x - j)), _height - 1); k++) {
 				int points = 0;
 				double mvpoints = moveCost(race, x, y, j, k, life[i / 2], enemies, nbEnemies);
 
@@ -432,28 +432,26 @@ void Algo::bestMoves(Race race, int units[], double mvPts[], int nbUnits, int li
 				}
 
 
-				if (mvpoints <= mvPts[i]) {
-					// Change best moves
-					for (int m = 0; m < 3; m++) {
-						// If this is the same value, 1/2 chance of changing it
-						if (victoryPoints[m] < points && moves[m * 2] != j && moves[m * 2 + 1] != k) {
-							moves[m * 2] = j;
-							moves[m * 2 + 1] = k;
-							victoryPoints[m] = points;
-							break;
-						}
-						else if (victoryPoints[m] == points && moves[m * 2] != j && moves[m * 2 + 1] != k &&
-							rand() % 2) {
-							moves[m * 2] = j;
-							moves[m * 2 + 1] = k;
-							victoryPoints[m] = points;
-							break;
-						}
-					}
+				if (mvpoints <= mvPts[i] && mvpoints >= 0) {
+					pair<int, pair<int, int>> p;
+					p.first = points;
+					p.second.first = j;
+					p.second.second = k;
+					movesList.push_back(p);
 				}
 			}
 		}
 	}
 
-	delete victoryPoints;
+	movesList.sort([](const pair<int, pair<int, int>> &a, const pair<int, pair<int, int>> &b) { return a.first > b.first; });
+	list<pair<int, pair<int, int>>>::const_iterator iterator;
+	int i;
+	for (iterator = movesList.begin(), i = 0; i < 3 && iterator != movesList.end(); ++iterator, ++i) {
+		moves[i * 2] = (*iterator).second.first;
+		moves[i * 2 + 1] = (*iterator).second.second;
+	}
+	for (; i < 3; i++) {
+		moves[i * 2] = (*movesList.end()).second.first;
+		moves[i * 2 + 1] = (*movesList.end()).second.second;
+	}
 }
