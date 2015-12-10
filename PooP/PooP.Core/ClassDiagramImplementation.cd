@@ -7,7 +7,7 @@
     <Position X="15.566" Y="2.676" Height="0.75" Width="1.341" />
   </Comment>
   <Comment CommentText="Design Pattern&#xD;&#xA;Flyweight">
-    <Position X="13.259" Y="3.709" Height="0.75" Width="1.365" />
+    <Position X="12.895" Y="4.055" Height="0.75" Width="1.365" />
   </Comment>
   <Comment CommentText="Design Pattern&#xD;&#xA;Builder">
     <Position X="8.82" Y="0.51" Height="0.75" Width="1.7" />
@@ -19,7 +19,7 @@
     <Position X="12.345" Y="0.5" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="PooP.Core.Implementation.PlayerImpl">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="5.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Implementation\PlayerImpl.cs</FileName>
@@ -29,7 +29,7 @@
   <Class Name="PooP.Core.Implementation.Maps.DemoMap">
     <Position X="11" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -93,7 +93,7 @@
   <Class Name="PooP.Core.Implementation.Games.GameImpl">
     <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACACAAABAAAAAAAACAAAAAAAAgAAAAABAABAAAAQA=</HashCode>
+      <HashCode>AAACACAAADAAAAAAAACIAAAACAAgAAAAAAAABAAAAQA=</HashCode>
       <FileName>Implementation\Game\GameImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -101,7 +101,7 @@
   <Class Name="PooP.Core.Implementation.Maps.SmallMap">
     <Position X="12.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -109,7 +109,7 @@
   <Class Name="PooP.Core.Implementation.Maps.StandardMap">
     <Position X="14" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
       <FileName>Implementation\Map\Maps.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.122" />
@@ -118,35 +118,35 @@
     <Position X="14.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAEAAAAAAAAgAAAAAAAEIAAAAABAEAAAA=</HashCode>
-      <FileName>Implementation\Map\TileFactory.cs</FileName>
+      <FileName>Implementation\Map\MapImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PooP.Core.Implementation.Games.GameBuilder">
     <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAABAAAAAgAAAAAAEAUBAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAACAAAAABAAAAAAAAAAAAEAUBAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Game\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Implementation.Games.DemoGameBuilder" Collapsed="true">
     <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Game\GameBuilders.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Implementation.Games.SmallGameBuilder" Collapsed="true">
     <Position X="5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Game\GameBuilders.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Implementation.Games.StandardGameBuilder" Collapsed="true">
     <Position X="5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Game\GameBuilders.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -169,12 +169,12 @@
   <Class Name="PooP.Core.Implementation.Commands.EndTurn">
     <Position X="3.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAIAAAAEEAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Command\EndTurn.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="PooP.Core.Implementation.Command.UndoableImpl">
+  <Class Name="PooP.Core.Implementation.Commands.UndoableImpl">
     <Position X="2.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAgAAA=</HashCode>
@@ -184,20 +184,20 @@
   <Class Name="PooP.Core.Ressource.Position">
     <Position X="16" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAABAAAAAgAAAAAAAAAAAAIAAAABgAAAAAAA=</HashCode>
       <FileName>Resource\Position.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PooP.Core.Implementation.UnitImpl">
-    <Position X="10" Y="5.75" Width="1.5" />
+    <Position X="10" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAACAAAAAQAAAAAgAAAAACAEAAAAAIAAAAABDAAAAAg=</HashCode>
+      <HashCode>QAACAAAAAQAAAAAgAAAAACAAAACAAoAAAAABDAAAAAg=</HashCode>
       <FileName>Implementation\UnitImpl.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PooP.Core.Implementation.Races.RaceFactoryImpl">
-    <Position X="7.75" Y="5.25" Width="1.5" />
+    <Position X="7.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIBAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementation\Race\RaceFactoryImpl.cs</FileName>

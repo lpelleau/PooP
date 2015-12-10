@@ -11,11 +11,6 @@ namespace PooP.Core.Interfaces.Games
     public interface Game
     {
         /// <summary>
-        /// Ends the game
-        /// </summary>
-        void endGame();
-
-        /// <summary>
         /// Gets the current playing player
         /// </summary>
         /// <returns>The player whose turn is on</returns>
