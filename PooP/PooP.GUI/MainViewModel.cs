@@ -1,11 +1,14 @@
 ﻿using PooP.Core.Implementation.Games;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Interface
 {
@@ -14,6 +17,8 @@ namespace Interface
     /// </summary>
     public class MainViewModel
     {
+        public const string IMAGES_PATH = "images/";
+
         /// <summary>
         /// Constructor
         /// Puts an empty string in all the values for game instanciation
@@ -83,11 +88,24 @@ namespace Interface
             set;
         }
 
+        public string Player1RaceImage
+        {
+            get;
+            set;
+        }
+
         public string Player2Race
         {
             get;
             set;
         }
+
+        public string Player2RaceImage
+        {
+            get;
+            set;
+        }
+
 
         public string MapSize
         {
@@ -119,6 +137,7 @@ namespace Interface
         public void Execute(Object o)
         {
             mvm.Player1Race = (string) o;
+            mvm.Player1RaceImage = MainViewModel.IMAGES_PATH + mvm.Player2Race.ToLower() + ".png";
         }
 
         /// <summary>
@@ -165,6 +184,7 @@ namespace Interface
         public void Execute(Object o)
         {
             mvm.Player2Race = (string)o;
+            mvm.Player2RaceImage = MainViewModel.IMAGES_PATH + mvm.Player2Race.ToLower() + ".png";
         }
 
         /// <summary>
