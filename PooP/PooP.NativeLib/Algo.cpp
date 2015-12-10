@@ -1,6 +1,6 @@
 #ifdef _DEBUG
-//#include "Algo.h" // PooP
-#include "../PooP.NativeLib.Test/Algo.h" // Test C++
+#include "Algo.h" // PooP
+//#include "../PooP.NativeLib.Test/Algo.h" // Test C++
 #else
 #include "Algo.h"
 #endif
