@@ -97,6 +97,20 @@ namespace Interface
             }
         }
 
+        public string Player1RaceFont
+        {
+            get
+            {
+                switch (Player1Race)
+                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                    case "Elf": return "Lucida Calligraphy";
+                    case "Human" : return "Engravers MT";
+                    case "Orc": return "Copperplate Gothic Light";
+                    default: return "Segoe US";
+                }
+            }
+        }
+
         public string Player2Race
         {
             get;
@@ -108,6 +122,20 @@ namespace Interface
             get
             {
                 return IMAGES_PATH + Player2Race.ToLower() + ".png";
+            }
+        }
+
+        public string Player2RaceFont
+        {
+            get
+            {
+                switch (Player2Race)
+                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                    case "Elf": return "Lucida Calligraphy";
+                    case "Human": return "Engravers MT";
+                    case "Orc": return "Copperplate Gothic Light";
+                    default: return "Segoe US";
+                }
             }
         }
 
@@ -143,6 +171,7 @@ namespace Interface
         {
             mvm.Player1Race = ((RaceParameter) o).Name;
             ((System.Windows.Controls.Image)((RaceParameter)o).Image).Source = new BitmapImage(new Uri(mvm.Player1RaceImage, UriKind.Relative));
+            ((System.Windows.Controls.TextBox)((RaceParameter)o).TextBox).FontFamily = new FontFamily(mvm.Player1RaceFont);
         }
 
         /// <summary>
@@ -190,6 +219,7 @@ namespace Interface
         {
             mvm.Player2Race = ((RaceParameter)o).Name;
             ((System.Windows.Controls.Image)((RaceParameter)o).Image).Source = new BitmapImage(new Uri(mvm.Player2RaceImage, UriKind.Relative));
+            ((System.Windows.Controls.TextBox)((RaceParameter)o).TextBox).FontFamily = new FontFamily(mvm.Player2RaceFont);
         }
 
         /// <summary>

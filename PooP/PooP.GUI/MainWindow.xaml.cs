@@ -31,11 +31,13 @@ namespace PooP.GUI
     {
         public String Name;
         public Object Image;
+        public Object TextBox;
 
-        public RaceParameter(string name, Object image)
+        public RaceParameter(string name, Object image, Object tb)
         {
             this.Name = name.Substring(0,name.Length-1);
             this.Image = image;
+            this.TextBox = tb;
         }
     }
 
@@ -43,7 +45,7 @@ namespace PooP.GUI
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return new RaceParameter((string)values[0], values[1]);
+            return new RaceParameter((string)values[0], values[1], values[2]);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
