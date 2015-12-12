@@ -93,7 +93,7 @@ namespace Interface
         {
             get
             {
-                return IMAGES_PATH + Player1Race.ToLower() + ".png";
+                return IMAGES_PATH + Player1Race.ToLower() + ".new.png";
             }
         }
 
@@ -121,7 +121,7 @@ namespace Interface
         {
             get
             {
-                return IMAGES_PATH + Player2Race.ToLower() + ".png";
+                return IMAGES_PATH + Player2Race.ToLower() + ".new.png";
             }
         }
 
