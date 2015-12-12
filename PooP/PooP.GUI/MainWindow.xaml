@@ -18,6 +18,7 @@
 
     <Window.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}"></KeyBinding>
+        <KeyBinding Key="Escape" Command="{Binding Quit}" CommandParameter="{Binding ElementName=InitWindow}"/>
     </Window.InputBindings>
 
     <Canvas Height="600" Width="800">
@@ -26,7 +27,7 @@
         </Canvas.Background>
 
         <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Width="185" Height="202" Canvas.Left="170" Canvas.Top="114"/>
-        <Image x:Name="ImRace2" Source="{Binding Player2RaceImage}" Width="185" Height="202" Canvas.Left="444" Canvas.Top="111">
+        <Image x:Name="ImRace2" Source="{Binding Player2RaceImage}" Width="185" Height="202" Canvas.Left="444" Canvas.Top="111" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -102,6 +103,6 @@
         <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" Command="{Binding ChangeMapSize}" CommandParameter="Small" Canvas.Left="444" Canvas.Top="491" FontSize="22" />
         <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" VerticalAlignment="Top" Command="{Binding ChangeMapSize}" CommandParameter="Standard" Canvas.Left="520" Canvas.Top="491" FontSize="22" />
         <Label Content="Small World" Canvas.Left="260" Canvas.Top="10" FontFamily="Rockwell Extra Bold" FontSize="36" FontWeight="Bold" Foreground="#FF272319"/>
-        <Button x:Name="quit_button" Content="QUIT" Command="{Binding Quit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button x:Name="quit_button" Content="QUIT" Command="{Binding Quit}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
     </Canvas>
 </Window>
