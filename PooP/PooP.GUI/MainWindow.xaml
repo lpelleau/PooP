@@ -4,11 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Interface="clr-namespace:Interface" x:Class="MainWindow"
     x:Name="InitWindow"
-    Title="Initialisation de la partie" Height="600" Width="800" ResizeMode="NoResize">
+    Title="Initialisation de la partie" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Window.Resources>
         <l:NegateBool x:Key="NegateBool"/>
         <l:ParameterRaceConverter x:Key="ParameterRaceConverter"/>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="images/background.png"/>
+    </Window.Background>
 
     <Window.DataContext>
         <Interface:MainViewModel/>
