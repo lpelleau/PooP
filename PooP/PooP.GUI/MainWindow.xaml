@@ -4,15 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Interface="clr-namespace:Interface" x:Class="MainWindow"
     x:Name="InitWindow"
-    Title="Initialisation de la partie" Width="800" Height="600" ResizeMode="NoResize">
+    Title="Small World" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="images/logo.png">
     <!-- WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None"-->
+
     <Window.Resources>
         <l:NegateBool x:Key="NegateBool"/>
         <l:ParameterRaceConverter x:Key="ParameterRaceConverter"/>
     </Window.Resources>
-    <Window.Background>
-        <ImageBrush ImageSource="images/background.png"/>
-    </Window.Background>
 
     <Window.DataContext>
         <Interface:MainViewModel/>
@@ -22,20 +20,13 @@
         <KeyBinding Key="Enter" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}"></KeyBinding>
     </Window.InputBindings>
 
+    <Canvas Height="600" Width="800">
+        <Canvas.Background>
+            <ImageBrush ImageSource="images/background.png"/>
+        </Canvas.Background>
 
-    <Grid Margin="0,0,0,0" RenderTransformOrigin="0.614,0.5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="293*"/>
-            <ColumnDefinition Width="400*"/>
-        </Grid.ColumnDefinitions>
-
-        <!-- Fot the best display, use 590/944 images -->
-        <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Margin="63,112,47,-14" Grid.Column="1" />
-        <Image Name="ImRace2" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Source="{Binding Player2RaceImage}">
-            <Image.OpacityMask>
-                <SolidColorBrush Color="Black" Opacity="0.4"/>
-            </Image.OpacityMask>
+        <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Width="185" Height="202" Canvas.Left="170" Canvas.Top="114"/>
+        <Image x:Name="ImRace2" Source="{Binding Player2RaceImage}" Width="185" Height="202" Canvas.Left="444" Canvas.Top="111">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -45,9 +36,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-
-        <Label Content="Race J1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="52" Margin="31,126,0,0"/>
-        <RadioButton x:Name="Elf1" Content="Elf" HorizontalAlignment="Left" Margin="31,154,0,0" VerticalAlignment="Top" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf2}" Height="16" Width="66" Command="{Binding ChangeRace1}" Background="{x:Null}">
+        <Label Content="Player 1" Canvas.Left="30" Canvas.Top="117" FontSize="24" FontWeight="Bold" FontFamily="Rockwell Extra Bold" />
+        <RadioButton x:Name="Elf1" Content="Elf" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Elf1" Path="Name"/>
@@ -56,7 +46,7 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-        <RadioButton x:Name="Human1" Content="Human" HorizontalAlignment="Left" Margin="31,170,0,0" VerticalAlignment="Top" GroupName="Race1" RenderTransformOrigin="0.5,0.5"  IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human2}" Height="16" Width="66" Command="{Binding ChangeRace1}" Background="{x:Null}">
+        <RadioButton x:Name="Human1" Content="Human" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="179" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D" RenderTransformOrigin="0,0.5">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Human1" Path="Name"/>
@@ -65,7 +55,7 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-        <RadioButton x:Name="Orc1" Content="Orc" HorizontalAlignment="Left" Margin="31,186,0,0" VerticalAlignment="Top" GroupName="Race1"  IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Orc2}" Height="16" Width="66" Command="{Binding ChangeRace1}" Background="{x:Null}">
+        <RadioButton x:Name="Orc1" Content="Orc" GroupName="Race1"  IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Orc2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="210" FontSize="20" Foreground="#FF1D1D1D" BorderBrush="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Orc1" Path="Name"/>
@@ -74,9 +64,8 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-
-        <Label Content="Race J2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="52" Margin="178,0,0,0"/>
-        <RadioButton x:Name="Elf2" Content="Elf" HorizontalAlignment="Left" Margin="163,28,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="0.724,0.25" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf1}" Grid.Column="2" Height="16" Width="67" Command="{Binding ChangeRace2}" Background="{x:Null}">
+        <Label Content=" Player 2" FontWeight="Bold" Height="38" Width="136" Canvas.Left="642" Canvas.Top="117" FontSize="24" FontFamily="Rockwell Extra Bold" />
+        <RadioButton x:Name="Elf2" Content="Elf" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Elf2" Path="Name"/>
@@ -85,7 +74,7 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-        <RadioButton x:Name="Human2" Content="Human" HorizontalAlignment="Left" Margin="163,44,0,0" VerticalAlignment="Top" GroupName="Race2" RenderTransformOrigin="2.029,0.625" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human1}" Grid.Column="2" Height="16" Width="67" Command="{Binding ChangeRace2}" Background="{x:Null}">
+        <RadioButton x:Name="Human2" Content="Human" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="179" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Human2" Path="Name"/>
@@ -94,7 +83,7 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-        <RadioButton x:Name="Orc2" Content="Orc" HorizontalAlignment="Left" Margin="163,60,0,0" VerticalAlignment="Top" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Orc1}" Grid.Column="2" Height="16" Width="67" Command="{Binding ChangeRace2}" Background="{x:Null}">
+        <RadioButton x:Name="Orc2" Content="Orc" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Orc1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="210" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Orc2" Path="Name"/>
@@ -103,25 +92,16 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-
-        <TextBox x:Name="NameP1" HorizontalAlignment="Left" Height="23" Margin="45,359,0,-82" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" ToolTip="Nom du joueur 1" Text="{Binding Player1Name}" TextAlignment="Center" Grid.Column="1"/>
-        <TextBox x:Name="NameP2" HorizontalAlignment="Left" Height="23" Margin="89,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Grid.Column="2" ToolTip="Nom du joueur 2" Text="{Binding Player2Name}" TextAlignment="Center"/>
-
-        <Label Content="Name P1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="72,356,0,-82" Height="26" Width="61" Grid.ColumnSpan="2"/>
-        <Label Content="Name P2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="9,166,0,0" Height="26" Width="61"/>
-
-        <Grid Grid.ColumnSpan="3" Margin="20,471,-20,-237">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="25*"/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Map size" Margin="10,-2,10,0" RenderTransformOrigin="0.515,0.365" FontWeight="Bold" VerticalAlignment="Top"/>
-            <RadioButton x:Name="Demo" Content="Demo" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,3,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" Command="{Binding ChangeMapSize}" CommandParameter="Demo"/>
-            <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,1,0,0" VerticalAlignment="Top" Width="84" Grid.Column="2" Command="{Binding ChangeMapSize}" CommandParameter="Small"/>
-            <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" HorizontalAlignment="Left" Height="15" Margin="10,1,0,0" VerticalAlignment="Top" Width="85" Grid.Column="3" Command="{Binding ChangeMapSize}" CommandParameter="Standard"/>
-        </Grid>
-        <Button x:Name="start_button" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="348,542,0,-262" VerticalAlignment="Top" Width="39" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}" Height="20"/>
-    </Grid>
+        <TextBox x:Name="NameP1" TextWrapping="Wrap" ToolTip="Nom du joueur 1" Text="{Binding Player1Name}" Canvas.Left="114" Canvas.Top="361" FontSize="20" Background="#FF6A6A6A" BorderBrush="#FF515151" CaretBrush="#FF1F1F1F" Foreground="#FF1D1D1D" Width="226" />
+        <TextBox x:Name="NameP2" TextWrapping="Wrap" ToolTip="Nom du joueur 2" Text="{Binding Player2Name}" Canvas.Left="538" Canvas.Top="361" FontSize="20" Background="#FF6A6A6A" BorderBrush="#FF515151" CaretBrush="#FF1F1F1F" Foreground="#FF1D1D1D" Width="226" />
+        <Label Content="Name:" FontWeight="Bold" Canvas.Left="40" Canvas.Top="357" FontSize="20" Foreground="#FF1D1D1D" />
+        <Label Content="Name:" FontWeight="Bold" Canvas.Left="458" Canvas.Top="357"  FontSize="20" Foreground="#FF1D1D1D"/>
+        <Button x:Name="start_button" Content="START" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="678" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="Map size" FontWeight="Bold" Canvas.Left="205" Canvas.Top="488" FontFamily="Rockwell Extra Bold" FontSize="22"/>
+        <RadioButton x:Name="Demo" Content="Demo" GroupName="Difficulty" Command="{Binding ChangeMapSize}" CommandParameter="Demo" Canvas.Left="361" Canvas.Top="491" FontSize="22" />
+        <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" Command="{Binding ChangeMapSize}" CommandParameter="Small" Canvas.Left="444" Canvas.Top="491" FontSize="22" />
+        <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" VerticalAlignment="Top" Command="{Binding ChangeMapSize}" CommandParameter="Standard" Canvas.Left="520" Canvas.Top="491" FontSize="22" />
+        <Label Content="Small World" Canvas.Left="260" Canvas.Top="10" FontFamily="Rockwell Extra Bold" FontSize="36" FontWeight="Bold" Foreground="#FF272319"/>
+        <Button x:Name="quit_button" Content="QUIT" Command="{Binding Quit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+    </Canvas>
 </Window>
