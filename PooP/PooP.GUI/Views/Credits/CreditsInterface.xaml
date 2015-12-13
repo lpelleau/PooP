@@ -1,0 +1,13 @@
+﻿<Page x:Class="PooP.GUI.Views.Credits.CreditsInterface"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Credits">
+    <Canvas Width="800" Height="600">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/Interface;component/images/text.png" />
+        </Canvas.Background>
+    </Canvas>
+</Page>

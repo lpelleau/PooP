@@ -53,7 +53,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\Tutorial\TutorialInterface.xaml.cs">
+      <DependentUpon>TutorialInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tutorial\TutorialModel.cs" />
+    <Page Include="Views\Credits\CreditsInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainMenu\MainMenuInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow\MainWindowInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewGame\NewGameInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -61,20 +77,40 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainViewModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\Credits\CreditsInterface.xaml.cs">
+      <DependentUpon>CreditsInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Credits\CreditsModel.cs" />
+    <Compile Include="Views\MainMenu\MainMenuInterface.xaml.cs">
+      <DependentUpon>MainMenuInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\MainMenuModel.cs" />
+    <Compile Include="Views\MainWindow\MainWindowInterface.xaml.cs">
+      <DependentUpon>MainWindowInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewGame\QuitCommand.cs" />
+    <Compile Include="Views\NewGame\LaunchCommand.cs" />
+    <Compile Include="Views\NewGame\ChangeMapSizeCommand.cs" />
+    <Compile Include="Views\NewGame\ChangeRace2Command.cs" />
+    <Compile Include="Views\NewGame\ChangeRace1Command.cs" />
+    <Compile Include="Views\NewGame\NewGameModel.cs" />
+    <Compile Include="Views\NewGame\NewGameInterface.xaml.cs">
+      <DependentUpon>NewGameInterface.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MapWindow.xaml">
+    <Page Include="Views\CurrentGame\CurrentGameInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tutorial\TutorialInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapViewModel.cs" />
-    <Compile Include="MapWindow.xaml.cs">
-      <DependentUpon>MapWindow.xaml</DependentUpon>
+    <Compile Include="Views\CurrentGame\CurrentGameModel.cs" />
+    <Compile Include="Views\CurrentGame\CurrentGameInterface.xaml.cs">
+      <DependentUpon>CurrentGameInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -113,6 +149,7 @@
       <Link>PooP.NativeLib.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
     <Resource Include="images\mainMenu.png" />
     <Resource Include="images\newGame.png" />
     <Resource Include="images\text.png" />
@@ -120,6 +157,7 @@
     <Resource Include="images\orc.png" />
     <Resource Include="images\elf.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,64 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Data;
+using System.Globalization;
+using System.Windows.Input;
+using System.Windows.Controls;
+using PooP.GUI.Views.MainWindow;
+
+namespace PooP.GUI.Views.NewGame
+{
+    /// <summary>
+    /// Logique d'interaction pour MainWindow.xaml
+    /// </summary>
+    public partial class NewGameInterface : Page
+    {
+        private MainWindowInterface window;
+        public NewGameInterface(MainWindowInterface window)
+        {
+            InitializeComponent();
+            this.window = window;
+        }
+    }
+
+    public class NegateBool : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (((string)value.ToString()) == "True") return Boolean.FalseString;
+            else return Boolean.TrueString;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return Convert(value, targetType, parameter, culture);
+        }
+    }
+
+    public class RaceParameter
+    {
+        public String Name;
+        public Object Image;
+        public Object TextBox;
+
+        public RaceParameter(string name, Object image, Object tb)
+        {
+            this.Name = name.Substring(0,name.Length-1);
+            this.Image = image;
+            this.TextBox = tb;
+        }
+    }
+
+    public class ParameterRaceConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            return new RaceParameter((string)values[0], values[1], values[2]);
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
