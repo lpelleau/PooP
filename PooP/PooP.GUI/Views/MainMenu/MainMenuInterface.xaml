@@ -10,10 +10,10 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
-        <Button Content="Button" Command="{Binding NewGame}" Canvas.Left="372" Canvas.Top="155"/>
-        <Button Content="Button" Command="{Binding LoadGame}" Canvas.Left="372" Canvas.Top="261"/>
-        <Button Content="Button" Command="{Binding Tutorial}" Canvas.Left="372" Canvas.Top="373"/>
-        <Button Content="Button" Command="{Binding Credits}" Canvas.Left="372" Canvas.Top="470"/>
-        <Button Content="Button" Command="{Binding Quit}" Canvas.Left="60" Canvas.Top="542"/>
+        <Button Content="NEW GAME" Command="{Binding NewGame}" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="TUTORIAL" Command="{Binding Tutorial}" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="CREDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="QUIT" Command="{Binding Quit}" Canvas.Left="35" Canvas.Top="530" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
     </Canvas>
 </Page>
