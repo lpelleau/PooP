@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\MainMenu\NewGameCommand.cs" />
     <Compile Include="Views\Tutorial\TutorialInterface.xaml.cs">
       <DependentUpon>TutorialInterface.xaml</DependentUpon>
     </Compile>

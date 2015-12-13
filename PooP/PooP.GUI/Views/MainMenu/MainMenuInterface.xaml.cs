@@ -1,4 +1,4 @@
-﻿using PooP.GUI.Views.MainWindow;
+﻿using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +24,7 @@ namespace PooP.GUI.Views.MainMenu
         public MainMenuInterface(WindowInterface window)
         {
             InitializeComponent();
+            DataContext = new MainMenuModel(window);
             this.window = window;
         }
     }

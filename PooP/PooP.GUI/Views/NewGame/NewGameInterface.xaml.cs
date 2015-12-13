@@ -4,7 +4,7 @@ using System.Windows.Data;
 using System.Globalization;
 using System.Windows.Input;
 using System.Windows.Controls;
-using PooP.GUI.Views.MainWindow;
+using PooP.GUI.Views.WindowApp;
 
 namespace PooP.GUI.Views.NewGame
 {

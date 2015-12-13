@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PooP.GUI.Views.WindowApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,19 @@ namespace PooP.GUI.Views.MainMenu
 {
     public class MainMenuModel
     {
+        public WindowInterface window;
+
+        public MainMenuModel(WindowInterface window)
+        {
+            this.window = window;
+        }
+
+        public ICommand NewGame
+        {
+            get
+            {
+                return new NewGameCommand(window);
+            }
+        }
     }
 }

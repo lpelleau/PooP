@@ -6,14 +6,10 @@
       xmlns:l="clr-namespace:PooP.GUI.Views.MainMenu"
       mc:Ignorable="d" 
       Title="Main menu">
-    <Page.DataContext>
-        <l:MainMenuModel/>
-    </Page.DataContext>
-    
     <Canvas Width="800" Height="600">
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
-        <Button Content="Button" Canvas.Left="372" Canvas.Top="155" Width="75"/>
+        <Button Content="Button" Command="{Binding NewGame}" Canvas.Left="372" Canvas.Top="155"/>
     </Canvas>
 </Page>

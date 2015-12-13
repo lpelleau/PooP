@@ -1,4 +1,4 @@
-﻿using PooP.GUI.Views.MainWindow;
+﻿using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
