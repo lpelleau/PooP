@@ -1,4 +1,5 @@
-﻿using PooP.GUI.Views.Credits;
+﻿using PooP.GUI.Audio;
+using PooP.GUI.Views.Credits;
 using PooP.GUI.Views.CurrentGame;
 using PooP.GUI.Views.MainMenu;
 using PooP.GUI.Views.NewGame;
@@ -85,6 +86,7 @@ namespace PooP.GUI.Views.WindowApp
 
             if (flow.Count == 0)
             {
+                //Sound.INSTANCE.StopMusic();
                 this.Close();
                 return;
             }

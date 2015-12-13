@@ -1,4 +1,5 @@
-﻿using PooP.GUI.Views.WindowApp;
+﻿using PooP.GUI.Audio;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace PooP.GUI.Views.MainMenu
             InitializeComponent();
             DataContext = new MainMenuModel(window);
             this.window = window;
+
+            //Sound.INSTANCE.StartMusic();
         }
     }
 }
