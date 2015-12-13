@@ -41,6 +41,8 @@ namespace PooP.GUI.Views.WindowApp
             credits = new CreditsInterface(this);
 
             OpenMainMenu();
+
+            Sound.INSTANCE.StartMusic();
         }
 
         public void OpenCredits()
@@ -86,7 +88,7 @@ namespace PooP.GUI.Views.WindowApp
 
             if (flow.Count == 0)
             {
-                //Sound.INSTANCE.StopMusic();
+                Sound.INSTANCE.StopMusic();
                 this.Close();
                 return;
             }

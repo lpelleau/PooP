@@ -27,8 +27,6 @@ namespace PooP.GUI.Views.MainMenu
             InitializeComponent();
             DataContext = new MainMenuModel(window);
             this.window = window;
-
-            //Sound.INSTANCE.StartMusic();
         }
     }
 }

@@ -72,7 +72,7 @@ namespace PooP.GUI.Audio
                 sound.StartMusicIntern();
                 while (!_shouldStop)
                 {
-                    Thread.Sleep(5 + 3 * 60 * 60 * 1000);
+                    Thread.Sleep(5 + 3 * 60 * 1000);
                     sound.StopMusicIntern();
                     sound.StartMusicIntern();
                 }
