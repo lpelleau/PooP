@@ -7,7 +7,7 @@
       Title="Main menu">
     <Canvas Width="800" Height="600">
         <Canvas.Background>
-            <ImageBrush ImageSource="/Interface;component/images/mainMenu.png" />
+            <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
         <Button Content="Button" Canvas.Left="372" Canvas.Top="155" Width="75"/>
     </Canvas>
