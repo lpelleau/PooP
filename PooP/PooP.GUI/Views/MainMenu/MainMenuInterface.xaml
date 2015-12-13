@@ -10,10 +10,10 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
-        <Button Content="NEW GAME" Command="{Binding NewGame}" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="TUTORIAL" Command="{Binding Tutorial}" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="CREDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="QUIT" Command="{Binding Quit}" Canvas.Left="35" Canvas.Top="530" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="NEW GAME" Command="{Binding NewGame}" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="TUTORIAL" Command="{Binding Tutorial}" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="CREDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="QUIT" Command="{Binding Quit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
     </Canvas>
 </Page>

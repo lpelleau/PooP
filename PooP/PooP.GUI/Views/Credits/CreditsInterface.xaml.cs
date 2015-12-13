@@ -24,6 +24,7 @@ namespace PooP.GUI.Views.Credits
         public CreditsInterface(WindowInterface window)
         {
             InitializeComponent();
+            DataContext = new CreditsModel(window);
             this.window = window;
         }
     }

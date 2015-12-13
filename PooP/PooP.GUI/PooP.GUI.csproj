@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\Credits\BackCommand.cs" />
     <Compile Include="Views\LoadGame\LoadGameInterface.xaml.cs">
       <DependentUpon>LoadGameInterface.xaml</DependentUpon>
     </Compile>

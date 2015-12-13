@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PooP.GUI.Views.WindowApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,19 @@ namespace PooP.GUI.Views.Credits
 {
     public class CreditsModel
     {
+        public WindowInterface window;
+
+        public CreditsModel(WindowInterface window)
+        {
+            this.window = window;
+        }
+
+        public ICommand Back
+        {
+            get
+            {
+                return new BackCommand(window);
+            }
+        }
     }
 }
