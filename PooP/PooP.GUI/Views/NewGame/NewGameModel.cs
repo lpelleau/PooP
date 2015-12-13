@@ -1,5 +1,4 @@
-﻿using Interface.Views.NewGame;
-using PooP.Core.Implementation.Games;
+﻿using PooP.Core.Implementation.Games;
 using PooP.GUI;
 using System;
 using System.Collections.Generic;
@@ -19,7 +18,7 @@ namespace PooP.GUI.Views.NewGame
     /// </summary>
     public class NewGameModel
     {
-        public const string IMAGES_PATH = "/Interface;component/images/";
+        public const string IMAGES_PATH = "/SmallWorld;component/images/";
 
         /// <summary>
         /// Constructor

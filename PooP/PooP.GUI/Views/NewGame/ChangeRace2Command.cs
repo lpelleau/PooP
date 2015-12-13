@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Interface.Views.NewGame
+namespace PooP.GUI.Views.NewGame
 {
     /// <summary>
     /// Command for a change in P2's race

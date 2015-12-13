@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Interface.Views.NewGame
+namespace PooP.GUI.Views.NewGame
 {
     /// <summary>
     /// Command to launch the game

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Interface.Views.NewGame
+namespace PooP.GUI.Views.NewGame
 {
     /// <summary>
     /// Command for a change in map size
