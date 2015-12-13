@@ -1,4 +1,5 @@
 ﻿using PooP.GUI.Views.Credits;
+using PooP.GUI.Views.CurrentGame;
 using PooP.GUI.Views.MainMenu;
 using PooP.GUI.Views.NewGame;
 using PooP.GUI.Views.Tutorial;
@@ -38,6 +39,26 @@ namespace PooP.GUI.Views.WindowApp
             tutorial = new TutorialInterface(this);
             credits = new CreditsInterface(this);
 
+            OpenMainMenu();
+        }
+
+        public void OpenCredits()
+        {
+            frame.Content = credits;
+
+            flow.Push(credits);
+        }
+
+        public void OpenCurrentGame()
+        {
+            CurrentGameInterface page = new CurrentGameInterface(this);
+            frame.Content = page;
+
+            flow.Push(page);
+        }
+
+        public void OpenMainMenu()
+        {
             frame.Content = mainMenu;
 
             flow.Push(mainMenu);
@@ -51,14 +72,24 @@ namespace PooP.GUI.Views.WindowApp
             flow.Push(page);
         }
 
+        public void OpenTutorial()
+        {
+            frame.Content = tutorial;
+
+            flow.Push(tutorial);
+        }
+
         public void CloseCurrent()
         {
+            flow.Pop();
+
             if (flow.Count == 0)
             {
                 this.Close();
+                return;
             }
-            Page page = flow.Pop();
-            frame.Content = page;
+
+            frame.Content = flow.Peek();
         }
     }
 }

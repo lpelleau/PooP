@@ -18,6 +18,7 @@ namespace PooP.GUI.Views.NewGame
         {
             InitializeComponent();
             this.window = window;
+            DataContext = new NewGameModel(window);
         }
     }
 

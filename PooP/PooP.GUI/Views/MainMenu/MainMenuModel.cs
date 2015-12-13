@@ -18,11 +18,43 @@ namespace PooP.GUI.Views.MainMenu
             this.window = window;
         }
 
+        public ICommand Credits
+        {
+            get
+            {
+                return new CreditsCommand(window);
+            }
+        }
+
+        public ICommand LoadGame
+        {
+            get
+            {
+                return new LoadGameCommand(window);
+            }
+        }
+
         public ICommand NewGame
         {
             get
             {
                 return new NewGameCommand(window);
+            }
+        }
+
+        public ICommand Tutorial
+        {
+            get
+            {
+                return new TutorialCommand(window);
+            }
+        }
+
+        public ICommand Quit
+        {
+            get
+            {
+                return new QuitCommand(window);
             }
         }
     }

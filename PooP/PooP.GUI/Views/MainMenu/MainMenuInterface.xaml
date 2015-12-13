@@ -11,5 +11,9 @@
             <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
         <Button Content="Button" Command="{Binding NewGame}" Canvas.Left="372" Canvas.Top="155"/>
+        <Button Content="Button" Command="{Binding LoadGame}" Canvas.Left="372" Canvas.Top="261"/>
+        <Button Content="Button" Command="{Binding Tutorial}" Canvas.Left="372" Canvas.Top="373"/>
+        <Button Content="Button" Command="{Binding Credits}" Canvas.Left="372" Canvas.Top="470"/>
+        <Button Content="Button" Command="{Binding Quit}" Canvas.Left="60" Canvas.Top="542"/>
     </Canvas>
 </Page>

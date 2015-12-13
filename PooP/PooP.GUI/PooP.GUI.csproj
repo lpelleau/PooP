@@ -71,12 +71,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\LoadGame\LoadGameInterface.xaml.cs">
+      <DependentUpon>LoadGameInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadGame\LoadGameModel.cs" />
+    <Compile Include="Views\MainMenu\LoadGameCommand.cs" />
+    <Compile Include="Views\MainMenu\QuitCommand.cs" />
+    <Compile Include="Views\MainMenu\TutorialCommand.cs" />
+    <Compile Include="Views\MainMenu\CreditsCommand.cs" />
     <Compile Include="Views\MainMenu\NewGameCommand.cs" />
     <Compile Include="Views\Tutorial\TutorialInterface.xaml.cs">
       <DependentUpon>TutorialInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tutorial\TutorialModel.cs" />
     <Page Include="Views\Credits\CreditsInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoadGame\LoadGameInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

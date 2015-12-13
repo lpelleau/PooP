@@ -12,10 +12,6 @@
         <l:ParameterRaceConverter x:Key="ParameterRaceConverter"/>
     </Page.Resources>
 
-    <Page.DataContext>
-        <l:NewGameModel/>
-    </Page.DataContext>
-
     <Page.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding Launch}" CommandParameter="{Binding ElementName=InitWindow}"></KeyBinding>
         <KeyBinding Key="Escape" Command="{Binding Quit}" CommandParameter="{Binding ElementName=InitWindow}"/>

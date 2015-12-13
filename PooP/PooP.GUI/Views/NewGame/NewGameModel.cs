@@ -1,5 +1,6 @@
 ﻿using PooP.Core.Implementation.Games;
 using PooP.GUI;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +20,16 @@ namespace PooP.GUI.Views.NewGame
     public class NewGameModel
     {
         public const string IMAGES_PATH = "/SmallWorld;component/images/";
+        private WindowInterface window;
 
         /// <summary>
         /// Constructor
         /// Puts an empty string in all the values for game instanciation
         /// </summary>
-        public NewGameModel()
+        public NewGameModel(WindowInterface window)
         {
+            this.window = window;
+
             Player1Name = "";
             Player2Name = "";
             Player1Race = "";
@@ -74,7 +78,7 @@ namespace PooP.GUI.Views.NewGame
         {
             get
             {
-                return new QuitCommand(this);
+                return new QuitCommand(window);
             }
         }
 
