@@ -20,8 +20,8 @@ namespace PooP.GUI.Views.Credits
     /// </summary>
     public partial class CreditsInterface : Page
     {
-        private MainWindowInterface window;
-        public CreditsInterface(MainWindowInterface window)
+        private WindowInterface window;
+        public CreditsInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;

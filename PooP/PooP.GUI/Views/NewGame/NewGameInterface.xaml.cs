@@ -13,8 +13,8 @@ namespace PooP.GUI.Views.NewGame
     /// </summary>
     public partial class NewGameInterface : Page
     {
-        private MainWindowInterface window;
-        public NewGameInterface(MainWindowInterface window)
+        private WindowInterface window;
+        public NewGameInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;

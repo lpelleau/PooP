@@ -20,8 +20,8 @@ namespace PooP.GUI.Views.CurrentGame
     /// </summary>
     public partial class CurrentGameInterface : Page
     {
-        private MainWindowInterface window;
-        public CurrentGameInterface(MainWindowInterface window)
+        private WindowInterface window;
+        public CurrentGameInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;

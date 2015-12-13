@@ -83,7 +83,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MainWindow\MainWindowInterface.xaml">
+    <Page Include="Views\Window\WindowInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,8 +103,8 @@
       <DependentUpon>MainMenuInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainMenu\MainMenuModel.cs" />
-    <Compile Include="Views\MainWindow\MainWindowInterface.xaml.cs">
-      <DependentUpon>MainWindowInterface.xaml</DependentUpon>
+    <Compile Include="Views\Window\WindowInterface.xaml.cs">
+      <DependentUpon>WindowInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewGame\QuitCommand.cs" />
     <Compile Include="Views\NewGame\LaunchCommand.cs" />

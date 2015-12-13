@@ -20,8 +20,8 @@ namespace PooP.GUI.Views.MainMenu
     /// </summary>
     public partial class MainMenuInterface : Page
     {
-        private MainWindowInterface window;
-        public MainMenuInterface(MainWindowInterface window)
+        private WindowInterface window;
+        public MainMenuInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;

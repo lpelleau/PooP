@@ -19,10 +19,10 @@ namespace PooP.GUI.Views.MainWindow
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindowInterface : Window
+    public partial class WindowInterface : Window
     {
         private Page mainMenu;
-        public MainWindowInterface()
+        public WindowInterface()
         {
             InitializeComponent();
 

@@ -139,7 +139,7 @@ namespace PooP.GUI.Views.NewGame
             get
             {
                 switch (Player2Race)
-                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                {
                     case "Elf": return "Lucida Calligraphy";
                     case "Human": return "Engravers MT";
                     case "Orc": return "Copperplate Gothic Light";

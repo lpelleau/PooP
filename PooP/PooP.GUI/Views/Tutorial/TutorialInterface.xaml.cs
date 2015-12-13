@@ -20,8 +20,8 @@ namespace PooP.GUI.Views.Tutorial
     /// </summary>
     public partial class TutorialInterface : Page
     {
-        private MainWindowInterface window;
-        public TutorialInterface(MainWindowInterface window)
+        private WindowInterface window;
+        public TutorialInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;

@@ -1,4 +1,4 @@
-﻿<Window x:Class="PooP.GUI.Views.MainWindow.MainWindowInterface"
+﻿<Window x:Class="PooP.GUI.Views.MainWindow.WindowInterface"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Small World" SizeToContent="WidthAndHeight" Icon="/SmallWorld;component/images/logo.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
