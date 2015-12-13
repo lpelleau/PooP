@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Interface="clr-namespace:Interface" x:Class="MainWindow"
     x:Name="InitWindow"
-    Title="Small World" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="images/logo.png">
+    Title="Small World" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
     <!-- WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None"-->
 
     <Window.Resources>
@@ -23,7 +23,7 @@
 
     <Canvas Height="600" Width="800">
         <Canvas.Background>
-            <ImageBrush ImageSource="images/background.png"/>
+            <ImageBrush ImageSource="images/newGame.png"/>
         </Canvas.Background>
 
         <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Width="185" Height="202" Canvas.Left="170" Canvas.Top="114"/>

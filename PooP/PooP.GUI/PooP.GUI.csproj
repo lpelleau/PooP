@@ -113,11 +113,9 @@
       <Link>PooP.NativeLib.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="images\logo.png" />
-    <Resource Include="images\elf.new.png" />
-    <Resource Include="images\human.new.png" />
-    <Resource Include="images\orc.new.png" />
-    <Resource Include="images\background.png" />
+    <Resource Include="images\mainMenu.png" />
+    <Resource Include="images\newGame.png" />
+    <Resource Include="images\text.png" />
     <Resource Include="images\human.png" />
     <Resource Include="images\orc.png" />
     <Resource Include="images\elf.png" />
