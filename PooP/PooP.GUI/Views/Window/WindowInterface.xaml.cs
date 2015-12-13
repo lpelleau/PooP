@@ -51,6 +51,14 @@ namespace PooP.GUI.Views.WindowApp
             flow.Push(page);
         }
 
+        public void OpenCredits()
+        {
+            CreditsInterface page = new CreditsInterface(this);
+            frame.Content = page;
+
+            flow.Push(page);
+        }
+
         public void CloseCurrent()
         {
             if (flow.Count == 0)

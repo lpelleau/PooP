@@ -1,37 +1,37 @@
 ﻿using PooP.GUI.Views.NewGame;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
-namespace PooP.GUI.Views.NewGame
+namespace PooP.GUI.Views.MainMenu
 {
     /// <summary>
     /// Command for quitting the game
     /// </summary>
-    public class QuitCommand : ICommand
+    public class CloseWindowCommand : ICommand
     {
-        private NewGameModel ngm;
+        private WindowInterface wi;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="m">Associated ViewModel</param>
-        public QuitCommand(NewGameModel m)
+        public CloseWindowCommand(WindowInterface w)
         {
-            ngm = m;
+            wi = w;
         }
 
         /// <summary>
         /// Quits
         /// </summary>
-        /// <param name="o">Current window</param>
+        /// <param name="o">Unused</param>
         public void Execute(Object o)
         {
-            //((NewGame)o).Close();
+            wi.Close();
         }
 
         /// <summary>

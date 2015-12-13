@@ -1,44 +1,43 @@
-﻿using PooP.GUI.Views.NewGame;
+﻿using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace PooP.GUI.Views.NewGame
+namespace PooP.GUI.Views.MainMenu
 {
     /// <summary>
-    /// Command for quitting the game
+    /// Command to display the credits
     /// </summary>
-    public class QuitCommand : ICommand
+    public class CreditCommand : ICommand
     {
-        private NewGameModel ngm;
+        private WindowInterface window;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="m">Associated ViewModel</param>
-        public QuitCommand(NewGameModel m)
+        /// <param name="m">Current window</param>
+        public CreditCommand(WindowInterface m)
         {
-            ngm = m;
+            this.window = m;
         }
 
         /// <summary>
-        /// Quits
-        /// </summary>
-        /// <param name="o">Current window</param>
-        public void Execute(Object o)
-        {
-            //((NewGame)o).Close();
-        }
-
-        /// <summary>
-        /// Tests if the game can be exited
+        /// Displays the credits
         /// </summary>
         /// <param name="o">Unused</param>
-        /// <returns>true</returns>
+        public void Execute(Object o)
+        {
+            window.OpenCredits();
+        }
+
+        /// <summary>
+        /// Tests if the command can be executed
+        /// </summary>
+        /// <param name="o">Unused</param>
+        /// <returns>Always true</returns>
         public bool CanExecute(Object o)
         {
             return true;

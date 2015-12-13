@@ -25,5 +25,21 @@ namespace PooP.GUI.Views.MainMenu
                 return new NewGameCommand(window);
             }
         }
+
+        public ICommand Credits
+        {
+            get
+            {
+                return new CreditCommand(window);
+            }
+        }
+
+        public ICommand Quit
+        {
+            get
+            {
+                return new CloseWindowCommand(window);
+            }
+        }
     }
 }

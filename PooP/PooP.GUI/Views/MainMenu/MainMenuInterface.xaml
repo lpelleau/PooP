@@ -10,6 +10,9 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
         </Canvas.Background>
-        <Button Content="Button" Command="{Binding NewGame}" Canvas.Left="372" Canvas.Top="155"/>
+        <Button Content="NOUVELLE PARTIE" Command="{Binding NewGame}" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="CHARGEMENT" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="CRÉDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="362" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="QUITTER" Command="{Binding Quit}" CommandParameter="{Binding ElementName=Window}" Canvas.Left="233" Canvas.Top="467" Height="44" Width="341" FontSize="30" Background="{x:Null}" FontFamily="Rockwell Extra Bold"/>
     </Canvas>
 </Page>
