@@ -1,11 +1,13 @@
 ﻿using PooP.GUI.Audio;
 using PooP.GUI.Views.Credits;
 using PooP.GUI.Views.CurrentGame;
+using PooP.GUI.Views.FinishedGame;
 using PooP.GUI.Views.MainMenu;
 using PooP.GUI.Views.NewGame;
 using PooP.GUI.Views.Tutorial;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +45,8 @@ namespace PooP.GUI.Views.WindowApp
             OpenMainMenu();
 
             Sound.INSTANCE.StartMusic();
+
+            Closing += OnWindowClosing;
         }
 
         public void OpenCredits()
@@ -55,6 +59,16 @@ namespace PooP.GUI.Views.WindowApp
         public void OpenCurrentGame()
         {
             CurrentGameInterface page = new CurrentGameInterface(this);
+            frame.Content = page;
+
+            flow.Push(page);
+        }
+
+        public void CurrentToFinishedGame()
+        {
+            flow.Pop();
+
+            FinishedGameInterface page = new FinishedGameInterface(this);
             frame.Content = page;
 
             flow.Push(page);
@@ -88,12 +102,18 @@ namespace PooP.GUI.Views.WindowApp
 
             if (flow.Count == 0)
             {
-                Sound.INSTANCE.StopMusic();
+                OnWindowClosing(null, null);
                 this.Close();
-                return;
             }
+            else
+            {
+                frame.Content = flow.Peek();
+            }
+        }
 
-            frame.Content = flow.Peek();
+        private void OnWindowClosing(object sender, CancelEventArgs e) 
+        {
+            Sound.INSTANCE.StopMusic();
         }
     }
 }
