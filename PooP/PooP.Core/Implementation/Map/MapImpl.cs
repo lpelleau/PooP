@@ -118,8 +118,8 @@ namespace PooP.Core.Implementation.Maps
         // If the position is already used, throw an exception
         public Tile getTile(string TileType, Position Position)
         {
-            Height = Math.Max(Position.YPosition, Height);
-            Width = Math.Max(Position.XPosition, Width);
+            Height = Math.Max(Position.YPosition + 1, Height);
+            Width = Math.Max(Position.XPosition + 1, Width);
 
             // If the position is already used, throw an exception
             if (Tiles.Where(l => l.Value.Contains(Position)).Count() != 0)

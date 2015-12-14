@@ -77,6 +77,7 @@
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
+    <Compile Include="Views\LoadGame\LoadGameCommand.cs" />
     <Compile Include="Views\LoadGame\LoadGameInterface.xaml.cs">
       <DependentUpon>LoadGameInterface.xaml</DependentUpon>
     </Compile>

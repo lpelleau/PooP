@@ -24,13 +24,13 @@ namespace PooP.GUI.Views.CurrentGame
             
             map.ShowGridLines = true;
 
-            for (int i = 0; i <= GameBuilder.CURRENTGAME.Map.Height; i++)
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
                 map.RowDefinitions.Add(new RowDefinition());
-            for (int i = 0; i <= GameBuilder.CURRENTGAME.Map.Width; i++)
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Width; i++)
                 map.ColumnDefinitions.Add(new ColumnDefinition());
 
-            for (int i = 0; i <= GameBuilder.CURRENTGAME.Map.Height; i++){
-                for (int j = 0; j <= GameBuilder.CURRENTGAME.Map.Width; j++){
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++){
+                for (int j = 0; j < GameBuilder.CURRENTGAME.Map.Width; j++){
                     Rectangle r = new Rectangle();
                     switch (GameBuilder.CURRENTGAME.Map.getTileAt(new Core.Ressource.Position(j, i)).GetType().Name.ToLower())
                     {
