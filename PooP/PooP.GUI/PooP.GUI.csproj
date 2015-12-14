@@ -77,6 +77,9 @@
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
+    <Compile Include="Views\SplashScreen\SplashScreenInterface.xaml.cs">
+      <DependentUpon>SplashScreenInterface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoadGame\LoadGameCommand.cs" />
     <Compile Include="Views\LoadGame\LoadGameInterface.xaml.cs">
       <DependentUpon>LoadGameInterface.xaml</DependentUpon>
@@ -96,6 +99,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FinishedGame\FinishedGameInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SplashScreen\SplashScreenInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -192,6 +199,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
+    <Resource Include="images\splashScreen.png" />
     <Resource Include="images\logo.ico" />
     <Resource Include="images\mainMenu.png" />
     <Resource Include="images\newGame.png" />
