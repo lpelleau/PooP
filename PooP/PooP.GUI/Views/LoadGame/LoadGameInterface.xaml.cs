@@ -21,10 +21,12 @@ namespace PooP.GUI.Views.LoadGame
     public partial class LoadGameInterface : Page
     {
         private WindowInterface window;
+
         public LoadGameInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;
+            DataContext = new LoadGameModel(window);
         }
     }
 }

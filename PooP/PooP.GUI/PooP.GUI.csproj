@@ -73,6 +73,11 @@
     </ApplicationDefinition>
     <Compile Include="audio\Sound.cs" />
     <Compile Include="Views\Credits\BackCommand.cs" />
+    <Compile Include="Views\FinishedGame\FinishedGameInterface.xaml.cs">
+      <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
+    <Compile Include="Views\LoadGame\LoadGameCommand.cs" />
     <Compile Include="Views\LoadGame\LoadGameInterface.xaml.cs">
       <DependentUpon>LoadGameInterface.xaml</DependentUpon>
     </Compile>
@@ -87,6 +92,10 @@
     </Compile>
     <Compile Include="Views\Tutorial\TutorialModel.cs" />
     <Page Include="Views\Credits\CreditsInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FinishedGame\FinishedGameInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
