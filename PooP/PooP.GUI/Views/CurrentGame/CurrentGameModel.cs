@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace PooP.GUI.Views.CurrentGame
@@ -21,8 +22,6 @@ namespace PooP.GUI.Views.CurrentGame
         {
             this.window = window;
             Grid map = (Grid) page.FindName("Map");
-            
-            map.ShowGridLines = true;
 
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
                 map.RowDefinitions.Add(new RowDefinition());
@@ -32,12 +31,14 @@ namespace PooP.GUI.Views.CurrentGame
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++){
                 for (int j = 0; j < GameBuilder.CURRENTGAME.Map.Width; j++){
                     Rectangle r = new Rectangle();
+                    ImageBrush brush;
                     switch (GameBuilder.CURRENTGAME.Map.getTileAt(new Core.Ressource.Position(j, i)).GetType().Name.ToLower())
                     {
-                        case "water": r.Fill = (Brush)new BrushConverter().ConvertFromString("#0000FF"); break;
-                        case "plain": r.Fill = (Brush)new BrushConverter().ConvertFromString("#AAFFAA"); break;
-                        case "forest": r.Fill = (Brush)new BrushConverter().ConvertFromString("#00FF00"); break;
-                        case "mountain": r.Fill = (Brush)new BrushConverter().ConvertFromString("#903F08"); break;
+                        case "water": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/3.bmp", UriKind.Relative))); break;
+                        case "plain":
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/0.bmp", UriKind.Relative))); break;
+                        case "forest": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/2.bmp", UriKind.Relative))); break;
+                        case "mountain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/1.bmp", UriKind.Relative))); break;
                     }
                     map.Children.Add(r);
                     Grid.SetColumn(r, j);
