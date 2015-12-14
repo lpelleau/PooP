@@ -2,6 +2,7 @@
 using PooP.GUI.Views.Credits;
 using PooP.GUI.Views.CurrentGame;
 using PooP.GUI.Views.FinishedGame;
+using PooP.GUI.Views.LoadGame;
 using PooP.GUI.Views.MainMenu;
 using PooP.GUI.Views.NewGame;
 using PooP.GUI.Views.Tutorial;
@@ -79,6 +80,14 @@ namespace PooP.GUI.Views.WindowApp
             frame.Content = mainMenu;
 
             flow.Push(mainMenu);
+        }
+
+        public void OpenLoadGame()
+        {
+            LoadGameInterface page = new LoadGameInterface(this);
+            frame.Content = page;
+
+            flow.Push(page);
         }
 
         public void OpenNewGame()

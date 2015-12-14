@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace PooP.GUI.Views.MainMenu
+namespace PooP.GUI.Views.LoadGame
 {
     /// <summary>
     /// Command to start the page of a game
@@ -33,7 +33,8 @@ namespace PooP.GUI.Views.MainMenu
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            window.OpenLoadGame();
+            GameSave.INSTANCE.load("test");
+            window.OpenCurrentGame();
         }
 
         /// <summary>
