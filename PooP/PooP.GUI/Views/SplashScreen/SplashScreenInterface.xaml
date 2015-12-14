@@ -1,0 +1,15 @@
+﻿<Page x:Class="PooP.GUI.Views.SplashScreen.SplashScreenInterface"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Splash screen">
+    <Canvas Width="800" Height="600">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/SmallWorld;component/images/splashScreen.png" />
+        </Canvas.Background>
+        <Label Content="APPUYEZ SUR UNE TOUCHE" Canvas.Left="140" Canvas.Top="333" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>
+        <Label Content="POUR COMMENCER" Canvas.Left="201" Canvas.Top="386" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>
+    </Canvas>
+</Page>

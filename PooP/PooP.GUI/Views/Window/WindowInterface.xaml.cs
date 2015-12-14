@@ -5,6 +5,7 @@ using PooP.GUI.Views.FinishedGame;
 using PooP.GUI.Views.LoadGame;
 using PooP.GUI.Views.MainMenu;
 using PooP.GUI.Views.NewGame;
+using PooP.GUI.Views.SplashScreen;
 using PooP.GUI.Views.Tutorial;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace PooP.GUI.Views.WindowApp
     /// </summary>
     public partial class WindowInterface : Window
     {
+        private Page splashScreen;
         private Page mainMenu;
         private Page tutorial;
         private Page credits;
@@ -39,15 +41,23 @@ namespace PooP.GUI.Views.WindowApp
 
             flow = new Stack<Page>();
 
+            splashScreen = new SplashScreenInterface(this);
             mainMenu = new MainMenuInterface(this);
             tutorial = new TutorialInterface(this);
             credits = new CreditsInterface(this);
 
-            OpenMainMenu();
+            OpenSplashScreen();
 
             Sound.INSTANCE.StartMusic();
 
             Closing += OnWindowClosing;
+        }
+
+        public void OpenSplashScreen()
+        {
+            frame.Content = splashScreen;
+
+            flow.Push(splashScreen);
         }
 
         public void OpenCredits()
@@ -59,27 +69,40 @@ namespace PooP.GUI.Views.WindowApp
 
         public void OpenCurrentGame()
         {
-            CurrentGameInterface page = new CurrentGameInterface(this);
-            frame.Content = page;
+            if (flow.Peek() is LoadGameInterface || flow.Peek() is NewGameInterface)
+            {
+                flow.Pop();
 
-            flow.Push(page);
+                CurrentGameInterface page = new CurrentGameInterface(this);
+                frame.Content = page;
+
+                flow.Push(page);
+            }
         }
 
         public void CurrentToFinishedGame()
         {
-            flow.Pop();
+            if (flow.Peek() is CurrentGameInterface)
+            {
+                flow.Pop();
 
-            FinishedGameInterface page = new FinishedGameInterface(this);
-            frame.Content = page;
+                FinishedGameInterface page = new FinishedGameInterface(this);
+                frame.Content = page;
 
-            flow.Push(page);
+                flow.Push(page);
+            }
         }
 
         public void OpenMainMenu()
         {
-            frame.Content = mainMenu;
+            if (flow.Peek() is SplashScreenInterface)
+            {
+                flow.Pop();
 
-            flow.Push(mainMenu);
+                frame.Content = mainMenu;
+
+                flow.Push(mainMenu);
+            }
         }
 
         public void OpenLoadGame()
