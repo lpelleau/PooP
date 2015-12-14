@@ -1,5 +1,6 @@
 ﻿using PooP.Core.Implementation.Games;
 using PooP.GUI.Views.NewGame;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,8 @@ namespace PooP.GUI.Views.NewGame
             MessageBox.Show("Jeu " + ngm.MapSize + " généré avec : \n - J1 : " +
                 ngm.Player1Name + " de race " + ngm.Player1Race + "\n - J2 : " +
                 ngm.Player2Name + " de race " + ngm.Player2Race);
+
+            ngm.window.OpenCurrentGame();
         }
 
         /// <summary>

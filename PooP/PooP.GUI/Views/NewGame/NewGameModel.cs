@@ -20,7 +20,7 @@ namespace PooP.GUI.Views.NewGame
     public class NewGameModel
     {
         public const string IMAGES_PATH = "/SmallWorld;component/images/";
-        private WindowInterface window;
+        public WindowInterface window;
 
         /// <summary>
         /// Constructor

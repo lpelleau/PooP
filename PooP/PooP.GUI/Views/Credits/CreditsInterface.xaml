@@ -37,10 +37,18 @@
                  ~~ Special thanks ~~
                  
                  
-                 Éric ANQUETIL
+                 Éric ANQUETIL - OOP
                  
                  
                  
-                 Arnaud BLOUIN" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+                 Arnaud BLOUIN - Design patterns
+                 
+                 
+                 
+                 Maud MARCHAL - OOM
+                 
+                 
+                 
+                 Pascal FRESNAY - TP" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
     </Canvas>
 </Page>

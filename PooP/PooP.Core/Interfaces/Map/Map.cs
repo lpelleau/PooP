@@ -13,6 +13,9 @@ namespace PooP.Core.Interfaces.Maps
     /// </summary>
     public interface Map
     {
+        int Height { get; set; }
+        int Width { get; set; }
+
         // The created tiles, with their positions
         Dictionary<Tile, List<Position>> Tiles
         {
