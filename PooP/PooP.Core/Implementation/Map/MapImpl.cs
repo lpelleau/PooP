@@ -17,6 +17,18 @@ namespace PooP.Core.Implementation.Maps
     /// </summary>
     public class MapImpl : Map
     {
+        public int Height
+        {
+            get;
+            set;
+        }
+
+        public int Width
+        {
+            get;
+            set;
+        }
+
         // The created tiles, with their positions
         public Dictionary<Tile, List<Position>> Tiles
         {
@@ -68,6 +80,8 @@ namespace PooP.Core.Implementation.Maps
                     map[pos.YPosition * ((int) Math.Sqrt(size)) + pos.XPosition] = type;
                 }
             }
+            Height = (int) Math.Sqrt(size);
+            Width = (int) Math.Sqrt(size);
             Algo.INSTANCE.InitMap(map, size);
         }
 
@@ -104,6 +118,9 @@ namespace PooP.Core.Implementation.Maps
         // If the position is already used, throw an exception
         public Tile getTile(string TileType, Position Position)
         {
+            Height = Math.Max(Position.YPosition, Height);
+            Width = Math.Max(Position.XPosition, Width);
+
             // If the position is already used, throw an exception
             if (Tiles.Where(l => l.Value.Contains(Position)).Count() != 0)
                 throw new BadPositionException("Position already used");
@@ -122,6 +139,7 @@ namespace PooP.Core.Implementation.Maps
                 Tiles.First(e => e.Key.GetType().Name == TileType).Value.Add(Position);
                 return Tiles.First(e => e.Key.GetType().Name == TileType).Key;
             }
+            
         }
 
         /// <summary>

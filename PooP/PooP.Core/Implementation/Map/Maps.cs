@@ -17,7 +17,7 @@ namespace PooP.Core.Implementation.Maps
         /// <summary>
         /// A demo map is 6x6 tiles large
         /// </summary>
-        private static int SIZE = 6;
+        public static int SIZE = 6;
 
         /// <summary>
         /// A standard number of players is 8

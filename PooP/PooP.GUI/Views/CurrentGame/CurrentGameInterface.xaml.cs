@@ -25,6 +25,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             InitializeComponent();
             this.window = window;
+            DataContext = new CurrentGameModel(window,this);
         }
     }
 }

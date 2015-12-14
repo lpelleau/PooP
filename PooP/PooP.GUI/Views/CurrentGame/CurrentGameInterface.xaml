@@ -6,5 +6,10 @@
       mc:Ignorable="d" 
       Title="Current game">
     <Canvas Width="800" Height="600">
+        <Grid Name="Map" Height="590" Width="790">
+            <Grid.ColumnDefinitions>
+
+            </Grid.ColumnDefinitions>
+        </Grid>
     </Canvas>
 </Page>
