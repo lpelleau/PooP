@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PooP.GUI.Views.MainMenu
@@ -12,10 +13,12 @@ namespace PooP.GUI.Views.MainMenu
     public class MainMenuModel
     {
         public WindowInterface window;
+        public Page page;
 
-        public MainMenuModel(WindowInterface window)
+        public MainMenuModel(WindowInterface window, Page page)
         {
             this.window = window;
+            this.page = page;
         }
 
         public ICommand Credits
@@ -47,6 +50,22 @@ namespace PooP.GUI.Views.MainMenu
             get
             {
                 return new TutorialCommand(window);
+            }
+        }
+
+        public ICommand AskQuit
+        {
+            get
+            {
+                return new AskQuitCommand(page);
+            }
+        }
+
+        public ICommand AbortQuit
+        {
+            get
+            {
+                return new AbortQuitCommand(page);
             }
         }
 

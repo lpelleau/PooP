@@ -14,6 +14,23 @@
         <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
         <Button Content="TUTORIAL" Command="{Binding Tutorial}" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
         <Button Content="CREDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="QUIT" Command="{Binding Quit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Content="QUIT" Command="{Binding AskQuit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+
+        <Canvas x:Name="confirmQuit" Width="800" Height="600" Visibility="Collapsed">
+            <Canvas.Background>
+                <SolidColorBrush Color="Black" Opacity=".50"/>
+            </Canvas.Background>
+
+            <Canvas Width="330" Height="110" Canvas.Left="236" Canvas.Top="255">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White"/>
+                </Canvas.Background>
+
+                <Label Content="Are you sure you want" Canvas.Left="16" Canvas.Top="3" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+                <Label Content="to quit ?" Canvas.Left="108" Canvas.Top="30" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+                <Button Content="YES" Command="{Binding Quit}" Canvas.Left="10" Canvas.Top="70" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+                <Button Content="NO" Command="{Binding AbortQuit}" Canvas.Left="278" Canvas.Top="70" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+            </Canvas>
+        </Canvas>
     </Canvas>
 </Page>

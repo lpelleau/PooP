@@ -74,11 +74,11 @@ namespace PooP.GUI.Views.NewGame
         }
 
         // Command to quit
-        public ICommand Quit
+        public ICommand Back
         {
             get
             {
-                return new QuitCommand(window);
+                return new BackCommand(window);
             }
         }
 

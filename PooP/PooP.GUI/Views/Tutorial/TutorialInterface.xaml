@@ -9,5 +9,15 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/text.png" />
         </Canvas.Background>
+
+        <Canvas x:Name="tipN0" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208">
+            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+        </Canvas>
+
+        <Canvas x:Name="tipN1" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
+            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+        </Canvas>
+
+        <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
     </Canvas>
 </Page>

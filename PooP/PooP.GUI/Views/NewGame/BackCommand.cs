@@ -13,7 +13,7 @@ namespace PooP.GUI.Views.NewGame
     /// <summary>
     /// Command for quitting the game
     /// </summary>
-    public class QuitCommand : ICommand
+    public class BackCommand : ICommand
     {
         private WindowInterface window;
 
@@ -21,7 +21,7 @@ namespace PooP.GUI.Views.NewGame
         /// Constructor
         /// </summary>
         /// <param name="m">Associated ViewModel</param>
-        public QuitCommand(WindowInterface window)
+        public BackCommand(WindowInterface window)
         {
             this.window = window;
         }

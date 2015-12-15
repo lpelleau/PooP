@@ -21,10 +21,23 @@ namespace PooP.GUI.Views.Tutorial
     public partial class TutorialInterface : Page
     {
         private WindowInterface window;
+        private List<Canvas> tips;
+
         public TutorialInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;
+
+            DataContext = new TutorialModel(window, this);
+
+            tips = new List<Canvas>();
+            tips.Add((Canvas)FindName("tipN0"));
+            tips.Add((Canvas)FindName("tipN1"));
+        }
+
+        public List<Canvas> getTips()
+        {
+            return tips;
         }
     }
 }
