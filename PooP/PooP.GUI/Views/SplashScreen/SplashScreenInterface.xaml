@@ -7,7 +7,7 @@
       Title="Splash screen">
     <Canvas Width="800" Height="600">
         <Canvas.Background>
-            <ImageBrush ImageSource="/SmallWorld;component/images/splashScreen.png" />
+            <ImageBrush ImageSource="/SmallWorld;component/images/pages/splashScreen.png" />
         </Canvas.Background>
         <Label Content="APPUYEZ SUR UNE TOUCHE" Canvas.Left="140" Canvas.Top="333" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>
         <Label Content="POUR COMMENCER" Canvas.Left="201" Canvas.Top="386" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>

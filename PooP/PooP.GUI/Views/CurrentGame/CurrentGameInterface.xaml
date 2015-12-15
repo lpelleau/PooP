@@ -6,6 +6,10 @@
       mc:Ignorable="d" 
       Title="Current game">
     <Canvas Width="800" Height="600">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/SmallWorld;component/images/pages/currentGame.png" />
+        </Canvas.Background>
+        
         <Grid Name="Map" Height="400" Width="400" Canvas.Left="200" Canvas.Top="157">
             <Grid.ColumnDefinitions>
 

@@ -8,7 +8,7 @@
       Title="Main menu">
     <Canvas Width="800" Height="600">
         <Canvas.Background>
-            <ImageBrush ImageSource="/SmallWorld;component/images/mainMenu.png" />
+            <ImageBrush ImageSource="/SmallWorld;component/images/pages/mainMenu.png" />
         </Canvas.Background>
         <Button Content="NEW GAME" Command="{Binding NewGame}" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
         <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>

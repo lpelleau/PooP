@@ -19,7 +19,7 @@
 
     <Canvas Height="600" Width="800">
         <Canvas.Background>
-            <ImageBrush ImageSource="/SmallWorld;component/images/newGame.png" />
+            <ImageBrush ImageSource="/SmallWorld;component/images/pages/newGame.png" />
         </Canvas.Background>
 
         <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Width="185" Height="202" Canvas.Left="170" Canvas.Top="114"/>

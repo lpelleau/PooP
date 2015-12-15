@@ -34,11 +34,11 @@ namespace PooP.GUI.Views.CurrentGame
                     ImageBrush brush;
                     switch (GameBuilder.CURRENTGAME.Map.getTileAt(new Core.Ressource.Position(j, i)).GetType().Name.ToLower())
                     {
-                        case "water": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/3.bmp", UriKind.Relative))); break;
+                        case "water": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tiles/3.bmp", UriKind.Relative))); break;
                         case "plain":
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/0.bmp", UriKind.Relative))); break;
-                        case "forest": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/2.bmp", UriKind.Relative))); break;
-                        case "mountain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/1.bmp", UriKind.Relative))); break;
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tiles/0.bmp", UriKind.Relative))); break;
+                        case "forest": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tiles/2.bmp", UriKind.Relative))); break;
+                        case "mountain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tiles/1.bmp", UriKind.Relative))); break;
                     }
                     map.Children.Add(r);
                     Grid.SetColumn(r, j);
