@@ -15,7 +15,7 @@ namespace PooP.Core.Implementation.Games
     public class GameSave
     {
         // Defines the extension and creates a glabal instance
-        private static string EXTENSION = ".flav";
+        public const string EXTENSION = ".flav";
         public static GameSave INSTANCE = new GameSave();
 
         /// <summary>

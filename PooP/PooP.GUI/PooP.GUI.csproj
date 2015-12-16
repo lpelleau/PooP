@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
     <Compile Include="Views\LoadGame\BackCommand.cs" />
+    <Compile Include="Views\LoadGame\SaveChoser.cs" />
     <Compile Include="Views\MainMenu\AbortQuitCommand.cs" />
     <Compile Include="Views\MainMenu\AskQuitCommand.cs" />
     <Compile Include="Views\SplashScreen\SplashScreenInterface.xaml.cs">
