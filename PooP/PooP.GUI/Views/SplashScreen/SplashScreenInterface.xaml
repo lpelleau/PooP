@@ -9,7 +9,42 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/splashScreen.png" />
         </Canvas.Background>
-        <Label Content="APPUYEZ SUR UNE TOUCHE" Canvas.Left="140" Canvas.Top="333" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>
-        <Label Content="POUR COMMENCER" Canvas.Left="201" Canvas.Top="386" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32"/>
+
+        <Label Content="Small World" Canvas.Left="140" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9C6E1D" FontFamily="Rockwell Extra Bold" FontSize="72"/>
+
+        <Label Content="APPUYEZ SUR UNE TOUCHE" Canvas.Left="140" Canvas.Top="333" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Label.Loaded">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard TargetProperty="Opacity">
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:2" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <Label Content="POUR COMMENCER" Canvas.Left="201" Canvas.Top="386" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Label.Loaded">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard TargetProperty="Opacity">
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:2" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
     </Canvas>
 </Page>

@@ -206,10 +206,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
-    <Resource Include="images\tiles\0.bmp" />
-    <Resource Include="images\tiles\1.bmp" />
-    <Resource Include="images\tiles\2.bmp" />
-    <Resource Include="images\tiles\3.bmp" />
+    <Resource Include="images\tileset\0.bmp" />
+    <Resource Include="images\tileset\1.bmp" />
+    <Resource Include="images\tileset\2.bmp" />
+    <Resource Include="images\tileset\3.bmp" />
     <Resource Include="images\races\elf.png" />
     <Resource Include="images\races\human.png" />
     <Resource Include="images\races\orc.png" />
