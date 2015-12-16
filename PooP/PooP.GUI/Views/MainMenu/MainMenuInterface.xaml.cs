@@ -25,7 +25,7 @@ namespace PooP.GUI.Views.MainMenu
         public MainMenuInterface(WindowInterface window)
         {
             InitializeComponent();
-            DataContext = new MainMenuModel(window);
+            DataContext = new MainMenuModel(window, this);
             this.window = window;
         }
     }

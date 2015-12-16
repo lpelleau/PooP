@@ -25,5 +25,13 @@ namespace PooP.GUI.Views.LoadGame
                 return new LoadGameCommand(window);
             }
         }
+
+        public ICommand Back
+        {
+            get
+            {
+                return new BackCommand(window);
+            }
+        }
     }
 }
