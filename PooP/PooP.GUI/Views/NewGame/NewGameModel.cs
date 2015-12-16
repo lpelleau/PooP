@@ -19,7 +19,7 @@ namespace PooP.GUI.Views.NewGame
     /// </summary>
     public class NewGameModel
     {
-        public const string IMAGES_PATH = "/SmallWorld;component/images/";
+        public const string IMAGES_PATH = "/SmallWorld;component/images/races/";
         public WindowInterface window;
 
         /// <summary>
