@@ -369,6 +369,13 @@ namespace PooP.GUI.Views.CurrentGame
                             {
                                 r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/16.bmp", UriKind.Relative)));
                             }
+                            // all corners dry
+                            else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
+                                    && tiles[1, 0] == "water" &&                         tiles[1, 2] == "water"
+                                    && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/19.bmp", UriKind.Relative)));
+                            }
                             else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/3.bmp", UriKind.Relative)));break;
                         case "plain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/0.bmp", UriKind.Relative))); break;
                         case "forest": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/2.bmp", UriKind.Relative))); break;
