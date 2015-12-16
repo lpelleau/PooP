@@ -378,7 +378,330 @@ namespace PooP.GUI.Views.CurrentGame
                             }
                             else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/3.bmp", UriKind.Relative)));break;
                         case "plain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/0.bmp", UriKind.Relative))); break;
-                        case "forest": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/2.bmp", UriKind.Relative))); break;
+                        case "forest": 							
+                            // All around are non-forest tiles
+                            if (                          tiles[0, 1] != "forest"
+                                && tiles[1, 0] != "forest"                           && tiles[1, 2] != "forest"
+                                                          && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/113.bmp", UriKind.Relative)));
+                            }
+                            // Left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/112.bmp", UriKind.Relative)));
+                            }
+                            // Right-up is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/135.bmp", UriKind.Relative)));
+                            }
+                            // Left, right and up are non-forest
+                            else if (                           tiles[0, 1] != "forest"
+                                    && tiles[1, 0] != "forest"                           && tiles[1, 2] != "forest"
+                                    &&                           tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/111.bmp", UriKind.Relative)));
+                            }
+                            // Left-down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/110.bmp", UriKind.Relative)));
+                            }
+                            // Right-down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/136.bmp", UriKind.Relative)));
+                            }
+                            // Left is non-forest
+                            else if (                          tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] != "forest"                           && tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/109.bmp", UriKind.Relative)));
+                            }
+                            // Right is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] != "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/115.bmp", UriKind.Relative)));
+                            }
+                            // Up is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/120.bmp", UriKind.Relative)));
+                            }
+                            // Down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/121.bmp", UriKind.Relative)));
+                            }
+                            // Up & down is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/122.bmp", UriKind.Relative)));
+                            }
+                            // Up & down & left is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/123.bmp", UriKind.Relative)));
+                            }
+                            // Up & down & right is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] != "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/124.bmp", UriKind.Relative)));
+                            }
+                            // Left & right is non-forest
+                            else if (                            tiles[0, 1] == "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] != "forest"
+                                                              && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/125.bmp", UriKind.Relative)));
+                            }
+                            // Left & right & down is non-forest
+                            else if (                            tiles[0, 1] == "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] != "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/126.bmp", UriKind.Relative)));
+                            }
+                            // Right & up-left is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] != "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/127.bmp", UriKind.Relative)));
+                            }
+                            // Left & up-right is non-forest
+                            else if (                          tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] != "forest"                           && tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/128.bmp", UriKind.Relative)));
+                            }
+                            // Right & down-left is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest"                           && tiles[1, 2] != "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/129.bmp", UriKind.Relative)));
+                            }
+                            // Left & down-right is non-forest
+                            else if (                          tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] != "forest"                           && tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/130.bmp", UriKind.Relative)));
+                            }
+                            // Right & down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] != "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/131.bmp", UriKind.Relative)));
+                            }
+                            // Right & down & left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] != "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/132.bmp", UriKind.Relative)));
+                            }
+                            // Left & down is non-forest
+                            else if (                           tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/133.bmp", UriKind.Relative)));
+                            }
+                            // Left & down & right-up is non-forest
+                            else if (                           tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/134.bmp", UriKind.Relative)));
+                            }
+                            // Right & up is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] != "forest"
+                                      && tiles[2, 0] == "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/138.bmp", UriKind.Relative)));
+                            }
+                            // Right & up & left-down is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] != "forest"
+                                      && tiles[2, 0] != "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/140.bmp", UriKind.Relative)));
+                            }
+                            // Left & up is non-forest
+                            else if (                           tiles[0, 1] != "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/137.bmp", UriKind.Relative)));
+                            }
+                            // Left & up & right-down is non-forest
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] != "forest" &&                          tiles[1, 2] == "forest"
+                                                              && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/139.bmp", UriKind.Relative)));
+                            }
+                            // Up & right-down
+                            else if (                           tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/141.bmp", UriKind.Relative)));
+                            }
+                            // Up & left-down
+                            else if (                            tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/142.bmp", UriKind.Relative)));
+                            }
+                            // Up & right-down & left-down
+                            else if (                           tiles[0, 1] != "forest"
+                                    && tiles[1, 0] == "forest" &&                          tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/143.bmp", UriKind.Relative)));
+                            }
+                            // Down & right-up
+                            else if (  tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/144.bmp", UriKind.Relative)));
+                            }
+                            // Down & left-up
+                            else if (  tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/145.bmp", UriKind.Relative)));
+                            }
+                            // Down & right-up & left-up
+                            else if (  tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    &&                           tiles[2, 1] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/146.bmp", UriKind.Relative)));
+                            }
+                            // left-up and right-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/147.bmp", UriKind.Relative)));
+                            }
+                            // left-down and right-down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/148.bmp", UriKind.Relative)));
+                            }
+                            // left-down and left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/149.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/150.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up & left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/118.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up & left-down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/151.bmp", UriKind.Relative)));
+                            }
+                            // right-down and left-up & left-down is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/117.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/152.bmp", UriKind.Relative)));
+                            }
+                            // left & right-down and right-up is non-forest
+                            else if (                            tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] != "forest" &&                           tiles[1, 2] == "forest"
+                                    &&                            tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/153.bmp", UriKind.Relative)));
+                            }
+                            // right & left-down and left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] != "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/154.bmp", UriKind.Relative)));
+                            }
+                            // right-down and left-up is non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] == "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] == "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/114.bmp", UriKind.Relative)));
+                            }
+                            // right-up & left-down is non-forest
+                            else if (tiles[0, 0] == "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                           tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] == "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/116.bmp", UriKind.Relative)));
+                            }
+                            // all corners non-forest
+                            else if (tiles[0, 0] != "forest" && tiles[0, 1] == "forest" && tiles[0, 2] != "forest"
+                                    && tiles[1, 0] == "forest" &&                         tiles[1, 2] == "forest"
+                                    && tiles[2, 0] != "forest" && tiles[2, 1] == "forest" && tiles[2, 2] != "forest")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/119.bmp", UriKind.Relative)));
+                            }
+                            else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/103.bmp", UriKind.Relative)));break;
                         case "mountain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/1.bmp", UriKind.Relative))); break;
                     }
                     map.Children.Add(r);
