@@ -59,324 +59,324 @@ namespace PooP.GUI.Views.CurrentGame
                                 && tiles[1, 0] != "water"                           && tiles[1, 2] != "water"
                                                           && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/13.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/013.bmp", UriKind.Relative)));
                             }
                             // Left-up is non-water
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/12.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/012.bmp", UriKind.Relative)));
                             }
                             // Right-up is non-water
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/35.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/035.bmp", UriKind.Relative)));
                             }
                             // Left, right and up are dry
                             else if (                           tiles[0, 1] != "water"
                                     && tiles[1, 0] != "water"                           && tiles[1, 2] != "water"
                                     &&                           tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/11.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/011.bmp", UriKind.Relative)));
                             }
                             // Left-down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/10.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/010.bmp", UriKind.Relative)));
                             }
                             // Right-down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/36.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/036.bmp", UriKind.Relative)));
                             }
                             // Left is dry
                             else if (                          tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] != "water"                           && tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/9.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/009.bmp", UriKind.Relative)));
                             }
                             // Right is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] != "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/15.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/015.bmp", UriKind.Relative)));
                             }
                             // Up is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/20.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/020.bmp", UriKind.Relative)));
                             }
                             // Down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/21.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/021.bmp", UriKind.Relative)));
                             }
                             // Up & down is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/22.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/022.bmp", UriKind.Relative)));
                             }
                             // Up & down & left is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/23.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/023.bmp", UriKind.Relative)));
                             }
                             // Up & down & right is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] != "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/24.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/024.bmp", UriKind.Relative)));
                             }
                             // Left & right is dry
                             else if (                            tiles[0, 1] == "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] != "water"
                                                               && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/25.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/025.bmp", UriKind.Relative)));
                             }
                             // Left & right & down is dry
                             else if (                            tiles[0, 1] == "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] != "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/26.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/026.bmp", UriKind.Relative)));
                             }
                             // Right & up-left is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] != "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/27.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/027.bmp", UriKind.Relative)));
                             }
                             // Left & up-right is dry
                             else if (                          tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] != "water"                           && tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/28.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/028.bmp", UriKind.Relative)));
                             }
                             // Right & down-left is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water"                           && tiles[1, 2] != "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/29.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/029.bmp", UriKind.Relative)));
                             }
                             // Left & down-right is dry
                             else if (                          tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] != "water"                           && tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/30.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/030.bmp", UriKind.Relative)));
                             }
                             // Right & down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] != "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/31.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/031.bmp", UriKind.Relative)));
                             }
                             // Right & down & left-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] != "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/32.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/032.bmp", UriKind.Relative)));
                             }
                             // Left & down is dry
                             else if (                           tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/33.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/033.bmp", UriKind.Relative)));
                             }
                             // Left & down & right-up is dry
                             else if (                           tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/34.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/034.bmp", UriKind.Relative)));
                             }
                             // Right & up is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] != "water"
                                       && tiles[2, 0] == "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/38.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/038.bmp", UriKind.Relative)));
                             }
                             // Right & up & left-down is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] != "water"
                                       && tiles[2, 0] != "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/40.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/040.bmp", UriKind.Relative)));
                             }
                             // Left & up is dry
                             else if (                           tiles[0, 1] != "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/37.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/037.bmp", UriKind.Relative)));
                             }
                             // Left & up & right-down is dry
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] != "water" &&                          tiles[1, 2] == "water"
                                                               && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/39.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/039.bmp", UriKind.Relative)));
                             }
                             // Up & right-down
                             else if (                           tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/41.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/041.bmp", UriKind.Relative)));
                             }
                             // Up & left-down
                             else if (                            tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/42.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/042.bmp", UriKind.Relative)));
                             }
                             // Up & right-down & left-down
                             else if (                           tiles[0, 1] != "water"
                                     && tiles[1, 0] == "water" &&                          tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/43.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/043.bmp", UriKind.Relative)));
                             }
                             // Down & right-up
                             else if (  tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/44.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/044.bmp", UriKind.Relative)));
                             }
                             // Down & left-up
                             else if (  tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/45.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/045.bmp", UriKind.Relative)));
                             }
                             // Down & right-up & left-up
                             else if (  tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     &&                           tiles[2, 1] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/46.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/046.bmp", UriKind.Relative)));
                             }
                             // left-up and right-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/47.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/047.bmp", UriKind.Relative)));
                             }
                             // left-down and right-down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/48.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/048.bmp", UriKind.Relative)));
                             }
                             // left-down and left-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/49.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/049.bmp", UriKind.Relative)));
                             }
                             // right-down and right-up is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/50.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/050.bmp", UriKind.Relative)));
                             }
                             // right-down and right-up & left-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/18.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/018.bmp", UriKind.Relative)));
                             }
                             // right-down and right-up & left-down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/51.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/051.bmp", UriKind.Relative)));
                             }
                             // right-down and left-up & left-down is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/17.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/017.bmp", UriKind.Relative)));
                             }
                             // right-down and right-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/52.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/052.bmp", UriKind.Relative)));
                             }
                             // left & right-down and right-up is dry
                             else if (                            tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] != "water" &&                           tiles[1, 2] == "water"
                                     &&                            tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/53.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/053.bmp", UriKind.Relative)));
                             }
                             // right & left-down and left-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] != "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/54.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/054.bmp", UriKind.Relative)));
                             }
                             // right-down and left-up is dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] == "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] == "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/14.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/014.bmp", UriKind.Relative)));
                             }
                             // right-up & left-down is dry
                             else if (tiles[0, 0] == "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                           tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] == "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/16.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/016.bmp", UriKind.Relative)));
                             }
                             // all corners dry
                             else if (tiles[0, 0] != "water" && tiles[0, 1] == "water" && tiles[0, 2] != "water"
                                     && tiles[1, 0] == "water" &&                         tiles[1, 2] == "water"
                                     && tiles[2, 0] != "water" && tiles[2, 1] == "water" && tiles[2, 2] != "water")
                             {
-                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/19.bmp", UriKind.Relative)));
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/019.bmp", UriKind.Relative)));
                             }
-                            else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/3.bmp", UriKind.Relative)));break;
+                            else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/003.bmp", UriKind.Relative)));break;
                         case "plain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/0.bmp", UriKind.Relative))); break;
                         case "forest": 							
                             // All around are non-forest tiles
