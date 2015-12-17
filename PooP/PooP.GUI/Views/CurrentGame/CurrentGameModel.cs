@@ -702,7 +702,330 @@ namespace PooP.GUI.Views.CurrentGame
                                 r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/119.bmp", UriKind.Relative)));
                             }
                             else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/103.bmp", UriKind.Relative)));break;
-                        case "mountain": r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/1.bmp", UriKind.Relative))); break;
+                        case "mountain":
+                            // All around are non-mountain tiles
+                            if (tiles[0, 1] != "mountain"
+                                && tiles[1, 0] != "mountain" && tiles[1, 2] != "mountain"
+                                                          && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/213.bmp", UriKind.Relative)));
+                            }
+                            // Left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/212.bmp", UriKind.Relative)));
+                            }
+                            // Right-up is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/235.bmp", UriKind.Relative)));
+                            }
+                            // Left, right and up are non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] != "mountain"
+                                    && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/211.bmp", UriKind.Relative)));
+                            }
+                            // Left-down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/210.bmp", UriKind.Relative)));
+                            }
+                            // Right-down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/236.bmp", UriKind.Relative)));
+                            }
+                            // Left is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/209.bmp", UriKind.Relative)));
+                            }
+                            // Right is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/215.bmp", UriKind.Relative)));
+                            }
+                            // Up is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/220.bmp", UriKind.Relative)));
+                            }
+                            // Down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/221.bmp", UriKind.Relative)));
+                            }
+                            // Up & down is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/222.bmp", UriKind.Relative)));
+                            }
+                            // Up & down & left is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/223.bmp", UriKind.Relative)));
+                            }
+                            // Up & down & right is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/224.bmp", UriKind.Relative)));
+                            }
+                            // Left & right is non-mountain
+                            else if (tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] != "mountain"
+                                                              && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/225.bmp", UriKind.Relative)));
+                            }
+                            // Left & right & down is non-mountain
+                            else if (tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] != "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/226.bmp", UriKind.Relative)));
+                            }
+                            // Right & up-left is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/227.bmp", UriKind.Relative)));
+                            }
+                            // Left & up-right is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/228.bmp", UriKind.Relative)));
+                            }
+                            // Right & down-left is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/229.bmp", UriKind.Relative)));
+                            }
+                            // Left & down-right is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/230.bmp", UriKind.Relative)));
+                            }
+                            // Right & down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/231.bmp", UriKind.Relative)));
+                            }
+                            // Right & down & left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/232.bmp", UriKind.Relative)));
+                            }
+                            // Left & down is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/233.bmp", UriKind.Relative)));
+                            }
+                            // Left & down & right-up is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/234.bmp", UriKind.Relative)));
+                            }
+                            // Right & up is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                      && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/238.bmp", UriKind.Relative)));
+                            }
+                            // Right & up & left-down is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                      && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/240.bmp", UriKind.Relative)));
+                            }
+                            // Left & up is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/237.bmp", UriKind.Relative)));
+                            }
+                            // Left & up & right-down is non-mountain
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                                              && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/239.bmp", UriKind.Relative)));
+                            }
+                            // Up & right-down
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/241.bmp", UriKind.Relative)));
+                            }
+                            // Up & left-down
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/242.bmp", UriKind.Relative)));
+                            }
+                            // Up & right-down & left-down
+                            else if (tiles[0, 1] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/243.bmp", UriKind.Relative)));
+                            }
+                            // Down & right-up
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/244.bmp", UriKind.Relative)));
+                            }
+                            // Down & left-up
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/245.bmp", UriKind.Relative)));
+                            }
+                            // Down & right-up & left-up
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/246.bmp", UriKind.Relative)));
+                            }
+                            // left-up and right-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/247.bmp", UriKind.Relative)));
+                            }
+                            // left-down and right-down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/248.bmp", UriKind.Relative)));
+                            }
+                            // left-down and left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/249.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/250.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up & left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/218.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up & left-down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/251.bmp", UriKind.Relative)));
+                            }
+                            // right-down and left-up & left-down is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/217.bmp", UriKind.Relative)));
+                            }
+                            // right-down and right-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/252.bmp", UriKind.Relative)));
+                            }
+                            // left & right-down and right-up is non-mountain
+                            else if (tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] != "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/253.bmp", UriKind.Relative)));
+                            }
+                            // right & left-down and left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] != "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/254.bmp", UriKind.Relative)));
+                            }
+                            // right-down and left-up is non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] == "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] == "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/214.bmp", UriKind.Relative)));
+                            }
+                            // right-up & left-down is non-mountain
+                            else if (tiles[0, 0] == "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] == "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/216.bmp", UriKind.Relative)));
+                            }
+                            // all corners non-mountain
+                            else if (tiles[0, 0] != "mountain" && tiles[0, 1] == "mountain" && tiles[0, 2] != "mountain"
+                                    && tiles[1, 0] == "mountain" && tiles[1, 2] == "mountain"
+                                    && tiles[2, 0] != "mountain" && tiles[2, 1] == "mountain" && tiles[2, 2] != "mountain")
+                            {
+                                r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/219.bmp", UriKind.Relative)));
+                            }
+                            else r.Fill = (Brush)new ImageBrush(new BitmapImage(new Uri("../../images/tileset/203.bmp", UriKind.Relative))); break;
                     }
                     map.Children.Add(r);
                     Grid.SetColumn(r, j);
