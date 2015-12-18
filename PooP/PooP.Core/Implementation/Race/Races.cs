@@ -129,6 +129,15 @@ namespace PooP.Core.Implementation.Races
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
+
+        /// <summary>
+        /// Gives a string representation
+        /// </summary>
+        /// <returns>"Human"</returns>
+        public override string ToString()
+        {
+            return "Human";
+        }
     }
 
     /// <summary>
@@ -252,6 +261,15 @@ namespace PooP.Core.Implementation.Races
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
         }
+
+        /// <summary>
+        /// Gives a string representation
+        /// </summary>
+        /// <returns>"Elf"</returns>
+        public override string ToString()
+        {
+            return "Elf";
+        }
     }
 
     /// <summary>
@@ -374,6 +392,15 @@ namespace PooP.Core.Implementation.Races
                 RaceName = "Orc",
                 Units = this.Units.ConvertAll(u => u.ToData())
             };
+        }
+
+        /// <summary>
+        /// Gives a string representation
+        /// </summary>
+        /// <returns>"Orc"</returns>
+        public override string ToString()
+        {
+            return "Orc";
         }
     }
 }

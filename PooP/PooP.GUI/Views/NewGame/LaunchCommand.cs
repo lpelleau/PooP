@@ -44,11 +44,6 @@ namespace PooP.GUI.Views.NewGame
             //((MainWindow)o).Close();
 
             // Launch the other window
-            // TO DO : Replace by the correct code
-            MessageBox.Show("Jeu " + ngm.MapSize + " généré avec : \n - J1 : " +
-                ngm.Player1Name + " de race " + ngm.Player1Race + "\n - J2 : " +
-                ngm.Player2Name + " de race " + ngm.Player2Race);
-
             ngm.window.OpenCurrentGame();
         }
 

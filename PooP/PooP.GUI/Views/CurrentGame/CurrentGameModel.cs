@@ -21,6 +21,8 @@ namespace PooP.GUI.Views.CurrentGame
 
         private static string TILES_PATH = "../../images/tileset/";
         private static string TILES_EXT = ".bmp";
+        private static string UNITS_PATH = "../../images/races/";
+        private static string UNITS_EXT = ".png";
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -399,6 +401,33 @@ namespace PooP.GUI.Views.CurrentGame
                     Grid.SetColumn(r, j);
                     Grid.SetRow(r, i);
                 }
+            }
+
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
+            {
+                GameBuilder.CURRENTGAME.Players[i].Race.Units.ForEach(u =>
+                {
+                    Rectangle r = new Rectangle();
+                    Brush b = (Brush) new ImageBrush(new BitmapImage(new Uri(
+                        UNITS_PATH + 
+                        u.Race.ToString().ToLower()
+                        + "_unit"
+                        + UNITS_EXT, UriKind.Relative)));
+                    r.RenderTransformOrigin = new Point(0.5,0.5);
+                    r.RenderTransform = new ScaleTransform(0.75, 0.75);
+                    r.Fill = b;
+                    map.Children.Add(r);
+                    Grid.SetRow(r, u.Position.YPosition);
+                    Grid.SetColumn(r, u.Position.XPosition);
+                });
+            }
+        }
+
+        public ICommand Back
+        {
+            get
+            {
+                return new BackCommand(window);
             }
         }
     }
