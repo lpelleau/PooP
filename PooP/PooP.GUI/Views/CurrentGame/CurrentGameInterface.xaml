@@ -15,7 +15,8 @@
 
             </Grid.ColumnDefinitions>
         </Grid>
-
+		
+        <Button x:Name="back_button" Content="MENU" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Label Content="Label" Canvas.Left="400" Canvas.Top="562" RenderTransformOrigin="-0.473,-0.8"/>
         <TextBox Height="23" Canvas.Left="443" TextWrapping="Wrap" Text="{Binding FileName}" Canvas.Top="565" Width="120"/>
         <Button Content="Button" Command="{Binding Save}" Canvas.Left="568" Canvas.Top="568" Width="75"/>

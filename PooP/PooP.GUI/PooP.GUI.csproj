@@ -76,6 +76,7 @@
     <Compile Include="audio\Sound.cs" />
     <Compile Include="Views\Credits\BackCommand.cs" />
     <Compile Include="Views\CurrentGame\SaveCommand.cs" />
+    <Compile Include="Views\CurrentGame\BackCommand.cs" />
     <Compile Include="Views\FinishedGame\FinishedGameInterface.xaml.cs">
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
