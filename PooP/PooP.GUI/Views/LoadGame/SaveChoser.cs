@@ -11,14 +11,21 @@ namespace PooP.GUI.Views.LoadGame
 {
     public class SaveChoser
     {
-        private string PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SmallWorld";
+        public static SaveChoser INSATANCE = new SaveChoser();
+
+        private string PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SmallWorld\\";
         private List<string> files;
+
+        private SaveChoser()
+        {
+
+        }
 
         public void Refresh()
         {
             try
             {
-                files = new List<string>(Directory.EnumerateDirectories(PATH));
+                files = new List<string>(Directory.EnumerateFiles(PATH));
             }
             catch (DirectoryNotFoundException e)
             {
@@ -30,18 +37,20 @@ namespace PooP.GUI.Views.LoadGame
         public List<string> getSaves()
         {
             Refresh();
-            return files.Where(f => f.Contains(GameSave.EXTENSION)).ToList<string>();
+            return files.Where(f => f.Contains(GameSave.EXTENSION)).ToList<string>()
+                .ConvertAll(f => f.Substring(f.LastIndexOf("\\") + 1))
+                .ConvertAll(f => f.Substring(0, f.Count() - 5));
         }
 
         public void ImportSave(string file)
         {
-            GameSave.INSTANCE.load(PATH + "\\" + file + GameSave.EXTENSION);
+            GameSave.INSTANCE.load(PATH + file + GameSave.EXTENSION);
         }
 
         public void SaveGame(string file)
         {
             //File.Create(PATH + "\\lsdflsdfk" + GameSave.EXTENSION);   
-            GameSave.INSTANCE.save(PATH + "\\" + file + GameSave.EXTENSION);
+            GameSave.INSTANCE.save(PATH + file + GameSave.EXTENSION);
         }
     }
 }
