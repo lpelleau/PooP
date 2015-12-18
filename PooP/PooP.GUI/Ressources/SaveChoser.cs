@@ -27,7 +27,7 @@ namespace PooP.GUI.Views.LoadGame
             {
                 files = new List<string>(Directory.EnumerateFiles(PATH));
             }
-            catch (DirectoryNotFoundException e)
+            catch (DirectoryNotFoundException)
             {
                 Directory.CreateDirectory(PATH);
                 Refresh();

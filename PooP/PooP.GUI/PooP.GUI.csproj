@@ -52,8 +52,10 @@
     <ApplicationIcon>images\logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,12 +75,14 @@
     </ApplicationDefinition>
     <Compile Include="audio\Sound.cs" />
     <Compile Include="Views\Credits\BackCommand.cs" />
+    <Compile Include="Views\CurrentGame\SaveCommand.cs" />
     <Compile Include="Views\FinishedGame\FinishedGameInterface.xaml.cs">
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
+    <Compile Include="Views\LoadGame\RefreshCommand.cs" />
     <Compile Include="Views\LoadGame\BackCommand.cs" />
-    <Compile Include="Views\LoadGame\SaveChoser.cs" />
+    <Compile Include="Ressources\SaveChoser.cs" />
     <Compile Include="Views\MainMenu\AbortQuitCommand.cs" />
     <Compile Include="Views\MainMenu\AskQuitCommand.cs" />
     <Compile Include="Views\SplashScreen\SplashScreenInterface.xaml.cs">

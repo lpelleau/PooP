@@ -1,4 +1,5 @@
 ﻿using PooP.Core.Implementation.Games;
+using PooP.GUI.Views.LoadGame;
 using PooP.GUI.Views.NewGame;
 using PooP.GUI.Views.WindowApp;
 using System;
@@ -10,26 +11,22 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace PooP.GUI.Views.LoadGame
+namespace PooP.GUI.Views.CurrentGame
 {
     /// <summary>
     /// Command to start the page of a game
     /// </summary>
-    public class LoadGameCommand : ICommand
+    public class SaveCommand : ICommand
     {
-        private WindowInterface window;
-        private LoadGameInterface page;
-        private ListBox listBox;
+        private CurrentGameModel cgm;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="window">Parent window</param>
-        public LoadGameCommand(WindowInterface window, LoadGameInterface page)
+        public SaveCommand(CurrentGameModel cgm)
         {
-            this.window = window;
-            this.page = page;
-            listBox = (ListBox)page.FindName("files");
+            this.cgm = cgm;
         }
 
         /// <summary>
@@ -38,8 +35,7 @@ namespace PooP.GUI.Views.LoadGame
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            SaveChoser.INSATANCE.ImportSave(listBox.SelectedItem.ToString());
-            window.OpenCurrentGame();
+            SaveChoser.INSATANCE.SaveGame(cgm.FileName);
         }
 
         /// <summary>
@@ -49,7 +45,7 @@ namespace PooP.GUI.Views.LoadGame
         /// <returns>true</returns>
         public bool CanExecute(Object o)
         {
-            return true;
+            return true;// !cgm.FileName.Equals(""); // TODO
         }
 
         /// <summary>

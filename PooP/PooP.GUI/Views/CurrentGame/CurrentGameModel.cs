@@ -18,6 +18,7 @@ namespace PooP.GUI.Views.CurrentGame
     public class CurrentGameModel
     {
         public WindowInterface window;
+        public CurrentGameInterface page;
 
         private static string TILES_PATH = "../../images/tileset/";
         private static string TILES_EXT = ".bmp";
@@ -362,9 +363,11 @@ namespace PooP.GUI.Views.CurrentGame
                 + TILES_EXT, UriKind.Relative)));
         }
 
-        public CurrentGameModel(WindowInterface window, Page page)
+        public CurrentGameModel(WindowInterface window, CurrentGameInterface page)
         {
             this.window = window;
+            this.page = page;
+            FileName = "";
             Grid map = (Grid)page.FindName("Map");
 
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
@@ -399,6 +402,20 @@ namespace PooP.GUI.Views.CurrentGame
                     Grid.SetColumn(r, j);
                     Grid.SetRow(r, i);
                 }
+            }
+        }
+
+        public string FileName
+        {
+            get;
+            set;
+        }
+
+        public ICommand Save
+        {
+            get
+            {
+                return new SaveCommand(this);
             }
         }
     }

@@ -9,11 +9,15 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/currentGame.png" />
         </Canvas.Background>
-        
+
         <Grid Name="Map" Height="400" Width="400" Canvas.Left="200" Canvas.Top="157">
             <Grid.ColumnDefinitions>
 
             </Grid.ColumnDefinitions>
         </Grid>
+
+        <Label Content="Label" Canvas.Left="400" Canvas.Top="562" RenderTransformOrigin="-0.473,-0.8"/>
+        <TextBox Height="23" Canvas.Left="443" TextWrapping="Wrap" Text="{Binding FileName}" Canvas.Top="565" Width="120"/>
+        <Button Content="Button" Command="{Binding Save}" Canvas.Left="568" Canvas.Top="568" Width="75"/>
     </Canvas>
 </Page>
