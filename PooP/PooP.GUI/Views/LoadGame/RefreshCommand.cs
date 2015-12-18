@@ -1,5 +1,4 @@
-﻿using PooP.Core.Implementation.Games;
-using PooP.GUI.Views.NewGame;
+﻿using PooP.GUI.Views.NewGame;
 using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
@@ -13,37 +12,34 @@ using System.Windows.Input;
 namespace PooP.GUI.Views.LoadGame
 {
     /// <summary>
-    /// Command to start the page of a game
+    /// Command for quitting the game
     /// </summary>
-    public class LoadGameCommand : ICommand
+    public class RefreshCommand : ICommand
     {
-        private WindowInterface window;
         private LoadGameInterface page;
         private ListBox listBox;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="window">Parent window</param>
-        public LoadGameCommand(WindowInterface window, LoadGameInterface page)
+        /// <param name="m">Associated ViewModel</param>
+        public RefreshCommand(LoadGameInterface page)
         {
-            this.window = window;
             this.page = page;
             listBox = (ListBox)page.FindName("files");
         }
 
         /// <summary>
-        /// Starts the page
+        /// Quits
         /// </summary>
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            SaveChoser.INSATANCE.ImportSave(listBox.SelectedItem.ToString());
-            window.OpenCurrentGame();
+            listBox.ItemsSource = SaveChoser.INSATANCE.getSaves();
         }
 
         /// <summary>
-        /// Allaways possible
+        /// Tests if the game can be exited
         /// </summary>
         /// <param name="o">Unused</param>
         /// <returns>true</returns>
@@ -53,13 +49,12 @@ namespace PooP.GUI.Views.LoadGame
         }
 
         /// <summary>
-        /// Handler for a change in the conditions
-        /// Called whenever one of the used variables changes
+        /// Never called since CanExecute is constant
         /// </summary>
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add { }
+            remove { }
         }
     }
 }

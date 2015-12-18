@@ -12,17 +12,27 @@ namespace PooP.GUI.Views.LoadGame
     public class LoadGameModel
     {
         private WindowInterface window;
+        private LoadGameInterface page;
 
-        public LoadGameModel(WindowInterface window)
+        public LoadGameModel(WindowInterface window, LoadGameInterface page)
         {
             this.window = window;
+            this.page = page;
+        }
+
+        public ICommand Refresh
+        {
+            get
+            {
+                return new RefreshCommand(page);
+            }
         }
 
         public ICommand Load
         {
             get
             {
-                return new LoadGameCommand(window);
+                return new LoadGameCommand(window, page);
             }
         }
 

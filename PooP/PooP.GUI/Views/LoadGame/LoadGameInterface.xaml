@@ -3,15 +3,23 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       mc:Ignorable="d" 
       Title="Load game">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding Refresh}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Canvas Width="800" Height="600">
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/text.png" />
         </Canvas.Background>
 
-        <Button x:Name="start_button" Content="START" Command="{Binding Load}" Canvas.Left="678" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-        <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="193" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="345" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button x:Name="refresh_button" Content="REFRESH" Command="{Binding Refresh}" Canvas.Left="513" Canvas.Top="497" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button x:Name="start_button" Content="START" Command="{Binding Load}" Canvas.Left="550" Canvas.Top="532" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
     </Canvas>
 </Page>
