@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Interactivity;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -24,6 +25,9 @@ namespace PooP.GUI.Views.CurrentGame
         private static string TILES_EXT = ".bmp";
         private static string UNITS_PATH = "../../images/races/";
         private static string UNITS_EXT = ".png";
+
+        private Grid map;
+        private Border bo;
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -370,7 +374,7 @@ namespace PooP.GUI.Views.CurrentGame
             this.window = window;
             this.page = page;
             FileName = "";
-            Grid map = (Grid)page.FindName("Map");
+            map = (Grid)page.FindName("Map");
 
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
                 map.RowDefinitions.Add(new RowDefinition());
@@ -398,7 +402,8 @@ namespace PooP.GUI.Views.CurrentGame
                                 tiles[y + 1, x + 1] = GameBuilder.CURRENTGAME.Map.getTileAt(new Core.Ressource.Position(j + x, i + y)).GetType().Name.ToLower();
                             }
                         }
-                    }						
+                    }
+                    r.MouseLeftButtonDown += TileClick;
                     r.Fill = GetCorrectBrush(tiles[1,1],tiles);
                     map.Children.Add(r);
                     Grid.SetColumn(r, j);
@@ -418,12 +423,29 @@ namespace PooP.GUI.Views.CurrentGame
                         + UNITS_EXT, UriKind.Relative)));
                     r.RenderTransformOrigin = new Point(0.5,0.5);
                     r.RenderTransform = new ScaleTransform(0.75, 0.75);
+                    r.MouseLeftButtonDown += TileClick;
                     r.Fill = b;
                     map.Children.Add(r);
                     Grid.SetRow(r, u.Position.YPosition);
                     Grid.SetColumn(r, u.Position.XPosition);
                 });
             }
+            bo = new Border();
+            bo.BorderBrush = Brushes.Red;
+            bo.BorderThickness = new Thickness(2);
+        }
+
+        private void TileClick(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle r = (Rectangle)sender;
+            int x = Grid.GetColumn(r);
+            int y = Grid.GetRow(r);
+            
+            //MessageBox.Show(x + ";" + y);
+
+            if (!map.Children.Contains(bo)) map.Children.Add(bo);
+            Grid.SetColumn(bo, x);
+            Grid.SetRow(bo, y);            
         }
 
         public ICommand Back
