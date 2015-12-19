@@ -32,7 +32,10 @@ namespace PooP.Core.Implementation.Games
             foreach (PlayerData p in data.Players) {
                 Player PlayerToAdd = p.ToPlayer();
                 if (p.Fst)
+                {
                     FirstPlayer = PlayerToAdd;
+                    indexOfCurrentPlayer = data.Players.IndexOf(p);
+                }
                 PlayersList.Add(PlayerToAdd);
             }
             Players = PlayersList.ToArray();

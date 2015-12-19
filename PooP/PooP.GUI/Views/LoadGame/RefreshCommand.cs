@@ -35,7 +35,7 @@ namespace PooP.GUI.Views.LoadGame
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            listBox.ItemsSource = SaveChoser.INSATANCE.getSaves();
+            listBox.ItemsSource = SaveChoser.INSTANCE.getSaves();
         }
 
         /// <summary>

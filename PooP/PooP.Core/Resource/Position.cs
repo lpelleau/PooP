@@ -72,5 +72,10 @@ namespace PooP.Core.Ressource
         {
             return this.x * 100 + this.y;
         }
+
+        public override string ToString()
+        {
+            return XPosition + ";" + YPosition;
+        }
     }
 }

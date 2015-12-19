@@ -327,10 +327,10 @@ double Algo::moveCost(Race race, int xS, int yS, int xT, int yT, int life, int e
 	{
 		// Try moving to another tile and test
 		vector<double> possibleCosts = vector<double>();
-		int TestedPaths[4 * 2] = { xS + 1, yS,
-			xS, yS + 1,
-			xS - 1, yS,
-			xS, yS - 1 };
+		int TestedPaths[4 * 2] = { min(xS + 1,_height), yS,
+			xS, min(yS + 1,_height),
+			max(xS - 1,0), yS,
+			xS, max(yS - 1,0) };
 
 		if (xS < xT && yS < yT)
 		{

@@ -28,10 +28,6 @@ namespace PooP.Core.Implementation.Commands
         {
             MovedUnit = UnitToMove;
             Target = PosToReach;
-            OldTile = MovedUnit.Position;
-            
-            // Computes the number of needed points
-            cost = MovedUnit.getMoveCost(Target);
         }
 
         /// <summary>
@@ -40,7 +36,7 @@ namespace PooP.Core.Implementation.Commands
         /// <returns>true if the unit can go, false otherwise</returns>
         public bool canDo()
         {
-            return MovedUnit.canMoveTo(Target);
+            return MovedUnit != null && Target != null && MovedUnit.canMoveTo(Target);
         }
 
         /// <summary>
@@ -49,6 +45,11 @@ namespace PooP.Core.Implementation.Commands
         public void execute()
         {
             if (!this.canDo()) throw new IncorrectCommandException();
+
+            OldTile = MovedUnit.Position;
+            
+            // Computes the number of needed points
+            cost = MovedUnit.getMoveCost(Target);
 
             // Move the unit to the target
             MovedUnit.Position = Target;

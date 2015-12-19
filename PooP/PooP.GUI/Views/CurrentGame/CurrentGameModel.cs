@@ -1,4 +1,5 @@
 ﻿using PooP.Core.Implementation.Games;
+using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Maps;
 using PooP.GUI.Views.WindowApp;
 using System;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using System.Windows.Media;
@@ -27,7 +29,7 @@ namespace PooP.GUI.Views.CurrentGame
         private static string UNITS_EXT = ".png";
 
         private Grid map;
-        private Border bo;
+        public Border bo;
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -376,16 +378,25 @@ namespace PooP.GUI.Views.CurrentGame
             FileName = "";
             map = (Grid)page.FindName("Map");
 
+            DrawMap();
+        }
+
+        private void DrawMap()
+        {
+            // Add the rows and columns needed for the map
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
                 map.RowDefinitions.Add(new RowDefinition());
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Width; i++)
                 map.ColumnDefinitions.Add(new ColumnDefinition());
 
+            // Put the tiles
             for (int i = 0; i < GameBuilder.CURRENTGAME.Map.Height; i++)
             {
                 for (int j = 0; j < GameBuilder.CURRENTGAME.Map.Width; j++)
                 {
                     Rectangle r = new Rectangle();
+
+                    // Get the tiles and the ones around for a better rendering
                     // If tile at a border, assume the tiles around are the same
                     string[,] tiles = new string[3, 3];
                     for (int x = -1; x <= 1; x++)
@@ -403,39 +414,25 @@ namespace PooP.GUI.Views.CurrentGame
                             }
                         }
                     }
-                    r.MouseLeftButtonDown += TileClick;
-                    r.Fill = GetCorrectBrush(tiles[1,1],tiles);
+
+                    // For each tile, associate a selection command
+                    r.MouseLeftButtonDown += SelectTile;
+                    r.Fill = GetCorrectBrush(tiles[1, 1], tiles);
                     map.Children.Add(r);
                     Grid.SetColumn(r, j);
                     Grid.SetRow(r, i);
                 }
             }
 
-            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
-            {
-                GameBuilder.CURRENTGAME.Players[i].Race.Units.ForEach(u =>
-                {
-                    Rectangle r = new Rectangle();
-                    Brush b = (Brush) new ImageBrush(new BitmapImage(new Uri(
-                        UNITS_PATH + 
-                        u.Race.ToString().ToLower()
-                        + "_unit"
-                        + UNITS_EXT, UriKind.Relative)));
-                    r.RenderTransformOrigin = new Point(0.5,0.5);
-                    r.RenderTransform = new ScaleTransform(0.75, 0.75);
-                    r.MouseLeftButtonDown += TileClick;
-                    r.Fill = b;
-                    map.Children.Add(r);
-                    Grid.SetRow(r, u.Position.YPosition);
-                    Grid.SetColumn(r, u.Position.XPosition);
-                });
-            }
+            // Create a border element to show the selected tile
             bo = new Border();
             bo.BorderBrush = Brushes.Red;
             bo.BorderThickness = new Thickness(2);
+
+            DrawUnits();
         }
 
-        private void TileClick(object sender, MouseButtonEventArgs e)
+        private void SelectTile(object sender, MouseButtonEventArgs e)
         {
             Rectangle r = (Rectangle)sender;
             int x = Grid.GetColumn(r);
@@ -445,7 +442,50 @@ namespace PooP.GUI.Views.CurrentGame
 
             if (!map.Children.Contains(bo)) map.Children.Add(bo);
             Grid.SetColumn(bo, x);
-            Grid.SetRow(bo, y);            
+            Grid.SetRow(bo, y);
+        }
+
+        private void DrawUnits()
+        {
+            // For each player
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
+            {
+                // Create an empty list box
+                ListBox lb = (ListBox)page.FindName("UnitsP" + i);
+                List<RadioButton> units = new List<RadioButton>();
+
+                // For each one of the units
+                for (int no_u = 0; no_u < GameBuilder.CURRENTGAME.Players[i].Race.Units.Count(); no_u++)
+                {
+                    // Create an image with the unit
+                    Unit u = GameBuilder.CURRENTGAME.Players[i].Race.Units[no_u];
+                    Rectangle r = new Rectangle();
+                    Brush b = (Brush)new ImageBrush(new BitmapImage(new Uri(
+                        UNITS_PATH +
+                        u.Race.ToString().ToLower()
+                        + "_unit"
+                        + UNITS_EXT, UriKind.Relative)));
+                    r.RenderTransformOrigin = new Point(0.5, 0.5);
+                    r.RenderTransform = new ScaleTransform(0.75, 0.75);
+                    r.MouseLeftButtonDown += SelectTile;
+                    r.Fill = b;
+                    r.Name = "P" + i + "U" + no_u;
+                    map.Children.Add(r);
+                    Grid.SetRow(r, u.Position.YPosition);
+                    Grid.SetColumn(r, u.Position.XPosition);
+
+                    // Add the unit to the list of units
+                    RadioButton bt = new RadioButton();
+                    bt.Name = "Bt" + r.Name;
+                    bt.GroupName = "UnitsOfP" + i;
+
+                    bt.Content = "Unit " + no_u + " (" + u.Position + ")\n" + u.LifePoints + "/" + u.Race.Life + "PV";
+                    bt.CommandParameter = r;
+                    bt.Command = SelectUnit;
+                    units.Add(bt);
+                }
+                lb.ItemsSource = units;
+            }
         }
 
         public ICommand Back
@@ -455,7 +495,7 @@ namespace PooP.GUI.Views.CurrentGame
                 return new BackCommand(window);
             }
         }
-
+        
         public string FileName
         {
             get;
@@ -467,6 +507,22 @@ namespace PooP.GUI.Views.CurrentGame
             get
             {
                 return new SaveCommand(this);
+            }
+        }
+
+        public ICommand SelectUnit
+        {
+            get
+            {
+                return new SelectUnitCommand(this);
+            }
+        }
+
+        public ICommand Move
+        {
+            get
+            {
+                return new MoveUnitCommand(this);
             }
         }
     }

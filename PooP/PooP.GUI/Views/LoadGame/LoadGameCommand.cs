@@ -38,7 +38,7 @@ namespace PooP.GUI.Views.LoadGame
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            SaveChoser.INSATANCE.ImportSave(listBox.SelectedItem.ToString());
+            SaveChoser.INSTANCE.ImportSave(listBox.SelectedItem.ToString());
             window.OpenCurrentGame();
         }
 

@@ -11,7 +11,7 @@ namespace PooP.GUI.Views.LoadGame
 {
     public class SaveChoser
     {
-        public static SaveChoser INSATANCE = new SaveChoser();
+        public static SaveChoser INSTANCE = new SaveChoser();
 
         private string PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SmallWorld\\";
         private List<string> files;

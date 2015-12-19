@@ -35,7 +35,7 @@ namespace PooP.GUI.Views.CurrentGame
         /// <param name="o">Current window</param>
         public void Execute(Object o)
         {
-            SaveChoser.INSATANCE.SaveGame(cgm.FileName);
+            SaveChoser.INSTANCE.SaveGame(cgm.FileName);
         }
 
         /// <summary>
