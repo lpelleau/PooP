@@ -525,5 +525,13 @@ namespace PooP.GUI.Views.CurrentGame
                 return new MoveUnitCommand(this);
             }
         }
+
+        public ICommand EndTurn
+        {
+            get
+            {
+                return new EndTurnCommand(this);
+            }
+        }
     }
 }
