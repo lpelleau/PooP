@@ -19,7 +19,7 @@ namespace PooP.Core.Implementation.Commands
         private Unit MovedUnit;
         private Position OldPos;
         private Position Target;
-        private Unit Defender;
+        public Unit Defender;
         private double cost;
         private bool AttackSuccess;
         private int Damage;
@@ -32,9 +32,7 @@ namespace PooP.Core.Implementation.Commands
         public AttackCommand(Unit Attacker, Position AttackedTilePos)
         {
             MovedUnit = Attacker;
-            OldPos = MovedUnit.Position;
             Target = AttackedTilePos;
-            cost = MovedUnit.getMoveCost(Target);
         }
     
         /// <summary>
@@ -43,7 +41,7 @@ namespace PooP.Core.Implementation.Commands
         /// <returns>true if the unit can attack the tile</returns>
         public bool canDo()
         {
-            return MovedUnit.canAttack(Target);
+            return MovedUnit != null && Target != null && MovedUnit.canAttack(Target);
         }
 
         /// <summary>
@@ -53,6 +51,9 @@ namespace PooP.Core.Implementation.Commands
         {
             if (!this.canDo()) throw new IncorrectCommandException();
 
+            OldPos = MovedUnit.Position;
+
+            cost = MovedUnit.getMoveCost(Target);
             // Choose the defender
             Defender = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(Target);
 
@@ -71,9 +72,6 @@ namespace PooP.Core.Implementation.Commands
 
                 if (Defender.LifePoints < 0)
                 {
-                    // Kills the defender
-                    Defender.Race.Units.Remove(Defender);
-
                     // Move the attacker to the tile
                     MovedUnit.Position = Target;
                 }
@@ -84,12 +82,6 @@ namespace PooP.Core.Implementation.Commands
                 // The damage are (Attack-Defence)+/-50%
                 Damage = (Defender.Race.Attack - MovedUnit.Race.Defence) * randGenerator.Next(50, 150) / 100;
                 MovedUnit.LifePoints -= Damage;
-
-                if (MovedUnit.LifePoints < 0)
-                {
-                    // Kills the unit
-                    MovedUnit.Race.Units.Remove(MovedUnit);
-                }
             }
 
             MovedUnit.MovePoints -= cost;
@@ -109,21 +101,12 @@ namespace PooP.Core.Implementation.Commands
                 {
                     // The unit had moved to the target tile
                     MovedUnit.Position = OldPos;
-
-                    // The defender had been killed : resurect it
-                    Defender.Race.Units.Add(Defender);
                 }
                 // Give back the life points that had been taken
                 Defender.LifePoints += Damage;
             }
             else
             {
-                // The ttack had failed
-                if (MovedUnit.LifePoints < 0)
-                {
-                    // Put again the unit in its army
-                    MovedUnit.Race.Units.Add(MovedUnit);
-                }
                 // Give back the life points that had been taken
                 MovedUnit.LifePoints += Damage;
             }

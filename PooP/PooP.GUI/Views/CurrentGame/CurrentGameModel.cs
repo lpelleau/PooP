@@ -445,7 +445,43 @@ namespace PooP.GUI.Views.CurrentGame
             Grid.SetRow(bo, y);
         }
 
-        private void DrawUnits()
+        public void DrawUnits()
+        {
+            // For each player
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
+            {
+                // For each one of the units
+                for (int no_u = 0; no_u < GameBuilder.CURRENTGAME.Players[i].Race.Units.Count(); no_u++)
+                {
+                    // Create an image with the unit
+                    Unit u = GameBuilder.CURRENTGAME.Players[i].Race.Units[no_u];
+                    if (u.LifePoints > 0)
+                    {
+                        Rectangle r = (Rectangle)LogicalTreeHelper.FindLogicalNode(map, "P" + i + "U" + no_u);
+                        if (r == null)
+                        {
+                            r = new Rectangle();
+                            Brush b = (Brush)new ImageBrush(new BitmapImage(new Uri(
+                                UNITS_PATH +
+                                u.Race.ToString().ToLower()
+                                + "_unit"
+                                + UNITS_EXT, UriKind.Relative)));
+                            r.RenderTransformOrigin = new Point(0.5, 0.5);
+                            r.RenderTransform = new ScaleTransform(0.75, 0.75);
+                            r.MouseLeftButtonDown += SelectTile;
+                            r.Fill = b;
+                            r.Name = "P" + i + "U" + no_u;
+                            map.Children.Add(r);
+                        }
+                        Grid.SetRow(r, u.Position.YPosition);
+                        Grid.SetColumn(r, u.Position.XPosition);
+                    }
+                }
+            }
+            DrawUnitsInfos();
+        }
+
+        public void DrawUnitsInfos()
         {
             // For each player
             for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
@@ -457,32 +493,20 @@ namespace PooP.GUI.Views.CurrentGame
                 // For each one of the units
                 for (int no_u = 0; no_u < GameBuilder.CURRENTGAME.Players[i].Race.Units.Count(); no_u++)
                 {
-                    // Create an image with the unit
-                    Unit u = GameBuilder.CURRENTGAME.Players[i].Race.Units[no_u];
-                    Rectangle r = new Rectangle();
-                    Brush b = (Brush)new ImageBrush(new BitmapImage(new Uri(
-                        UNITS_PATH +
-                        u.Race.ToString().ToLower()
-                        + "_unit"
-                        + UNITS_EXT, UriKind.Relative)));
-                    r.RenderTransformOrigin = new Point(0.5, 0.5);
-                    r.RenderTransform = new ScaleTransform(0.75, 0.75);
-                    r.MouseLeftButtonDown += SelectTile;
-                    r.Fill = b;
-                    r.Name = "P" + i + "U" + no_u;
-                    map.Children.Add(r);
-                    Grid.SetRow(r, u.Position.YPosition);
-                    Grid.SetColumn(r, u.Position.XPosition);
+                    if (GameBuilder.CURRENTGAME.Players[i].Race.Units[no_u].LifePoints > 0)
+                    {
+                        Unit u = GameBuilder.CURRENTGAME.Players[i].Race.Units[no_u];
+                        Rectangle r = (Rectangle)LogicalTreeHelper.FindLogicalNode(map, "P" + i + "U" + no_u);
+                        // Add the unit to the list of units
+                        RadioButton bt = new RadioButton();
+                        bt.Name = "Bt" + r.Name;
+                        bt.GroupName = "UnitsOfP" + i;
 
-                    // Add the unit to the list of units
-                    RadioButton bt = new RadioButton();
-                    bt.Name = "Bt" + r.Name;
-                    bt.GroupName = "UnitsOfP" + i;
-
-                    bt.Content = "Unit " + no_u + " (" + u.Position + ")\n" + u.LifePoints + "/" + u.Race.Life + "PV";
-                    bt.CommandParameter = r;
-                    bt.Command = SelectUnit;
-                    units.Add(bt);
+                        bt.Content = "Unit " + no_u + " (" + u.Position + ")\n" + u.LifePoints + "/" + u.Race.Life + "PV";
+                        bt.CommandParameter = r;
+                        bt.Command = SelectUnit;
+                        units.Add(bt);
+                    }
                 }
                 lb.ItemsSource = units;
             }
@@ -532,6 +556,38 @@ namespace PooP.GUI.Views.CurrentGame
             {
                 return new EndTurnCommand(this);
             }
+        }
+
+        public ICommand Attack
+        {
+            get
+            {
+                return new AttackUnitCommand(this);
+            }
+        }
+
+        public void RemoveUnit(Unit u)
+        {
+            bool found = false;
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Length && !found; i++)
+            {
+                for (int n = 0; n < GameBuilder.CURRENTGAME.Players[i].Race.Units.Count && !found; n++)
+                {
+                    if (GameBuilder.CURRENTGAME.Players[i].Race.Units[n] == u)
+                    {
+                        found = true;
+                        Rectangle r = (Rectangle) LogicalTreeHelper.FindLogicalNode(map, "P" + i + "U" + n);
+                        r.Visibility = Visibility.Hidden;
+
+                        for (int no = n; no < GameBuilder.CURRENTGAME.Players[i].Race.Units.Count; no++)
+                        {
+                            r = (Rectangle)LogicalTreeHelper.FindLogicalNode(map, "P" + i + "U" + n);
+                            r.Name = "P" + i + "U" + no;
+                        }
+                    }
+                }
+            }
+            DrawUnitsInfos();
         }
     }
 }

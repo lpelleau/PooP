@@ -1,5 +1,4 @@
 ﻿using PooP.Core.Implementation.Commands;
-using PooP.Core.Implementation.Games;
 using PooP.Core.Ressource;
 using System;
 using System.Collections.Generic;
@@ -7,24 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Shapes;
 
 namespace PooP.GUI.Views.CurrentGame
 {
-    class MoveUnitCommand : ICommand
+    class AttackUnitCommand : ICommand
     {
-        private CurrentGameModel currentGameModel;
+        private CurrentGameModel cgm;
 
-        public MoveUnitCommand(CurrentGameModel currentGameModel)
+        public AttackUnitCommand(CurrentGameModel currentGameModel)
         {
-            this.currentGameModel = currentGameModel;
+            this.cgm = currentGameModel;
         }
-
 
         public bool CanExecute(object parameter)
         {
-            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(currentGameModel.bo), Grid.GetRow(currentGameModel.bo)));
-            return mv.canDo();
+            AttackCommand atk = new AttackCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(cgm.bo), Grid.GetRow(cgm.bo)));
+            return atk.canDo();
         }
 
         public event EventHandler CanExecuteChanged
@@ -35,11 +32,15 @@ namespace PooP.GUI.Views.CurrentGame
 
         public void Execute(object parameter)
         {
-            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(currentGameModel.bo), Grid.GetRow(currentGameModel.bo)));
-            mv.execute();
+            AttackCommand atk = new AttackCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(cgm.bo), Grid.GetRow(cgm.bo)));
+            atk.execute();
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
-            currentGameModel.DrawUnits();
+            cgm.DrawUnits();
+            if (atk.Defender.LifePoints <= 0)
+            {
+                cgm.RemoveUnit(atk.Defender);
+            }
         }
     }
 }

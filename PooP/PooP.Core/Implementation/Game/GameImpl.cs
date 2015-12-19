@@ -41,25 +41,9 @@ namespace PooP.Core.Implementation.Games
             Players = PlayersList.ToArray();
             NumberOfTurns = data.NumberOfTurns;
             Map = new MapImpl(data.Tiles);
-            FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
             UndoableImpl.DoneCommands = new Stack<Command>();
             UndoableImpl.UndoneCommands = new Stack<Command>();
             EndTurn.winner = null;
-        }
-
-        /// <summary>
-        /// Creates a game
-        /// </summary>
-        /// <param name="players">Names of the players</param>
-        /// <param name="m">Map to use</param>
-        /// <param name="turns">Number of turns for the game</param>
-        public GameImpl(Player[] players, Map m, int turns)
-        {
-            Players = players;
-            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
-            FirstPlayer = Players[IndexOfCurrentPlayer];
-            NumberOfTurns = turns;
-            Map = m;
         }
 
         /// <summary>
@@ -70,8 +54,8 @@ namespace PooP.Core.Implementation.Games
         public GameImpl(Player[] players, int turns)
         {
             Players = players;
-            IndexOfCurrentPlayer = new Random().Next(0, players.Count() - 1);
-            FirstPlayer = Players[IndexOfCurrentPlayer];
+            indexOfCurrentPlayer = new Random().Next(0, players.Count());
+            FirstPlayer = Players[indexOfCurrentPlayer];
             NumberOfTurns = turns;
         }
 

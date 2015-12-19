@@ -1,8 +1,10 @@
 ﻿using PooP.Core.Implementation.Commands;
+using PooP.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PooP.GUI.Views.CurrentGame
@@ -32,6 +34,11 @@ namespace PooP.GUI.Views.CurrentGame
         {
             EndTurn et = new EndTurn();
             et.execute();
+            if (EndTurn.winner != null)
+            {
+                MessageBox.Show(((Player)EndTurn.winner).Name + " a gagné !");
+                cgm.window.CloseCurrent();
+            }
         }
     }
 }
