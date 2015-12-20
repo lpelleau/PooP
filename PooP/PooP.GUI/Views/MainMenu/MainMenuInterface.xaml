@@ -17,7 +17,7 @@
         <Button Content="QUIT" Command="{Binding AskQuit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
-        
+
         <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
@@ -40,5 +40,6 @@
                 <Button Content="NO" Command="{Binding AbortQuit}" Canvas.Left="239" Canvas.Top="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" Height="31" Width="83" />
             </Canvas>
         </Canvas>
+        <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
     </Canvas>
 </Page>

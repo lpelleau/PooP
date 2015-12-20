@@ -34,6 +34,8 @@ namespace PooP.GUI.Views.Tutorial
             tips = new List<Canvas>();
             tips.Add((Canvas)FindName("tipN0"));
             tips.Add((Canvas)FindName("tipN1"));
+            tips.Add((Canvas)FindName("tipN2"));
+            tips.Add((Canvas)FindName("tipN3"));
 
             OnReload();
         }

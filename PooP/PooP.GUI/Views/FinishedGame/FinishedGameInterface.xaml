@@ -17,5 +17,7 @@
                 <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Label Content="Finished game" Canvas.Left="228" Canvas.Top="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
+        <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
     </Canvas>
 </Page>

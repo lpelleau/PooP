@@ -29,5 +29,7 @@
         <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="345" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Button x:Name="refresh_button" Content="REFRESH" Command="{Binding Refresh}" Canvas.Left="513" Canvas.Top="497" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Button x:Name="start_button" Content="START" Command="{Binding Load}" Canvas.Left="550" Canvas.Top="532" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
+        <Label Content="Load game" Canvas.Left="271" Canvas.Top="114" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
     </Canvas>
 </Page>

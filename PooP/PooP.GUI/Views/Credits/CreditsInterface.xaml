@@ -17,8 +17,9 @@
                 <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
             </Rectangle.Fill>
         </Rectangle>
+
+        <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
         
-        <Label Content="Small World" Canvas.Left="260" Canvas.Top="10" FontFamily="Rockwell Extra Bold" FontSize="36" FontWeight="Bold" Foreground="#FF272319"/>
         <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <TextBox Canvas.Left="157" Canvas.Top="209" Height="358" Width="489" Background="{x:Null}" 
                  Text="This game has been realized for the OOP-OOM project of the INSA of Rennes (2015-2016)
@@ -58,6 +59,16 @@
                  
                  
                  
-                 Pascal FRESNAY - TP" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+                 Pascal FRESNAY - TP
+                 
+                 
+                 
+                 -
+                 
+                 
+                 
+                 
+                 Music: Oursvince - Magic Spell" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+        <Label Content="Credits" Canvas.Left="312" Canvas.Top="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
     </Canvas>
 </Page>

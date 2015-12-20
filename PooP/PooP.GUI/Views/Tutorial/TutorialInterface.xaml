@@ -18,12 +18,79 @@
             </Rectangle.Fill>
         </Rectangle>
 
+        <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
+
+        <Label Content="Tutorials" Canvas.Left="290" Canvas.Top="114" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
+
         <Canvas x:Name="tipN0" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208">
             <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+
+            <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/human.png"/>
+            <Label Content="Human unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
+
+            <Label Content="Move points: 2" Canvas.Left="216" Canvas.Top="60" FontSize="14"/>
+            <Label Content="Distance attack: 1" Canvas.Left="216" Canvas.Top="89" FontSize="14"/>
+            <Label Content="Life points: 15" Canvas.Left="216" Canvas.Top="118" FontSize="14"/>
+            <Label Content="Attack points: 6" Canvas.Left="216" Canvas.Top="147" FontSize="14"/>
+            <Label Content="Defence points: 3" Canvas.Left="216" Canvas.Top="176" FontSize="14"/>
+            <Label Content="Victory points:" Canvas.Left="216" Canvas.Top="205" FontSize="14"/>
+            <Label Content="Plain 2 ; Mountain 1 ; Forest 1; Water 0" Canvas.Left="216" Canvas.Top="246" FontSize="14" FontStyle="Italic"/>
         </Canvas>
 
         <Canvas x:Name="tipN1" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
             <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+
+            <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/elf.png"/>
+            <Label Content="Elf unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
+
+            <Label Content="Move points: 2" Canvas.Left="216" Canvas.Top="60" FontSize="14"/>
+            <Label Content="Distance attack: 2 (in the same direction)" Canvas.Left="216" Canvas.Top="89" FontSize="14"/>
+            <Label Content="Life points: 12" Canvas.Left="216" Canvas.Top="118" FontSize="14"/>
+            <Label Content="Attack points: 4" Canvas.Left="216" Canvas.Top="147" FontSize="14"/>
+            <Label Content="Defence points: 3" Canvas.Left="216" Canvas.Top="176" FontSize="14"/>
+            <Label Content="Victory points:" Canvas.Left="216" Canvas.Top="205" FontSize="14"/>
+            <Label Content="Plain 1 ; Mountain 0 ; Forest 3; Water 0" Canvas.Left="216" Canvas.Top="246" FontSize="14" FontStyle="Italic"/>
+            <Label Content="Can't go on water and spend 2 move points on mountain" Canvas.Left="26" Canvas.Top="280" FontSize="14"/>
+        </Canvas>
+
+        <Canvas x:Name="tipN2" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
+            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+
+            <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/orc.png"/>
+            <Label Content="Orc unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
+
+            <Label Content="Move points: 2" Canvas.Left="216" Canvas.Top="60" FontSize="14"/>
+            <Label Content="Distance attack: 1 (expect on mountain: 2)" Canvas.Left="216" Canvas.Top="89" FontSize="14"/>
+            <Label Content="Life points: 17" Canvas.Left="216" Canvas.Top="118" FontSize="14"/>
+            <Label Content="Attack points: 5" Canvas.Left="216" Canvas.Top="147" FontSize="14"/>
+            <Label Content="Defence points: 2" Canvas.Left="216" Canvas.Top="176" FontSize="14"/>
+            <Label Content="Victory points:" Canvas.Left="216" Canvas.Top="205" FontSize="14"/>
+            <Label Content="Plain 1 ; Mountain 2 ; Forest 1; Water 0" Canvas.Left="216" Canvas.Top="246" FontSize="14" FontStyle="Italic"/>
+            <Label Content="Can't go on water and spend 0.5 move points on plain" Canvas.Left="26" Canvas.Top="280" FontSize="14"/>
+        </Canvas>
+
+        <Canvas x:Name="tipN3" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
+            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Label Content="Map size:" Canvas.Left="10" Canvas.Top="10" FontSize="18" FontWeight="Bold"/>
+
+            <Label Content="Demo:" Canvas.Left="33" Canvas.Top="42" FontSize="14" Width="162" FontWeight="Bold"/>
+            <Label Content="6 x 6 tiles" Canvas.Left="127" Canvas.Top="42" FontSize="14"/>
+            <Label Content="5 turns" Canvas.Left="142" Canvas.Top="71" FontSize="14"/>
+            <Label Content="4 units per players" Canvas.Left="72" Canvas.Top="100" FontSize="14"/>
+
+            <Label Content="Small:" Canvas.Left="33" Canvas.Top="129" FontSize="14" Width="162" FontWeight="Bold"/>
+            <Label Content="10 x 10 tiles" Canvas.Left="112" Canvas.Top="129" FontSize="14"/>
+            <Label Content="20 turns" Canvas.Left="135" Canvas.Top="158" FontSize="14"/>
+            <Label Content="6 units per players" Canvas.Left="72" Canvas.Top="187" FontSize="14"/>
+
+            <Label Content="Standard:" Canvas.Left="33" Canvas.Top="216" FontSize="14" Width="162" FontWeight="Bold"/>
+            <Label Content="14 x 14 tiles" Canvas.Left="112" Canvas.Top="216" FontSize="14"/>
+            <Label Content="30 turns" Canvas.Left="135" Canvas.Top="245" FontSize="14"/>
+            <Label Content="8 units per players" Canvas.Left="72" Canvas.Top="274" FontSize="14"/>
+
+            <Image Canvas.Left="200" Canvas.Top="21" Source="/SmallWorld;component/images/pages/tutorialMap.png" Height="282" Width="282"/>
         </Canvas>
 
         <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />

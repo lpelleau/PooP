@@ -217,6 +217,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
+    <Resource Include="images\pages\tutorialMap.png" />
     <Resource Include="images\pages\redcross.png" />
     <Resource Include="images\pages\circleHover.png" />
     <Resource Include="images\pages\mainMenu-QuitPopup.png" />
