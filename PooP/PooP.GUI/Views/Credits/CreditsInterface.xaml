@@ -9,6 +9,15 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/text.png" />
         </Canvas.Background>
+
+        <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
+
+        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
         <Label Content="Small World" Canvas.Left="260" Canvas.Top="10" FontFamily="Rockwell Extra Bold" FontSize="36" FontWeight="Bold" Foreground="#FF272319"/>
         <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <TextBox Canvas.Left="157" Canvas.Top="209" Height="358" Width="489" Background="{x:Null}" 

@@ -9,5 +9,13 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/text.png" />
         </Canvas.Background>
+
+        <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
+
+        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Canvas>
 </Page>

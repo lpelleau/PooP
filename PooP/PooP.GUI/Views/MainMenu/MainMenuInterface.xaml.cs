@@ -28,5 +28,28 @@ namespace PooP.GUI.Views.MainMenu
             DataContext = new MainMenuModel(window, this);
             this.window = window;
         }
+
+        private void SoundHoverI(object sender, MouseEventArgs e)
+        {
+            ((Rectangle)sender).Opacity = 100;
+        }
+
+        private void SoundHoverO(object sender, MouseEventArgs e)
+        {
+            ((Rectangle)sender).Opacity = 0;
+        }
+
+        private void SoundClick(object sender, MouseButtonEventArgs e)
+        {
+            Sound.INSTANCE.ToogleMusic();
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace PooP.GUI.Audio
         private MusicTimer musicWorker;
         private Thread musicThread;
 
+        private bool statusMusic;
+
         private Sound()
         {
             int NewVolume = ((ushort.MaxValue / 10) * 1);
@@ -37,6 +39,7 @@ namespace PooP.GUI.Audio
             musicWorker = new MusicTimer(this);
             musicThread = new Thread(musicWorker.DoWork);
             musicThread.Start();
+            statusMusic = true;
         }
 
         private void StartMusicIntern()
@@ -47,11 +50,29 @@ namespace PooP.GUI.Audio
         public void StopMusic()
         {
             musicWorker.RequestStop();
+            statusMusic = false;
         }
 
         private void StopMusicIntern()
         {
             music.Stop();
+        }
+
+        public void ToogleMusic()
+        {
+            if (statusMusic)
+            {
+                StopMusic();
+            }
+            else
+            {
+                StartMusic();
+            }
+        }
+
+        public bool isOn()
+        {
+            return statusMusic;
         }
 
         private class MusicTimer

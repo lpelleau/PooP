@@ -10,6 +10,14 @@
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/currentGame.png" />
         </Canvas.Background>
 
+        <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
+
+        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
         <Grid Name="Map" Height="400" Width="400" Canvas.Left="200" Canvas.Top="157">
             <Grid.ColumnDefinitions>
 

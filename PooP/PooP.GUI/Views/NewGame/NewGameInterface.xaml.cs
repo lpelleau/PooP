@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Windows.Input;
 using System.Windows.Controls;
 using PooP.GUI.Views.WindowApp;
+using System.Windows.Shapes;
+using PooP.GUI.Audio;
 
 namespace PooP.GUI.Views.NewGame
 {
@@ -19,6 +21,29 @@ namespace PooP.GUI.Views.NewGame
             InitializeComponent();
             this.window = window;
             DataContext = new NewGameModel(window);
+        }
+
+        private void SoundHoverI(object sender, MouseEventArgs e)
+        {
+            ((Rectangle)sender).Opacity = 100;
+        }
+
+        private void SoundHoverO(object sender, MouseEventArgs e)
+        {
+            ((Rectangle)sender).Opacity = 0;
+        }
+
+        private void SoundClick(object sender, MouseButtonEventArgs e)
+        {
+            Sound.INSTANCE.ToogleMusic();
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
     }
 
