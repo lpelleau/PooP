@@ -430,6 +430,7 @@ namespace PooP.GUI.Views.CurrentGame
             bo.BorderBrush = Brushes.Red;
             bo.BorderThickness = new Thickness(2);
 
+
             // Create a border element to show the selected unit's tile
             unitBo = new Border();
             unitBo.BorderBrush = Brushes.Black;
@@ -492,6 +493,7 @@ namespace PooP.GUI.Views.CurrentGame
                     }
                 }
             }
+
             DrawUnitsInfos();
         }
 
@@ -524,6 +526,7 @@ namespace PooP.GUI.Views.CurrentGame
                 }
                 lb.ItemsSource = units;
             }
+            unitBo.Visibility = Visibility.Hidden;
         }
 
         public ICommand Back
