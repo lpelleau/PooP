@@ -154,7 +154,7 @@ namespace PooP.Core.Implementation.Maps
             {
                 GameBuilder.CURRENTGAME.Players[i].Race.Units.ForEach(u => 
                     {
-                        if (u.Position.Equals(Position)) {
+                        if (u.Position.Equals(Position) && u.LifePoints > 0) {
                             units.Add(u);
                         }
                     });
@@ -180,6 +180,7 @@ namespace PooP.Core.Implementation.Maps
         /// <returns>The best defender for this position</returns>
         public Unit getBestDefenderAt(Position Position)
         {
+            if (getUnits(Position).Count == 0) return null;
             return getUnits(Position).Where(u => u.LifePoints == getUnits(Position).Max(un => un.LifePoints)).First();
         }
 

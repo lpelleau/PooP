@@ -437,12 +437,17 @@ namespace PooP.GUI.Views.CurrentGame
             Rectangle r = (Rectangle)sender;
             int x = Grid.GetColumn(r);
             int y = Grid.GetRow(r);
-            
-            //MessageBox.Show(x + ";" + y);
 
             if (!map.Children.Contains(bo)) map.Children.Add(bo);
             Grid.SetColumn(bo, x);
             Grid.SetRow(bo, y);
+
+            string tileInfo = x + ";" + y + ": " + GameBuilder.CURRENTGAME.Map.getTileAt(new Core.Ressource.Position(x, y)).GetType().Name;
+            Unit TileBestDef = GameBuilder.CURRENTGAME.Map.getBestDefenderAt(new Core.Ressource.Position(x, y));
+            if (TileBestDef != null)
+                tileInfo += "\nOccupied by the " + TileBestDef.Race.ToString() + " race";
+            else tileInfo += "\nUnoccupied";
+            ((TextBlock)page.FindName("TileInfo")).Text = tileInfo;
         }
 
         public void DrawUnits()
