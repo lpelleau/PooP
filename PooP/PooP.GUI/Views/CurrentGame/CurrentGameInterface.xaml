@@ -23,17 +23,18 @@
 
             </Grid.ColumnDefinitions>
         </Grid>
-        <ListBox x:Name="UnitsP0" Height="326" Canvas.Left="23" Canvas.Top="157" Width="158" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <ListBox x:Name="UnitsP0" Background="{Binding P1RaceImage}" Height="326" Canvas.Left="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
         <Button x:Name="back_button" Content="MENU" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Label Content="Label" Canvas.Left="400" Canvas.Top="562" RenderTransformOrigin="-0.473,-0.8"/>
         <TextBox Height="23" Canvas.Left="443" TextWrapping="Wrap" Text="{Binding FileName}" Canvas.Top="565" Width="120"/>
         <Button Content="Button" Command="{Binding Save}" Canvas.Left="568" Canvas.Top="568" Width="75"/>
-        <ListBox x:Name="UnitsP1" Height="326" Canvas.Right="23" Canvas.Top="157" Width="158" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button Content="Move" Command="{Binding Move}" Canvas.Left="200" Canvas.Top="568" Width="75"/>
-        <Button Content="Attack" Command="{Binding Attack}" Canvas.Left="280" Canvas.Top="568" Width="75"/>
-        <Button Content="End turn" Command="{Binding EndTurn}" Canvas.Left="360" Canvas.Top="568" Width="75"/>
+        <ListBox x:Name="UnitsP1" Background="{Binding P2RaceImage}" Height="326" Canvas.Right="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
+        <Button Name="MoveOrAttack" Content="Move" Command="{Binding Move}" Canvas.Left="200" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="End turn" Command="{Binding EndTurn}" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
         <TextBlock Name="TileInfo" Text="No tile selected
                    
-                   Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974"/>
+                   Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974" Focusable="False" IsEnabled="False"/>
+        <Label Content="{Binding P1Name}" FontFamily="{Binding P1Font}" Canvas.Left="23" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label Content="{Binding P2Name}" FontFamily="{Binding P2Font}" Canvas.Right="23" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
     </Canvas>
 </Page>

@@ -458,6 +458,18 @@ namespace PooP.GUI.Views.CurrentGame
                 tileInfo += "\nOccupied by the " + TileBestDef.Race.ToString() + " race";
             else tileInfo += "\nUnoccupied";
             ((TextBlock)page.FindName("TileInfo")).Text = tileInfo;
+
+            Button b = (Button) page.FindName("MoveOrAttack");
+            if (GameBuilder.CURRENTGAME.Map.IsOccupied(new Core.Ressource.Position(x, y), GameBuilder.CURRENTGAME.FirstPlayer.Race))
+            {
+                b.Content = "Attack";
+                b.Command = Attack;
+            }
+            else
+            {
+                b.Content = "Move";
+                b.Command = Move;
+            }
         }
 
         public void DrawUnits()
@@ -519,6 +531,9 @@ namespace PooP.GUI.Views.CurrentGame
                         bt.GroupName = "UnitsOfP" + i;
 
                         bt.Content = "Unit " + no_u + " (" + u.Position + ")\n" + u.LifePoints + "/" + u.Race.Life + "PV";
+                        bt.Background = Brushes.LightGreen;
+                        bt.FontFamily = new FontFamily("Rockwell Extra Bold");
+                        bt.FontSize = 14;
                         bt.CommandParameter = r;
                         bt.Command = SelectUnit;
                         units.Add(bt);
@@ -605,6 +620,66 @@ namespace PooP.GUI.Views.CurrentGame
                 }
             }
             DrawUnitsInfos();
+        }
+
+        public string P1Name
+        {
+            get { return GameBuilder.CURRENTGAME.Players[0].Name; }
+        }
+
+        public string P2Name
+        {
+            get { return GameBuilder.CURRENTGAME.Players[1].Name; }
+        }
+
+        public string P1Font
+        {
+            get
+            {
+                switch (GameBuilder.CURRENTGAME.Players[0].Race.GetType().Name)
+                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                    case "Elf": return "Lucida Calligraphy";
+                    case "Human": return "Engravers MT";
+                    case "Orc": return "Copperplate Gothic Light";
+                    default: return "Segoe US";
+                }
+            }
+        }
+
+        public string P2Font
+        {
+            get
+            {
+                switch (GameBuilder.CURRENTGAME.Players[1].Race.GetType().Name)
+                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                    case "Elf": return "Lucida Calligraphy";
+                    case "Human": return "Engravers MT";
+                    case "Orc": return "Copperplate Gothic Light";
+                    default: return "Segoe US";
+                }
+            }
+        }
+
+        public Brush P1RaceImage
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(
+                    new Uri(UNITS_PATH
+                        + GameBuilder.CURRENTGAME.Players[0].Race.GetType().Name
+                        + UNITS_EXT, UriKind.Relative))) { Opacity = 0.6, Stretch = Stretch.UniformToFill };
+            }
+        }
+
+        public Brush P2RaceImage
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(
+                    new Uri(UNITS_PATH
+                        + GameBuilder.CURRENTGAME.Players[1].Race.GetType().Name
+                        + UNITS_EXT, UriKind.Relative))) { Opacity = 0.6, Stretch = Stretch.UniformToFill };
+            }
         }
     }
 }
