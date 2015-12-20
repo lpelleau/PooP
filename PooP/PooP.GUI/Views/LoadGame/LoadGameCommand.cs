@@ -49,7 +49,7 @@ namespace PooP.GUI.Views.LoadGame
         /// <returns>true</returns>
         public bool CanExecute(Object o)
         {
-            return true;
+            return listBox.SelectedIndex != -1;
         }
 
         /// <summary>

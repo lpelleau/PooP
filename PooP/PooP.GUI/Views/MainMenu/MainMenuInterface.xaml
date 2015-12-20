@@ -23,7 +23,7 @@
 
             <Canvas Width="330" Height="110" Canvas.Left="236" Canvas.Top="255">
                 <Canvas.Background>
-                    <SolidColorBrush Color="White"/>
+                    <ImageBrush ImageSource="/SmallWorld;component/images/pages/mainMenu-QuitPopup.png" />
                 </Canvas.Background>
 
                 <Label Content="Are you sure you want" Canvas.Left="16" Canvas.Top="3" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />

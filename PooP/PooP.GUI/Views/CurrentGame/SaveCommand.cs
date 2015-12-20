@@ -45,7 +45,7 @@ namespace PooP.GUI.Views.CurrentGame
         /// <returns>true</returns>
         public bool CanExecute(Object o)
         {
-            return true;// !cgm.FileName.Equals(""); // TODO
+            return true;//!cgm.FileName.Equals(""); // TODO
         }
 
         /// <summary>
@@ -54,8 +54,15 @@ namespace PooP.GUI.Views.CurrentGame
         /// </summary>
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+                
+            }
         }
     }
 }
