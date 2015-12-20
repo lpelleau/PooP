@@ -32,5 +32,8 @@
         <Button Content="Move" Command="{Binding Move}" Canvas.Left="200" Canvas.Top="568" Width="75"/>
         <Button Content="Attack" Command="{Binding Attack}" Canvas.Left="280" Canvas.Top="568" Width="75"/>
         <Button Content="End turn" Command="{Binding EndTurn}" Canvas.Left="360" Canvas.Top="568" Width="75"/>
+        <TextBlock Name="TileInfo" Text="No tile selected
+                   
+                   Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974"/>
     </Canvas>
 </Page>
