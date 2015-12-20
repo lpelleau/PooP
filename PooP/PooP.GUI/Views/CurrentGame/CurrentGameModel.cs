@@ -637,7 +637,7 @@ namespace PooP.GUI.Views.CurrentGame
             get
             {
                 switch (GameBuilder.CURRENTGAME.Players[0].Race.GetType().Name)
-                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                {
                     case "Elf": return "Lucida Calligraphy";
                     case "Human": return "Engravers MT";
                     case "Orc": return "Copperplate Gothic Light";
@@ -651,7 +651,7 @@ namespace PooP.GUI.Views.CurrentGame
             get
             {
                 switch (GameBuilder.CURRENTGAME.Players[1].Race.GetType().Name)
-                {            // ENGRAVERS, LUCIDA CALLIG, Copperplate Gothic Light
+                {
                     case "Elf": return "Lucida Calligraphy";
                     case "Human": return "Engravers MT";
                     case "Orc": return "Copperplate Gothic Light";
@@ -679,6 +679,14 @@ namespace PooP.GUI.Views.CurrentGame
                     new Uri(UNITS_PATH
                         + GameBuilder.CURRENTGAME.Players[1].Race.GetType().Name
                         + UNITS_EXT, UriKind.Relative))) { Opacity = 0.6, Stretch = Stretch.UniformToFill };
+            }
+        }
+
+        public string RemainingTurns
+        {
+            get
+            {
+                return "Remaining turns : " + GameBuilder.CURRENTGAME.NumberOfTurns;
             }
         }
     }

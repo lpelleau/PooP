@@ -85,6 +85,9 @@ namespace PooP.Core.Implementation.Commands
             }
 
             MovedUnit.MovePoints -= cost;
+
+            UndoableImpl.DoneCommands.Push(this);
+            UndoableImpl.UndoneCommands.Clear();
         }
 
         /// <summary>

@@ -30,11 +30,12 @@
         <Button Content="Button" Command="{Binding Save}" Canvas.Left="568" Canvas.Top="568" Width="75"/>
         <ListBox x:Name="UnitsP1" Background="{Binding P2RaceImage}" Height="326" Canvas.Right="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
         <Button Name="MoveOrAttack" Content="Move" Command="{Binding Move}" Canvas.Left="200" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="End turn" Command="{Binding EndTurn}" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="End turn" Name="EndTurn" Command="{Binding EndTurn}" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
         <TextBlock Name="TileInfo" Text="No tile selected
                    
                    Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974" Focusable="False" IsEnabled="False"/>
         <Label Content="{Binding P1Name}" FontFamily="{Binding P1Font}" Canvas.Left="23" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
         <Label Content="{Binding P2Name}" FontFamily="{Binding P2Font}" Canvas.Right="23" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label Name="RemainingTurns"  Content="{Binding RemainingTurns}" Canvas.Left="200" Canvas.Top="10" Width="400" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center" FontSize="16" Height="33"/>
     </Canvas>
 </Page>

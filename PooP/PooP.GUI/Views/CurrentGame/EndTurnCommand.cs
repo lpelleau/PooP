@@ -1,10 +1,12 @@
 ﻿using PooP.Core.Implementation.Commands;
+using PooP.Core.Implementation.Games;
 using PooP.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PooP.GUI.Views.CurrentGame
@@ -38,6 +40,11 @@ namespace PooP.GUI.Views.CurrentGame
             {
                 MessageBox.Show(((Player)EndTurn.winner).Name + " a gagné !");
                 cgm.window.CloseCurrent();
+            }
+            ((Label)cgm.page.FindName("RemainingTurns")).Content = "Remaining turns : " + GameBuilder.CURRENTGAME.NumberOfTurns;
+            if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)
+            {
+                ((Button)cgm.page.FindName("EndTurn")).Content = "End game";
             }
         }
     }

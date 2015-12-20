@@ -57,6 +57,9 @@ namespace PooP.Core.Implementation.Commands
             // Consumes the needed move points
             
             MovedUnit.MovePoints -= cost;
+
+            UndoableImpl.DoneCommands.Push(this);
+            UndoableImpl.UndoneCommands.Clear();
         }
 
         /// <summary>

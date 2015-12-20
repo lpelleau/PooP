@@ -32,6 +32,7 @@ namespace PooP.Core.Implementation.Commands
         public void execute()
         {
             UndoableImpl.DoneCommands.Clear();
+            UndoableImpl.UndoneCommands.Clear();
             GameBuilder.CURRENTGAME.NumberOfTurns--;
             GameBuilder.CURRENTGAME.IndexOfCurrentPlayer++;
             
