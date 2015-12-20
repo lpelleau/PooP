@@ -34,15 +34,6 @@
             </Image.RenderTransform>
         </Image>
         <Label Content="Player 1" Canvas.Left="30" Canvas.Top="117" FontSize="24" FontWeight="Bold" FontFamily="Rockwell Extra Bold" />
-        <RadioButton x:Name="Elf1" Content="Elf" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
-            <RadioButton.CommandParameter>
-                <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
-                    <Binding ElementName="Elf1" Path="Name"/>
-                    <Binding ElementName="ImRace1"/>
-                    <Binding ElementName="NameP1"/>
-                </MultiBinding>
-            </RadioButton.CommandParameter>
-        </RadioButton>
         <RadioButton x:Name="Human1" Content="Human" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="179" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D" RenderTransformOrigin="0,0.5">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
@@ -61,16 +52,17 @@
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
-        <Label Content=" Player 2" FontWeight="Bold" Height="38" Width="136" Canvas.Left="642" Canvas.Top="117" FontSize="24" FontFamily="Rockwell Extra Bold" />
-        <RadioButton x:Name="Elf2" Content="Elf" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
+        <RadioButton x:Name="Elf1" Content="Elf" GroupName="Race1" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf2}" Command="{Binding ChangeRace1}" Background="{x:Null}" Canvas.Left="30" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
-                    <Binding ElementName="Elf2" Path="Name"/>
-                    <Binding ElementName="ImRace2"/>
-                    <Binding ElementName="NameP2"/>
+                    <Binding ElementName="Elf1" Path="Name"/>
+                    <Binding ElementName="ImRace1"/>
+                    <Binding ElementName="NameP1"/>
                 </MultiBinding>
             </RadioButton.CommandParameter>
         </RadioButton>
+        <Label Content=" Player 2" FontWeight="Bold" Height="38" Width="136" Canvas.Left="642" Canvas.Top="117" FontSize="24" FontFamily="Rockwell Extra Bold" />
+        
         <RadioButton x:Name="Human2" Content="Human" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="179" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
@@ -84,6 +76,15 @@
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
                     <Binding ElementName="Orc2" Path="Name"/>
+                    <Binding ElementName="ImRace2"/>
+                    <Binding ElementName="NameP2"/>
+                </MultiBinding>
+            </RadioButton.CommandParameter>
+        </RadioButton>
+        <RadioButton x:Name="Elf2" Content="Elf" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Elf1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="241" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
+            <RadioButton.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
+                    <Binding ElementName="Elf2" Path="Name"/>
                     <Binding ElementName="ImRace2"/>
                     <Binding ElementName="NameP2"/>
                 </MultiBinding>

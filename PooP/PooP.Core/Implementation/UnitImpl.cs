@@ -38,7 +38,7 @@ namespace PooP.Core.Implementation
             Race = r;
             LifePoints = r.Life;
             Position = p;
-            MovePoints = 0;
+            MovePoints = 2.0;
         }
 
         /// <summary>
@@ -184,10 +184,10 @@ namespace PooP.Core.Implementation
             {
                 // Try moving to another tile and test
                 List<double> possibleCosts = new List<double>();
-                Position[] TestedPaths = new Position[4] {  new Position(Start.XPosition + 1, Start.YPosition),
-                                                            new Position(Start.XPosition, Start.YPosition + 1),
-                                                            new Position(Start.XPosition - 1, Start.YPosition),
-                                                            new Position(Start.XPosition, Start.YPosition - 1)};
+                Position[] TestedPaths = new Position[4] {  new Position(Math.Min(Start.XPosition + 1,GameBuilder.CURRENTGAME.Map.Width), Start.YPosition),
+                                                            new Position(Start.XPosition, Math.Min(Start.YPosition + 1,GameBuilder.CURRENTGAME.Map.Height)),
+                                                            new Position(Math.Max(Start.XPosition - 1,0), Start.YPosition),
+                                                            new Position(Start.XPosition, Math.Max(Start.YPosition - 1,0))};
                 /*
                  * Start (S) and Target (T) are like :
                  *  S   A  ... ...
@@ -258,8 +258,8 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit can move to the given position, false otherwise</returns>
         public bool canMoveTo(Position Target)
         {
-            return (Target.XPosition == Position.XPosition || Target.YPosition == Position.YPosition)
-                && (getMoveCost(Target) <= MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water")
+            return (!Target.Equals(Position)
+                && getMoveCost(Target) <= MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water")
                 && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target, Race);
         }
 

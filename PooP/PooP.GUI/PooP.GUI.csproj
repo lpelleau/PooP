@@ -75,8 +75,12 @@
     </ApplicationDefinition>
     <Compile Include="audio\Sound.cs" />
     <Compile Include="Views\Credits\BackCommand.cs" />
+    <Compile Include="Views\CurrentGame\AttackUnitCommand.cs" />
+    <Compile Include="Views\CurrentGame\EndTurnCommand.cs" />
+    <Compile Include="Views\CurrentGame\MoveUnitCommand.cs" />
     <Compile Include="Views\CurrentGame\SaveCommand.cs" />
     <Compile Include="Views\CurrentGame\BackCommand.cs" />
+    <Compile Include="Views\CurrentGame\SelectUnitCommand.cs" />
     <Compile Include="Views\FinishedGame\FinishedGameInterface.xaml.cs">
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
@@ -213,6 +217,9 @@
     </Content>
     <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
     <Resource Include="images\pages\mainMenu-QuitPopup.png" />
+    <Resource Include="images\races\elf_unit.png" />
+    <Resource Include="images\races\human_unit.png" />
+    <Resource Include="images\races\orc_unit.png" />
     <Resource Include="images\tileset\209.bmp" />
     <Resource Include="images\tileset\210.bmp" />
     <Resource Include="images\tileset\211.bmp" />
