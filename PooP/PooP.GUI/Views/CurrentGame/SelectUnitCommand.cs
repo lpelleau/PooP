@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
@@ -41,6 +42,9 @@ namespace PooP.GUI.Views.CurrentGame
             unitRect = (Rectangle)parameter;
             unitRef = unitRect.Name.ToString();
             SelectedUnit = GameBuilder.CURRENTGAME.Players[Int16.Parse(unitRef.Substring(unitRef.IndexOf("P") + 1, unitRef.IndexOf("U") - (unitRef.IndexOf("P") + 1)))].Race.Units[Int16.Parse(unitRef.Substring(unitRef.IndexOf("U") + 1))];
+            cgm.unitBo.Visibility = Visibility.Visible;
+            Grid.SetColumn(cgm.unitBo, Grid.GetColumn(unitRect));
+            Grid.SetRow(cgm.unitBo, Grid.GetRow(unitRect));
         }
     }
 }

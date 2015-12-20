@@ -30,6 +30,7 @@ namespace PooP.GUI.Views.CurrentGame
 
         private Grid map;
         public Border bo;
+        public Border unitBo;
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -428,6 +429,14 @@ namespace PooP.GUI.Views.CurrentGame
             bo = new Border();
             bo.BorderBrush = Brushes.Red;
             bo.BorderThickness = new Thickness(2);
+
+            // Create a border element to show the selected unit's tile
+            unitBo = new Border();
+            unitBo.BorderBrush = Brushes.Black;
+            unitBo.BorderThickness = new Thickness(2);
+            unitBo.RenderTransformOrigin = new Point(0.5, 0.5);
+            unitBo.RenderTransform = new ScaleTransform(0.85, 0.85);
+            map.Children.Add(unitBo);
 
             DrawUnits();
         }
