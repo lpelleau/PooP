@@ -19,7 +19,7 @@ namespace PooP.GUI.Views.Credits
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class CreditsInterface : Page
+    public partial class CreditsInterface : Page, PageInterface
     {
         private WindowInterface window;
         public CreditsInterface(WindowInterface window)
@@ -27,6 +27,19 @@ namespace PooP.GUI.Views.Credits
             InitializeComponent();
             DataContext = new CreditsModel(window);
             this.window = window;
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)

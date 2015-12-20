@@ -19,7 +19,7 @@ namespace PooP.GUI.Views.MainMenu
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainMenuInterface : Page
+    public partial class MainMenuInterface : Page, PageInterface
     {
         private WindowInterface window;
         public MainMenuInterface(WindowInterface window)
@@ -27,6 +27,19 @@ namespace PooP.GUI.Views.MainMenu
             InitializeComponent();
             DataContext = new MainMenuModel(window, this);
             this.window = window;
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)
@@ -42,14 +55,7 @@ namespace PooP.GUI.Views.MainMenu
         private void SoundClick(object sender, MouseButtonEventArgs e)
         {
             Sound.INSTANCE.ToogleMusic();
-            if (Sound.INSTANCE.isOn())
-            {
-                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
-            }
+            OnReload();
         }
     }
 }

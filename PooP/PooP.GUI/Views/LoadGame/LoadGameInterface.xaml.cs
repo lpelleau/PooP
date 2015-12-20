@@ -19,7 +19,7 @@ namespace PooP.GUI.Views.LoadGame
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class LoadGameInterface : Page
+    public partial class LoadGameInterface : Page, PageInterface
     {
         private WindowInterface window;
 
@@ -28,6 +28,19 @@ namespace PooP.GUI.Views.LoadGame
             InitializeComponent();
             this.window = window;
             DataContext = new LoadGameModel(window, this);
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)

@@ -90,6 +90,7 @@
     <Compile Include="Ressources\SaveChoser.cs" />
     <Compile Include="Views\MainMenu\AbortQuitCommand.cs" />
     <Compile Include="Views\MainMenu\AskQuitCommand.cs" />
+    <Compile Include="Views\PageInterface.cs" />
     <Compile Include="Views\SplashScreen\SplashScreenInterface.xaml.cs">
       <DependentUpon>SplashScreenInterface.xaml</DependentUpon>
     </Compile>

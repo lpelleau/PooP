@@ -21,7 +21,7 @@ namespace PooP.GUI.Views.SplashScreen
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class SplashScreenInterface : Page
+    public partial class SplashScreenInterface : Page, PageInterface
     {
         private WindowInterface window;
 
@@ -32,6 +32,11 @@ namespace PooP.GUI.Views.SplashScreen
             window.KeyDown += new KeyEventHandler(KeyAction);
             KeyDown += new KeyEventHandler(KeyAction);
             MouseDown += new MouseButtonEventHandler(MouseAction);
+        }
+
+        public void OnReload()
+        {
+
         }
 
         ~SplashScreenInterface()

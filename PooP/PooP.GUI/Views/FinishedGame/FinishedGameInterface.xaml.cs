@@ -19,13 +19,26 @@ namespace PooP.GUI.Views.FinishedGame
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class FinishedGameInterface : Page
+    public partial class FinishedGameInterface : Page, PageInterface
     {
         private WindowInterface window;
         public FinishedGameInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)

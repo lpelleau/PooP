@@ -63,7 +63,7 @@ namespace PooP.GUI.Views.WindowApp
         public void OpenCredits()
         {
             frame.Content = credits;
-
+            ((PageInterface)credits).OnReload();
             flow.Push(credits);
         }
 
@@ -73,7 +73,7 @@ namespace PooP.GUI.Views.WindowApp
             {
                 flow.Pop();
 
-                CurrentGameInterface page = new CurrentGameInterface(this);
+                Page page = new CurrentGameInterface(this);
                 frame.Content = page;
 
                 flow.Push(page);
@@ -86,7 +86,7 @@ namespace PooP.GUI.Views.WindowApp
             {
                 flow.Pop();
 
-                FinishedGameInterface page = new FinishedGameInterface(this);
+                Page page = new FinishedGameInterface(this);
                 frame.Content = page;
 
                 flow.Push(page);
@@ -100,14 +100,14 @@ namespace PooP.GUI.Views.WindowApp
                 flow.Pop();
 
                 frame.Content = mainMenu;
-
+                ((PageInterface)mainMenu).OnReload();
                 flow.Push(mainMenu);
             }
         }
 
         public void OpenLoadGame()
         {
-            LoadGameInterface page = new LoadGameInterface(this);
+            Page page = new LoadGameInterface(this);
             frame.Content = page;
 
             flow.Push(page);
@@ -115,7 +115,7 @@ namespace PooP.GUI.Views.WindowApp
 
         public void OpenNewGame()
         {
-            NewGameInterface page = new NewGameInterface(this);
+            Page page = new NewGameInterface(this);
             frame.Content = page;
 
             flow.Push(page);
@@ -124,7 +124,7 @@ namespace PooP.GUI.Views.WindowApp
         public void OpenTutorial()
         {
             frame.Content = tutorial;
-
+            ((PageInterface)tutorial).OnReload();
             flow.Push(tutorial);
         }
 
@@ -140,6 +140,7 @@ namespace PooP.GUI.Views.WindowApp
             else
             {
                 frame.Content = flow.Peek();
+                ((PageInterface)flow.Peek()).OnReload();
             }
         }
 

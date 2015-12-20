@@ -13,7 +13,7 @@ namespace PooP.GUI.Views.NewGame
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class NewGameInterface : Page
+    public partial class NewGameInterface : Page, PageInterface
     {
         private WindowInterface window;
         public NewGameInterface(WindowInterface window)
@@ -21,6 +21,19 @@ namespace PooP.GUI.Views.NewGame
             InitializeComponent();
             this.window = window;
             DataContext = new NewGameModel(window);
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)

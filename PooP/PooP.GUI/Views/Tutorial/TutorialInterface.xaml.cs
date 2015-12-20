@@ -19,7 +19,7 @@ namespace PooP.GUI.Views.Tutorial
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class TutorialInterface : Page
+    public partial class TutorialInterface : Page, PageInterface
     {
         private WindowInterface window;
         private List<Canvas> tips;
@@ -34,6 +34,20 @@ namespace PooP.GUI.Views.Tutorial
             tips = new List<Canvas>();
             tips.Add((Canvas)FindName("tipN0"));
             tips.Add((Canvas)FindName("tipN1"));
+
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         public List<Canvas> getTips()

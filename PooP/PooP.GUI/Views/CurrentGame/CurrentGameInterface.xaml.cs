@@ -19,14 +19,27 @@ namespace PooP.GUI.Views.CurrentGame
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class CurrentGameInterface : Page
+    public partial class CurrentGameInterface : Page, PageInterface
     {
         private WindowInterface window;
         public CurrentGameInterface(WindowInterface window)
         {
             InitializeComponent();
             this.window = window;
-            DataContext = new CurrentGameModel(window,this);
+            DataContext = new CurrentGameModel(window, this);
+            OnReload();
+        }
+
+        public void OnReload()
+        {
+            if (Sound.INSTANCE.isOn())
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)
