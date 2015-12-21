@@ -380,10 +380,16 @@ namespace PooP.GUI.Views.CurrentGame
             this.window = window;
             this.page = page;
             FileName = GameBuilder.CURRENTGAME.OpenedFile;
-            FileName = FileName.Substring(FileName.LastIndexOf("\\") + 1);
-            try {
-                FileName = FileName.Substring(0, GameBuilder.CURRENTGAME.OpenedFile.Count() - 5);
-            } catch(Exception) {
+            if (FileName != null)
+            {
+                FileName = FileName.Substring(FileName.LastIndexOf("\\") + 1);
+                try
+                {
+                    FileName = FileName.Substring(0, GameBuilder.CURRENTGAME.OpenedFile.Count() - 5);
+                }
+                catch (Exception)
+                {
+                }
             }
             map = (Grid)page.FindName("Map");
 
