@@ -26,6 +26,7 @@ namespace PooP.GUI.Views.FinishedGame
         {
             InitializeComponent();
             this.window = window;
+            DataContext = new FinishedGameModel(window, this);
             OnReload();
         }
 

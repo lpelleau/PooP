@@ -38,8 +38,7 @@ namespace PooP.GUI.Views.CurrentGame
             et.execute();
             if (EndTurn.winner != null)
             {
-                MessageBox.Show(((Player)EndTurn.winner).Name + " a gagné !");
-                cgm.window.CloseCurrent();
+                cgm.window.CurrentToFinishedGame();
             }
             ((Label)cgm.page.FindName("RemainingTurns")).Content = "Remaining turns : " + GameBuilder.CURRENTGAME.NumberOfTurns;
             if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)

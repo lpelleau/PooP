@@ -19,5 +19,15 @@
         </Rectangle>
         <Label Content="Finished game" Canvas.Left="228" Canvas.Top="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
+        <Button x:Name="back_button" Content="MENU" Command="{Binding Back}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22"/>
+        <Label x:Name="Winner" Canvas.Left="154" Canvas.Top="208" FontSize="24" FontFamily="SimSun" Height="48" Width="492" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="P1Stats" Content=", Player 1 Statistics:" Canvas.Left="154" Canvas.Top="308" Width="244" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="P2Stats" Content=", Player 2 Statistics:" Canvas.Left="403" Canvas.Top="308" Width="243" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="R1" Content="Race: " Canvas.Left="154" Canvas.Top="356" HorizontalAlignment="Left" Width="244"/>
+        <Label x:Name="R2" Content="Race: " Canvas.Left="402" Canvas.Top="356" HorizontalAlignment="Left" Width="244"/>
+        <Label x:Name="VP1" Content="Victory points: " Canvas.Left="154" Canvas.Top="387" HorizontalAlignment="Left" Width="244"/>
+        <Label x:Name="VP2" Content="Victory points: " Canvas.Left="402" Canvas.Top="387" HorizontalAlignment="Left" Width="244"/>
+        <Label x:Name="UL1" Content="Units left: " Canvas.Left="154" Canvas.Top="418" HorizontalAlignment="Left" Width="244"/>
+        <Label x:Name="UL2" Content="Units left: " Canvas.Left="402" Canvas.Top="418" HorizontalAlignment="Left" Width="244"/>
     </Canvas>
 </Page>
