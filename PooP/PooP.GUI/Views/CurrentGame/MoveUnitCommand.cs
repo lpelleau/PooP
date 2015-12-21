@@ -14,10 +14,12 @@ namespace PooP.GUI.Views.CurrentGame
     class MoveUnitCommand : ICommand
     {
         private CurrentGameModel currentGameModel;
+        private PageInterface page;
 
-        public MoveUnitCommand(CurrentGameModel currentGameModel)
+        public MoveUnitCommand(CurrentGameModel currentGameModel, PageInterface page)
         {
             this.currentGameModel = currentGameModel;
+            this.page = page;
         }
 
 
@@ -40,6 +42,7 @@ namespace PooP.GUI.Views.CurrentGame
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
             currentGameModel.DrawUnits();
+            page.OnReload();
         }
     }
 }

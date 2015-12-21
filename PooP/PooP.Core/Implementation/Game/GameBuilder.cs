@@ -34,16 +34,6 @@ namespace PooP.Core.Implementation.Games
         }
 
         /// <summary>
-        /// The name of the file in which the game is saved
-        /// By default, it is null
-        /// </summary>
-        public string OpenedFile
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// The Map of the game
         /// </summary>
         public Map Map
@@ -79,7 +69,7 @@ namespace PooP.Core.Implementation.Games
             Map m = createMap();
             CURRENTGAME.Map = m;
             CURRENTGAME.FirstPlayer.Race.Units.ForEach(u => u.MovePoints = 2);
-            OpenedFile = null;
+            CURRENTGAME.OpenedFile = null;
             UndoableImpl.DoneCommands = new Stack<Command>();
             UndoableImpl.UndoneCommands = new Stack<Command>();
             EndTurn.winner = null;

@@ -23,6 +23,16 @@ namespace PooP.Core.Interfaces.Games
         Player getWinner();
 
         /// <summary>
+        /// The name of the file in which the game is saved
+        /// By default, it is null
+        /// </summary>
+        string OpenedFile
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets the best moves
         /// </summary>
         /// <returns>Possible best moves</returns>

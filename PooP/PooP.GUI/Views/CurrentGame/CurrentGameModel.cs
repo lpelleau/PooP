@@ -1,20 +1,23 @@
 ﻿using PooP.Core.Implementation.Games;
 using PooP.Core.Interfaces;
-using PooP.Core.Interfaces.Maps;
 using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using PooP.Core.Implementation.Games;
+using PooP.Core.Interfaces;
+using PooP.Core.Interfaces.Maps;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Interactivity;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PooP.GUI.Views.CurrentGame
 {
@@ -376,7 +379,12 @@ namespace PooP.GUI.Views.CurrentGame
         {
             this.window = window;
             this.page = page;
-            FileName = "";
+            FileName = GameBuilder.CURRENTGAME.OpenedFile;
+            FileName = FileName.Substring(FileName.LastIndexOf("\\") + 1);
+            try {
+                FileName = FileName.Substring(0, GameBuilder.CURRENTGAME.OpenedFile.Count() - 5);
+            } catch(Exception) {
+            }
             map = (Grid)page.FindName("Map");
 
             DrawMap();
@@ -597,7 +605,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             get
             {
-                return new MoveUnitCommand(this);
+                return new MoveUnitCommand(this, page);
             }
         }
 
@@ -613,7 +621,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             get
             {
-                return new AttackUnitCommand(this);
+                return new AttackUnitCommand(this, page);
             }
         }
 

@@ -24,12 +24,14 @@
             </Rectangle.Fill>
         </Rectangle>
 
+        <Image x:Name="UndoStyle" Height="41" Canvas.Left="26" Canvas.Top="14" Width="40"/>
         <Rectangle Height="41" Canvas.Left="26" Width="40" MouseEnter="SoundHoverI" MouseDown="UndoClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
             </Rectangle.Fill>
         </Rectangle>
 
+        <Image x:Name="RedoStyle" Height="41" Canvas.Left="82" Canvas.Top="14" Width="40"/>
         <Rectangle Height="41" Canvas.Left="82" Width="41" MouseEnter="SoundHoverI" MouseDown="RedoClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>

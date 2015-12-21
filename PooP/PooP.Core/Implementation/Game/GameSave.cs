@@ -56,6 +56,7 @@ namespace PooP.Core.Implementation.Games
             using (Stream stream = new FileStream(SaveFile + EXTENSION, FileMode.Open, FileAccess.Read, FileShare.None))
             {
                 GameBuilder.createGame((GameData) formatter.Deserialize(stream));
+                GameBuilder.CURRENTGAME.OpenedFile = SaveFile;
             }
         }
     }

@@ -12,10 +12,12 @@ namespace PooP.GUI.Views.CurrentGame
     class AttackUnitCommand : ICommand
     {
         private CurrentGameModel cgm;
+        private PageInterface page;
 
-        public AttackUnitCommand(CurrentGameModel currentGameModel)
+        public AttackUnitCommand(CurrentGameModel currentGameModel, PageInterface page)
         {
             this.cgm = currentGameModel;
+            this.page = page;
         }
 
         public bool CanExecute(object parameter)
@@ -41,6 +43,7 @@ namespace PooP.GUI.Views.CurrentGame
             {
                 cgm.RemoveUnit(atk.Defender);
             }
+            page.OnReload();
         }
     }
 }

@@ -41,6 +41,24 @@ namespace PooP.GUI.Views.CurrentGame
             {
                 ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
             }
+
+            if (UndoableImpl.DoneCommands.Count == 0)
+            {
+                ((Image)FindName("UndoStyle")).Source = new BitmapImage(new Uri("../../images/pages/undo.png", UriKind.Relative));
+            }
+            else
+            {
+                ((Image)FindName("UndoStyle")).Source = new BitmapImage(new Uri("../../images/pages/undoEnable.png", UriKind.Relative));
+            }
+
+            if (UndoableImpl.UndoneCommands.Count == 0)
+            {
+                ((Image)FindName("RedoStyle")).Source = new BitmapImage(new Uri("../../images/pages/redo.png", UriKind.Relative));
+            }
+            else
+            {
+                ((Image)FindName("RedoStyle")).Source = new BitmapImage(new Uri("../../images/pages/redoEnable.png", UriKind.Relative));
+            }
         }
 
         private void SoundHoverI(object sender, MouseEventArgs e)
@@ -75,12 +93,14 @@ namespace PooP.GUI.Views.CurrentGame
         {
             UndoableImpl.undo();
             ((CurrentGameModel)DataContext).DrawUnits();
+            OnReload();
         }
 
         private void RedoClick(object sender, MouseButtonEventArgs e)
         {
             UndoableImpl.redo();
             ((CurrentGameModel)DataContext).DrawUnits();
+            OnReload();
         }
     }
 }

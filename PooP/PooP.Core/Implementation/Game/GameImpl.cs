@@ -107,6 +107,16 @@ namespace PooP.Core.Implementation.Games
         }
 
         /// <summary>
+        /// The name of the file in which the game is saved
+        /// By default, it is null
+        /// </summary>
+        public string OpenedFile
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets the player that is playing
         /// </summary>
         /// <returns></returns>
