@@ -542,6 +542,9 @@ namespace PooP.GUI.Views.CurrentGame
                 lb.ItemsSource = units;
             }
             unitBo.Visibility = Visibility.Hidden;
+
+            if (SelectUnitCommand.unitRect != null)
+                SelectTile(SelectUnitCommand.unitRect, null);
         }
 
         public ICommand AbortBack
