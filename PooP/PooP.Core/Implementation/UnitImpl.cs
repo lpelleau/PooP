@@ -184,8 +184,8 @@ namespace PooP.Core.Implementation
             {
                 // Try moving to another tile and test
                 List<double> possibleCosts = new List<double>();
-                Position[] TestedPaths = new Position[4] {  new Position(Math.Min(Start.XPosition + 1,GameBuilder.CURRENTGAME.Map.Width), Start.YPosition),
-                                                            new Position(Start.XPosition, Math.Min(Start.YPosition + 1,GameBuilder.CURRENTGAME.Map.Height)),
+                Position[] TestedPaths = new Position[4] {  new Position(Math.Min(Start.XPosition + 1,GameBuilder.CURRENTGAME.Map.Width-1), Start.YPosition),
+                                                            new Position(Start.XPosition, Math.Min(Start.YPosition + 1,GameBuilder.CURRENTGAME.Map.Height-1)),
                                                             new Position(Math.Max(Start.XPosition - 1,0), Start.YPosition),
                                                             new Position(Start.XPosition, Math.Max(Start.YPosition - 1,0))};
                 /*
