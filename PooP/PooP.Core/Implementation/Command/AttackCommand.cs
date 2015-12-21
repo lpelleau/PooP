@@ -70,7 +70,7 @@ namespace PooP.Core.Implementation.Commands
                 Damage = (MovedUnit.Race.Attack - Defender.Race.Defence) * randGenerator.Next(50,150)/100;
                 Defender.LifePoints -= Damage;
 
-                if (Defender.LifePoints < 0)
+                if (Defender.LifePoints <= 0)
                 {
                     // Move the attacker to the tile
                     MovedUnit.Position = Target;
@@ -120,7 +120,29 @@ namespace PooP.Core.Implementation.Commands
         /// </summary>
         public void redo()
         {
-            this.execute();
+            // The attacker wins the battle
+            if (AttackSuccess)
+            {
+                // The damage are (Attack-Defence)+/-50%
+                Defender.LifePoints -= Damage;
+
+                if (Defender.LifePoints <= 0)
+                {
+                    // Move the attacker to the tile
+                    MovedUnit.Position = Target;
+                }
+            }
+            // The defender wins
+            else
+            {
+                // The damage are (Attack-Defence)+/-50%
+                MovedUnit.LifePoints -= Damage;
+            }
+
+            MovedUnit.MovePoints -= cost;
+
+            UndoableImpl.DoneCommands.Push(this);
+            UndoableImpl.UndoneCommands.Clear();
         }
     }
 }
