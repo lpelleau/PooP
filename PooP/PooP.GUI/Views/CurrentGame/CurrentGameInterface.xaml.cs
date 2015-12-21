@@ -1,4 +1,5 @@
-﻿using PooP.GUI.Audio;
+﻿using PooP.Core.Implementation.Commands;
+using PooP.GUI.Audio;
 using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
@@ -72,12 +73,14 @@ namespace PooP.GUI.Views.CurrentGame
 
         private void UndoClick(object sender, MouseButtonEventArgs e)
         {
-            // TODO Call undo stuff
+            UndoableImpl.undo();
+            ((CurrentGameModel)DataContext).DrawUnits();
         }
 
         private void RedoClick(object sender, MouseButtonEventArgs e)
         {
-            // TODO Call undo stuff
+            UndoableImpl.redo();
+            ((CurrentGameModel)DataContext).DrawUnits();
         }
     }
 }
