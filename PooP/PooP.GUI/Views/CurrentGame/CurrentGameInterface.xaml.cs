@@ -64,5 +64,20 @@ namespace PooP.GUI.Views.CurrentGame
                 ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
             }
         }
+
+        private void HelpClick(object sender, MouseButtonEventArgs e)
+        {
+            window.OpenTutorial();
+        }
+
+        private void UndoClick(object sender, MouseButtonEventArgs e)
+        {
+            // TODO Call undo stuff
+        }
+
+        private void RedoClick(object sender, MouseButtonEventArgs e)
+        {
+            // TODO Call undo stuff
+        }
     }
 }

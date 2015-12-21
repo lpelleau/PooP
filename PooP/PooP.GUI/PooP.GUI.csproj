@@ -75,6 +75,8 @@
     </ApplicationDefinition>
     <Compile Include="audio\Sound.cs" />
     <Compile Include="Views\Credits\BackCommand.cs" />
+    <Compile Include="Views\CurrentGame\AbortBackCommand.cs" />
+    <Compile Include="Views\CurrentGame\AskBackCommand.cs" />
     <Compile Include="Views\CurrentGame\AttackUnitCommand.cs" />
     <Compile Include="Views\CurrentGame\EndTurnCommand.cs" />
     <Compile Include="Views\CurrentGame\MoveUnitCommand.cs" />
@@ -86,6 +88,7 @@
       <DependentUpon>FinishedGameInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FinishedGame\FinishedGameModel.cs" />
+    <Compile Include="Views\LoadGame\DeleteCommand.cs" />
     <Compile Include="Views\LoadGame\RefreshCommand.cs" />
     <Compile Include="Views\LoadGame\BackCommand.cs" />
     <Compile Include="Ressources\SaveChoser.cs" />

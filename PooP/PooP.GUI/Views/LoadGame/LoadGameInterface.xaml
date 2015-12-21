@@ -26,10 +26,11 @@
         </Rectangle>
 
         <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-        <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="345" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="345" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" BorderThickness="0" Foreground="#FF321D0B" FontFamily="Sitka Display"/>
         <Button x:Name="refresh_button" Content="REFRESH" Command="{Binding Refresh}" Canvas.Left="513" Canvas.Top="497" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Button x:Name="start_button" Content="START" Command="{Binding Load}" Canvas.Left="550" Canvas.Top="532" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
         <Label Content="Load game" Canvas.Left="271" Canvas.Top="114" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
+        <Button Content="DELETE" Command="{Binding Delete}" Canvas.Left="531" Canvas.Top="216" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
     </Canvas>
 </Page>

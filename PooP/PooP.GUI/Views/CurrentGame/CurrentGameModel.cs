@@ -544,6 +544,22 @@ namespace PooP.GUI.Views.CurrentGame
             unitBo.Visibility = Visibility.Hidden;
         }
 
+        public ICommand AbortBack
+        {
+            get
+            {
+                return new AbortBackCommand(page);
+            }
+        }
+
+        public ICommand AskBack
+        {
+            get
+            {
+                return new AskBackCommand(page);
+            }
+        }
+
         public ICommand Back
         {
             get

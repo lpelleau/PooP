@@ -52,5 +52,10 @@ namespace PooP.GUI.Views.LoadGame
             //File.Create(PATH + "\\lsdflsdfk" + GameSave.EXTENSION);   
             GameSave.INSTANCE.save(PATH + file + GameSave.EXTENSION);
         }
+
+        public void DeleteGame(string file)
+        {
+            File.Delete(PATH + file + GameSave.EXTENSION);   
+        }
     }
 }

@@ -14,7 +14,7 @@
 
     <Page.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding Launch}" />
-        <KeyBinding Key="Escape" Command="{Binding Quit}" />
+        <KeyBinding Key="Escape" Command="{Binding Back}" />
     </Page.InputBindings>
 
     <Canvas Height="600" Width="800">

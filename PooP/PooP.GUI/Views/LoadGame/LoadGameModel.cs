@@ -28,6 +28,14 @@ namespace PooP.GUI.Views.LoadGame
             }
         }
 
+        public ICommand Delete
+        {
+            get
+            {
+                return new DeleteCommand(page);
+            }
+        }
+
         public ICommand Load
         {
             get
