@@ -68,7 +68,15 @@
                  
                  
                  
-                 Music: Oursvince - Magic Spell" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
+                 Music: Oursvince - Magic Spell
+                 
+                 
+                 
+                 Tiles: RPG Maker
+                 
+                 
+                 
+                 Units and races - Different fan arts" TextAlignment="Center" FontSize="18" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" BorderBrush="{x:Null}" FontFamily="Rockwell Extra Bold"/>
         <Label Content="Credits" Canvas.Left="312" Canvas.Top="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
     </Canvas>
 </Page>
