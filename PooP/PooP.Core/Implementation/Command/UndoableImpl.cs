@@ -47,7 +47,6 @@ namespace PooP.Core.Implementation.Commands
             {
                 PooP.Core.Interfaces.Commands.Command LastCommand = UndoneCommands.Pop();
                 LastCommand.redo();
-                DoneCommands.Push(LastCommand);
             }
         }
     }

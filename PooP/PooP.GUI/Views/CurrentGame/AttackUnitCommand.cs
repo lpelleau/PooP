@@ -39,10 +39,6 @@ namespace PooP.GUI.Views.CurrentGame
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
             cgm.DrawUnits();
-            if (atk.Defender.LifePoints <= 0)
-            {
-                cgm.RemoveUnit(atk.Defender);
-            }
             page.OnReload();
         }
     }
