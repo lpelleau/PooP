@@ -45,6 +45,7 @@ namespace PooP.GUI.Views.CurrentGame
             {
                 ((Button)cgm.page.FindName("EndTurn")).Content = "End game";
             }
+            cgm.page.OnReload();
         }
     }
 }

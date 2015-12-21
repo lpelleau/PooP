@@ -36,6 +36,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             AttackCommand atk = new AttackCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(cgm.bo), Grid.GetRow(cgm.bo)));
             atk.execute();
+            UndoableImpl.UndoneCommands.Clear();
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
             cgm.DrawUnits();

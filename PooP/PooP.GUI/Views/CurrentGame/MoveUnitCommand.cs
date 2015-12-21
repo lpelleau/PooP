@@ -39,6 +39,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(currentGameModel.bo), Grid.GetRow(currentGameModel.bo)));
             mv.execute();
+            UndoableImpl.UndoneCommands.Clear();
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
             currentGameModel.DrawUnits();
