@@ -76,13 +76,21 @@ namespace PooP.GUI.Views.WindowApp
             originH = frame.Height;
             originW = frame.Width;
 
+            double stH = resolution.Height / originH;
+            double stW = resolution.Width / originW;
+            if (stH < stW)
+            {
+                stW = stH;
+            }
+            else
+            {
+                stH = stW;
+            }
             frame.Height = resolution.Height;
             frame.Width = resolution.Width;
 
             frame.RenderTransformOrigin = new Point(0.5, 0.5);
             TransformGroup tg = new TransformGroup();
-            double stH = frame.Height / originH;
-            double stW = frame.Width / originW;
             tg.Children.Add(new ScaleTransform(stW, stH));
             frame.RenderTransform = tg;
 
