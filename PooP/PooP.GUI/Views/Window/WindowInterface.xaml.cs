@@ -17,6 +17,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -29,6 +30,16 @@ namespace PooP.GUI.Views.WindowApp
     /// </summary>
     public partial class WindowInterface : Window
     {
+        private double originH;
+        private double originW;
+
+        private bool isfullScreen;
+
+        public bool IsfullScreen()
+        {
+            return isfullScreen;
+        }
+
         private Page splashScreen;
         private Page mainMenu;
         private Page tutorial;
@@ -38,6 +49,8 @@ namespace PooP.GUI.Views.WindowApp
         public WindowInterface()
         {
             InitializeComponent();
+
+            FullScreen();
 
             flow = new Stack<Page>();
 
@@ -51,6 +64,51 @@ namespace PooP.GUI.Views.WindowApp
             Sound.INSTANCE.StartMusic();
 
             Closing += OnWindowClosing;
+        }
+
+        public void FullScreen()
+        {
+            System.Drawing.Rectangle resolution = Screen.PrimaryScreen.Bounds;
+
+            Window window = (Window)FindName("Window");
+            Frame frame = (Frame)FindName("frame");
+
+            originH = frame.Height;
+            originW = frame.Width;
+
+            frame.Height = resolution.Height;
+            frame.Width = resolution.Width;
+
+            frame.RenderTransformOrigin = new Point(0.5, 0.5);
+            TransformGroup tg = new TransformGroup();
+            double stH = frame.Height / originH;
+            double stW = frame.Width / originW;
+            tg.Children.Add(new ScaleTransform(stW, stH));
+            frame.RenderTransform = tg;
+
+            window.WindowState = WindowState.Maximized;
+            window.Topmost = true;
+            window.Style = null;
+
+            isfullScreen = true;
+        }
+
+        public void SmallScreen()
+        {
+            Window window = (Window)FindName("Window");
+            Frame frame = (Frame)FindName("frame");
+
+            frame.Height = originH;
+            frame.Width = originW;
+
+            frame.RenderTransform = null;
+
+            window.WindowState = WindowState.Normal;
+            window.Topmost = true;
+            window.Style = null;
+            window.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            isfullScreen = false;
         }
 
         public void OpenSplashScreen()

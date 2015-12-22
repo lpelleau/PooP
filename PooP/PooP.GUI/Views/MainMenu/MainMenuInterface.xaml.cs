@@ -57,5 +57,19 @@ namespace PooP.GUI.Views.MainMenu
             Sound.INSTANCE.ToogleMusic();
             OnReload();
         }
+
+        private void FullscreenClick(object sender, MouseButtonEventArgs e)
+        {
+            if (window.IsfullScreen())
+            {
+                ((Image)FindName("FullscreenStyle")).Source = new BitmapImage(new Uri("../../images/pages/expand.png", UriKind.Relative));
+                window.SmallScreen();
+            }
+            else
+            {
+                ((Image)FindName("FullscreenStyle")).Source = new BitmapImage(new Uri("../../images/pages/contract.png", UriKind.Relative));
+                window.FullScreen();
+            }
+        }
     }
 }

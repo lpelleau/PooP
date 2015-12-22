@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
@@ -32,6 +33,42 @@ namespace PooP.GUI.Audio
             waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
 
             music = new SoundPlayer("../../audio/Oursvince_-_Magic_Spell.wav");
+        }
+
+        /// <summary>
+        /// Not working
+        /// </summary>
+        public void StartWalk()
+        {
+            music.SoundLocation = "../../audio/walk.wav";
+            //music.Stream = new Stream("../../audio/walk.wav");
+            music.LoadAsync();
+            music.Play();
+            //new Thread(Walk).Start();
+        }
+
+        private void Walk()
+        {
+            SoundPlayer sp = new SoundPlayer("../../audio/walk.wav");
+            sp.Play();
+        }
+
+        /// <summary>
+        /// Not working
+        /// </summary>
+        public void StartFight()
+        {
+            music.SoundLocation = "../../audio/fight.wav";
+            //music.Stream = new Stream("../../audio/fight.wav");
+            music.LoadAsync();
+            music.Play();
+            //new Thread(Fight).Start();
+        }
+
+        private void Fight()
+        {
+            SoundPlayer sp = new SoundPlayer("../../audio/fight.wav");
+            sp.Play();
         }
 
         public void StartMusic()
