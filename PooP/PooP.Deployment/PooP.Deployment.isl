@@ -343,9 +343,15 @@
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{54B7EA93-C03A-466B-B98E-C7BC63AB799D}</td><td>SMALLWORLD</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{39A199DE-CB12-427B-BF58-EADD1A741099}</td><td>AUDIO</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{60FCB87A-C58C-43FB-B17E-D89D489B0D92}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.Core.dll</td><td>{A11E6FB1-0EDE-46C4-AAAF-B68CFD6609B3}</td><td>SMALLWORLD</td><td>2</td><td/><td>poop.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.NativeLib.dll</td><td>{E2EA5A4C-7F3E-4769-B211-276052FDA8A6}</td><td>SMALLWORLD</td><td>2</td><td/><td>poop.nativelib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SmallWorld.exe</td><td>{DBA5739B-B443-4B14-AA6B-0940F8D0DB0A}</td><td>SMALLWORLD</td><td>2</td><td/><td>smallworld.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{4ED1AA0C-3FA6-4FD2-9D7D-BDA293B5DAF0}</td><td>BIN</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{701EB126-9C22-4858-BED7-E8C5A32CB003}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT5</td><td>{DD5D863E-65FE-465E-8A67-9F707BE1B95D}</td><td>IMAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT6</td><td>{13B06C3E-CAB3-4D18-A3A0-7CF5F8AF5648}</td><td>PAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT7</td><td>{AE270235-16EF-4FA5-B61B-82CD718CEE12}</td><td>RACES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{C96D3845-63BE-4674-9409-DD64285E4874}</td><td>TILESET</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.Core.dll2</td><td>{45A6E7C8-380F-49FA-8B49-F51127B15CA9}</td><td>X64</td><td>2</td><td/><td>poop.core.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.NativeLib.dll2</td><td>{2B250224-F83B-4CDF-BE26-CB15BCB206E5}</td><td>X64</td><td>2</td><td/><td>poop.nativelib.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SmallWorld.exe2</td><td>{026FE8B7-214A-43EC-84D8-2F452158B9B9}</td><td>X64</td><td>2</td><td/><td>smallworld.exe2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1055,16 +1061,28 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AUDIO</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>BIN</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>IMAGES</td><td>ISX_DEFAULTCOMPONENT5</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
-		<row><td>INSTALLDIR</td><td>PooP.Core.dll</td></row>
-		<row><td>INSTALLDIR</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>INSTALLDIR</td><td>SmallWorld.exe</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT4</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT5</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT6</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT7</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>INSTALLDIR</td><td>PooP.Core.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>SmallWorld.exe2</td></row>
+		<row><td>PAGES</td><td>ISX_DEFAULTCOMPONENT6</td></row>
+		<row><td>RACES</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>SMALLWORLD</td><td>ISX_DEFAULTCOMPONENT</td></row>
-		<row><td>SMALLWORLD</td><td>PooP.Core.dll</td></row>
-		<row><td>SMALLWORLD</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>SMALLWORLD</td><td>SmallWorld.exe</td></row>
+		<row><td>TILESET</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT4</td></row>
+		<row><td>X64</td><td>PooP.Core.dll2</td></row>
+		<row><td>X64</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>X64</td><td>SmallWorld.exe2</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1147,6 +1165,7 @@
 		<row><td>AUDIO</td><td>SMALLWORLD</td><td>audio</td><td/><td>0</td><td/></row>
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
+		<row><td>BIN</td><td>SMALLWORLD</td><td>bin</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
@@ -1155,6 +1174,7 @@
 		<row><td>FavoritesFolder</td><td>TARGETDIR</td><td>.:FAVORI~1|Favorites</td><td/><td>0</td><td/></row>
 		<row><td>FontsFolder</td><td>TARGETDIR</td><td>.:Fonts</td><td/><td>0</td><td/></row>
 		<row><td>GlobalAssemblyCache</td><td>TARGETDIR</td><td>.:Global~1|GlobalAssemblyCache</td><td/><td>0</td><td/></row>
+		<row><td>IMAGES</td><td>SMALLWORLD</td><td>images</td><td/><td>0</td><td/></row>
 		<row><td>INSA_RENNES</td><td>ProgramFilesFolder</td><td>INSARE~1|INSA Rennes</td><td/><td>0</td><td/></row>
 		<row><td>INSTALLDIR</td><td>ProgramFiles64Folder</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISCommonFilesFolder</td><td>CommonFilesFolder</td><td>Instal~1|InstallShield</td><td/><td>0</td><td/></row>
@@ -1164,13 +1184,16 @@
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MY_PRODUCT_NAME</td><td>INSA_RENNES</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
+		<row><td>NEW_FOLDER_1</td><td>TARGETDIR</td><td>NEW_FOLDER_1</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
+		<row><td>PAGES</td><td>IMAGES</td><td>pages</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
 		<row><td>PrimaryVolumePath</td><td>TARGETDIR</td><td>.:Primar~1|PrimaryVolumePath</td><td/><td>0</td><td/></row>
 		<row><td>PrintHoodFolder</td><td>TARGETDIR</td><td>.:PRINTH~1|PrintHood</td><td/><td>0</td><td/></row>
 		<row><td>ProgramFiles64Folder</td><td>TARGETDIR</td><td>.:Prog64~1|Program Files 64</td><td/><td>0</td><td/></row>
 		<row><td>ProgramFilesFolder</td><td>TARGETDIR</td><td>.:PROGRA~1|program files</td><td/><td>0</td><td/></row>
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
+		<row><td>RACES</td><td>IMAGES</td><td>races</td><td/><td>0</td><td/></row>
 		<row><td>RecentFolder</td><td>TARGETDIR</td><td>.:Recent</td><td/><td>0</td><td/></row>
 		<row><td>SMALLWORLD</td><td>INSTALLDIR</td><td>SMALLW~1|SmallWorld</td><td/><td>0</td><td/></row>
 		<row><td>SMALL_WORLD</td><td>INSA_RENNES</td><td>SMALLW~1|Small World</td><td/><td>0</td><td/></row>
@@ -1181,13 +1204,13 @@
 		<row><td>System64Folder</td><td>TARGETDIR</td><td>.:System64</td><td/><td>0</td><td/></row>
 		<row><td>SystemFolder</td><td>TARGETDIR</td><td>.:System32</td><td/><td>0</td><td/></row>
 		<row><td>TARGETDIR</td><td/><td>SourceDir</td><td/><td>0</td><td/></row>
+		<row><td>TILESET</td><td>IMAGES</td><td>tileset</td><td/><td>0</td><td/></row>
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
-		<row><td>insare_1_insa_rennes</td><td>ProgramMenuFolder</td><td>INSARE~1|INSA Rennes</td><td/><td>1</td><td/></row>
-		<row><td>smallw_1_small_world</td><td>insare_1_insa_rennes</td><td>SMALLW~1|Small World</td><td/><td>1</td><td/></row>
+		<row><td>X64</td><td>BIN</td><td>x64</td><td/><td>0</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -1858,6 +1881,7 @@
 		<col def="S255">ProgId_</col>
 		<col def="S64">MIME_</col>
 		<col def="s38">Feature_</col>
+		<row><td>ext1</td><td>SmallWorld.exe2</td><td>flav.File</td><td/><td>AlwaysInstall</td></row>
 	</table>
 
 	<table name="Feature">
@@ -1882,9 +1906,15 @@
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
-		<row><td>AlwaysInstall</td><td>PooP.Core.dll</td></row>
-		<row><td>AlwaysInstall</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>AlwaysInstall</td><td>SmallWorld.exe</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT4</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT5</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT6</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT7</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>AlwaysInstall</td><td>PooP.Core.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>SmallWorld.exe2</td></row>
 	</table>
 
 	<table name="File">
@@ -1899,10 +1929,176 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>_.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>0.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\0.bmp</td><td>1</td><td/></row>
+		<row><td>_03.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>003.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\003.bmp</td><td>1</td><td/></row>
+		<row><td>_03.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>103.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\103.bmp</td><td>1</td><td/></row>
+		<row><td>_03.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>203.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\203.bmp</td><td>1</td><td/></row>
+		<row><td>_09.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>009.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\009.bmp</td><td>1</td><td/></row>
+		<row><td>_09.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>109.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\109.bmp</td><td>1</td><td/></row>
+		<row><td>_09.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>209.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\209.bmp</td><td>1</td><td/></row>
+		<row><td>_10.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>010.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\010.bmp</td><td>1</td><td/></row>
+		<row><td>_10.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>110.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\110.bmp</td><td>1</td><td/></row>
+		<row><td>_10.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>210.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\210.bmp</td><td>1</td><td/></row>
+		<row><td>_11.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>011.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\011.bmp</td><td>1</td><td/></row>
+		<row><td>_11.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>111.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\111.bmp</td><td>1</td><td/></row>
+		<row><td>_11.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>211.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\211.bmp</td><td>1</td><td/></row>
+		<row><td>_12.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>012.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\012.bmp</td><td>1</td><td/></row>
+		<row><td>_12.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>112.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\112.bmp</td><td>1</td><td/></row>
+		<row><td>_12.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>212.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\212.bmp</td><td>1</td><td/></row>
+		<row><td>_13.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>013.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\013.bmp</td><td>1</td><td/></row>
+		<row><td>_13.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>113.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\113.bmp</td><td>1</td><td/></row>
+		<row><td>_13.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>213.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\213.bmp</td><td>1</td><td/></row>
+		<row><td>_14.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>014.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\014.bmp</td><td>1</td><td/></row>
+		<row><td>_14.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>114.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\114.bmp</td><td>1</td><td/></row>
+		<row><td>_14.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>214.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\214.bmp</td><td>1</td><td/></row>
+		<row><td>_15.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>015.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\015.bmp</td><td>1</td><td/></row>
+		<row><td>_15.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>115.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\115.bmp</td><td>1</td><td/></row>
+		<row><td>_15.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>215.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\215.bmp</td><td>1</td><td/></row>
+		<row><td>_16.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>016.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\016.bmp</td><td>1</td><td/></row>
+		<row><td>_16.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>116.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\116.bmp</td><td>1</td><td/></row>
+		<row><td>_16.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>216.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\216.bmp</td><td>1</td><td/></row>
+		<row><td>_17.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>017.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\017.bmp</td><td>1</td><td/></row>
+		<row><td>_17.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>117.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\117.bmp</td><td>1</td><td/></row>
+		<row><td>_17.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>217.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\217.bmp</td><td>1</td><td/></row>
+		<row><td>_18.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>018.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\018.bmp</td><td>1</td><td/></row>
+		<row><td>_18.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>118.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\118.bmp</td><td>1</td><td/></row>
+		<row><td>_18.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>218.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\218.bmp</td><td>1</td><td/></row>
+		<row><td>_19.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>019.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\019.bmp</td><td>1</td><td/></row>
+		<row><td>_19.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>119.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\119.bmp</td><td>1</td><td/></row>
+		<row><td>_19.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>219.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\219.bmp</td><td>1</td><td/></row>
+		<row><td>_20.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>020.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\020.bmp</td><td>1</td><td/></row>
+		<row><td>_20.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>120.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\120.bmp</td><td>1</td><td/></row>
+		<row><td>_20.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>220.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\220.bmp</td><td>1</td><td/></row>
+		<row><td>_21.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>021.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\021.bmp</td><td>1</td><td/></row>
+		<row><td>_21.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>121.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\121.bmp</td><td>1</td><td/></row>
+		<row><td>_21.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>221.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\221.bmp</td><td>1</td><td/></row>
+		<row><td>_22.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>022.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\022.bmp</td><td>1</td><td/></row>
+		<row><td>_22.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>122.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\122.bmp</td><td>1</td><td/></row>
+		<row><td>_22.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>222.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\222.bmp</td><td>1</td><td/></row>
+		<row><td>_23.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>023.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\023.bmp</td><td>1</td><td/></row>
+		<row><td>_23.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>123.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\123.bmp</td><td>1</td><td/></row>
+		<row><td>_23.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>223.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\223.bmp</td><td>1</td><td/></row>
+		<row><td>_24.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>024.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\024.bmp</td><td>1</td><td/></row>
+		<row><td>_24.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>124.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\124.bmp</td><td>1</td><td/></row>
+		<row><td>_24.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>224.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\224.bmp</td><td>1</td><td/></row>
+		<row><td>_25.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>025.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\025.bmp</td><td>1</td><td/></row>
+		<row><td>_25.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>125.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\125.bmp</td><td>1</td><td/></row>
+		<row><td>_25.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>225.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\225.bmp</td><td>1</td><td/></row>
+		<row><td>_26.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>026.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\026.bmp</td><td>1</td><td/></row>
+		<row><td>_26.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>126.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\126.bmp</td><td>1</td><td/></row>
+		<row><td>_26.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>226.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\226.bmp</td><td>1</td><td/></row>
+		<row><td>_27.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>027.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\027.bmp</td><td>1</td><td/></row>
+		<row><td>_27.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>127.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\127.bmp</td><td>1</td><td/></row>
+		<row><td>_27.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>227.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\227.bmp</td><td>1</td><td/></row>
+		<row><td>_28.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>028.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\028.bmp</td><td>1</td><td/></row>
+		<row><td>_28.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>128.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\128.bmp</td><td>1</td><td/></row>
+		<row><td>_28.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>228.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\228.bmp</td><td>1</td><td/></row>
+		<row><td>_29.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>029.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\029.bmp</td><td>1</td><td/></row>
+		<row><td>_29.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>129.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\129.bmp</td><td>1</td><td/></row>
+		<row><td>_29.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>229.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\229.bmp</td><td>1</td><td/></row>
+		<row><td>_30.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>030.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\030.bmp</td><td>1</td><td/></row>
+		<row><td>_30.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>130.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\130.bmp</td><td>1</td><td/></row>
+		<row><td>_30.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>230.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\230.bmp</td><td>1</td><td/></row>
+		<row><td>_31.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>031.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\031.bmp</td><td>1</td><td/></row>
+		<row><td>_31.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>131.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\131.bmp</td><td>1</td><td/></row>
+		<row><td>_31.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>231.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\231.bmp</td><td>1</td><td/></row>
+		<row><td>_32.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>032.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\032.bmp</td><td>1</td><td/></row>
+		<row><td>_32.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>132.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\132.bmp</td><td>1</td><td/></row>
+		<row><td>_32.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>232.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\232.bmp</td><td>1</td><td/></row>
+		<row><td>_33.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>033.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\033.bmp</td><td>1</td><td/></row>
+		<row><td>_33.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>133.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\133.bmp</td><td>1</td><td/></row>
+		<row><td>_33.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>233.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\233.bmp</td><td>1</td><td/></row>
+		<row><td>_34.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>034.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\034.bmp</td><td>1</td><td/></row>
+		<row><td>_34.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>134.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\134.bmp</td><td>1</td><td/></row>
+		<row><td>_34.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>234.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\234.bmp</td><td>1</td><td/></row>
+		<row><td>_35.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>035.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\035.bmp</td><td>1</td><td/></row>
+		<row><td>_35.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>135.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\135.bmp</td><td>1</td><td/></row>
+		<row><td>_35.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>235.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\235.bmp</td><td>1</td><td/></row>
+		<row><td>_36.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>036.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\036.bmp</td><td>1</td><td/></row>
+		<row><td>_36.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>136.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\136.bmp</td><td>1</td><td/></row>
+		<row><td>_36.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>236.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\236.bmp</td><td>1</td><td/></row>
+		<row><td>_37.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>037.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\037.bmp</td><td>1</td><td/></row>
+		<row><td>_37.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>137.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\137.bmp</td><td>1</td><td/></row>
+		<row><td>_37.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>237.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\237.bmp</td><td>1</td><td/></row>
+		<row><td>_38.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>038.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\038.bmp</td><td>1</td><td/></row>
+		<row><td>_38.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>138.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\138.bmp</td><td>1</td><td/></row>
+		<row><td>_38.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>238.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\238.bmp</td><td>1</td><td/></row>
+		<row><td>_39.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>039.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\039.bmp</td><td>1</td><td/></row>
+		<row><td>_39.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>139.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\139.bmp</td><td>1</td><td/></row>
+		<row><td>_39.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>239.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\239.bmp</td><td>1</td><td/></row>
+		<row><td>_40.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>040.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\040.bmp</td><td>1</td><td/></row>
+		<row><td>_40.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>140.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\140.bmp</td><td>1</td><td/></row>
+		<row><td>_40.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>240.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\240.bmp</td><td>1</td><td/></row>
+		<row><td>_41.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>041.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\041.bmp</td><td>1</td><td/></row>
+		<row><td>_41.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>141.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\141.bmp</td><td>1</td><td/></row>
+		<row><td>_41.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>241.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\241.bmp</td><td>1</td><td/></row>
+		<row><td>_42.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>042.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\042.bmp</td><td>1</td><td/></row>
+		<row><td>_42.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>142.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\142.bmp</td><td>1</td><td/></row>
+		<row><td>_42.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>242.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\242.bmp</td><td>1</td><td/></row>
+		<row><td>_43.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>043.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\043.bmp</td><td>1</td><td/></row>
+		<row><td>_43.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>143.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\143.bmp</td><td>1</td><td/></row>
+		<row><td>_43.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>243.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\243.bmp</td><td>1</td><td/></row>
+		<row><td>_44.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>044.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\044.bmp</td><td>1</td><td/></row>
+		<row><td>_44.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>144.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\144.bmp</td><td>1</td><td/></row>
+		<row><td>_44.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>244.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\244.bmp</td><td>1</td><td/></row>
+		<row><td>_45.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>045.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\045.bmp</td><td>1</td><td/></row>
+		<row><td>_45.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>145.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\145.bmp</td><td>1</td><td/></row>
+		<row><td>_45.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>245.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\245.bmp</td><td>1</td><td/></row>
+		<row><td>_46.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>046.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\046.bmp</td><td>1</td><td/></row>
+		<row><td>_46.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>146.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\146.bmp</td><td>1</td><td/></row>
+		<row><td>_46.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>246.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\246.bmp</td><td>1</td><td/></row>
+		<row><td>_47.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>047.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\047.bmp</td><td>1</td><td/></row>
+		<row><td>_47.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>147.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\147.bmp</td><td>1</td><td/></row>
+		<row><td>_47.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>247.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\247.bmp</td><td>1</td><td/></row>
+		<row><td>_48.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>048.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\048.bmp</td><td>1</td><td/></row>
+		<row><td>_48.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>148.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\148.bmp</td><td>1</td><td/></row>
+		<row><td>_48.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>248.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\248.bmp</td><td>1</td><td/></row>
+		<row><td>_49.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>049.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\049.bmp</td><td>1</td><td/></row>
+		<row><td>_49.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>149.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\149.bmp</td><td>1</td><td/></row>
+		<row><td>_49.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>249.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\249.bmp</td><td>1</td><td/></row>
+		<row><td>_50.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>050.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\050.bmp</td><td>1</td><td/></row>
+		<row><td>_50.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>150.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\150.bmp</td><td>1</td><td/></row>
+		<row><td>_50.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>250.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\250.bmp</td><td>1</td><td/></row>
+		<row><td>_51.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>051.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\051.bmp</td><td>1</td><td/></row>
+		<row><td>_51.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>151.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\151.bmp</td><td>1</td><td/></row>
+		<row><td>_51.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>251.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\251.bmp</td><td>1</td><td/></row>
+		<row><td>_52.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>052.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\052.bmp</td><td>1</td><td/></row>
+		<row><td>_52.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>152.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\152.bmp</td><td>1</td><td/></row>
+		<row><td>_52.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>252.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\252.bmp</td><td>1</td><td/></row>
+		<row><td>_53.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>053.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\053.bmp</td><td>1</td><td/></row>
+		<row><td>_53.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>153.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\153.bmp</td><td>1</td><td/></row>
+		<row><td>_53.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>253.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\253.bmp</td><td>1</td><td/></row>
+		<row><td>_54.bmp</td><td>ISX_DEFAULTCOMPONENT8</td><td>054.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\054.bmp</td><td>1</td><td/></row>
+		<row><td>_54.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>154.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\154.bmp</td><td>1</td><td/></row>
+		<row><td>_54.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>254.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\tileset\254.bmp</td><td>1</td><td/></row>
+		<row><td>circlehover.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>CIRCLE~1.PNG|circleHover.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\circleHover.png</td><td>1</td><td/></row>
+		<row><td>currentgame.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>CURREN~1.PNG|currentGame.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\currentGame.png</td><td>1</td><td/></row>
+		<row><td>elf.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>elf.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\elf.png</td><td>1</td><td/></row>
+		<row><td>elf_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>elf_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\elf_unit.png</td><td>1</td><td/></row>
+		<row><td>human.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>human.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\human.png</td><td>1</td><td/></row>
+		<row><td>human_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>HUMAN_~1.PNG|human_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\human_unit.png</td><td>1</td><td/></row>
+		<row><td>logo.ico</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.ico</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\logo.ico</td><td>1</td><td/></row>
+		<row><td>logo.png</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\logo.png</td><td>1</td><td/></row>
+		<row><td>mainmenu.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>mainMenu.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\mainMenu.png</td><td>1</td><td/></row>
+		<row><td>mainmenu_quitpopup.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>MAINME~1.PNG|mainMenu-QuitPopup.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\mainMenu-QuitPopup.png</td><td>1</td><td/></row>
+		<row><td>newgame.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>newGame.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\newGame.png</td><td>1</td><td/></row>
+		<row><td>orc.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>orc.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\orc.png</td><td>1</td><td/></row>
+		<row><td>orc_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>orc_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\orc_unit.png</td><td>1</td><td/></row>
+		<row><td>org.elf.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGELF~1.PNG|org.elf.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\org.elf.png</td><td>1</td><td/></row>
+		<row><td>org.human.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGHUM~1.PNG|org.human.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\org.human.png</td><td>1</td><td/></row>
+		<row><td>org.orc.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGORC~1.PNG|org.orc.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\races\org.orc.png</td><td>1</td><td/></row>
 		<row><td>oursvince___magic_spell.wav</td><td>ISX_DEFAULTCOMPONENT1</td><td>OURSVI~1.WAV|Oursvince_-_Magic_Spell.wav</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\audio\Oursvince_-_Magic_Spell.wav</td><td>1</td><td/></row>
-		<row><td>poop.core.dll</td><td>PooP.Core.dll</td><td>POOPCO~1.DLL|PooP.Core.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\PooP.Core.dll</td><td>1</td><td/></row>
-		<row><td>poop.nativelib.dll</td><td>PooP.NativeLib.dll</td><td>POOPNA~1.DLL|PooP.NativeLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\PooP.NativeLib.dll</td><td>1</td><td/></row>
-		<row><td>smallworld.exe</td><td>SmallWorld.exe</td><td>SMALLW~1.EXE|SmallWorld.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>1</td><td/></row>
+		<row><td>poop.core.dll2</td><td>PooP.Core.dll2</td><td>POOPCO~1.DLL|PooP.Core.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\PooP.Core.dll</td><td>1</td><td/></row>
+		<row><td>poop.nativelib.dll2</td><td>PooP.NativeLib.dll2</td><td>POOPNA~1.DLL|PooP.NativeLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\PooP.NativeLib.dll</td><td>1</td><td/></row>
+		<row><td>redcross.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>redcross.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\redcross.png</td><td>1</td><td/></row>
+		<row><td>redo.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>redo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\redo.png</td><td>1</td><td/></row>
+		<row><td>redoenable.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>REDOEN~1.PNG|redoEnable.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\redoEnable.png</td><td>1</td><td/></row>
+		<row><td>smallworld.exe2</td><td>SmallWorld.exe2</td><td>SMALLW~1.EXE|SmallWorld.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>1</td><td/></row>
+		<row><td>splashscreen.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>SPLASH~1.PNG|splashScreen.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\splashScreen.png</td><td>1</td><td/></row>
+		<row><td>text.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>text.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\text.png</td><td>1</td><td/></row>
+		<row><td>tutorialmap.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>TUTORI~1.PNG|tutorialMap.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\tutorialMap.png</td><td>1</td><td/></row>
+		<row><td>undo.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>undo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\undo.png</td><td>1</td><td/></row>
+		<row><td>undoenable.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>UNDOEN~1.PNG|undoEnable.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Work\PooP\PooP\PooP.GUI\images\pages\undoEnable.png</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2047,9 +2243,15 @@
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_EC3BAF7C_F5A8_463F_9FB1_C3D082E91C62_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_C40BDC88_143F_426C_8750_159A84AC9F0C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_FAD7ED10_2A3D_4886_9F98_D53AC1823571_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PooP.Core.dll</td><td/><td/><td>_6616E85E_95AA_4DCD_9E94_1AD0BB99B282_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PooP.NativeLib.dll</td><td/><td/><td>_4138BA07_AFC6_4E52_B637_5CA92226A158_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SmallWorld.exe</td><td/><td/><td>_5325C6BD_5CB7_47E9_AE9C_AAC71624A1C7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_EFE5B529_50D9_49D9_AC08_DB3B40BEF038_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_753B2C85_3876_473D_B5DC_95B37D60FB0B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT5</td><td/><td/><td>_79A0C6A9_0246_435D_8846_E40E7AEFF133_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT6</td><td/><td/><td>_C02C1A90_A169_4094_901A_29AA1EFC3224_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT7</td><td/><td/><td>_CD96141B_2F43_4EA2_BC05_203AC6BDC95E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT8</td><td/><td/><td>_DEFDE6A6_AEE3_440D_9077_A7A31DB96BA9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PooP.Core.dll2</td><td/><td/><td>_582502D0_E02B_4869_BF1D_E4293463C630_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PooP.NativeLib.dll2</td><td/><td/><td>_6788A505_51C5_47C1_9574_794F5465C163_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SmallWorld.exe2</td><td/><td/><td>_3A49F2BA_EA6F_43F9_BA3B_00FEAB29380B_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3742,6 +3944,7 @@
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-1507618291</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>http://www.insa-rennes.com</td><td>0</td><td/><td>-1507632595</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>INSA Rennes</td><td>0</td><td/><td>-1507651027</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>SMALLW~1|Small World</td><td>0</td><td/><td>-1239165429</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1507620339</td></row>
 	</table>
 
@@ -3856,6 +4059,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PooP.GUI\images\logo.ico</td><td>0</td></row>
+		<row><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
 		<row><td>SmallWorld.exe_65F9FD742820416D9996DBA2B6E17ABB.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
 	</table>
 
@@ -3971,8 +4175,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d78a46bf2c52ee27034bbcad20f7f95">
-QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
+UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>
@@ -3989,7 +4193,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{97E7DC90-E93C-4633-82DD-E51036D9CBC6}</td></row>
 		<row><td>ISUSSignature</td><td>{610C0D08-5693-4281-8EBD-2D0CE4FC81BF}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppFiles,viewObjects,viewShortcuts,viewRegistry,viewIniFiles,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewTextMessages,viewSystemSearch,viewRelease</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppFiles,viewObjects,viewShortcuts,viewRegistry,viewIniFiles,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewTextMessages,viewSystemSearch,viewRelease,viewUpgradePaths,viewUpdateService,viewCustomActions</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4288,6 +4492,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="S72">Icon_</col>
 		<col def="I2">IconIndex</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>flav.File</td><td/><td/><td/><td/><td>0</td><td/></row>
 	</table>
 
 	<table name="Property">
@@ -4441,9 +4646,6 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>SmallWorld.exe</td><td/><td>insare_1_insa_rennes</td><td>2</td></row>
-		<row><td>FileKey2</td><td>SmallWorld.exe</td><td/><td>smallw_1_small_world</td><td>2</td></row>
-		<row><td>SmallWorld.exe</td><td>SmallWorld.exe</td><td/><td>smallw_1_small_world</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4529,7 +4731,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>SmallWorld.exe</td><td>smallw_1_small_world</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>SmallWorld.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>SmallWorld.exe_65F9FD742820416D9996DBA2B6E17ABB.exe</td><td>1</td><td>1</td><td>SMALLWORLD</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>SmallWorld.exe2</td><td>[INSTALLDIR]SmallWorld\bin\x64\SmallWorld.exe</td><td/><td/><td/><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4660,6 +4862,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="I2">Sequence</col>
 		<col def="L255">Command</col>
 		<col def="L255">Argument</col>
+		<row><td>ext1</td><td>open</td><td/><td/><td/></row>
 	</table>
 
 	<table name="_Validation">
