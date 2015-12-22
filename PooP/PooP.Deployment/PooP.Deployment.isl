@@ -4731,7 +4731,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>SmallWorld.exe2</td><td>[INSTALLDIR]SmallWorld\bin\x64\SmallWorld.exe</td><td/><td/><td/><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>SmallWorld.exe2</td><td>[INSTALLDIR]SmallWorld\bin\x64\SmallWorld.exe</td><td/><td/><td/><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td>1</td><td>1</td><td>X64</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
