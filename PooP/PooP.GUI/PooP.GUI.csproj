@@ -80,6 +80,7 @@
     <Compile Include="Views\CurrentGame\AbortBackCommand.cs" />
     <Compile Include="Views\CurrentGame\AskBackCommand.cs" />
     <Compile Include="Views\CurrentGame\AttackUnitCommand.cs" />
+    <Compile Include="Views\CurrentGame\HelpCommand.cs" />
     <Compile Include="Views\CurrentGame\EndTurnCommand.cs" />
     <Compile Include="Views\CurrentGame\MoveUnitCommand.cs" />
     <Compile Include="Views\CurrentGame\SaveCommand.cs" />

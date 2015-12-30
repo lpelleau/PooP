@@ -9,13 +9,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using PooP.Core.Implementation.Games;
-using PooP.Core.Interfaces;
 using PooP.Core.Interfaces.Maps;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
 using System.Windows.Interactivity;
 
@@ -31,7 +28,7 @@ namespace PooP.GUI.Views.CurrentGame
         private static string UNITS_PATH = "../../images/races/";
         private static string UNITS_EXT = ".png";
 
-        private Grid map;
+        public Grid map;
         public Border bo;
         public Border unitBo;
 
@@ -623,6 +620,14 @@ namespace PooP.GUI.Views.CurrentGame
             get
             {
                 return new EndTurnCommand(this);
+            }
+        }
+
+        public ICommand Help
+        {
+            get
+            {
+                return new HelpCommand(this);
             }
         }
 

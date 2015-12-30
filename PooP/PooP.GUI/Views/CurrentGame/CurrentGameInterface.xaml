@@ -51,6 +51,7 @@
         <ListBox x:Name="UnitsP1" Background="{Binding P2RaceImage}" Height="326" Canvas.Right="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
         <Button Name="MoveOrAttack" Content="Move" Command="{Binding Move}" Canvas.Left="200" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
         <Button Content="End turn" Name="EndTurn" Command="{Binding EndTurn}" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
+        <Button Content="Help" x:Name="Helpopy" Command="{Binding Help}" Canvas.Left="530" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
         <TextBlock Name="TileInfo" Text="No tile selected
                    
                    Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974" Focusable="False" IsEnabled="False"/>
