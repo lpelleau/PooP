@@ -22,7 +22,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             this.cgm = cgm;
             HelpBorder = new Border();
-            HelpBorder.BorderBrush = Brushes.Red;
+            HelpBorder.BorderBrush = Brushes.White;
             HelpBorder.BorderThickness = new Thickness(2);
         }
 
