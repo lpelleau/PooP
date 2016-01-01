@@ -10,20 +10,17 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace PooP.GUI.Views.CurrentGame
 {
     class HelpCommand : ICommand
     {
         private CurrentGameModel cgm;
-        private Border HelpBorder;
 
         public HelpCommand(CurrentGameModel cgm)
         {
             this.cgm = cgm;
-            HelpBorder = new Border();
-            HelpBorder.BorderBrush = Brushes.Red;
-            HelpBorder.BorderThickness = new Thickness(2);
         }
 
         public bool CanExecute(object parameter)
@@ -39,14 +36,8 @@ namespace PooP.GUI.Views.CurrentGame
 
         public void Execute(object parameter)
         {
-            int[] moves = GameBuilder.CURRENTGAME.getBestMoves();
-
-            for (int i = 0; i < 3; i++)
-            {
-                Position givenPosition = new Position(moves[i * 2], moves[i * 2 + 1]);
-                // TODO : Place border on map in the givenPosition
-                //cgm.map.Children.
-            }
+            cgm.HelpOn = !cgm.HelpOn;
+            cgm.PlaceHelp();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace PooP.GUI.Views.CurrentGame
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
             cgm.DrawUnits();
             page.OnReload();
+            cgm.PlaceHelp();
         }
     }
 }

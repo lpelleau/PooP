@@ -95,7 +95,7 @@ namespace PooP.GUI.Views.WindowApp
             frame.RenderTransform = tg;
 
             window.WindowState = WindowState.Maximized;
-            window.Topmost = true;
+            //window.Topmost = true;
             window.Style = null;
 
             isfullScreen = true;
@@ -112,7 +112,7 @@ namespace PooP.GUI.Views.WindowApp
             frame.RenderTransform = null;
 
             window.WindowState = WindowState.Normal;
-            window.Topmost = true;
+            //window.Topmost = true;
             window.Style = null;
             window.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 

@@ -13,19 +13,19 @@ namespace PooP.GUI.Views.CurrentGame
 {
     class MoveUnitCommand : ICommand
     {
-        private CurrentGameModel currentGameModel;
+        private CurrentGameModel cgm;
         private PageInterface page;
 
-        public MoveUnitCommand(CurrentGameModel currentGameModel, PageInterface page)
+        public MoveUnitCommand(CurrentGameModel cgm, PageInterface page)
         {
-            this.currentGameModel = currentGameModel;
+            this.cgm = cgm;
             this.page = page;
         }
 
 
         public bool CanExecute(object parameter)
         {
-            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(currentGameModel.bo), Grid.GetRow(currentGameModel.bo)));
+            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(cgm.bo), Grid.GetRow(cgm.bo)));
             return mv.canDo();
         }
 
@@ -37,13 +37,14 @@ namespace PooP.GUI.Views.CurrentGame
 
         public void Execute(object parameter)
         {
-            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(currentGameModel.bo), Grid.GetRow(currentGameModel.bo)));
+            MoveCommand mv = new MoveCommand(SelectUnitCommand.SelectedUnit, new Position(Grid.GetColumn(cgm.bo), Grid.GetRow(cgm.bo)));
             mv.execute();
             UndoableImpl.UndoneCommands.Clear();
             Grid.SetColumn(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.XPosition);
             Grid.SetRow(SelectUnitCommand.unitRect, SelectUnitCommand.SelectedUnit.Position.YPosition);
-            currentGameModel.DrawUnits();
+            cgm.DrawUnits();
             page.OnReload();
+            cgm.PlaceHelp();
         }
     }
 }
