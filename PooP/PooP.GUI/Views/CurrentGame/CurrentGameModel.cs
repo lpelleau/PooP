@@ -30,13 +30,11 @@ namespace PooP.GUI.Views.CurrentGame
         private static string UNITS_EXT = ".png";
 
         public Grid map;
-        public Border noBo;
         public Border bo;
         public Border unitBo;
-        public Border helpBo;
+        public Border[] helpBo;
 
         public bool HelpOn = false;
-        private List<Position> LastHelped = new List<Position>();
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -456,14 +454,15 @@ namespace PooP.GUI.Views.CurrentGame
             unitBo.RenderTransform = new ScaleTransform(0.85, 0.85);
             map.Children.Add(unitBo);
 
-
-            helpBo = new Border();
-            helpBo.BorderBrush = Brushes.White;
-            helpBo.BorderThickness = new Thickness(2);
-
-            noBo = new Border();
-            noBo.BorderBrush = Brushes.Black;
-            noBo.BorderThickness = new Thickness(0);
+            helpBo = new Border[3];
+            for (int i = 0; i < 3; i++)
+            {
+                helpBo[i] = new Border();
+                helpBo[i].BorderBrush = Brushes.White;
+                helpBo[i].BorderThickness = new Thickness(2);
+                helpBo[i].Visibility = Visibility.Hidden;
+                map.Children.Add(helpBo[i]);
+            }
 
             DrawUnits();
         }
@@ -748,12 +747,10 @@ namespace PooP.GUI.Views.CurrentGame
 
         public void PlaceHelp()
         {
-            LastHelped.ForEach(p =>
+            helpBo.ToList<Border>().ForEach(b =>
             {
-                Grid.SetColumn(noBo, p.XPosition);
-                Grid.SetRow(noBo, p.YPosition);
+                b.Visibility = Visibility.Hidden;
             });
-            LastHelped.Clear();
 
             if (!HelpOn)
             {
@@ -762,13 +759,12 @@ namespace PooP.GUI.Views.CurrentGame
 
             int[] moves = GameBuilder.CURRENTGAME.getBestMoves();
 
-            int i;
-            for (i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Position p = new Position(moves[i * 2], moves[i * 2 + 1]);
-                Grid.SetColumn(helpBo, p.XPosition);
-                Grid.SetRow(helpBo, p.YPosition);
-                LastHelped.Add(p);
+                Grid.SetColumn(helpBo[i], p.XPosition);
+                Grid.SetRow(helpBo[i], p.YPosition);
+                helpBo[i].Visibility = Visibility.Visible;
             }
         }
     }
