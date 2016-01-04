@@ -36,7 +36,7 @@ namespace PooP.GUI.Views.CurrentGame
         public Border helpBo;
 
         public bool HelpOn = false;
-        private List<Rectangle> LastHelped = new List<Rectangle>();
+        private List<Position> LastHelped = new List<Position>();
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -460,6 +460,7 @@ namespace PooP.GUI.Views.CurrentGame
             helpBo = new Border();
             helpBo.BorderBrush = Brushes.White;
             helpBo.BorderThickness = new Thickness(2);
+
             noBo = new Border();
             noBo.BorderBrush = Brushes.Black;
             noBo.BorderThickness = new Thickness(0);
@@ -747,55 +748,27 @@ namespace PooP.GUI.Views.CurrentGame
 
         public void PlaceHelp()
         {
+            LastHelped.ForEach(p =>
+            {
+                Grid.SetColumn(noBo, p.XPosition);
+                Grid.SetRow(noBo, p.YPosition);
+            });
+            LastHelped.Clear();
+
             if (!HelpOn)
             {
                 return;
             }
 
-            LastHelped.ForEach(r => {
-                int x = Grid.GetColumn(r);
-                int y = Grid.GetRow(r);
-
-                if (!map.Children.Contains(helpBo)) map.Children.Add(helpBo);
-                Grid.SetColumn(noBo, y);
-                Grid.SetRow(noBo, x);
-            });
-            LastHelped.Clear();
-
             int[] moves = GameBuilder.CURRENTGAME.getBestMoves();
-            Position[] givenPositions = new Position[3];
 
             int i;
             for (i = 0; i < 3; i++)
             {
-                givenPositions[i] = new Position(moves[i * 2], moves[i * 2 + 1]);
-            }
-
-            for (int j = 0; j < 3; j++)
-            {
-                int v = givenPositions[j].XPosition * GameBuilder.CURRENTGAME.Map.Height + givenPositions[j].YPosition;
-                var e = map.Children.GetEnumerator();
-                e.MoveNext();
-                i = 0;
-                while (e.Current != null && i < GameBuilder.CURRENTGAME.Map.Height * GameBuilder.CURRENTGAME.Map.Height)
-                {
-                    Rectangle r = (Rectangle)e.Current;
-                    if (v == i)
-                    {
-                        // FIX : Not the real position :'(
-                        int x = Grid.GetColumn(r);
-                        int y = Grid.GetRow(r);
-
-                        if (!map.Children.Contains(helpBo)) map.Children.Add(helpBo);
-                        Grid.SetColumn(helpBo, x);
-                        Grid.SetRow(helpBo, y);
-                        LastHelped.Add(r);
-                        break;
-                    }
-
-                    e.MoveNext();
-                    i++;
-                }
+                Position p = new Position(moves[i * 2], moves[i * 2 + 1]);
+                Grid.SetColumn(helpBo, p.XPosition);
+                Grid.SetRow(helpBo, p.YPosition);
+                LastHelped.Add(p);
             }
         }
     }
