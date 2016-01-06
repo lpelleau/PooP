@@ -1,4 +1,5 @@
-﻿using PooP.GUI.Views.WindowApp;
+﻿using PooP.GUI.Audio;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,14 @@ namespace PooP.GUI.Views.LoadGame
             get
             {
                 return new BackCommand(window);
+            }
+        }
+
+        public ICommand Sound
+        {
+            get
+            {
+                return SoundCommand.INSTANCE;
             }
         }
     }

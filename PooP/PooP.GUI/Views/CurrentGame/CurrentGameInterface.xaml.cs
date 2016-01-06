@@ -60,47 +60,5 @@ namespace PooP.GUI.Views.CurrentGame
                 ((Image)FindName("RedoStyle")).Source = new BitmapImage(new Uri("../../images/pages/redoEnable.png", UriKind.Relative));
             }
         }
-
-        private void SoundHoverI(object sender, MouseEventArgs e)
-        {
-            ((Rectangle)sender).Opacity = 100;
-        }
-
-        private void SoundHoverO(object sender, MouseEventArgs e)
-        {
-            ((Rectangle)sender).Opacity = 0;
-        }
-
-        private void SoundClick(object sender, MouseButtonEventArgs e)
-        {
-            Sound.INSTANCE.ToogleMusic();
-            if (Sound.INSTANCE.isOn())
-            {
-                ((Image)FindName("MusicOFF")).Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
-            }
-        }
-
-        private void HelpClick(object sender, MouseButtonEventArgs e)
-        {
-            window.OpenTutorial();
-        }
-
-        private void UndoClick(object sender, MouseButtonEventArgs e)
-        {
-            UndoableImpl.undo();
-            ((CurrentGameModel)DataContext).DrawUnits();
-            OnReload();
-        }
-
-        private void RedoClick(object sender, MouseButtonEventArgs e)
-        {
-            UndoableImpl.redo();
-            ((CurrentGameModel)DataContext).DrawUnits();
-            OnReload();
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PooP.GUI.Views.WindowApp;
+﻿using PooP.GUI.Audio;
+using PooP.GUI.Ressources;
+using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +76,22 @@ namespace PooP.GUI.Views.MainMenu
             get
             {
                 return new QuitCommand(window);
+            }
+        }
+
+        public ICommand FullScreen
+        {
+            get
+            {
+                return new FullScreenCommand(window, page);
+            }
+        }
+
+        public ICommand Sound
+        {
+            get
+            {
+                return SoundCommand.INSTANCE;
             }
         }
     }

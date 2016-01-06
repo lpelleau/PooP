@@ -11,15 +11,10 @@
         </Canvas.Background>
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
-
-        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Sound}" Canvas.Left="736" Canvas.Top="14" Height="41" Width="41" />
+        
         <Label Content="Finished game" Canvas.Left="228" Canvas.Top="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
-        <Button x:Name="back_button" Content="MENU" Command="{Binding Back}" CommandParameter="{Binding ElementName=InitWindow}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22"/>
         <Label x:Name="Winner" Canvas.Left="154" Canvas.Top="208" FontSize="24" FontFamily="SimSun" Height="48" Width="492" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="P1Stats" Content=", Player 1 Statistics:" Canvas.Left="154" Canvas.Top="308" Width="244" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         <Label x:Name="P2Stats" Content=", Player 2 Statistics:" Canvas.Left="403" Canvas.Top="308" Width="243" HorizontalContentAlignment="Center" FontWeight="Bold"/>
@@ -29,5 +24,8 @@
         <Label x:Name="VP2" Content="Victory points: " Canvas.Left="402" Canvas.Top="387" HorizontalAlignment="Left" Width="244"/>
         <Label x:Name="UL1" Content="Units left: " Canvas.Left="154" Canvas.Top="418" HorizontalAlignment="Left" Width="244"/>
         <Label x:Name="UL2" Content="Units left: " Canvas.Left="402" Canvas.Top="418" HorizontalAlignment="Left" Width="244"/>
+
+        <Label Content="MENU" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22"/>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="532" Height="44" Width="89" />
     </Canvas>
 </Page>

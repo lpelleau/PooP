@@ -23,12 +23,7 @@
         </Canvas.Background>
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
-
-        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Sound}" Canvas.Left="736" Canvas.Top="14" Height="41" Width="41" />
 
         <Image Name="ImRace1" Source="{Binding Player1RaceImage}" Width="185" Height="202" Canvas.Left="170" Canvas.Top="114"/>
         <Image x:Name="ImRace2" Source="{Binding Player2RaceImage}" Width="185" Height="202" Canvas.Left="444" Canvas.Top="111" RenderTransformOrigin="0.5,0.5">
@@ -70,7 +65,7 @@
             </RadioButton.CommandParameter>
         </RadioButton>
         <Label Content=" Player 2" FontWeight="Bold" Height="38" Width="136" Canvas.Left="642" Canvas.Top="117" FontSize="24" FontFamily="Rockwell Extra Bold" />
-        
+
         <RadioButton x:Name="Human2" Content="Human" GroupName="Race2" IsEnabled="{Binding IsChecked, Converter={StaticResource NegateBool}, ElementName=Human1}" Command="{Binding ChangeRace2}" Background="{x:Null}" Canvas.Left="657" Canvas.Top="179" FontSize="20" BorderBrush="#FF1D1D1D" Foreground="#FF1D1D1D">
             <RadioButton.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterRaceConverter}">
@@ -102,12 +97,14 @@
         <TextBox x:Name="NameP2" TextWrapping="Wrap" Text="{Binding Player2Name}" Canvas.Left="545" Canvas.Bottom="207" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" CaretBrush="#FF1F1F1F" Foreground="#FF1D1D1D" Width="210" />
         <Label Content="Name:" FontWeight="Bold" Canvas.Left="45" Canvas.Top="361" FontSize="20" Foreground="#FF1D1D1D" />
         <Label Content="Name:" FontWeight="Bold" Canvas.Left="474" Canvas.Top="361"  FontSize="20" Foreground="#FF1D1D1D"/>
-        <Button x:Name="start_button" Content="START" Command="{Binding Launch}" Canvas.Left="678" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="START" Canvas.Left="678" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Launch}" Canvas.Left="672" Canvas.Top="532" Height="44" Width="98" />
         <Label Content="Map size" FontWeight="Bold" Canvas.Left="205" Canvas.Top="488" FontFamily="Rockwell Extra Bold" FontSize="22"/>
         <RadioButton x:Name="Demo" Content="Demo" GroupName="Difficulty" Command="{Binding ChangeMapSize}" CommandParameter="Demo" Canvas.Left="361" Canvas.Top="491" FontSize="22" />
         <RadioButton x:Name="Small" Content="Small" GroupName="Difficulty" Command="{Binding ChangeMapSize}" CommandParameter="Small" Canvas.Left="444" Canvas.Top="491" FontSize="22" />
         <RadioButton x:Name="Standard" Content="Standard" GroupName="Difficulty" VerticalAlignment="Top" Command="{Binding ChangeMapSize}" CommandParameter="Standard" Canvas.Left="520" Canvas.Top="491" FontSize="22" />
-        <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="BACK" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="532" Height="44" Width="89" />
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
     </Canvas>
 </Page>

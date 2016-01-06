@@ -11,19 +11,15 @@
         </Canvas.Background>
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
-
-        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="SoundHoverI" MouseDown="SoundClick" MouseLeave="SoundHoverO" Opacity="0" Canvas.Top="14">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Sound}" Canvas.Left="736" Canvas.Top="14" Height="41" Width="41" />
 
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
 
         <Label Content="Tutorials" Canvas.Left="290" Canvas.Top="114" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
 
         <Canvas x:Name="tipN0" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208">
-            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Label Content="NEXT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding NextTips}" Canvas.Left="424" Canvas.Top="331" Height="23" Width="58" />
 
             <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/human.png"/>
             <Label Content="Human unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
@@ -38,8 +34,10 @@
         </Canvas>
 
         <Canvas x:Name="tipN1" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
-            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
-            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Label Content="PREVIOUS" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding PreviousTips}" Canvas.Left="10" Canvas.Top="331" Height="29" Width="104" />
+            <Label Content="NEXT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding NextTips}" Canvas.Left="424" Canvas.Top="331" Height="23" Width="58" />
 
             <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/elf.png"/>
             <Label Content="Elf unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
@@ -55,8 +53,10 @@
         </Canvas>
 
         <Canvas x:Name="tipN2" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
-            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
-            <Button Content="NEXT" Command="{Binding NextTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Label Content="PREVIOUS" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding PreviousTips}" Canvas.Left="10" Canvas.Top="331" Height="29" Width="104" />
+            <Label Content="NEXT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="424" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding NextTips}" Canvas.Left="424" Canvas.Top="331" Height="23" Width="58" />
 
             <Image Canvas.Left="26" Canvas.Top="26" Source="/SmallWorld;component/images/races/orc.png"/>
             <Label Content="Orc unit" Canvas.Left="216" Canvas.Top="26" FontSize="18" FontWeight="Bold"/>
@@ -72,7 +72,8 @@
         </Canvas>
 
         <Canvas x:Name="tipN3" Width="492" Height="364" Canvas.Left="154" Canvas.Top="208" Visibility="Collapsed">
-            <Button Content="PREVIOUS" Command="{Binding PreviousTips}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Label Content="PREVIOUS" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="16" Canvas.Left="10" Canvas.Top="331" />
+            <Button Style="{StaticResource CircleHover}" Command="{Binding PreviousTips}" Canvas.Left="10" Canvas.Top="331" Height="29" Width="104" />
             <Label Content="Map size:" Canvas.Left="10" Canvas.Top="10" FontSize="18" FontWeight="Bold"/>
 
             <Label Content="Demo:" Canvas.Left="33" Canvas.Top="42" FontSize="14" Width="162" FontWeight="Bold"/>
@@ -93,6 +94,7 @@
             <Image Canvas.Left="200" Canvas.Top="21" Source="/SmallWorld;component/images/pages/tutorialMap.png" Height="282" Width="282"/>
         </Canvas>
 
-        <Button x:Name="back_button" Content="BACK" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="BACK" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Back}" Canvas.Left="40" Canvas.Top="532" Height="44" Width="89" />
     </Canvas>
 </Page>

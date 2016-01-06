@@ -41,40 +41,5 @@ namespace PooP.GUI.Views.MainMenu
                 ((Image)FindName("MusicOFF")).Visibility = Visibility.Visible;
             }
         }
-
-        private void CircleHoverI(object sender, MouseEventArgs e)
-        {
-            ((Rectangle)sender).Opacity = 100;
-        }
-
-        private void CircleHoverO(object sender, MouseEventArgs e)
-        {
-            ((Rectangle)sender).Opacity = 0;
-        }
-
-        private void SoundClick(object sender, MouseButtonEventArgs e)
-        {
-            Sound.INSTANCE.ToogleMusic();
-            OnReload();
-        }
-
-        private void FullscreenClick(object sender, MouseButtonEventArgs e)
-        {
-            if (window.IsfullScreen())
-            {
-                ((Image)FindName("FullscreenStyle")).Source = new BitmapImage(new Uri("../../images/pages/expand.png", UriKind.Relative));
-                window.SmallScreen();
-            }
-            else
-            {
-                ((Image)FindName("FullscreenStyle")).Source = new BitmapImage(new Uri("../../images/pages/contract.png", UriKind.Relative));
-                window.FullScreen();
-            }
-        }
-
-        private void NewGameClick(object sender, MouseButtonEventArgs e)
-        {
-            window.OpenNewGame();
-        }
     }
 }

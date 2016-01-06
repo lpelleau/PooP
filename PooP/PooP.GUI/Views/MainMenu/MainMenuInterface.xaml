@@ -12,32 +12,25 @@
         </Canvas.Background>
 
         <Label Content="NEW GAME" Canvas.Left="233" Canvas.Top="149" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center"/>
-        <Rectangle Height="90" Canvas.Left="214" Width="376" MouseEnter="CircleHoverI" MouseDown="NewGameClick" MouseLeave="CircleHoverO" Opacity="0" Canvas.Top="125">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding NewGame}" Canvas.Left="214" Canvas.Top="125" Height="90" Width="376" />
 
-        <Button Content="LOAD GAME" Command="{Binding LoadGame}" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="TUTORIAL" Command="{Binding Tutorial}" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="CREDITS" Command="{Binding Credits}" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold"/>
-        <Button Content="QUIT" Command="{Binding AskQuit}" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Label Content="LOAD GAME" Canvas.Left="233" Canvas.Top="258" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center"/>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding LoadGame}" Canvas.Left="214" Canvas.Top="231" Height="90" Width="376" />
+
+        <Label Content="TUTORIAL" Canvas.Left="233" Canvas.Top="466" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center"/>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Tutorial}" Canvas.Left="214" Canvas.Top="442" Height="90" Width="376" />
+
+        <Label Content="CREDITS" Canvas.Left="233" Canvas.Top="361" Height="44" Width="341" FontSize="30" Background="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center"/>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Credits}" Canvas.Left="214" Canvas.Top="337" Height="90" Width="376" />
+
+        <Label Content="QUIT" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" HorizontalContentAlignment="Center"/>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding AskQuit}" Canvas.Left="40" Canvas.Top="532" Height="41" Width="86" />
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
-
-        <Rectangle Height="41" Canvas.Left="736" Width="41" MouseEnter="CircleHoverI" MouseDown="SoundClick" MouseLeave="CircleHoverO" Opacity="0" Canvas.Top="14">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Sound}" Canvas.Left="736" Canvas.Top="14" Height="41" Width="41" />
 
         <Image x:Name="FullscreenStyle" Height="41" Canvas.Left="682" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/contract.png"/>
-
-        <Rectangle Height="41" Canvas.Left="682" Width="41" MouseEnter="CircleHoverI" MouseDown="FullscreenClick" MouseLeave="CircleHoverO" Opacity="0" Canvas.Top="14">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/SmallWorld;component/images/pages/circleHover.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Button Style="{StaticResource CircleHover}" Command="{Binding FullScreen}" Canvas.Left="682" Canvas.Top="14" Height="41" Width="41" />
 
         <Canvas x:Name="confirmQuit" Width="800" Height="600" Visibility="Collapsed">
             <Canvas.Background>
@@ -51,8 +44,12 @@
 
                 <Label Content="Are you sure you want" Canvas.Left="16" Canvas.Top="3" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
                 <Label Content="to quit ?" Canvas.Left="108" Canvas.Top="30" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-                <Button Content="YES" Command="{Binding Quit}" Canvas.Left="8" Canvas.Top="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" Height="31" Width="83" />
-                <Button Content="NO" Command="{Binding AbortQuit}" Canvas.Left="239" Canvas.Top="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" Height="31" Width="83" />
+
+                <Label Content="YES" Canvas.Left="8" Canvas.Top="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" Height="31" Width="83" HorizontalContentAlignment="Center"/>
+                <Button Style="{StaticResource CircleHover}" Command="{Binding Quit}" Canvas.Left="8" Canvas.Top="72" Height="31" Width="83" />
+
+                <Label Content="NO" Canvas.Left="239" Canvas.Top="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" Height="31" Width="83" HorizontalContentAlignment="Center"/>
+                <Button Style="{StaticResource CircleHover}" Command="{Binding AbortQuit}" Canvas.Left="239" Canvas.Top="72" Height="31" Width="83" />
             </Canvas>
         </Canvas>
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>

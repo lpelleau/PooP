@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Interactivity;
 using PooP.Core.Ressource;
+using PooP.GUI.Audio;
 
 namespace PooP.GUI.Views.CurrentGame
 {
@@ -650,6 +651,38 @@ namespace PooP.GUI.Views.CurrentGame
             get
             {
                 return new AttackUnitCommand(this, page);
+            }
+        }
+
+        public ICommand Sound
+        {
+            get
+            {
+                return SoundCommand.INSTANCE;
+            }
+        }
+
+        public ICommand Tutorial
+        {
+            get
+            {
+                return new TutorialCommand(window);
+            }
+        }
+
+        public ICommand Undo
+        {
+            get
+            {
+                return new UndoCommand(page);
+            }
+        }
+
+        public ICommand Redo
+        {
+            get
+            {
+                return new RedoCommand(page);
             }
         }
 

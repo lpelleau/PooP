@@ -123,12 +123,15 @@ namespace PooP.GUI.Views.WindowApp
         {
             frame.Content = splashScreen;
 
+            SoundCommand.INSTANCE.SetPage((PageInterface)splashScreen);
+
             flow.Push(splashScreen);
         }
 
         public void OpenCredits()
         {
             frame.Content = credits;
+            SoundCommand.INSTANCE.SetPage((PageInterface)credits);
             ((PageInterface)credits).OnReload();
             flow.Push(credits);
         }
@@ -142,6 +145,7 @@ namespace PooP.GUI.Views.WindowApp
                 Page page = new CurrentGameInterface(this);
                 frame.Content = page;
 
+                SoundCommand.INSTANCE.SetPage((PageInterface)page);
                 flow.Push(page);
             }
         }
@@ -155,6 +159,7 @@ namespace PooP.GUI.Views.WindowApp
                 Page page = new FinishedGameInterface(this);
                 frame.Content = page;
 
+                SoundCommand.INSTANCE.SetPage((PageInterface)page);
                 flow.Push(page);
             }
         }
@@ -167,6 +172,7 @@ namespace PooP.GUI.Views.WindowApp
 
                 frame.Content = mainMenu;
                 ((PageInterface)mainMenu).OnReload();
+                SoundCommand.INSTANCE.SetPage((PageInterface)mainMenu);
                 flow.Push(mainMenu);
             }
         }
@@ -176,6 +182,7 @@ namespace PooP.GUI.Views.WindowApp
             Page page = new LoadGameInterface(this);
             frame.Content = page;
 
+            SoundCommand.INSTANCE.SetPage((PageInterface)page);
             flow.Push(page);
         }
 
@@ -184,6 +191,7 @@ namespace PooP.GUI.Views.WindowApp
             Page page = new NewGameInterface(this);
             frame.Content = page;
 
+            SoundCommand.INSTANCE.SetPage((PageInterface)page);
             flow.Push(page);
         }
 
@@ -191,6 +199,7 @@ namespace PooP.GUI.Views.WindowApp
         {
             frame.Content = tutorial;
             ((PageInterface)tutorial).OnReload();
+            SoundCommand.INSTANCE.SetPage((PageInterface)tutorial);
             flow.Push(tutorial);
         }
 
@@ -207,6 +216,7 @@ namespace PooP.GUI.Views.WindowApp
             {
                 frame.Content = flow.Peek();
                 ((PageInterface)flow.Peek()).OnReload();
+                SoundCommand.INSTANCE.SetPage((PageInterface)flow.Peek());
             }
         }
 
