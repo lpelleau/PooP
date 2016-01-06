@@ -50,7 +50,15 @@ namespace PooP.GUI.Views.LoadGame
         public void SaveGame(string file)
         {
             //File.Create(PATH + "\\lsdflsdfk" + GameSave.EXTENSION);   
-            GameSave.INSTANCE.save(PATH + file + GameSave.EXTENSION);
+            try
+            {
+                GameSave.INSTANCE.save(PATH + file + GameSave.EXTENSION);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                Directory.CreateDirectory(PATH);
+                SaveGame(file);
+            }
         }
 
         public void DeleteGame(string file)

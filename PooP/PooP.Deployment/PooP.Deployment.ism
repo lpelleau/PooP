@@ -6,12 +6,12 @@
    <!ATTLIST msi xmlns:dt   CDATA #IMPLIED
                  codepage   CDATA #IMPLIED
                  compression (MSZIP|LZX|none) "LZX">
-   
+
    <!ELEMENT summary       (codepage?,title?,subject?,author?,keywords?,comments?,
                             template,lastauthor?,revnumber,lastprinted?,
                             createdtm?,lastsavedtm?,pagecount,wordcount,
                             charcount?,appname?,security?)>
-                            
+
    <!ELEMENT codepage      (#PCDATA)>
    <!ELEMENT title         (#PCDATA)>
    <!ELEMENT subject       (#PCDATA)>
@@ -28,8 +28,8 @@
    <!ELEMENT wordcount     (#PCDATA)>
    <!ELEMENT charcount     (#PCDATA)>
    <!ELEMENT appname       (#PCDATA)>
-   <!ELEMENT security      (#PCDATA)>                            
-                                
+   <!ELEMENT security      (#PCDATA)>
+
    <!ELEMENT table         (col+,row*)>
    <!ATTLIST table
                 name        CDATA #REQUIRED>
@@ -38,9 +38,9 @@
    <!ATTLIST col
                  key       (yes|no) #IMPLIED
                  def       CDATA #IMPLIED>
-                 
+
    <!ELEMENT row            (td+)>
-   
+
    <!ELEMENT td             (#PCDATA)>
    <!ATTLIST td
                  href       CDATA #IMPLIED
@@ -48,7 +48,7 @@
                  md5        CDATA #IMPLIED>
 ]>
 <msi version="2.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" codepage="65001">
-	
+
 	<summary>
 		<codepage>1252</codepage>
 		<title>Installation Database</title>
@@ -65,10 +65,10 @@
 		<pagecount>200</pagecount>
 		<wordcount>0</wordcount>
 		<charcount/>
-		<appname>InstallShield Express</appname>
+		<appname>InstallShield</appname>
 		<security>1</security>
 	</summary>
-	
+
 	<table name="ActionText">
 		<col key="yes" def="s72">Action</col>
 		<col def="L64">Description</col>
@@ -349,9 +349,9 @@
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td>{13B06C3E-CAB3-4D18-A3A0-7CF5F8AF5648}</td><td>PAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td>{AE270235-16EF-4FA5-B61B-82CD718CEE12}</td><td>RACES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{C96D3845-63BE-4674-9409-DD64285E4874}</td><td>TILESET</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.Core.dll</td><td>{8BCE532A-9026-493C-99C6-CA1536B95D40}</td><td>X64</td><td>2</td><td/><td>poop.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.NativeLib.dll</td><td>{FFCAAA4A-D844-4780-BC79-E9FA19608DED}</td><td>X64</td><td>2</td><td/><td>poop.nativelib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SmallWorld.exe</td><td>{482532AF-F584-4B29-A0B3-A1B6C7ABA85C}</td><td>X64</td><td>2</td><td/><td>smallworld.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.Core.dll2</td><td>{45A6E7C8-380F-49FA-8B49-F51127B15CA9}</td><td>X64</td><td>2</td><td/><td>poop.core.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.NativeLib.dll2</td><td>{2B250224-F83B-4CDF-BE26-CB15BCB206E5}</td><td>X64</td><td>2</td><td/><td>poop.nativelib.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SmallWorld.exe2</td><td>{026FE8B7-214A-43EC-84D8-2F452158B9B9}</td><td>X64</td><td>2</td><td/><td>smallworld.exe2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1072,17 +1072,17 @@
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT8</td></row>
-		<row><td>INSTALLDIR</td><td>PooP.Core.dll</td></row>
-		<row><td>INSTALLDIR</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>INSTALLDIR</td><td>SmallWorld.exe</td></row>
+		<row><td>INSTALLDIR</td><td>PooP.Core.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>SmallWorld.exe2</td></row>
 		<row><td>PAGES</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>RACES</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>SMALLWORLD</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>TILESET</td><td>ISX_DEFAULTCOMPONENT8</td></row>
 		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT4</td></row>
-		<row><td>X64</td><td>PooP.Core.dll</td></row>
-		<row><td>X64</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>X64</td><td>SmallWorld.exe</td></row>
+		<row><td>X64</td><td>PooP.Core.dll2</td></row>
+		<row><td>X64</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>X64</td><td>SmallWorld.exe2</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1881,6 +1881,7 @@
 		<col def="S255">ProgId_</col>
 		<col def="S64">MIME_</col>
 		<col def="s38">Feature_</col>
+		<row><td>ext1</td><td>SmallWorld.exe2</td><td>flav.File</td><td/><td>AlwaysInstall</td></row>
 	</table>
 
 	<table name="Feature">
@@ -1911,9 +1912,9 @@
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT8</td></row>
-		<row><td>AlwaysInstall</td><td>PooP.Core.dll</td></row>
-		<row><td>AlwaysInstall</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>AlwaysInstall</td><td>SmallWorld.exe</td></row>
+		<row><td>AlwaysInstall</td><td>PooP.Core.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>PooP.NativeLib.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>SmallWorld.exe2</td></row>
 	</table>
 
 	<table name="File">
@@ -2071,39 +2072,30 @@
 		<row><td>_54.bmp1</td><td>ISX_DEFAULTCOMPONENT8</td><td>154.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\tileset\154.bmp</td><td>1</td><td/></row>
 		<row><td>_54.bmp2</td><td>ISX_DEFAULTCOMPONENT8</td><td>254.bmp</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\tileset\254.bmp</td><td>1</td><td/></row>
 		<row><td>circlehover.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>CIRCLE~1.PNG|circleHover.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\circleHover.png</td><td>1</td><td/></row>
-		<row><td>circlehover0.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>CIRCLE~1.PNG|circleHover0.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\circleHover0.png</td><td>1</td><td/></row>
-		<row><td>contract.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>contract.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\contract.png</td><td>1</td><td/></row>
 		<row><td>currentgame.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>CURREN~1.PNG|currentGame.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\currentGame.png</td><td>1</td><td/></row>
-		<row><td>currentgame.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>CURREN~1.XCF|currentGame.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\currentGame.xcf</td><td>1</td><td/></row>
 		<row><td>elf.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>elf.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\elf.png</td><td>1</td><td/></row>
 		<row><td>elf_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>elf_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\elf_unit.png</td><td>1</td><td/></row>
-		<row><td>expand.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>expand.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\expand.png</td><td>1</td><td/></row>
 		<row><td>human.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>human.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\human.png</td><td>1</td><td/></row>
 		<row><td>human_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>HUMAN_~1.PNG|human_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\human_unit.png</td><td>1</td><td/></row>
 		<row><td>logo.ico</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.ico</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\logo.ico</td><td>1</td><td/></row>
 		<row><td>logo.png</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\logo.png</td><td>1</td><td/></row>
 		<row><td>mainmenu.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>mainMenu.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\mainMenu.png</td><td>1</td><td/></row>
-		<row><td>mainmenu.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>mainMenu.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\mainMenu.xcf</td><td>1</td><td/></row>
 		<row><td>mainmenu_quitpopup.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>MAINME~1.PNG|mainMenu-QuitPopup.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\mainMenu-QuitPopup.png</td><td>1</td><td/></row>
-		<row><td>mainmenu_quitpopup.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>MAINME~1.XCF|mainMenu-QuitPopup.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\mainMenu-QuitPopup.xcf</td><td>1</td><td/></row>
 		<row><td>newgame.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>newGame.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\newGame.png</td><td>1</td><td/></row>
-		<row><td>newgame.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>newGame.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\newGame.xcf</td><td>1</td><td/></row>
 		<row><td>orc.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>orc.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\orc.png</td><td>1</td><td/></row>
 		<row><td>orc_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>orc_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\orc_unit.png</td><td>1</td><td/></row>
 		<row><td>org.elf.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGELF~1.PNG|org.elf.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\org.elf.png</td><td>1</td><td/></row>
 		<row><td>org.human.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGHUM~1.PNG|org.human.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\org.human.png</td><td>1</td><td/></row>
 		<row><td>org.orc.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>ORGORC~1.PNG|org.orc.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\org.orc.png</td><td>1</td><td/></row>
 		<row><td>oursvince___magic_spell.wav</td><td>ISX_DEFAULTCOMPONENT1</td><td>OURSVI~1.WAV|Oursvince_-_Magic_Spell.wav</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\audio\Oursvince_-_Magic_Spell.wav</td><td>1</td><td/></row>
-		<row><td>poop.core.dll</td><td>PooP.Core.dll</td><td>POOPCO~1.DLL|PooP.Core.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\PooP.Core.dll</td><td>1</td><td/></row>
-		<row><td>poop.nativelib.dll</td><td>PooP.NativeLib.dll</td><td>POOPNA~1.DLL|PooP.NativeLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\PooP.NativeLib.dll</td><td>1</td><td/></row>
+		<row><td>poop.core.dll2</td><td>PooP.Core.dll2</td><td>POOPCO~1.DLL|PooP.Core.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\PooP.Core.dll</td><td>1</td><td/></row>
+		<row><td>poop.nativelib.dll2</td><td>PooP.NativeLib.dll2</td><td>POOPNA~1.DLL|PooP.NativeLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\PooP.NativeLib.dll</td><td>1</td><td/></row>
 		<row><td>redcross.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>redcross.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\redcross.png</td><td>1</td><td/></row>
 		<row><td>redo.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>redo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\redo.png</td><td>1</td><td/></row>
 		<row><td>redoenable.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>REDOEN~1.PNG|redoEnable.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\redoEnable.png</td><td>1</td><td/></row>
-		<row><td>smallworld.exe</td><td>SmallWorld.exe</td><td>SMALLW~1.EXE|SmallWorld.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>1</td><td/></row>
+		<row><td>smallworld.exe2</td><td>SmallWorld.exe2</td><td>SMALLW~1.EXE|SmallWorld.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>1</td><td/></row>
 		<row><td>splashscreen.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>SPLASH~1.PNG|splashScreen.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\splashScreen.png</td><td>1</td><td/></row>
-		<row><td>splashscreen.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>SPLASH~1.XCF|splashScreen.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\splashScreen.xcf</td><td>1</td><td/></row>
 		<row><td>text.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>text.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\text.png</td><td>1</td><td/></row>
-		<row><td>text.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>text.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\text.xcf</td><td>1</td><td/></row>
 		<row><td>tutorialmap.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>TUTORI~1.PNG|tutorialMap.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\tutorialMap.png</td><td>1</td><td/></row>
 		<row><td>undo.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>undo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\undo.png</td><td>1</td><td/></row>
 		<row><td>undoenable.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>UNDOEN~1.PNG|undoEnable.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\undoEnable.png</td><td>1</td><td/></row>
@@ -2257,9 +2249,9 @@
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td/><td/><td>_C02C1A90_A169_4094_901A_29AA1EFC3224_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td/><td/><td>_CD96141B_2F43_4EA2_BC05_203AC6BDC95E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td/><td/><td>_DEFDE6A6_AEE3_440D_9077_A7A31DB96BA9_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PooP.Core.dll</td><td/><td/><td>_3579263A_316D_4925_8405_3DFACCE2DE71_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PooP.NativeLib.dll</td><td/><td/><td>_B3171E5A_CE01_4698_9A26_AB49891CAD04_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SmallWorld.exe</td><td/><td/><td>_EED1D7B7_F585_4A60_842E_D5046568A368_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PooP.Core.dll2</td><td/><td/><td>_582502D0_E02B_4869_BF1D_E4293463C630_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PooP.NativeLib.dll2</td><td/><td/><td>_6788A505_51C5_47C1_9574_794F5465C163_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SmallWorld.exe2</td><td/><td/><td>_3A49F2BA_EA6F_43F9_BA3B_00FEAB29380B_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2267,6 +2259,14 @@
 		<col def="S0">Description</col>
 		<col def="S255">FileType</col>
 		<col def="S255">ISCAReferenceFilePath</col>
+	</table>
+
+	<table name="ISDIM">
+		<col key="yes" def="s255">DIM</col>
+		<col def="S0">ISBuildSourcePath</col>
+		<col def="S255">Name</col>
+		<col def="S255">Destination</col>
+		<col def="I4">ISAttributes</col>
 	</table>
 
 	<table name="ISDIMDependency">
@@ -2326,6 +2326,11 @@
 	<table name="ISFeatureDIMReferences">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">ISDIMReference_</col>
+	</table>
+
+	<table name="ISFeatureDIMs">
+		<col key="yes" def="s38">Feature_</col>
+		<col key="yes" def="s255">ISDIM_</col>
 	</table>
 
 	<table name="ISFeatureMergeModuleExcludes">
@@ -2443,6 +2448,7 @@
 		<col def="S255">Cabinet</col>
 		<col def="S32">VolumeLabel</col>
 		<col def="S32">Source</col>
+		<row><td>1</td><td>Small World</td><td>1.0</td><td>0</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISLogicalDiskFeatures">
@@ -2476,6 +2482,15 @@
 		<col def="L255">Description</col>
 		<col def="L255">HelpLocation</col>
 		<col def="L255">HelpKeyword</col>
+	</table>
+
+	<table name="ISNetworkShares">
+		<col key="yes" def="s72">Component_</col>
+		<col def="S255">ServerName</col>
+		<col def="s255">ShareName</col>
+		<col def="S0">Remark</col>
+		<col def="i4">Permission</col>
+		<col def="i4">MaxUsers</col>
 	</table>
 
 	<table name="ISObject">
@@ -2542,6 +2557,7 @@
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
+		<row><td>PATH_TO__FILES</td><td>D:\</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
@@ -2552,6 +2568,7 @@
 		<col def="S255">ProductConfigurationFlags</col>
 		<col def="I4">GeneratePackageCode</col>
 		<row><td>Express</td><td/><td>1</td></row>
+		<row><td>Small World</td><td/><td>1</td></row>
 	</table>
 
 	<table name="ISProductConfigurationInstance">
@@ -2565,6 +2582,8 @@
 		<col key="yes" def="s72">ISProductConfiguration_</col>
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
+		<row><td>Small World</td><td>IncludeActionHelp</td><td>1</td></row>
+		<row><td>Small World</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
 	<table name="ISRelease">
@@ -2598,6 +2617,7 @@
 		<col def="S255">DotNetBuildConfiguration</col>
 		<col def="S255">MsiCommandLine</col>
 		<col def="I4">ISSetupPrerequisiteLocation</col>
+		<row><td>1.0</td><td>Small World</td><td>&lt;PATH_TO__FILES&gt;</td><td>PackageName</td><td>1</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>1</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>8921101</td><td/><td/><td/><td/></row>
 		<row><td>CD_ROM</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>0</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>650</td><td>0</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>Custom</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>2</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>100</td><td>0</td><td>1024</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-10</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>8.75</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
@@ -2646,6 +2666,7 @@
 		<col def="I4">MsiEngineVersion</col>
 		<col def="S255">WinMsi30Url</col>
 		<col def="S255">CertPassword</col>
+		<row><td>1.0</td><td>Small World</td><td>0</td><td>http://</td><td>0</td><td>install</td><td>install</td><td>[LocalAppDataFolder]Downloaded Installations</td><td>1</td><td>http://www.installengine.com/Msiengine20</td><td>http://www.installengine.com/Msiengine20</td><td/><td>http://www.installengine.com/cert05/isengine</td><td/><td/><td/><td/><td>3</td><td>http://www.installengine.com/cert05/dotnetfx</td><td>2</td><td>1033</td><td/><td/><td/><td/><td>16</td><td>3</td><td>16</td><td>http://www.installengine.com/Msiengine30</td><td/></row>
 		<row><td>CD_ROM</td><td>Express</td><td>0</td><td>http://</td><td>0</td><td>install</td><td>install</td><td>[LocalAppDataFolder]Downloaded Installations</td><td>0</td><td>http://www.installengine.com/Msiengine20</td><td>http://www.installengine.com/Msiengine20</td><td>0</td><td>http://www.installengine.com/cert05/isengine</td><td>0</td><td/><td/><td/><td>3</td><td>http://www.installengine.com/cert05/dotnetfx</td><td>0</td><td>1033</td><td/><td/><td/><td/><td/><td>3</td><td/><td>http://www.installengine.com/Msiengine30</td><td/></row>
 		<row><td>Custom</td><td>Express</td><td>0</td><td>http://</td><td>0</td><td>install</td><td>install</td><td>[LocalAppDataFolder]Downloaded Installations</td><td>0</td><td>http://www.installengine.com/Msiengine20</td><td>http://www.installengine.com/Msiengine20</td><td>0</td><td>http://www.installengine.com/cert05/isengine</td><td>0</td><td/><td/><td/><td>3</td><td>http://www.installengine.com/cert05/dotnetfx</td><td>0</td><td>1033</td><td/><td/><td/><td/><td/><td>3</td><td/><td>http://www.installengine.com/Msiengine30</td><td/></row>
 		<row><td>DVD-10</td><td>Express</td><td>0</td><td>http://</td><td>0</td><td>install</td><td>install</td><td>[LocalAppDataFolder]Downloaded Installations</td><td>0</td><td>http://www.installengine.com/Msiengine20</td><td>http://www.installengine.com/Msiengine20</td><td>0</td><td>http://www.installengine.com/cert05/isengine</td><td>0</td><td/><td/><td/><td>3</td><td>http://www.installengine.com/cert05/dotnetfx</td><td>0</td><td>1033</td><td/><td/><td/><td/><td/><td>3</td><td/><td>http://www.installengine.com/Msiengine30</td><td/></row>
@@ -2661,6 +2682,7 @@
 		<col key="yes" def="s72">ISProductConfiguration_</col>
 		<col key="yes" def="s72">Name</col>
 		<col def="s0">Value</col>
+		<row><td>1.0</td><td>Small World</td><td>CabCompressionType</td><td>1</td></row>
 	</table>
 
 	<table name="ISReleasePublishInfo">
@@ -2788,8 +2810,49 @@
 		<col def="i4">Attributes</col>
 	</table>
 
+	<table name="ISScheduledTasks">
+		<col key="yes" def="s72">ISScheduledTasks</col>
+		<col def="s72">Component_</col>
+		<col def="l255">TaskName</col>
+		<col def="L0">Comments</col>
+		<col def="s255">TaskRun</col>
+		<col def="S255">Arguments</col>
+		<col def="S72">WkDir</col>
+		<col def="S255">UserName</col>
+		<col def="S255">Password</col>
+		<col def="S255">StartTime</col>
+		<col def="s255">Schedule</col>
+		<col def="S255">Modifier</col>
+		<col def="S255">Days</col>
+		<col def="S255">Months</col>
+		<col def="I4">IdleTime</col>
+		<col def="S255">StartDate</col>
+		<col def="S255">EndDate</col>
+		<col def="I4">Attributes</col>
+	</table>
+
 	<table name="ISScriptFile">
 		<col key="yes" def="s255">ISScriptFile</col>
+	</table>
+
+	<table name="ISSearchReplace">
+		<col key="yes" def="s72">ISSearchReplace</col>
+		<col def="s72">ISSearchReplaceSet_</col>
+		<col def="S0">Search</col>
+		<col def="S0">Replace</col>
+		<col def="i2">Attributes</col>
+		<col def="i2">Order</col>
+	</table>
+
+	<table name="ISSearchReplaceSet">
+		<col key="yes" def="s72">ISSearchReplaceSet</col>
+		<col def="s72">Component_</col>
+		<col def="s72">Directory_</col>
+		<col def="S0">IncludeFiles</col>
+		<col def="S0">ExcludeFiles</col>
+		<col def="i2">Attributes</col>
+		<col def="i2">Order</col>
+		<col def="i2">CodePage</col>
 	</table>
 
 	<table name="ISSelfReg">
@@ -3661,7 +3724,6 @@
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>-1507620339</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>-1507620339</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>LAUNCH~1.EXE|Launch SmallWorld.exe</td><td>0</td><td/><td>-1507636531</td></row>
-		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>SMALLW~1|Small World</td><td>0</td><td/><td>681882549</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>-1507620339</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>-1507620339</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-1507620339</td></row>
@@ -4068,9 +4130,8 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PooP.GUI\images\logo.ico</td><td>0</td></row>
-		<row><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
-		<row><td>SmallWorld.exe_65F9FD742820416D9996DBA2B6E17ABB.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
-		<row><td>SmallWorld.exe_E4B2C885904446219DEE96DC70D30559.exe</td><td/><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
+		<row><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td/><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
+		<row><td>SmallWorld.exe_65F9FD742820416D9996DBA2B6E17ABB.exe</td><td/><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4185,8 +4246,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
-UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="c1bdad126ee659024f002c62fc02e719">
+MQAuADAAAQBTAG0AYQBsAGwAIABXAG8AcgBsAGQA
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>
@@ -4203,8 +4264,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{97E7DC90-E93C-4633-82DD-E51036D9CBC6}</td></row>
 		<row><td>ISUSSignature</td><td>{610C0D08-5693-4281-8EBD-2D0CE4FC81BF}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppFiles,viewObjects,viewShortcuts,viewRegistry,viewIniFiles,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewTextMessages,viewSystemSearch,viewRelease,viewUpgradePaths,viewUpdateService,viewCustomActions,viewLearnMore</td></row>
-		<row><td>Limited</td><td>1</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppFiles,viewObjects,viewShortcuts,viewRegistry,viewIniFiles,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewTextMessages,viewSystemSearch,viewRelease,viewUpgradePaths,viewUpdateService,viewCustomActions</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
 		<row><td>MsiLogFile</td><td/></row>
@@ -4216,7 +4276,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SccEnabled</td><td>0</td></row>
 		<row><td>SccPath</td><td/></row>
 		<row><td>SchemaVersion</td><td>776</td></row>
-		<row><td>Type</td><td>MSIE</td></row>
+		<row><td>Type</td><td>MSI</td></row>
 	</table>
 
 	<table name="InstallUISequence">
@@ -4502,6 +4562,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S72">Icon_</col>
 		<col def="I2">IconIndex</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>flav.File</td><td/><td/><td/><td/><td>0</td><td/></row>
 	</table>
 
 	<table name="Property">
@@ -4655,8 +4716,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>SmallWorld.exe</td><td/><td>insare_1_insa_rennes</td><td>2</td></row>
-		<row><td>FileKey2</td><td>SmallWorld.exe</td><td/><td>smallw_1_small_world</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4742,7 +4801,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>SmallWorld.exe</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>SmallWorld.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>SmallWorld.exe_E4B2C885904446219DEE96DC70D30559.exe</td><td>1</td><td>1</td><td>X64</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>SmallWorld.exe2</td><td>[INSTALLDIR]SmallWorld\bin\x64\SmallWorld.exe</td><td/><td/><td/><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td>1</td><td>1</td><td>X64</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4873,6 +4932,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I2">Sequence</col>
 		<col def="L255">Command</col>
 		<col def="L255">Argument</col>
+		<row><td>ext1</td><td>open</td><td/><td/><td/></row>
 	</table>
 
 	<table name="_Validation">
@@ -5169,6 +5229,11 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISCustomActionReference</td><td>Description</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Contents of the file speciifed in ISCAReferenceFilePath. This column is only used by MSI.</td></row>
 		<row><td>ISCustomActionReference</td><td>FileType</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>file type of the file specified  ISCAReferenceFilePath. This column is only used by MSI.</td></row>
 		<row><td>ISCustomActionReference</td><td>ISCAReferenceFilePath</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Full path, the category is of Text instead of Path because of potential use of path variables.  This column only exists in ISM.</td></row>
+		<row><td>ISDIM</td><td>DIM</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>The GUID identifying the DIM</td></row>
+		<row><td>ISDIM</td><td>Destination</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Destination.</td></row>
+		<row><td>ISDIM</td><td>ISAttributes</td><td>Y</td><td/><td/><td/><td/><td/><td/><td>This is used to store Installshield custom properties of a DIM.</td></row>
+		<row><td>ISDIM</td><td>ISBuildSourcePath</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Full path, the category is of Text instead of Path because of potential use of path variables.</td></row>
+		<row><td>ISDIM</td><td>Name</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Name of the DIM.</td></row>
 		<row><td>ISDIMDependency</td><td>ISDIMReference_</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>This is the primary key to the ISDIMDependency table</td></row>
 		<row><td>ISDIMDependency</td><td>RequiredBuildVersion</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>the build version identifying the required DIM</td></row>
 		<row><td>ISDIMDependency</td><td>RequiredMajorVersion</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>the major version identifying the required DIM</td></row>
@@ -5201,6 +5266,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISDynamicFile</td><td>SourceFolder</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Full path, the category is of Text instead of Path because of potential use of path variables.</td></row>
 		<row><td>ISFeatureDIMReferences</td><td>Feature_</td><td>N</td><td/><td/><td>Feature</td><td>1</td><td>Identifier</td><td/><td>Foreign key into Feature table.</td></row>
 		<row><td>ISFeatureDIMReferences</td><td>ISDIMReference_</td><td>N</td><td/><td/><td>ISDIMReference</td><td>1</td><td>Identifier</td><td/><td>Foreign key into ISDIMReference table.</td></row>
+		<row><td>ISFeatureDIMs</td><td>Feature_</td><td>N</td><td/><td/><td>Feature</td><td>1</td><td>Identifier</td><td/><td>Foreign key into Feature table.</td></row>
+		<row><td>ISFeatureDIMs</td><td>ISDIM_</td><td>N</td><td/><td/><td>ISDIM</td><td>1</td><td>Text</td><td/><td>Foreign key into ISDIM table.</td></row>
 		<row><td>ISFeatureMergeModuleExcludes</td><td>Feature_</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Foreign key into Feature table.</td></row>
 		<row><td>ISFeatureMergeModuleExcludes</td><td>Language</td><td>N</td><td/><td/><td/><td/><td/><td/><td>Foreign key into ISMergeModule table.</td></row>
 		<row><td>ISFeatureMergeModuleExcludes</td><td>ModuleID</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Foreign key into ISMergeModule table.</td></row>
@@ -5297,6 +5364,12 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISMergeModuleCfgValues</td><td>ModuleConfiguration_</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Identifier, foreign key into ModuleConfiguration table (ModuleConfiguration.Name)</td></row>
 		<row><td>ISMergeModuleCfgValues</td><td>Type</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Type (from configurable merge module)</td></row>
 		<row><td>ISMergeModuleCfgValues</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value for this item.</td></row>
+		<row><td>ISNetworkShares</td><td>Component_</td><td>N</td><td/><td/><td>Component</td><td>1</td><td>Identifier</td><td/><td>Required foreign key into the Component Table.</td></row>
+		<row><td>ISNetworkShares</td><td>MaxUsers</td><td>N</td><td/><td/><td/><td/><td/><td/><td>The maximum number of concurrent connections that the shared resource can accommodate.</td></row>
+		<row><td>ISNetworkShares</td><td>Permission</td><td>N</td><td/><td/><td/><td/><td/><td/><td>Permission Access mask.</td></row>
+		<row><td>ISNetworkShares</td><td>Remark</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The optional comment about the shared resource.</td></row>
+		<row><td>ISNetworkShares</td><td>ServerName</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The DNS or NetBIOS name of the remote server on which the function is to execute.</td></row>
+		<row><td>ISNetworkShares</td><td>ShareName</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>The share name of the resource.</td></row>
 		<row><td>ISObject</td><td>Language</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td/></row>
 		<row><td>ISObject</td><td>ObjectName</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td/></row>
 		<row><td>ISObjectProperty</td><td>IncludeInBuild</td><td>Y</td><td/><td/><td/><td/><td/><td/><td>Boolean, 0 for false non 0 for true</td></row>
@@ -5507,7 +5580,39 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISSQLScriptReplace</td><td>ISSQLScriptReplace</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key used to identify a particular ISSQLScriptReplace record.</td></row>
 		<row><td>ISSQLScriptReplace</td><td>Replace</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>ISSQLScriptReplace</td><td>Search</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISScheduledTasks</td><td>Arguments</td><td>Y</td><td/><td/><td/><td/><td>Formatted</td><td/><td>An optional value that specifies the command line arguments for the program specified with the TaskRun column.</td></row>
+		<row><td>ISScheduledTasks</td><td>Attributes</td><td>Y</td><td/><td/><td/><td/><td/><td/><td>This column contains a bit flag that specifies options for the scheduled task.</td></row>
+		<row><td>ISScheduledTasks</td><td>Comments</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The optional comment about the task.</td></row>
+		<row><td>ISScheduledTasks</td><td>Component_</td><td>N</td><td/><td/><td>Component</td><td>1</td><td>Identifier</td><td/><td>Required foreign key into the Component Table.</td></row>
+		<row><td>ISScheduledTasks</td><td>Days</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies the day of the week to run the task. Valid values are: MON, TUE, WED, THU, FRI, SAT, SUN and for MONTHLY schedules 1 - 31 (days of the month). The wildcard character (*) specifies all days.</td></row>
+		<row><td>ISScheduledTasks</td><td>EndDate</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Specifies the last date that the task is scheduled to run.</td></row>
+		<row><td>ISScheduledTasks</td><td>ISScheduledTasks</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key used to identify a particular ISScheduledTasks record.</td></row>
+		<row><td>ISScheduledTasks</td><td>IdleTime</td><td>Y</td><td/><td/><td/><td/><td/><td/><td>A value that specifies the amount of idle time to wait before running a scheduled ONIDLE task. The valid range is 1 - 999 minutes.</td></row>
+		<row><td>ISScheduledTasks</td><td>Modifier</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that refines the schedule type to allow for finer control over the schedule recurrence.</td></row>
+		<row><td>ISScheduledTasks</td><td>Months</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies months of the year. Defaults to the first day of the month. Valid values are: JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, and DEC. The wildcard character (*) specifies all months.</td></row>
+		<row><td>ISScheduledTasks</td><td>Password</td><td>Y</td><td/><td/><td/><td/><td>Formatted</td><td/><td>A value that specifies the password for the user specified with the UserName column.</td></row>
+		<row><td>ISScheduledTasks</td><td>Schedule</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies the schedule frequency. Valid values are: MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONLOGON, ONIDLE, and ONEVENT.</td></row>
+		<row><td>ISScheduledTasks</td><td>StartDate</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Specifies the date that the task starts in MM/DD/YYYY format.</td></row>
+		<row><td>ISScheduledTasks</td><td>StartTime</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies the start time to run the scheduled task.</td></row>
+		<row><td>ISScheduledTasks</td><td>TaskName</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies a name which uniquely identifies the scheduled task.</td></row>
+		<row><td>ISScheduledTasks</td><td>TaskRun</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>A value that specifies the path and file name of the task to be run at the scheduled time.</td></row>
+		<row><td>ISScheduledTasks</td><td>UserName</td><td>Y</td><td/><td/><td/><td/><td>Formatted</td><td/><td>A value that specifies the user context under which the task runs.</td></row>
+		<row><td>ISScheduledTasks</td><td>WkDir</td><td>Y</td><td/><td/><td/><td/><td>Identifier</td><td/><td>An optional value that specifies the working directory for the program specified with the TaskRun column.</td></row>
 		<row><td>ISScriptFile</td><td>ISScriptFile</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>This is the full path of the script file. The path portion may be expressed in path variable form.</td></row>
+		<row><td>ISSearchReplace</td><td>Attributes</td><td>N</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplace</td><td>ISSearchReplace</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key used to identify a particular ISSearchReplace record.</td></row>
+		<row><td>ISSearchReplace</td><td>ISSearchReplaceSet_</td><td>N</td><td/><td/><td>ISSearchReplaceSet</td><td>1</td><td>Identifier</td><td/><td>Foreign key referencing ISSearchReplaceSet.</td></row>
+		<row><td>ISSearchReplace</td><td>Order</td><td>N</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplace</td><td>Replace</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplace</td><td>Search</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplaceSet</td><td>Attributes</td><td>N</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplaceSet</td><td>CodePage</td><td>N</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplaceSet</td><td>Component_</td><td>N</td><td/><td/><td>Component</td><td>1</td><td>Identifier</td><td/><td>Foreign key referencing Component that controls the text file change.</td></row>
+		<row><td>ISSearchReplaceSet</td><td>Directory_</td><td>N</td><td/><td/><td>Directory</td><td>1</td><td>Identifier</td><td/><td>Foreign key referencing Directory that contains the text files.</td></row>
+		<row><td>ISSearchReplaceSet</td><td>ExcludeFiles</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplaceSet</td><td>ISSearchReplaceSet</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key used to identify a particular ISSearchReplaceSet record.</td></row>
+		<row><td>ISSearchReplaceSet</td><td>IncludeFiles</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>ISSearchReplaceSet</td><td>Order</td><td>N</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>ISSelfReg</td><td>CmdLine</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>ISSelfReg</td><td>Cost</td><td>Y</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>ISSelfReg</td><td>FileKey</td><td>N</td><td/><td/><td>File</td><td>1</td><td>Identifier</td><td/><td>Foreign key to the file table</td></row>
