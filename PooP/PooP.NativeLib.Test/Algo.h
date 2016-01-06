@@ -42,7 +42,6 @@ private:
 	void placeP2(int *x, int *y);
 
 	double moveCostFromTile(Race race, int x, int y, int life, int enemies[], int nbEnemies);
-	double moveCost(Race race, int xS, int yS, int xT, int yT, int life, int enemies[], int nbEnemies);
 
 public:
 	Algo() {}
@@ -52,4 +51,5 @@ public:
 	void fillMap(TileType map[], int size);
 	void placePlayers(int players[]);
 	void bestMoves(Race race, int units[], double mvPts[], int nbUnits, int life[], int enemies[], int nbEnemies, int moves[]);
+	double moveCost(Race race, int xS, int yS, int xT, int yT, int life, int enemies[], int nbEnemies);
 };
