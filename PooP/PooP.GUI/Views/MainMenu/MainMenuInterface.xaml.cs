@@ -42,12 +42,12 @@ namespace PooP.GUI.Views.MainMenu
             }
         }
 
-        private void SoundHoverI(object sender, MouseEventArgs e)
+        private void CircleHoverI(object sender, MouseEventArgs e)
         {
             ((Rectangle)sender).Opacity = 100;
         }
 
-        private void SoundHoverO(object sender, MouseEventArgs e)
+        private void CircleHoverO(object sender, MouseEventArgs e)
         {
             ((Rectangle)sender).Opacity = 0;
         }
@@ -70,6 +70,11 @@ namespace PooP.GUI.Views.MainMenu
                 ((Image)FindName("FullscreenStyle")).Source = new BitmapImage(new Uri("../../images/pages/contract.png", UriKind.Relative));
                 window.FullScreen();
             }
+        }
+
+        private void NewGameClick(object sender, MouseButtonEventArgs e)
+        {
+            window.OpenNewGame();
         }
     }
 }
