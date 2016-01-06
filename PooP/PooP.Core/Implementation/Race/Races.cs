@@ -105,7 +105,7 @@ namespace PooP.Core.Implementation.Races
         /// <returns>true if there is at least oe human, false otherwise</returns>
         public bool hasUnits()
         {
-            return Units.Count() > 0;
+            return Units.Count(u => u.LifePoints > 0) > 0;
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace PooP.Core.Implementation.Races
         /// <returns>true if there is at least one living elf, false otherwise</returns>
         public bool hasUnits()
         {
-            return Units.Count() > 0;
+            return Units.Count(u => u.LifePoints > 0) > 0;
         }
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace PooP.Core.Implementation.Races
         /// <returns>true if there is at least one orc standing, false otherwise</returns>
         public bool hasUnits()
         {
-            return Units.Count() > 0;
+            return Units.Count(u => u.LifePoints > 0) > 0;
         }
 
         /// <summary>

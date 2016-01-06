@@ -311,17 +311,16 @@ int main() {
 
 	int tunits[] = { 1, 8, 4, 5, 8, 3, 3, 9 };
 	int tlife[] = { 17, 17, 17, 17 };
-	double tmv[] = { 2, 2, 2, 2 };
+	double tmv[] = { 2.0, 2.0, 2.0, 2.0, 2.0 };
 	int tenemies[] = { 12, 6, 8, 5, 4, 7, 3, 5, 6, 7 };
 
-	alg.bestMoves(Orc, tunits, tmv, NB_UNITS, tlife, tenemies, NB_UNITS, moves);
+	alg.bestMoves(Elf, tenemies, tmv, 5, tlife, tunits, NB_UNITS, moves);
 
 	cout << " ===" << endl;
 	cout << "3 best moves:" << endl;
 	cout << "\t1 - " << moves[0] << ":" << moves[1] << endl;
 	cout << "\t2 - " << moves[2] << ":" << moves[3] << endl;
 	cout << "\t3 - " << moves[4] << ":" << moves[5] << endl;
-
 
 	system("pause");
 }

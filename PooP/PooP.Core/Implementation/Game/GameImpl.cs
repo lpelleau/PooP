@@ -170,7 +170,8 @@ namespace PooP.Core.Implementation.Games
             int[] units = new int[nbUnits * 2];
             double[] mvPts = new double[nbUnits];
             int[] life = new int[nbUnits];
-            for (int i = 0; i < nbUnits; i++)
+            int i = 0;
+            for (i = 0; i < nbUnits; i++)
             {
                 e.MoveNext();
                 units[i * 2] = e.Current.Position.XPosition;
@@ -178,18 +179,31 @@ namespace PooP.Core.Implementation.Games
                 life[i] = e.Current.LifePoints;
                 mvPts[i] = e.Current.MovePoints;
             }
-
-            e = Players[1].Race.Units.GetEnumerator();
-            int nbEnemies = FirstPlayer.Race.Units.Count;
+            
+            int nbEnemies = Players.Sum(p => p.Race.Units.Count) - FirstPlayer.Race.Units.Count;
             int[] enemies = new int[nbEnemies * 2];
-            for (int i = 0; i < nbEnemies; i++)
+            i = 0;
+            for (int j = 0; j < Players.Count()-1; j++)
             {
-                e.MoveNext();
-                enemies[i * 2] = e.Current.Position.XPosition;
-                enemies[i * 2 + 1] = e.Current.Position.YPosition;
+                if (j == indexOfCurrentPlayer) j++;
+                for (int k = 0; k < Players[j].Race.Units.Count; k++)
+                {
+                    e.MoveNext();
+                    enemies[i * 2] = Players[j].Race.Units[k].Position.XPosition;
+                    enemies[i * 2 + 1] = Players[j].Race.Units[k].Position.YPosition;
+                    i++;
+                }
             }
 
-            return Algo.INSTANCE.BestMoves(3, WRace.Orc, units, mvPts, nbUnits, life, enemies, nbEnemies);
+            WRace race = WRace.Elf;
+            switch (FirstPlayer.Race.GetType().Name)
+            {
+                case "Orc": race = WRace.Orc; break;
+                case "Human": race = WRace.Human; break;
+                case "Elf": race = WRace.Elf; break;
+            }
+
+            return Algo.INSTANCE.BestMoves(3, race, units, mvPts, nbUnits, life, enemies, nbEnemies);
         }
     }
 }
