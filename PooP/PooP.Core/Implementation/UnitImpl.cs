@@ -111,10 +111,18 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit has the needed points to attack this position</returns>
         public bool canAttack(Position dest)
         {
-            return (getMoveCost(dest) - Int16.MaxValue / 2) <= MovePoints + Race.AttackDistance
-                && (dest.XPosition == Position.XPosition || dest.YPosition == Position.YPosition)
-                && GameBuilder.CURRENTGAME.Map.IsOccupied(dest, Race)
-                && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(dest).GetType().Name != "Water");
+            if (!GameBuilder.CURRENTGAME.Map.IsOccupied(dest, Race)) return false;
+            Position[] Test = {new Position(dest.XPosition,dest.YPosition+1),
+                               new Position(dest.XPosition+1,dest.YPosition),
+                               new Position(dest.XPosition,dest.YPosition-1),
+                               new Position(dest.XPosition-1,dest.YPosition)};
+            if ((getMoveCost(dest) - Int16.MaxValue / 2) <= MovePoints + Race.AttackDistance - 1
+                && (dest.XPosition == Position.XPosition || dest.YPosition == Position.YPosition)) return true;
+            for (int i = 0; i < Test.Count(); i++){
+                if ((getMoveCost(Test[i])) <= MovePoints - (Race.AttackDistance - 1)
+                && (Test[i].XPosition == Position.XPosition || Test[i].YPosition == Position.YPosition)) return true;
+            }
+            return false;
         }
 
         /// <summary>

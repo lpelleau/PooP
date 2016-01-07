@@ -70,7 +70,7 @@ namespace PooP.Core.Implementation.Commands
                 Damage = (MovedUnit.Race.Attack - Defender.Race.Defence) * randGenerator.Next(50,150)/100;
                 Defender.LifePoints -= Damage;
 
-                if (Defender.LifePoints <= 0)
+                if (Defender.LifePoints <= 0 && MovedUnit.canMoveTo(Target))
                 {
                     // Move the attacker to the tile
                     MovedUnit.Position = Target;
@@ -125,7 +125,7 @@ namespace PooP.Core.Implementation.Commands
                 // The damage are (Attack-Defence)+/-50%
                 Defender.LifePoints -= Damage;
 
-                if (Defender.LifePoints <= 0)
+                if (Defender.LifePoints <= 0 && MovedUnit.canMoveTo(Target))
                 {
                     // Move the attacker to the tile
                     MovedUnit.Position = Target;

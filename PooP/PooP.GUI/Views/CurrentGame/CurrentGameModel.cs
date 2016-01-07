@@ -468,6 +468,11 @@ namespace PooP.GUI.Views.CurrentGame
             }
 
             DrawUnits();
+
+            if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)
+            {
+                ((Label)page.FindName("EndTurn")).Content = "End game";
+            }
         }
 
         private void SelectTile(object sender, MouseButtonEventArgs e)
