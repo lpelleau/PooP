@@ -344,14 +344,14 @@
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{39A199DE-CB12-427B-BF58-EADD1A741099}</td><td>AUDIO</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{60FCB87A-C58C-43FB-B17E-D89D489B0D92}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{4ED1AA0C-3FA6-4FD2-9D7D-BDA293B5DAF0}</td><td>BIN</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{701EB126-9C22-4858-BED7-E8C5A32CB003}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{701EB126-9C22-4858-BED7-E8C5A32CB003}</td><td>BIN1</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT5</td><td>{DD5D863E-65FE-465E-8A67-9F707BE1B95D}</td><td>IMAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td>{13B06C3E-CAB3-4D18-A3A0-7CF5F8AF5648}</td><td>PAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td>{AE270235-16EF-4FA5-B61B-82CD718CEE12}</td><td>RACES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{C96D3845-63BE-4674-9409-DD64285E4874}</td><td>TILESET</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.Core.dll</td><td>{8BCE532A-9026-493C-99C6-CA1536B95D40}</td><td>X64</td><td>2</td><td/><td>poop.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PooP.NativeLib.dll</td><td>{FFCAAA4A-D844-4780-BC79-E9FA19608DED}</td><td>X64</td><td>2</td><td/><td>poop.nativelib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SmallWorld.exe</td><td>{482532AF-F584-4B29-A0B3-A1B6C7ABA85C}</td><td>X64</td><td>2</td><td/><td>smallworld.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.Core.dll</td><td>{8BCE532A-9026-493C-99C6-CA1536B95D40}</td><td>BIN1</td><td>2</td><td/><td>poop.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PooP.NativeLib.dll</td><td>{FFCAAA4A-D844-4780-BC79-E9FA19608DED}</td><td>BIN1</td><td>2</td><td/><td>poop.nativelib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SmallWorld.exe</td><td>{482532AF-F584-4B29-A0B3-A1B6C7ABA85C}</td><td>BIN1</td><td>2</td><td/><td>smallworld.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1062,6 +1062,10 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AUDIO</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>BIN</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>BIN1</td><td>ISX_DEFAULTCOMPONENT4</td></row>
+		<row><td>BIN1</td><td>PooP.Core.dll</td></row>
+		<row><td>BIN1</td><td>PooP.NativeLib.dll</td></row>
+		<row><td>BIN1</td><td>SmallWorld.exe</td></row>
 		<row><td>IMAGES</td><td>ISX_DEFAULTCOMPONENT5</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
@@ -1079,10 +1083,6 @@
 		<row><td>RACES</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>SMALLWORLD</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>TILESET</td><td>ISX_DEFAULTCOMPONENT8</td></row>
-		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT4</td></row>
-		<row><td>X64</td><td>PooP.Core.dll</td></row>
-		<row><td>X64</td><td>PooP.NativeLib.dll</td></row>
-		<row><td>X64</td><td>SmallWorld.exe</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1166,6 +1166,7 @@
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
 		<row><td>BIN</td><td>SMALLWORLD</td><td>bin</td><td/><td>0</td><td/></row>
+		<row><td>BIN1</td><td>BIN</td><td>bin</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
@@ -1210,7 +1211,6 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
-		<row><td>X64</td><td>BIN</td><td>x64</td><td/><td>0</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -4072,7 +4072,7 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PooP.GUI\images\logo.ico</td><td>0</td></row>
 		<row><td>NewShortcut1_31FFA71009D9439FA677799F5625EF2B.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
 		<row><td>SmallWorld.exe_65F9FD742820416D9996DBA2B6E17ABB.exe</td><td/><td>D:\Work\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
-		<row><td>SmallWorld.exe_E4B2C885904446219DEE96DC70D30559.exe</td><td/><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
+		<row><td>SmallWorld.exe_9E46B8F0B3BD4AF4958F4689DECABFC8.exe</td><td/><td>D:\PooP\PooP\PooP.GUI\bin\Debug\SmallWorld.exe</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4744,7 +4744,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>SmallWorld.exe</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>SmallWorld.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>SmallWorld.exe_E4B2C885904446219DEE96DC70D30559.exe</td><td>1</td><td>1</td><td>X64</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>SmallWorld.exe</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>SmallWorld.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>SmallWorld.exe_9E46B8F0B3BD4AF4958F4689DECABFC8.exe</td><td>1</td><td>1</td><td>BIN1</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
