@@ -28,6 +28,7 @@ namespace PooP.GUI.Views.LoadGame
             InitializeComponent();
             this.window = window;
             DataContext = new LoadGameModel(window, this);
+            ((ListBox)FindName("files")).ItemsSource = SaveChoser.INSTANCE.getSaves();
             OnReload();
         }
 

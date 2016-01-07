@@ -2080,6 +2080,7 @@
 		<row><td>expand.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>expand.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\expand.png</td><td>1</td><td/></row>
 		<row><td>human.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>human.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\human.png</td><td>1</td><td/></row>
 		<row><td>human_unit.png</td><td>ISX_DEFAULTCOMPONENT7</td><td>HUMAN_~1.PNG|human_unit.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\races\human_unit.png</td><td>1</td><td/></row>
+		<row><td>loadgame.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>loadGame.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\loadGame.png</td><td>1</td><td/></row>
 		<row><td>logo.ico</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.ico</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\logo.ico</td><td>1</td><td/></row>
 		<row><td>logo.png</td><td>ISX_DEFAULTCOMPONENT5</td><td>logo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\logo.png</td><td>1</td><td/></row>
 		<row><td>mainmenu.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>mainMenu.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\mainMenu.png</td><td>1</td><td/></row>
@@ -2103,7 +2104,7 @@
 		<row><td>splashscreen.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>SPLASH~1.PNG|splashScreen.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\splashScreen.png</td><td>1</td><td/></row>
 		<row><td>splashscreen.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>SPLASH~1.XCF|splashScreen.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\splashScreen.xcf</td><td>1</td><td/></row>
 		<row><td>text.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>text.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\text.png</td><td>1</td><td/></row>
-		<row><td>text.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>text.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\text.xcf</td><td>1</td><td/></row>
+		<row><td>textnloadgame.xcf</td><td>ISX_DEFAULTCOMPONENT6</td><td>TEXTNL~1.XCF|textNloadGame.xcf</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\textNloadGame.xcf</td><td>1</td><td/></row>
 		<row><td>tutorialmap.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>TUTORI~1.PNG|tutorialMap.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\tutorialMap.png</td><td>1</td><td/></row>
 		<row><td>undo.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>undo.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\undo.png</td><td>1</td><td/></row>
 		<row><td>undoenable.png</td><td>ISX_DEFAULTCOMPONENT6</td><td>UNDOEN~1.PNG|undoEnable.png</td><td>0</td><td/><td/><td/><td>1</td><td>D:\PooP\PooP\PooP.GUI\images\pages\undoEnable.png</td><td>1</td><td/></row>
@@ -3955,6 +3956,7 @@
 		<row><td>ID_STRING3</td><td>1033</td><td>INSA Rennes</td><td>0</td><td/><td>-1507651027</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>SMALLW~1|Small World</td><td>0</td><td/><td>-1239165429</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1507620339</td></row>
+		<row><td>NEW_STRING1</td><td>1033</td><td>flav</td><td>0</td><td/><td>950286962</td></row>
 	</table>
 
 	<table name="ISSwidtagProperty">
@@ -4147,7 +4149,7 @@
 		<row><td>RegisterUser</td><td/><td>6000</td><td>RegisterUser</td><td/></row>
 		<row><td>RemoveDuplicateFiles</td><td/><td>3400</td><td>RemoveDuplicateFiles</td><td/></row>
 		<row><td>RemoveEnvironmentStrings</td><td/><td>3300</td><td>RemoveEnvironmentStrings</td><td/></row>
-		<row><td>RemoveExistingProducts</td><td/><td>1410</td><td>RemoveExistingProducts</td><td/></row>
+		<row><td>RemoveExistingProducts</td><td/><td>6601</td><td>RemoveExistingProducts</td><td/></row>
 		<row><td>RemoveFiles</td><td/><td>3500</td><td>RemoveFiles</td><td/></row>
 		<row><td>RemoveFolders</td><td/><td>3600</td><td>RemoveFolders</td><td/></row>
 		<row><td>RemoveIniValues</td><td/><td>3100</td><td>RemoveIniValues</td><td/></row>
@@ -4185,8 +4187,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
-UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d78a46bf2c52ee27034bbcad20f7f95">
+QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>
