@@ -36,10 +36,10 @@
         </Grid>
 
         <Label Name="MoveOrAttack" Content="Move" Canvas.Left="200" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button Style="{StaticResource CircleHover}" Command="{Binding Move}" Canvas.Left="196" Canvas.Top="568" Height="24" Width="54" />
+        <Button Name="MoveOrAttackButton" Style="{StaticResource CircleHover}" Command="{Binding Move}" Canvas.Left="196" Canvas.Top="568" Height="24" Width="54" />
 
         <Label Content="End turn" Name="EndTurn" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button Style="{StaticResource CircleHover}" Command="{Binding EndTurn}" Canvas.Left="275" Canvas.Top="568" Height="24" Width="80" />
+        <Button Name="EndTurnButton" Style="{StaticResource CircleHover}" Command="{Binding EndTurn}" Canvas.Left="275" Canvas.Top="568" Height="24" Width="80" />
 
         <Label Content="Help" x:Name="Helpopy" Canvas.Left="530" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
         <Button Style="{StaticResource CircleHover}" Command="{Binding Help}" Canvas.Left="530" Canvas.Top="568" Height="24" Width="75" />

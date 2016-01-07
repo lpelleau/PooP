@@ -466,6 +466,11 @@ namespace PooP.GUI.Views.CurrentGame
             }
 
             DrawUnits();
+
+            if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)
+            {
+                ((Label)page.FindName("EndTurn")).Content = "End game";
+            }
         }
 
         private void SelectTile(object sender, MouseButtonEventArgs e)
@@ -485,15 +490,16 @@ namespace PooP.GUI.Views.CurrentGame
             else tileInfo += "\nUnoccupied";
             ((TextBlock)page.FindName("TileInfo")).Text = tileInfo;
 
-            Button b = (Button) page.FindName("MoveOrAttack");
+            Label l = (Label) page.FindName("MoveOrAttack");
+            Button b = (Button)page.FindName("MoveOrAttackButton");
             if (GameBuilder.CURRENTGAME.Map.IsOccupied(new Core.Ressource.Position(x, y), GameBuilder.CURRENTGAME.FirstPlayer.Race))
             {
-                b.Content = "Attack";
+                l.Content = "Attack";
                 b.Command = Attack;
             }
             else
             {
-                b.Content = "Move";
+                l.Content = "Move";
                 b.Command = Move;
             }
         }
