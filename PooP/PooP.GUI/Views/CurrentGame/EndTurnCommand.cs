@@ -43,7 +43,7 @@ namespace PooP.GUI.Views.CurrentGame
             ((Label)cgm.page.FindName("RemainingTurns")).Content = "Remaining turns : " + GameBuilder.CURRENTGAME.NumberOfTurns;
             if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)
             {
-                ((Button)cgm.page.FindName("EndTurn")).Content = "End game";
+                ((Label)cgm.page.FindName("EndTurn")).Content = "End game";
             }
             cgm.page.OnReload();
             cgm.PlaceHelp();

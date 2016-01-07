@@ -14,7 +14,7 @@
 
     <Canvas Width="800" Height="600">
         <Canvas.Background>
-            <ImageBrush ImageSource="/SmallWorld;component/images/pages/text.png" />
+            <ImageBrush ImageSource="/SmallWorld;component/images/pages/loadGame.png" />
         </Canvas.Background>
 
         <Image x:Name="MusicOFF" Height="41" Canvas.Left="736" Canvas.Top="14" Width="41" Source="/SmallWorld;component/images/pages/redcross.png" Visibility="Hidden"/>
@@ -26,15 +26,15 @@
         <Label Content="Small World" Canvas.Left="224" Canvas.Top="10" Foreground="#FF3C3935" FontFamily="Rockwell Extra Bold" FontSize="48"/>
         <Label Content="Load game" Canvas.Left="271" Canvas.Top="114" Foreground="#FF2B1902" FontFamily="Rockwell Extra Bold" FontSize="38"/>
 
-        <ListBox x:Name="files" Height="346" Canvas.Left="163" Canvas.Top="216" Width="345" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" BorderThickness="0" Foreground="#FF321D0B" FontFamily="Sitka Display"/>
+        <ListBox x:Name="files" Height="325" Canvas.Left="173" Canvas.Top="227" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" BorderThickness="0" Foreground="#FF321D0B" FontFamily="Sitka Display" FontWeight="Bold"/>
 
-        <Label Content="DELETE" Canvas.Left="531" Canvas.Top="216" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-        <Button Style="{StaticResource CircleHover}" Command="{Binding Delete}" Canvas.Left="531" Canvas.Top="216" Height="36" Width="111" />
+        <Label Content="DELETE" Canvas.Left="523" Canvas.Top="227" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Delete}" Canvas.Left="521" Canvas.Top="224" Height="46" Width="115" />
 
-        <Label Content="REFRESH" Canvas.Left="513" Canvas.Top="497" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-        <Button Style="{StaticResource CircleHover}" Command="{Binding Refresh}" Canvas.Left="513" Canvas.Top="497" Height="36" Width="129" />
-        
-        <Label Content="START" Canvas.Left="550" Canvas.Top="532" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
-        <Button Style="{StaticResource CircleHover}" Command="{Binding Load}" Canvas.Left="550" Canvas.Top="533" Height="35" Width="92" />
+        <Label Content="REFRESH" Canvas.Left="517" Canvas.Top="457" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="21" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Refresh}" Canvas.Left="521" Canvas.Top="452" Height="46" Width="115" />
+
+        <Label Content="START" Canvas.Left="533" Canvas.Top="516" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Load}" Canvas.Left="521" Canvas.Top="509" Height="46" Width="115" />
     </Canvas>
 </Page>
