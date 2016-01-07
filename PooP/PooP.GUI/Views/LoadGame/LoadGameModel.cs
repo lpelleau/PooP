@@ -14,18 +14,21 @@ namespace PooP.GUI.Views.LoadGame
     {
         private WindowInterface window;
         private LoadGameInterface page;
+        private RefreshCommand refreshCommand;
 
         public LoadGameModel(WindowInterface window, LoadGameInterface page)
         {
             this.window = window;
             this.page = page;
+            refreshCommand = new RefreshCommand(page);
+            refreshCommand.Execute(null);
         }
 
         public ICommand Refresh
         {
             get
             {
-                return new RefreshCommand(page);
+                return refreshCommand;
             }
         }
 
