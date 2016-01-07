@@ -1,4 +1,5 @@
 ﻿using PooP.Core.Implementation.Commands;
+using PooP.Core.Implementation.Games;
 using PooP.Core.Ressource;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ namespace PooP.GUI.Views.CurrentGame
     class AttackUnitCommand : ICommand
     {
         private CurrentGameModel cgm;
-        private PageInterface page;
+        private CurrentGameInterface page;
 
-        public AttackUnitCommand(CurrentGameModel currentGameModel, PageInterface page)
+        public AttackUnitCommand(CurrentGameModel currentGameModel, CurrentGameInterface page)
         {
             this.cgm = currentGameModel;
             this.page = page;
@@ -42,6 +43,12 @@ namespace PooP.GUI.Views.CurrentGame
             cgm.DrawUnits();
             page.OnReload();
             cgm.PlaceHelp();
+            ((Label)page.FindName("NameP0")).Content =
+                    GameBuilder.CURRENTGAME.Players[0].Name
+                    + " (VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints() + ")";
+            ((Label)page.FindName("NameP1")).Content =
+                    GameBuilder.CURRENTGAME.Players[1].Name
+                    + " (VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints() + ")";
         }
     }
 }
