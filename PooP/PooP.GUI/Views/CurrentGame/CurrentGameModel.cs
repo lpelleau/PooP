@@ -17,6 +17,8 @@ using System.Windows.Data;
 using System.Windows.Interactivity;
 using PooP.Core.Ressource;
 using PooP.GUI.Audio;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace PooP.GUI.Views.CurrentGame
 {
@@ -466,11 +468,6 @@ namespace PooP.GUI.Views.CurrentGame
             }
 
             DrawUnits();
-
-            if (GameBuilder.CURRENTGAME.NumberOfTurns == 1)
-            {
-                ((Label)page.FindName("EndTurn")).Content = "End game";
-            }
         }
 
         private void SelectTile(object sender, MouseButtonEventArgs e)
@@ -490,8 +487,8 @@ namespace PooP.GUI.Views.CurrentGame
             else tileInfo += "\nUnoccupied";
             ((TextBlock)page.FindName("TileInfo")).Text = tileInfo;
 
-            Label l = (Label) page.FindName("MoveOrAttack");
-            Button b = (Button)page.FindName("MoveOrAttackButton");
+            Label l = (Label)page.FindName("MoveOrAttack");
+            Button b = (Button)page.FindName("MoveOrAttackCommand");
             if (GameBuilder.CURRENTGAME.Map.IsOccupied(new Core.Ressource.Position(x, y), GameBuilder.CURRENTGAME.FirstPlayer.Race))
             {
                 l.Content = "Attack";
@@ -718,12 +715,20 @@ namespace PooP.GUI.Views.CurrentGame
 
         public string P1Name
         {
-            get { return GameBuilder.CURRENTGAME.Players[0].Name; }
+            get
+            {
+                return GameBuilder.CURRENTGAME.Players[0].Name
+                        + " (VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints() + ")";
+            }
         }
 
         public string P2Name
         {
-            get { return GameBuilder.CURRENTGAME.Players[1].Name; }
+            get
+            {
+                return GameBuilder.CURRENTGAME.Players[1].Name
+                        + " (VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints() + ")";
+            }
         }
 
         public string P1Font

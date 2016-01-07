@@ -231,6 +231,7 @@
     <Content Include="audio\fight.wav" />
     <Content Include="audio\Oursvince_-_Magic_Spell.wav" />
     <Content Include="audio\walk.wav" />
+    <Resource Include="images\pages\loadGame.png" />
     <Resource Include="images\pages\contract.png" />
     <Resource Include="images\pages\expand.png" />
     <Resource Include="images\pages\redo.png" />

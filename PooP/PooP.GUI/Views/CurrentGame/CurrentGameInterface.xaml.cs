@@ -1,8 +1,10 @@
 ﻿using PooP.Core.Implementation.Commands;
+using PooP.Core.Implementation.Games;
 using PooP.GUI.Audio;
 using PooP.GUI.Views.WindowApp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
