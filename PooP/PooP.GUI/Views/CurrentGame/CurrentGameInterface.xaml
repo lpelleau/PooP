@@ -30,26 +30,28 @@
 
         <TextBlock Name="TileInfo" Text="No tile selected
                    
-                   Select a tile to get informations" Canvas.Left="280" Canvas.Top="112" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974" Focusable="False" IsEnabled="False"/>
-        <Grid Name="Map" Height="405" Width="405" Canvas.Left="200" Canvas.Top="157">
+                   Select a tile to get informations" Canvas.Left="289" Canvas.Top="68" Width="240" Height="35" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Rockwell Extra Bold" Background="#FFA68974" Focusable="False" IsEnabled="False"/>
+        <Grid Name="Map" Height="405" Width="405" Canvas.Left="200" Canvas.Top="116">
             <Grid.ColumnDefinitions>
 
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <Label x:Name="MoveOrAttack" Content="Move" Canvas.Left="200" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button x:Name="MoveOrAttackCommand" Style="{StaticResource CircleHover}" Command="{Binding Move}" Canvas.Left="196" Canvas.Top="568" Height="24" Width="54" />
+        <Label x:Name="MoveOrAttack" Content="Move" Canvas.Left="148" Canvas.Top="543" Width="113" Height="38" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
+        <Button x:Name="MoveOrAttackCommand" Style="{StaticResource CircleHover}" Command="{Binding Move}" Canvas.Left="148" Canvas.Top="543" Height="38" Width="113" />
 
-        <Label x:Name="EndTurn" Content="End turn" Canvas.Left="280" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button Style="{StaticResource CircleHover}" Command="{Binding EndTurn}" Canvas.Left="275" Canvas.Top="568" Height="24" Width="80" />
+        <Label x:Name="EndTurn" Content="End turn" Canvas.Left="289" Canvas.Top="543" Width="113" Height="38" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding EndTurn}" Canvas.Left="289" Canvas.Top="543" Height="38" Width="113" />
 
-        <Label Content="Help" Canvas.Left="530" Canvas.Top="568" Width="75" FontFamily="Rockwell Extra Bold"/>
-        <Button Style="{StaticResource CircleHover}" Command="{Binding Help}" Canvas.Left="530" Canvas.Top="568" Height="24" Width="75" />
+        <Label Content="Help" Canvas.Left="538" Canvas.Top="543" Width="118" Height="38" FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
+        <Button Style="{StaticResource CircleHover}" Command="{Binding Help}" Canvas.Left="538" Canvas.Top="543" Height="38" Width="118" />
 
         <ListBox x:Name="UnitsP0" Background="{Binding P1RaceImage}" Height="326" Canvas.Left="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
-        <Label x:Name="NameP0" Content="{Binding P1Name}" FontFamily="{Binding P1Font}" Canvas.Left="23" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label x:Name="NameP0" Content="{Binding P1Name}" FontFamily="{Binding P1Font}" Canvas.Left="23" Canvas.Top="116" Width="158" Height="31" Foreground="#1D1D1D" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label x:Name="VPP0" Content="{Binding P1VP}" FontFamily="{Binding P1Font}" Canvas.Left="23" Canvas.Top="80" Width="158" Height="31" Foreground="#1D1D1D" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
         <ListBox x:Name="UnitsP1" Background="{Binding P2RaceImage}" Height="326" Canvas.Right="23" Canvas.Top="157" Width="158" BorderBrush="{x:Null}"/>
-        <Label x:Name="NameP1" Content="{Binding P2Name}" FontFamily="{Binding P2Font}" Canvas.Left="619" Canvas.Top="116" Width="158" Height="31" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label x:Name="NameP1" Content="{Binding P2Name}" FontFamily="{Binding P2Font}" Canvas.Left="619" Canvas.Top="116" Width="158" Height="31" Foreground="#1D1D1D" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label x:Name="VPP1" Content="{Binding P2VP}" FontFamily="{Binding P2Font}" Canvas.Left="619" Canvas.Top="80" Width="158" Height="31" Foreground="#1D1D1D" Background="#FF555555" HorizontalContentAlignment="Center" FontSize="18"/>
 
         <Label Content="MENU" Canvas.Left="40" Canvas.Top="537" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D1D1D" FontFamily="Rockwell Extra Bold" FontSize="22" />
         <Button Style="{StaticResource CircleHover}" Command="{Binding AskBack}" Canvas.Left="40" Canvas.Top="532" Height="44" Width="89" />

@@ -19,6 +19,7 @@ using PooP.Core.Ressource;
 using PooP.GUI.Audio;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Media.Animation;
 
 namespace PooP.GUI.Views.CurrentGame
 {
@@ -38,6 +39,9 @@ namespace PooP.GUI.Views.CurrentGame
         public Border[] helpBo;
 
         public bool HelpOn = false;
+
+        public static ColorAnimation LastPlayedAnim;
+        public static ColorAnimation NowPlayingAnim;
 
         private string GetTileIndexFromAround(string tileType, string[,] around){
             // All around are non-forest tiles
@@ -397,6 +401,25 @@ namespace PooP.GUI.Views.CurrentGame
             }
             map = (Grid)page.FindName("Map");
 
+            LastPlayedAnim = new ColorAnimation();
+            LastPlayedAnim.From = Color.FromRgb(0x55, 0x55, 0x55);
+            LastPlayedAnim.To = Color.FromRgb(0xF8, 0xCC, 0x10);
+            LastPlayedAnim.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+
+            NowPlayingAnim = new ColorAnimation();
+            NowPlayingAnim.From = Color.FromRgb(0xF8, 0xCC, 0x10);
+            NowPlayingAnim.To = Color.FromRgb(0x55, 0x55, 0x55);
+            NowPlayingAnim.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+
+            for (int i = 0; i < 2; i++)
+            {
+                if (GameBuilder.CURRENTGAME.Players[i] == GameBuilder.CURRENTGAME.getCurrentPlayer())
+                {
+                    ((Label)page.FindName("NameP" + i)).Background
+                        .BeginAnimation(SolidColorBrush.ColorProperty, LastPlayedAnim);
+                }
+            }
+
             DrawMap();
         }
 
@@ -642,7 +665,7 @@ namespace PooP.GUI.Views.CurrentGame
         {
             get
             {
-                return new EndTurnCommand(this);
+                return new EndTurnCommand(this, page);
             }
         }
 
@@ -722,8 +745,15 @@ namespace PooP.GUI.Views.CurrentGame
         {
             get
             {
-                return GameBuilder.CURRENTGAME.Players[0].Name
-                        + " (VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints() + ")";
+                return GameBuilder.CURRENTGAME.Players[0].Name;
+            }
+        }
+
+        public string P1VP
+        {
+            get
+            {
+                return "VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints();
             }
         }
 
@@ -731,8 +761,15 @@ namespace PooP.GUI.Views.CurrentGame
         {
             get
             {
-                return GameBuilder.CURRENTGAME.Players[1].Name
-                        + " (VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints() + ")";
+                return GameBuilder.CURRENTGAME.Players[1].Name;
+            }
+        }
+
+        public string P2VP
+        {
+            get
+            {
+                return "VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints();
             }
         }
 

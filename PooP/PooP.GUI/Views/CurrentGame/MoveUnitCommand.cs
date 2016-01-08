@@ -45,12 +45,8 @@ namespace PooP.GUI.Views.CurrentGame
             cgm.DrawUnits();
             page.OnReload();
             cgm.PlaceHelp();
-            ((Label)page.FindName("NameP0")).Content = 
-                    GameBuilder.CURRENTGAME.Players[0].Name
-                    + " (VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints() + ")";
-            ((Label)page.FindName("NameP1")).Content =
-                    GameBuilder.CURRENTGAME.Players[1].Name
-                    + " (VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints() + ")";
+            ((Label)page.FindName("VPP0")).Content = "VP: " + GameBuilder.CURRENTGAME.Players[0].Race.getVictoryPoints();
+            ((Label)page.FindName("VPP1")).Content = "VP: " + GameBuilder.CURRENTGAME.Players[1].Race.getVictoryPoints();
         }
     }
 }

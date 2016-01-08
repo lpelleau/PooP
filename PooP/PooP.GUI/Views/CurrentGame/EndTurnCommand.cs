@@ -8,16 +8,20 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace PooP.GUI.Views.CurrentGame
 {
     class EndTurnCommand : ICommand
     {
         private CurrentGameModel cgm;
+        private Page page;
 
-        public EndTurnCommand(CurrentGameModel cgm)
+        public EndTurnCommand(CurrentGameModel cgm, Page page)
         {
             this.cgm = cgm;
+            this.page = page;
         }
 
         public bool CanExecute(object parameter)
@@ -47,6 +51,20 @@ namespace PooP.GUI.Views.CurrentGame
             }
             cgm.page.OnReload();
             cgm.PlaceHelp();
+
+            for (int i = 0; i < 2; i++)
+            {
+                if (GameBuilder.CURRENTGAME.Players[i] == GameBuilder.CURRENTGAME.getCurrentPlayer())
+                {
+                    ((Label)page.FindName("NameP" + i)).Background
+                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.LastPlayedAnim);
+                }
+                else
+                {
+                    ((Label)page.FindName("NameP" + i)).Background
+                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.NowPlayingAnim);
+                }
+            }
         }
     }
 }
