@@ -57,12 +57,12 @@ namespace PooP.GUI.Views.CurrentGame
                 if (GameBuilder.CURRENTGAME.Players[i] == GameBuilder.CURRENTGAME.getCurrentPlayer())
                 {
                     ((Label)page.FindName("NameP" + i)).Background
-                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.LastPlayedAnim);
+                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.NowPlayingAnim);
                 }
                 else
                 {
                     ((Label)page.FindName("NameP" + i)).Background
-                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.NowPlayingAnim);
+                        .BeginAnimation(SolidColorBrush.ColorProperty, CurrentGameModel.LastPlayedAnim);
                 }
             }
         }

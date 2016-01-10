@@ -10,8 +10,6 @@
             <ImageBrush ImageSource="/SmallWorld;component/images/pages/splashScreen.png" />
         </Canvas.Background>
 
-        <Label Content="Small World" Canvas.Left="140" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9C6E1D" FontFamily="Rockwell Extra Bold" FontSize="72"/>
-
         <Label Content="APPUYEZ SUR UNE TOUCHE" Canvas.Left="140" Canvas.Top="333" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4B3001" FontFamily="Rockwell Extra Bold" FontSize="32">
             <Label.Style>
                 <Style TargetType="Label">

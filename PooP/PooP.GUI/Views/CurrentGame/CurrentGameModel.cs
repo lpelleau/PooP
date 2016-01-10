@@ -402,21 +402,21 @@ namespace PooP.GUI.Views.CurrentGame
             map = (Grid)page.FindName("Map");
 
             LastPlayedAnim = new ColorAnimation();
-            LastPlayedAnim.From = Color.FromRgb(0x55, 0x55, 0x55);
-            LastPlayedAnim.To = Color.FromRgb(0xF8, 0xCC, 0x10);
+            LastPlayedAnim.From = Color.FromRgb(0xF8, 0xCC, 0x10);
+            LastPlayedAnim.To = Color.FromRgb(0x55, 0x55, 0x55);
             LastPlayedAnim.Duration = new Duration(TimeSpan.FromSeconds(1.5));
 
             NowPlayingAnim = new ColorAnimation();
-            NowPlayingAnim.From = Color.FromRgb(0xF8, 0xCC, 0x10);
-            NowPlayingAnim.To = Color.FromRgb(0x55, 0x55, 0x55);
+            NowPlayingAnim.From = Color.FromRgb(0x55, 0x55, 0x55);
+            NowPlayingAnim.To = Color.FromRgb(0xF8, 0xCC, 0x10);
             NowPlayingAnim.Duration = new Duration(TimeSpan.FromSeconds(1.5));
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < GameBuilder.CURRENTGAME.Players.Count(); i++)
             {
                 if (GameBuilder.CURRENTGAME.Players[i] == GameBuilder.CURRENTGAME.getCurrentPlayer())
                 {
                     ((Label)page.FindName("NameP" + i)).Background
-                        .BeginAnimation(SolidColorBrush.ColorProperty, LastPlayedAnim);
+                        .BeginAnimation(SolidColorBrush.ColorProperty, NowPlayingAnim);
                 }
             }
 
