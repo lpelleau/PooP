@@ -28,7 +28,7 @@ namespace PooP.GUI.Views.CurrentGame
         public bool CanExecute(object parameter)
         {
             string uRef = ((Rectangle)parameter).Name.ToString();
-            return Int16.Parse(uRef.Substring(uRef.IndexOf("P") + 1, uRef.IndexOf("U") - (uRef.IndexOf("P") + 1))) == GameBuilder.CURRENTGAME.IndexOfCurrentPlayer;
+            return GameBuilder.CURRENTGAME.Players[Int16.Parse(uRef.Substring(uRef.IndexOf("P") + 1, uRef.IndexOf("U") - (uRef.IndexOf("P") + 1)))] == GameBuilder.CURRENTGAME.FirstPlayer;
         }
 
         public event EventHandler CanExecuteChanged

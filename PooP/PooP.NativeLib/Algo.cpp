@@ -270,12 +270,12 @@ void Algo::placeP2(int *x, int *y) {
 	do {
 		move = 1 - (rand() % 3);
 		res = (*x + move) * _height + *y;
-	} while (res < 0 || res >= _nbTiles);
+	} while (res < 0 || res >= _nbTiles || *x + move < 0 || *x + move >= _height);
 	*x += move; // Randomly move near the opposite
 	do {
 		move = 1 - (rand() % 3);
 		res = *x * _height + (*y + move);
-	} while (res < 0 || res >= _nbTiles || *y + move < 0);
+	} while (res < 0 || res >= _nbTiles || *y + move < 0 || *y + move >= _height);
 	*y += move; // Randomly move near the opposite
 }
 
