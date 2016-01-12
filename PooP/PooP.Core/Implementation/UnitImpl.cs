@@ -267,7 +267,7 @@ namespace PooP.Core.Implementation
         /// <returns>true if the unit can move to the given position, false otherwise</returns>
         public bool canMoveTo(Position Target)
         {
-            return (!Target.Equals(Position)
+            return (Math.Abs(Target.YPosition - Position.YPosition) + Math.Abs(Target.XPosition - Position.XPosition)<=4) && (!Target.Equals(Position)
                 && getMoveCost(Target) <= MovePoints) && (Race.GetType().Name == "Human" || GameBuilder.CURRENTGAME.Map.getTileAt(Target).GetType().Name != "Water")
                 && !GameBuilder.CURRENTGAME.Map.IsOccupied(Target, Race);
         }
